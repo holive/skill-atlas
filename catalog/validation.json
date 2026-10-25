@@ -5,7 +5,7 @@
     "matt": 38,
     "poteto": 58
   },
-  "evidence_references": 246,
+  "evidence_references": 251,
   "route_outcomes": 22,
   "limits": [
     "Checks source coverage, integrity, line ranges and graph structure, not semantic truth.",

@@ -970,7 +970,7 @@
     ],
     "avoid_when": [
       "Catalog interpretation: Avoid using prototype constraints as the standard for production code.",
-      "Catalog interpretation: Do not add persistence or tests unless the question actually requires that scope."
+      "Catalog interpretation: Prototype code excludes tests and production hardening; use scratch persistence only when the question explicitly concerns a database."
     ],
     "outputs": [
       "One-file HTML logic demo or UI variants",
@@ -1013,6 +1013,12 @@
         "start_line": 98,
         "end_line": 112,
         "supports": "Fold decision in and retain prototype separately; no real mutations"
+      },
+      {
+        "path": "skills/engineering/prototype/SKILL.md",
+        "start_line": 23,
+        "end_line": 24,
+        "supports": "Scratch-persistence exception is separate from the no-tests prototype constraint"
       }
     ]
   },

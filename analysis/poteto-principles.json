@@ -823,8 +823,7 @@
       "A proposed lock may be avoidable through independent owned outputs."
     ],
     "avoid_when": [
-      "Catalog interpretation: There are no concurrent mutable writers.",
-      "Catalog interpretation: Instruction-only coordination is being treated as an adequate lock."
+      "Catalog interpretation: There are no concurrent mutable writers."
     ],
     "outputs": [
       "Shared-state ownership map",
@@ -939,8 +938,7 @@
       "A refactor repeatedly breaks tests despite identical consumer-visible behavior."
     ],
     "avoid_when": [
-      "Catalog interpretation: The assertion targets a private helper or internal call order that no consumer observes.",
-      "Catalog interpretation: A test checks data it constructed itself without exercising the relevant interface."
+      "Catalog interpretation: The task needs test-harness setup or a complete testing strategy rather than a rule for judging assertions against an observable consumer contract."
     ],
     "outputs": [
       "Contract-driven test cases",

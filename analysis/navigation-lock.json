@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "basis": "Source-grounded goal and search curation for the unchanged catalog. Data lock prevents accidental stale reuse; it does not prove selection quality.",
-  "catalog_sha256": "bc84936bfc715fc623ad309e136d639f29301309d94a6f85a9ba07a982e447fc",
+  "basis": "Reconfirmed during the 2026-10-25 full source reread after six scope, effect and dependency clarifications. All 35 goal outcomes, conditional alternatives and keyword vocabulary remain appropriate. The lock guards input consistency; it does not prove selection quality.",
+  "catalog_sha256": "de65f83c897eca87a044b8f67d4f9b1c1716aa205929839a21baa4d5e9e68563",
   "artifacts": {
     "catalog/navigation.json": "60c64c70aa264da95876de310d8eb1006de8e34b39958312bf6558d76348fbfc",
     "catalog/navigation-cases.json": "27a2a1f11954f3f35e46d8075fde0503fd1549f6fe7025507e78c672bd6066f5",

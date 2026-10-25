@@ -1165,9 +1165,9 @@
       "repository": "https://github.com/cursor/plugins",
       "scope": "pstack/skills",
       "license": "pstack/LICENSE",
-      "commit": "9580c23696ac8d7abed0c166f2f9918800afb819",
-      "commit_time": "2026-10-23T20:27:39-07:00",
-      "snapshot_tree_sha256": "23171478cdfbf5cb06a9d87759e0cf55fd3d4169c5f113623f25d0f20553c3e3",
+      "commit": "99b609a72323b70204eab407c622f436e858e112",
+      "commit_time": "2026-10-24T18:49:37-07:00",
+      "snapshot_tree_sha256": "d7ae8a1e78e37a2c15333f3f2f78a88e4013d4c7446a99a76f05f212329ef8d0",
       "downloaded_scopes": [
         "pstack",
         "cursor-team-kit",
@@ -1189,8 +1189,8 @@
         },
         {
           "path": "README.md",
-          "sha256": "61cf33e77687103c9720fdc144165f78825c7123e6209b256b9c4480daffe7c6",
-          "bytes": 18871,
+          "sha256": "8f98f2af620dcf5d8c39b8dcf2db56b7be098dcd1db75eeb6f74ae53975ae13c",
+          "bytes": 18848,
           "type": "file"
         },
         {
@@ -3150,11 +3150,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/architect/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/architect/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/architect/SKILL.md",
       "skill_sha256": "31f8e97a52bfa5432edd61f68ade2a8632ef0bacbc2d2a6802d7a0e6821944ac",
       "bundle_sha256": "1a184cd1b6b2f4f2586ea50f0b229066aae4d24f08f4b51e5c67a96c6a557a62",
       "line_count": 79,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/arena",
@@ -3165,11 +3165,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/arena/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/arena/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/arena/SKILL.md",
       "skill_sha256": "ed72f6c132b1ce3974d949581d0adc5dade424fe20793ac3b4c4fae22ecb9354",
       "bundle_sha256": "c642ffe32d6b6e324de9ea128e895d7aa976c60f41e633cceb6a804a31a14dfd",
       "line_count": 48,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/automate-me",
@@ -3180,11 +3180,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/automate-me/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/automate-me/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/automate-me/SKILL.md",
       "skill_sha256": "30b35f3628c4fd8c11af0ada06d14cdc3b28901810caca2480f627d4d21acfbe",
       "bundle_sha256": "83d049c94e268106f9e8e2a108c7f24500c494fe383091f7a6ad395697f416db",
       "line_count": 104,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/benchmark-checklist",
@@ -3195,11 +3195,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/benchmark-checklist/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/benchmark-checklist/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/benchmark-checklist/SKILL.md",
       "skill_sha256": "ba109e96c8f6c1c391baccf19e5d11e14370df7b3f2605e1572cd565a6c0fca0",
       "bundle_sha256": "bc3e91bf1abab811f965f23b8c75bab6e0728fc4e199b76ecbad077a4d3cc8a4",
       "line_count": 39,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/blast-radius",
@@ -3210,11 +3210,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/blast-radius/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/blast-radius/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/blast-radius/SKILL.md",
       "skill_sha256": "2e10745b97f5862323dcda3b29ca60d56b5c3c98e37020085d26b48efbe0a436",
       "bundle_sha256": "ce0dc029724fc3c1a3c956293ca7ed0ef3137639aaa09be92b584ca1ca99a599",
       "line_count": 50,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/bro",
@@ -3225,11 +3225,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/bro/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/bro/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/bro/SKILL.md",
       "skill_sha256": "aa329d0ceeeecb6822a7174ad76bb07a7826a3c52ceb6a588dec4138815084bb",
       "bundle_sha256": "87537b50a20db154e4cdafdbc3892bae47bd8db7d3b265d331cb7cf968ae8a51",
       "line_count": 7,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/correct",
@@ -3240,11 +3240,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/correct/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/correct/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/correct/SKILL.md",
       "skill_sha256": "e347045d00c967a0b831ef883cc6ac79d21329aa10b5968637df95de7febf0ba",
       "bundle_sha256": "ece2316b22c52d17ee641e25141c73cddd1b553f2a2f4673927fdaa1fdadc0b7",
       "line_count": 32,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/create-formal-verification-skill",
@@ -3255,11 +3255,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/create-formal-verification-skill/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/create-formal-verification-skill/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/create-formal-verification-skill/SKILL.md",
       "skill_sha256": "5e489d938620883502c27c9c2f32143ae7aa8c0543088dad996b2c815d2acc52",
       "bundle_sha256": "8c94a5f6061e66a71b23a96f11af51a85d0b8c640fb7123e232e04d84f81a7d5",
       "line_count": 43,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/create-verification-skill",
@@ -3270,11 +3270,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/create-verification-skill/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/create-verification-skill/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/create-verification-skill/SKILL.md",
       "skill_sha256": "d353973547bf8ad8977eca645f4cd4feaed0d32f4b43d1448f906b0a76c4d694",
       "bundle_sha256": "5f7ba2f295d1c3883b64a606564776c9635fb760735c076d2356e97d69c2358a",
       "line_count": 44,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/figure-it-out",
@@ -3285,11 +3285,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/figure-it-out/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/figure-it-out/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/figure-it-out/SKILL.md",
       "skill_sha256": "bdb23cdbd82a1e6af094b495691c832a6f7f3ab9706ba9edbeb664ef51a726e1",
       "bundle_sha256": "61b05912f335a95a6e15b6a07f0cb0469786c5f3bcd225a9591ee1350c96be71",
       "line_count": 52,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/how",
@@ -3300,11 +3300,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/how/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/how/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/how/SKILL.md",
       "skill_sha256": "08a00079bb15b4258874ac3ff62d4ca7e94350ffedb521d0fd296dc9dd21904e",
       "bundle_sha256": "fa70ba8d24657c09b5ccd13d127e7efd905504aef15c1a03ba84bcb814cad916",
       "line_count": 36,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/in-your-own-words",
@@ -3315,11 +3315,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/in-your-own-words/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/in-your-own-words/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/in-your-own-words/SKILL.md",
       "skill_sha256": "fa8ba74e27d7be371dc270ec78bbf816411477d0dfab185356c861ac8dd413ad",
       "bundle_sha256": "432bb6ccde036ef32d9984da3666c38ed0bb825529763ba1effded0744f61fd9",
       "line_count": 7,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/interrogate",
@@ -3330,11 +3330,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/interrogate/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/interrogate/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/interrogate/SKILL.md",
       "skill_sha256": "a16dfe179005abc22a4651b82f25b0c8ab953284276efe4e6dc341958fb63647",
       "bundle_sha256": "8a9b7e0bc1d27e5f0bf7a7b6d67ba5f277a7123bf77c6ba6eff000053c9d88c1",
       "line_count": 74,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/ketchup",
@@ -3345,11 +3345,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/ketchup/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/ketchup/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/ketchup/SKILL.md",
       "skill_sha256": "f2923ffd14f6fc778f75a47aaed1f317fb5fd00b5701ca769d6446c74106dead",
       "bundle_sha256": "788e454d9a5a1857a2f254a46251a31be2da6af8e15f9b26fc95beaf71d1b99c",
       "line_count": 43,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/ketchup-video",
@@ -3360,11 +3360,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/ketchup-video/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/ketchup-video/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/ketchup-video/SKILL.md",
       "skill_sha256": "74f1b9e61f8479e2be5b91a4f53136f6ad8e144fd950c9848de6aa1cdbb7645c",
       "bundle_sha256": "0e7a15b16197a7d683223a3117256ca2fab172ff246fe5c79f1cd5856644d367",
       "line_count": 23,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/maintain-formal-verification-skill",
@@ -3375,11 +3375,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/maintain-formal-verification-skill/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/maintain-formal-verification-skill/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/maintain-formal-verification-skill/SKILL.md",
       "skill_sha256": "0c96f54293542d3818b68754562b338073958781a9684454611dca37592e2d2c",
       "bundle_sha256": "e8a3df1ce284d3a97685197010f0a2eaaf2ff9d85f85ca9fd0043936b7349ec3",
       "line_count": 58,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/maintain-verification-skill",
@@ -3390,11 +3390,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/maintain-verification-skill/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/maintain-verification-skill/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/maintain-verification-skill/SKILL.md",
       "skill_sha256": "515c0eaa054b3f6be1b1fb06f2c2f173c80fddb58bbcac57576f89c479bc68e8",
       "bundle_sha256": "95411d7928e3bdd5cf49b6da2649572975bb85438a1b9cb503f2235b0b26cf59",
       "line_count": 39,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/make-bot-ui",
@@ -3405,11 +3405,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/make-bot-ui/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/make-bot-ui/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/make-bot-ui/SKILL.md",
       "skill_sha256": "ad19d0bc6764287ec08c2521701974e7dac941f72e4d0fe81a24f4614494586f",
       "bundle_sha256": "34f513e4188ba0d2d7e732389487ea31bff665f8cc18d7aeeecbc778a256594a",
       "line_count": 115,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/no-comments",
@@ -3420,11 +3420,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/no-comments/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/no-comments/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/no-comments/SKILL.md",
       "skill_sha256": "078ecfe224eafbb017f6476870612838bf6dbe38c0b697e12f0c887d0313f17e",
       "bundle_sha256": "be0cb04098def337c838aa226ecf1dba6ee1752086e940551222a0fb5b309c10",
       "line_count": 24,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/poteto-help",
@@ -3435,11 +3435,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/poteto-help/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-help/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-help/SKILL.md",
       "skill_sha256": "587793b0f9959dbea7d5d009b8a6513795380d7150dd478a6cb05e604058e315",
       "bundle_sha256": "46240c1fba5d036e4a85037948f3881300b5ea72d1bed4981bd2772c5412d673",
       "line_count": 163,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/poteto-mode",
@@ -3450,11 +3450,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/poteto-mode/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-mode/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/SKILL.md",
       "skill_sha256": "2755f102e7a6d0496b429d1031a22fb353e1f3d523543367caeaae5c4ed6f544",
       "bundle_sha256": "cbd5242bda98c63ec51295aa7ce67f102916051e388665c7422e4800e0d6a294",
       "line_count": 149,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-attack-the-premise",
@@ -3465,11 +3465,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-attack-the-premise/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-attack-the-premise/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-attack-the-premise/SKILL.md",
       "skill_sha256": "6a932884daad4aa189e9b5d1665226bbc75621d4d2a398fd4003bebd382f4599",
       "bundle_sha256": "c97b26692d444d427ab189191a7c81b4e4a7b700156a915094be8502cb128c5d",
       "line_count": 21,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-boundary-discipline",
@@ -3480,11 +3480,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-boundary-discipline/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-boundary-discipline/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-boundary-discipline/SKILL.md",
       "skill_sha256": "62ac2862c2caa22dd14531f51c9c6bb445ceb198ca98a687e25b4d47c1f10a28",
       "bundle_sha256": "43ecf68df5f191b8938dbd1f206e6d5a4cc8df88e150d9be84708b11e7938009",
       "line_count": 34,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-build-the-lever",
@@ -3495,11 +3495,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-build-the-lever/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-build-the-lever/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-build-the-lever/SKILL.md",
       "skill_sha256": "3434b0ad0c640c6f1d7960be7a8986c3bcdc14e26060360dec29903df60074ff",
       "bundle_sha256": "bce194b1afe8a3a81100c790d2cbd3ae3688b236418e806dc733dc4ef0f422c2",
       "line_count": 23,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-encode-lessons-in-structure",
@@ -3510,11 +3510,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
       "skill_sha256": "228963799189f481827d6f28065f278bc2008ffa37030b1234cbd5814d36b9e9",
       "bundle_sha256": "413dbe7e397ad3f68670ef8cd772d43a817bd1afa6f18c9f8a840e3a1f6d29d1",
       "line_count": 11,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-exhaust-the-design-space",
@@ -3525,11 +3525,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-exhaust-the-design-space/SKILL.md",
       "skill_sha256": "2de83d99f93f60ec6313455b0bc9aa9f0bfb93dd59f414f403691322db00d4db",
       "bundle_sha256": "f929ed540ef1d0508d2dc602faaf8974ec589fefd0f63465e6e99f98fce432f3",
       "line_count": 9,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-experience-first",
@@ -3540,11 +3540,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-experience-first/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-experience-first/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-experience-first/SKILL.md",
       "skill_sha256": "58903529d733b1c1a7c9ccf127d45ef3c7d0d9f0b81164a4dc6b80efe6f2912b",
       "bundle_sha256": "a3ea2bab02e94d89bbb239e698b40ee0744e81c77572385092d772acc85cf0d0",
       "line_count": 19,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-explain-the-number",
@@ -3555,11 +3555,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-explain-the-number/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-explain-the-number/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-explain-the-number/SKILL.md",
       "skill_sha256": "cd5a25f9e7cf023627ccb470dc5faa97542f29b4319496a32b839a8e1e988047",
       "bundle_sha256": "63874ebf68f2328341035cace75003162b10dfb83eda590f5f34f8ef09c765d8",
       "line_count": 17,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-fix-root-causes",
@@ -3570,11 +3570,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-fix-root-causes/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-fix-root-causes/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-fix-root-causes/SKILL.md",
       "skill_sha256": "8df3c8c3fe57eb0055a5c8efab8ab144557fdf301da70b1cdc77a3a3ef3f3052",
       "bundle_sha256": "b288a0187153e7590fef63fd5718f48a46fc1efe426551f1cdeb6446a1326543",
       "line_count": 21,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-foundational-thinking",
@@ -3585,11 +3585,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-foundational-thinking/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-foundational-thinking/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-foundational-thinking/SKILL.md",
       "skill_sha256": "864b827e8199d946ce58beca0f89c4ed4099ed6e426fb698a3aaa45de2a9eea2",
       "bundle_sha256": "26747ea4aaa1d3f7f59ac7c2072847ba0ade1e7e7c9f32a81baadb4b6f8875c6",
       "line_count": 21,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-guard-the-context-window",
@@ -3600,11 +3600,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-guard-the-context-window/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-guard-the-context-window/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-guard-the-context-window/SKILL.md",
       "skill_sha256": "af0b9dd70b43628ce4a59a4d332e9d9ad055084e460f430e7a757495c627e81a",
       "bundle_sha256": "42e863c6d7fc4f01ac82588573fd0df3463327b850ea06dd8d0b37b764cb6d64",
       "line_count": 12,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-laziness-protocol",
@@ -3615,11 +3615,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-laziness-protocol/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-laziness-protocol/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-laziness-protocol/SKILL.md",
       "skill_sha256": "1be6e7a435f26a75a76eb848b9c3d611b9977d0f5822361753244da25ca3ca45",
       "bundle_sha256": "167e3e0e0586340741559e26993611910ef14f6e74fa20f0e1aa4653fa4edbd9",
       "line_count": 10,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-make-operations-idempotent",
@@ -3630,11 +3630,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-make-operations-idempotent/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-make-operations-idempotent/SKILL.md",
       "skill_sha256": "7aa9327cf1f1aa057e95d47a0a78bd88a8f9d556b608866fee939d455a53a019",
       "bundle_sha256": "8630fe1e6318284e0b943a59e25d59ee965e1122db2d81e8d8239d8d34346bf7",
       "line_count": 22,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-migrate-callers-then-delete-legacy-apis",
@@ -3645,11 +3645,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
       "skill_sha256": "580ad9bb1a0994ecb924321ba49efc38a2f85c64e22c76fb133f57a78272a2e6",
       "bundle_sha256": "771bd7c605e0090a29645159857632f15575f4a90ff792ead06848ea8db21bc8",
       "line_count": 14,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-minimize-reader-load",
@@ -3660,11 +3660,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-minimize-reader-load/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-minimize-reader-load/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-minimize-reader-load/SKILL.md",
       "skill_sha256": "1ea2b7fef2391cae5844c4efdbd59031f775e8a52d06b7495d707229a200dcca",
       "bundle_sha256": "0f7f5b1f76721c77e541d865b253ab5857fe5a320525a62d5066cfbc32d2440e",
       "line_count": 18,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-model-the-domain",
@@ -3675,11 +3675,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-model-the-domain/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-model-the-domain/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-model-the-domain/SKILL.md",
       "skill_sha256": "52c0d85e0c3827c41c18299b642657d7b47eaf77b7b31609e42e0df42b84c75f",
       "bundle_sha256": "b471fa4cb605dd1cdf307643a5f73fdf3bedc8c545677d2659841262045eb12e",
       "line_count": 24,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-never-block-on-the-human",
@@ -3690,11 +3690,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-never-block-on-the-human/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-never-block-on-the-human/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-never-block-on-the-human/SKILL.md",
       "skill_sha256": "05030a7a083c337676f793881b4e93cd218e8f1dd676529f56e6ac1d3efb8d1f",
       "bundle_sha256": "2df229e5d195f454b8b170d1d191a3cd80747c64617df8e4efb8241c1f39b522",
       "line_count": 15,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-outcome-oriented-execution",
@@ -3705,11 +3705,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-outcome-oriented-execution/SKILL.md",
       "skill_sha256": "10eb91633aa570355ba4bb37088fcade2b22e498df7a58edc749e65bc5a78e2d",
       "bundle_sha256": "33edffa807e2e6fa1090c9ac84930f9167807ac8ba687d357f21199aab831f0c",
       "line_count": 21,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-prove-it-works",
@@ -3720,11 +3720,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-prove-it-works/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-prove-it-works/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-prove-it-works/SKILL.md",
       "skill_sha256": "ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2",
       "bundle_sha256": "6458da6c5477cf17d43115a5877c978ebb0e8a3ba153ecb8f2038aeb09bc97f7",
       "line_count": 22,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-redesign-from-first-principles",
@@ -3735,11 +3735,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-redesign-from-first-principles/SKILL.md",
       "skill_sha256": "170e0a658783e43fee8ec5a8c2422a4abb8f69cef621dd1819a95910b8207034",
       "bundle_sha256": "29b3ab3b5ba3057ea644007b6b2ed02e35723f1c9c0ac59e9fdcd397107a5536",
       "line_count": 16,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-separate-before-serializing-shared-state",
@@ -3750,11 +3750,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
       "skill_sha256": "05294b40448e927c5da1c7b6f5c6b9fed3744637e3833d2d948b9154a9dd00bb",
       "bundle_sha256": "568fe3621dcc88801e15b1561ea1c2ccdb72120618549ec53af0d99146445511",
       "line_count": 16,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-sequence-verifiable-units",
@@ -3765,11 +3765,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-sequence-verifiable-units/SKILL.md",
       "skill_sha256": "2ccbbacc56ace5afdfb8670cef19d7bd009fb2a0033b9a741cbdf2b6baf72187",
       "bundle_sha256": "8e7ad0506dc5da7efb8926a15714f5ad6cdc0a83a64b403e8ea5dc1b3bad6558",
       "line_count": 17,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-subtract-before-you-add",
@@ -3780,11 +3780,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-subtract-before-you-add/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-subtract-before-you-add/SKILL.md",
       "skill_sha256": "8c93bb9d1a7f38e2ef37655d93f0e790fa59903105af3d500cc8a663ebe45f3f",
       "bundle_sha256": "79d854a5213a044d3515ff8725896405b0236d1944c4619e34cd325ccedde154",
       "line_count": 18,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-test-behavior-not-implementation",
@@ -3795,11 +3795,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
       "skill_sha256": "f7223698623b6a26fea49c751e466b38e6691b1f32ce841d3983e7ffbe2b74a6",
       "bundle_sha256": "67eafcb1a96ebf4d319a19d67ea1276f3df165abff52dbca1b874276fca8a7f9",
       "line_count": 20,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/principle-type-system-discipline",
@@ -3810,11 +3810,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/principle-type-system-discipline/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-type-system-discipline/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-type-system-discipline/SKILL.md",
       "skill_sha256": "5cdaf79785e3c12b2592b9469ee8c272143eb86ab7a18d8382197cea5fd30106",
       "bundle_sha256": "fa695a89812c849b181756b0a49d9084938874961df96a3cf3c4dcd0ae4ad8c7",
       "line_count": 13,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/recall",
@@ -3825,11 +3825,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/recall/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/recall/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/recall/SKILL.md",
       "skill_sha256": "b0ceb996259c3404532f61e4b010df4e3d80d7ddbed85b3c302895723eb62a89",
       "bundle_sha256": "4aa0bb8bb3137db1659bc519fe78d188ef24b102e95782714dbdd48d746bc2d2",
       "line_count": 35,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/reflect",
@@ -3840,11 +3840,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/reflect/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/reflect/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/reflect/SKILL.md",
       "skill_sha256": "9648df23cabaae99b78ed59cd93b6f35ebbf02105d228e3d0b5c3a3b3419d753",
       "bundle_sha256": "450ecdfb4727d21f0a19981c2b9f49f67fb99b0eaeddbdbe47ac598bc52e7beb",
       "line_count": 69,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/setup-pstack",
@@ -3855,11 +3855,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/setup-pstack/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/setup-pstack/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/setup-pstack/SKILL.md",
       "skill_sha256": "b45512f6ca5e96e81681984683b7472bfe892581da3a89a73cca4159438f29ed",
       "bundle_sha256": "eb8048851a857c354987973de4fa22bf89bf47f3f1c7e71035f66138c8f27412",
       "line_count": 78,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/sharpen",
@@ -3870,11 +3870,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/sharpen/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/sharpen/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/sharpen/SKILL.md",
       "skill_sha256": "563dfc460c605d311e650726288e2f1cbd61eab817db178d6e7e29643e07e7a2",
       "bundle_sha256": "704711a4a7861f4b16ebd64f5e3bbadab994bb997a93c0fc499114bd69437502",
       "line_count": 16,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/show-me-your-work",
@@ -3885,11 +3885,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/show-me-your-work/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/show-me-your-work/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/show-me-your-work/SKILL.md",
       "skill_sha256": "920a8217cbb62f92a2222fb81fc9eab17ecd554a0277e444a95a927195139bd1",
       "bundle_sha256": "b2038cdf12f1a6b81b31207732a7709eb6751bba7ec49c32087de857752f16b3",
       "line_count": 82,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/statechart",
@@ -3900,11 +3900,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/statechart/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/statechart/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/statechart/SKILL.md",
       "skill_sha256": "b1c544782b1527ba09e63311e4faa4c277c86aa33b0506590f8082b7b4bea505",
       "bundle_sha256": "9c19c6c3e1dee1905c855b0eafc5ff5ad63daf50d0127d607ac927e383b60193",
       "line_count": 36,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/swarm",
@@ -3915,11 +3915,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/swarm/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/swarm/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/swarm/SKILL.md",
       "skill_sha256": "fea6bfbbf21e067a4e2d2ebab034bc3af508118e9df1abc9d2ba040d58a6df3a",
       "bundle_sha256": "0761e96fd7a933965224e35f3e7bb1ad1987ae869a249e6c4e205e7c545392bc",
       "line_count": 41,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/tdd",
@@ -3930,11 +3930,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/tdd/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/tdd/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/tdd/SKILL.md",
       "skill_sha256": "eeb868e2dfebee528d730a67d7b17498fac4bb85dec2e38bc5c5176aca4d5d2f",
       "bundle_sha256": "0bbd0981a978638525e2230fd02598612afb36d063b6550f816a76d774569f80",
       "line_count": 42,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/teach",
@@ -3945,11 +3945,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/teach/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/teach/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/teach/SKILL.md",
       "skill_sha256": "bd286e5a6290673be2cd28aef7af2ec7f1fb138e6bce156ea657368c7e7fc8a4",
       "bundle_sha256": "e17b126b4c6ede5ade41a289ecbb83aa43c0ca2febf09b308ebc28976bfa8833",
       "line_count": 21,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/technical-writing",
@@ -3960,11 +3960,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/technical-writing/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/technical-writing/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/technical-writing/SKILL.md",
       "skill_sha256": "61fe9c424a798ebf36ad94941f87be049cb8827bdf86d21474a0dde37b513c43",
       "bundle_sha256": "dfa2c8c04f0ffb48a147b6bb26da4ce4b529fc0a34f866c254fcb87f129564f3",
       "line_count": 106,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/typescript-best-practices",
@@ -3975,11 +3975,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/typescript-best-practices/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/typescript-best-practices/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/typescript-best-practices/SKILL.md",
       "skill_sha256": "ec1dac086d3708e5940d45d250c30a37dd953b4e3cb2ca0692f5851d7a039e27",
       "bundle_sha256": "f179b9673ce27d3daed67dcc404feb1d568b8fb43ccf2f8c2e71d631784f2f26",
       "line_count": 31,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/unslop",
@@ -3990,11 +3990,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/unslop/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/unslop/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/unslop/SKILL.md",
       "skill_sha256": "ccab208e315ce05e2fab8eeee2f7879f1289b5c6844840b2d307adf31c79144f",
       "bundle_sha256": "ecb6c67cbe7bfd30b43025097ea371d28c9730b1cd53cba2a116fdd462aa4933",
       "line_count": 62,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     },
     {
       "id": "poteto/why",
@@ -4005,11 +4005,11 @@
       "upstream_group": "pstack",
       "status": "stable",
       "path": "pstack/skills/why/SKILL.md",
-      "source_url": "https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/why/SKILL.md",
+      "source_url": "https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/why/SKILL.md",
       "skill_sha256": "144d42e7712723d763e607bc0a969e5f1cdf83ec7228519d87677cc534571bed",
       "bundle_sha256": "b0d2024c3005920d18655dd312cb43621632659a55edd0a355526cb9a53ddf9c",
       "line_count": 98,
-      "snapshot_commit": "9580c23696ac8d7abed0c166f2f9918800afb819"
+      "snapshot_commit": "99b609a72323b70204eab407c622f436e858e112"
     }
   ]
 }

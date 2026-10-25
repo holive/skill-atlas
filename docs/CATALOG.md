@@ -51,64 +51,64 @@ Qualified IDs identify the collection; they are catalog identities, not promises
 
 | ID | Role | Catalog status | Useful result |
 | --- | --- | --- | --- |
-| [poteto/architect](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/architect/SKILL.md) | workflow | stable | Explores competing type and module designs, synthesizes a usage-first sketch, then implements against it. The human design checkpoint is opt-in. |
-| [poteto/arena](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/arena/SKILL.md) | workflow | stable | Runs several candidates on the same brief, compares them using a rubric and an independent judge, and combines selected strengths into one verified artifact. |
-| [poteto/automate-me](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/automate-me/SKILL.md) | workflow | stable | Turns recurring working preferences into a personal mode skill using workspace-scoped history and direct questions. Revises an existing mode instead of starting over by default. |
-| [poteto/benchmark-checklist](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/benchmark-checklist/SKILL.md) | workflow | stable | Checks whether a measured performance claim is meaningful, repeatable and about completed work. Produces a verdict with units, spread and the identified limiter. |
-| [poteto/blast-radius](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/blast-radius/SKILL.md) | workflow | stable | Finds downstream breakage that a diff or caller list can miss and executes a small proof of the safety fact the change depends on. |
-| [poteto/bro](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/bro/SKILL.md) | utility | stable | Restates the previous assistant message in simpler, shorter language without jargon. |
-| [poteto/correct](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/correct/SKILL.md) | workflow | stable | Finds repeated agent mistake classes and changes repository structure or enforcement so they are harder to repeat. Demonstrates each new check on a real past mistake. |
-| [poteto/create-formal-verification-skill](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/create-formal-verification-skill/SKILL.md) | workflow | stable | Builds and proves a project-local formal verification workflow for a costly invariant tests seldom reach. Records model scope, assumptions and the code synchronization commit. |
-| [poteto/create-verification-skill](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/create-verification-skill/SKILL.md) | workflow | stable | Creates a repository-specific skill that launches, health-checks, drives and cleans up the real app. Seeds a user-facing feature map and executes one complete journey before handoff. |
-| [poteto/figure-it-out](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/figure-it-out/SKILL.md) | workflow | stable | Designs a custom, auditable workflow when bundled playbooks do not fit or a change is ambitious. Runs small hypothesis-driven units against an explicit completion predicate. |
-| [poteto/how](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/how/SKILL.md) | workflow | stable | Explains a subsystem's architecture, runtime flow and ownership using code-grounded exploration. Scales from one explainer to several explorers and a synthesizer. |
-| [poteto/in-your-own-words](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/in-your-own-words/SKILL.md) | utility | stable | Restates the user's apparent goals and the underlying problem before work proceeds. |
-| [poteto/interrogate](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/interrogate/SKILL.md) | workflow | stable | Obtains independent adversarial reviews from configured models and produces a lead judgment rather than automatically fixing the findings. |
-| [poteto/ketchup](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/ketchup/SKILL.md) | utility | stable | Catches the user up on changes since their last message and lists every outstanding decision with enough context to act from the reply. |
-| [poteto/ketchup-video](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/ketchup-video/SKILL.md) | utility | stable | Delivers the ketchup catch-up as a short silent slide video, with outstanding decisions retained as text under it. |
-| [poteto/maintain-formal-verification-skill](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/maintain-formal-verification-skill/SKILL.md) | workflow | stable | Reconciles formal checks with code changes since their synchronization commit. Separates verification drift from real product bugs and proves updated checks can still fail. |
-| [poteto/maintain-verification-skill](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/maintain-verification-skill/SKILL.md) | workflow | stable | Audits every mapped feature from source and drives every feature live. Ships at most one PR limited to proven verification documentation or harness corrections. |
-| [poteto/make-bot-ui](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/make-bot-ui/SKILL.md) | workflow | stable | Builds a server-backed page whose buttons wake a Grok Bot through a webhook routine, then exposes the page on a Tailscale network. |
-| [poteto/no-comments](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/no-comments/SKILL.md) | workflow | stable | Runs a specialized comment-removal agent, validates its findings and fixes accepted in-scope code workarounds. Can propose structural replacements for claimed constraints. |
-| [poteto/poteto-help](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-help/SKILL.md) | router | stable | Helps choose a pstack setup path, skill, playbook or principle and returns an example prompt with a source link. It distinguishes help from an actual request to execute work. |
-| [poteto/poteto-mode](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-mode/SKILL.md) | router | stable | Coordinates pstack's working style and task-specific playbooks, selecting companion skills for grounding, design, delegation, verification and delivery. Its scope ranges from read-only investigation to autonomous PR programs. |
-| [poteto/principle-attack-the-premise](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-attack-the-premise/SKILL.md) | principle | stable | Interrupts repeated failed fixes by making their shared assumption explicit and testing it before another attempt. |
-| [poteto/principle-boundary-discipline](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-boundary-discipline/SKILL.md) | principle | stable | Concentrates parsing, validation and error handling at system boundaries, leaving internal business logic expressed as typed pure functions. |
-| [poteto/principle-build-the-lever](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-build-the-lever/SKILL.md) | principle | stable | Turns nontrivial work into a small rerunnable tool or an explicit delegate recipe, making the result reproducible for reviewers. |
-| [poteto/principle-encode-lessons-in-structure](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-encode-lessons-in-structure/SKILL.md) | principle | stable | Replaces repeated instructions or corrections with an enforceable structural rule where possible; judgment-heavy lessons receive a clearer instruction and failure example. |
-| [poteto/principle-exhaust-the-design-space](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-exhaust-the-design-space/SKILL.md) | principle | stable | Resolves unfamiliar architecture or interaction choices by comparing a few competing prototypes before selecting an approach. |
-| [poteto/principle-experience-first](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-experience-first/SKILL.md) | principle | stable | Prioritizes the experience of consumers and maintainers when deciding scope and polish, using prototypes to test design choices early. |
-| [poteto/principle-explain-the-number](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-explain-the-number/SKILL.md) | principle | stable | Qualifies a measured performance or evaluation result by identifying its limiter, testing alternative explanations and retaining run evidence. |
-| [poteto/principle-fix-root-causes](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-fix-root-causes/SKILL.md) | principle | stable | Traces a reproduced symptom to the first wrong decision and distinguishes legitimate states needing handling from impossible states that should never be produced. |
-| [poteto/principle-foundational-thinking](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-foundational-thinking/SKILL.md) | principle | stable | Orders work around sound data structures and shared foundations so later increments remain simple and coherent. |
-| [poteto/principle-guard-the-context-window](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-guard-the-context-window/SKILL.md) | principle | stable | Controls reasoning load by bounding phases and moving bulk reading to delegates while retaining summaries in the coordinating context. |
-| [poteto/principle-laziness-protocol](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-laziness-protocol/SKILL.md) | principle | stable | Keeps refactors and additions small by consolidating repeated choices and avoiding unnecessary layers or abstractions. |
-| [poteto/principle-make-operations-idempotent](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-make-operations-idempotent/SKILL.md) | principle | stable | Designs state-changing work to reconcile current state with the goal so retries and interrupted runs converge safely. |
-| [poteto/principle-migrate-callers-then-delete-legacy-apis](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md) | principle | stable | Keeps an internal API simplification coherent by migrating callers and removing the old API in the same wave, with tests aligned to the new contract. |
-| [poteto/principle-minimize-reader-load](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-minimize-reader-load/SKILL.md) | principle | stable | Evaluates maintainability through the indirections a reader must trace and the mutable state they must remember, then removes layers or narrows state. |
-| [poteto/principle-model-the-domain](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-model-the-domain/SKILL.md) | principle | stable | Encodes domain invariants and access patterns in an appropriate structure rather than spreading lifecycle rules across conditionals and phases. |
-| [poteto/principle-never-block-on-the-human](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-never-block-on-the-human/SKILL.md) | principle | stable | Lets reversible execution proceed with reasonable decisions and asynchronous supervision while retaining confirmation for irreversible actions and human control of product direction. |
-| [poteto/principle-outcome-oriented-execution](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-outcome-oriented-execution/SKILL.md) | principle | stable | Allows explicitly scoped transitional breakage during a planned migration so work converges on the verified target architecture without accumulating compatibility scaffolding. |
-| [poteto/principle-prove-it-works](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-prove-it-works/SKILL.md) | principle | stable | Checks task outputs against the actual artifact and, where feasible, keeps a deterministic verification script and evidence for reviewers. |
-| [poteto/principle-redesign-from-first-principles](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-redesign-from-first-principles/SKILL.md) | principle | stable | Integrates a requirement by reconsidering the whole affected design as though the requirement had always existed, then delivering the redesign incrementally. |
-| [poteto/principle-separate-before-serializing-shared-state](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md) | principle | stable | Removes unnecessary shared write targets before introducing locks, and uses structural ownership or serialization when one canonical mutable object is unavoidable. |
-| [poteto/principle-sequence-verifiable-units](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-sequence-verifiable-units/SKILL.md) | principle | stable | Sequences multi-step execution and delivery into small checked units whose order demonstrates correctness to a reviewer. |
-| [poteto/principle-subtract-before-you-add](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-subtract-before-you-add/SKILL.md) | principle | stable | Simplifies the existing base before extending it by removing dead code, redundant rules and references without novel content. |
-| [poteto/principle-test-behavior-not-implementation](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-test-behavior-not-implementation/SKILL.md) | principle | stable | Judges a test by whether it catches broken observable behavior while surviving internal restructuring, then rewrites assertions around the consumer contract. |
-| [poteto/principle-type-system-discipline](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-type-system-discipline/SKILL.md) | principle | stable | Uses types and authoritative schemas to prevent invalid states, semantic primitive mixups and unhandled variants before runtime. |
-| [poteto/recall](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/recall/SKILL.md) | workflow | stable | Rebuilds recent work context across the user's scoped chat history, shared evidence and live PR state. Returns a compact current-state brief before work resumes. |
-| [poteto/reflect](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/reflect/SKILL.md) | workflow | stable | Extracts durable lessons from the current session through three reviewer lenses and a synthesizer. Proposes concrete skill edits and separates structural enforcement work into backlog items. |
-| [poteto/setup-pstack](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/setup-pstack/SKILL.md) | setup | stable | Configures pstack's per-role models and reasoning budget using models the current host actually exposes. Writes an always-applied rule for future sessions. |
-| [poteto/sharpen](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/sharpen/SKILL.md) | utility | stable | Rewrites a task prompt to seek deeper expertise, rawer evidence, concrete methods and an independent correctness check without expanding its scope. |
-| [poteto/show-me-your-work](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/show-me-your-work/SKILL.md) | workflow | stable | Maintains an append-only TSV decision trail for long or unattended work. Audits it against the run transcript and obtains a different-model review before handoff. |
-| [poteto/statechart](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/statechart/SKILL.md) | workflow | stable | Turns a TLA+ model into reader-labeled statecharts and numbered bug paths, or converts an agreed chart into a TLA+ starting point. Reports model scope and whether code-backed counterexamples reproduce. |
-| [poteto/swarm](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/swarm/SKILL.md) | workflow | stable | Fans workers out across slices or declared races and consolidates their terminal results into one evidence-backed report. Missing coverage is recorded rather than counted as a pass. |
-| [poteto/tdd](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/tdd/SKILL.md) | workflow | stable | Fixes a bug with a focused failing-before, passing-after regression check when a practical local test path exists. Uses another executable proof when a new test would be brittle or disproportionate. |
-| [poteto/teach](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/teach/SKILL.md) | teaching | stable | Combines code behavior and historical rationale into a plain, conversational explanation at the learner's pace. Builds diagrams incrementally when they help understanding. |
-| [poteto/technical-writing](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/technical-writing/SKILL.md) | reference | stable | Applies a layered standard for technical documents, choosing a document purpose before refining sentences, instructions and unambiguous language. |
-| [poteto/typescript-best-practices](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/typescript-best-practices/SKILL.md) | reference | stable | Provides TypeScript-specific type modeling and boundary rules, emphasizing explicit variants, verified brands, schema-derived types and behavior checks. |
-| [poteto/unslop](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/unslop/SKILL.md) | utility | stable | Edits prose to remove recurring AI writing patterns while preserving meaning and intended tone. |
-| [poteto/why](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/why/SKILL.md) | workflow | stable | Investigates the historical reasons and constraints behind code across source control and available connected evidence categories. Separates explicit findings, inference, hypotheses and unresolved gaps. |
+| [poteto/architect](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/architect/SKILL.md) | workflow | stable | Explores competing type and module designs, synthesizes a usage-first sketch, then implements against it. The human design checkpoint is opt-in. |
+| [poteto/arena](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/arena/SKILL.md) | workflow | stable | Runs several candidates on the same brief, compares them using a rubric and an independent judge, and combines selected strengths into one verified artifact. |
+| [poteto/automate-me](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/automate-me/SKILL.md) | workflow | stable | Turns recurring working preferences into a personal mode skill using workspace-scoped history and direct questions. Revises an existing mode instead of starting over by default. |
+| [poteto/benchmark-checklist](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/benchmark-checklist/SKILL.md) | workflow | stable | Checks whether a measured performance claim is meaningful, repeatable and about completed work. Produces a verdict with units, spread and the identified limiter. |
+| [poteto/blast-radius](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/blast-radius/SKILL.md) | workflow | stable | Finds downstream breakage that a diff or caller list can miss and executes a small proof of the safety fact the change depends on. |
+| [poteto/bro](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/bro/SKILL.md) | utility | stable | Restates the previous assistant message in simpler, shorter language without jargon. |
+| [poteto/correct](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/correct/SKILL.md) | workflow | stable | Finds repeated agent mistake classes and changes repository structure or enforcement so they are harder to repeat. Demonstrates each new check on a real past mistake. |
+| [poteto/create-formal-verification-skill](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/create-formal-verification-skill/SKILL.md) | workflow | stable | Builds and proves a project-local formal verification workflow for a costly invariant tests seldom reach. Records model scope, assumptions and the code synchronization commit. |
+| [poteto/create-verification-skill](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/create-verification-skill/SKILL.md) | workflow | stable | Creates a repository-specific skill that launches, health-checks, drives and cleans up the real app. Seeds a user-facing feature map and executes one complete journey before handoff. |
+| [poteto/figure-it-out](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/figure-it-out/SKILL.md) | workflow | stable | Designs a custom, auditable workflow when bundled playbooks do not fit or a change is ambitious. Runs small hypothesis-driven units against an explicit completion predicate. |
+| [poteto/how](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/how/SKILL.md) | workflow | stable | Explains a subsystem's architecture, runtime flow and ownership using code-grounded exploration. Scales from one explainer to several explorers and a synthesizer. |
+| [poteto/in-your-own-words](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/in-your-own-words/SKILL.md) | utility | stable | Restates the user's apparent goals and the underlying problem before work proceeds. |
+| [poteto/interrogate](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/interrogate/SKILL.md) | workflow | stable | Obtains independent adversarial reviews from configured models and produces a lead judgment rather than automatically fixing the findings. |
+| [poteto/ketchup](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/ketchup/SKILL.md) | utility | stable | Catches the user up on changes since their last message and lists every outstanding decision with enough context to act from the reply. |
+| [poteto/ketchup-video](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/ketchup-video/SKILL.md) | utility | stable | Delivers the ketchup catch-up as a short silent slide video, with outstanding decisions retained as text under it. |
+| [poteto/maintain-formal-verification-skill](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/maintain-formal-verification-skill/SKILL.md) | workflow | stable | Reconciles formal checks with code changes since their synchronization commit. Separates verification drift from real product bugs and proves updated checks can still fail. |
+| [poteto/maintain-verification-skill](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/maintain-verification-skill/SKILL.md) | workflow | stable | Audits every mapped feature from source and drives every feature live. Ships at most one PR limited to proven verification documentation or harness corrections. |
+| [poteto/make-bot-ui](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/make-bot-ui/SKILL.md) | workflow | stable | Builds a server-backed page whose buttons wake a Grok Bot through a webhook routine, then exposes the page on a Tailscale network. |
+| [poteto/no-comments](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/no-comments/SKILL.md) | workflow | stable | Runs a specialized comment-removal agent, validates its findings and fixes accepted in-scope code workarounds. Can propose structural replacements for claimed constraints. |
+| [poteto/poteto-help](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-help/SKILL.md) | router | stable | Helps choose a pstack setup path, skill, playbook or principle and returns an example prompt with a source link. It distinguishes help from an actual request to execute work. |
+| [poteto/poteto-mode](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/SKILL.md) | router | stable | Coordinates pstack's working style and task-specific playbooks, selecting companion skills for grounding, design, delegation, verification and delivery. Its scope ranges from read-only investigation to autonomous PR programs. |
+| [poteto/principle-attack-the-premise](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-attack-the-premise/SKILL.md) | principle | stable | Interrupts repeated failed fixes by making their shared assumption explicit and testing it before another attempt. |
+| [poteto/principle-boundary-discipline](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-boundary-discipline/SKILL.md) | principle | stable | Concentrates parsing, validation and error handling at system boundaries, leaving internal business logic expressed as typed pure functions. |
+| [poteto/principle-build-the-lever](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-build-the-lever/SKILL.md) | principle | stable | Turns nontrivial work into a small rerunnable tool or an explicit delegate recipe, making the result reproducible for reviewers. |
+| [poteto/principle-encode-lessons-in-structure](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-encode-lessons-in-structure/SKILL.md) | principle | stable | Replaces repeated instructions or corrections with an enforceable structural rule where possible; judgment-heavy lessons receive a clearer instruction and failure example. |
+| [poteto/principle-exhaust-the-design-space](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-exhaust-the-design-space/SKILL.md) | principle | stable | Resolves unfamiliar architecture or interaction choices by comparing a few competing prototypes before selecting an approach. |
+| [poteto/principle-experience-first](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-experience-first/SKILL.md) | principle | stable | Prioritizes the experience of consumers and maintainers when deciding scope and polish, using prototypes to test design choices early. |
+| [poteto/principle-explain-the-number](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-explain-the-number/SKILL.md) | principle | stable | Qualifies a measured performance or evaluation result by identifying its limiter, testing alternative explanations and retaining run evidence. |
+| [poteto/principle-fix-root-causes](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-fix-root-causes/SKILL.md) | principle | stable | Traces a reproduced symptom to the first wrong decision and distinguishes legitimate states needing handling from impossible states that should never be produced. |
+| [poteto/principle-foundational-thinking](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-foundational-thinking/SKILL.md) | principle | stable | Orders work around sound data structures and shared foundations so later increments remain simple and coherent. |
+| [poteto/principle-guard-the-context-window](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-guard-the-context-window/SKILL.md) | principle | stable | Controls reasoning load by bounding phases and moving bulk reading to delegates while retaining summaries in the coordinating context. |
+| [poteto/principle-laziness-protocol](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-laziness-protocol/SKILL.md) | principle | stable | Keeps refactors and additions small by consolidating repeated choices and avoiding unnecessary layers or abstractions. |
+| [poteto/principle-make-operations-idempotent](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-make-operations-idempotent/SKILL.md) | principle | stable | Designs state-changing work to reconcile current state with the goal so retries and interrupted runs converge safely. |
+| [poteto/principle-migrate-callers-then-delete-legacy-apis](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md) | principle | stable | Keeps an internal API simplification coherent by migrating callers and removing the old API in the same wave, with tests aligned to the new contract. |
+| [poteto/principle-minimize-reader-load](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-minimize-reader-load/SKILL.md) | principle | stable | Evaluates maintainability through the indirections a reader must trace and the mutable state they must remember, then removes layers or narrows state. |
+| [poteto/principle-model-the-domain](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-model-the-domain/SKILL.md) | principle | stable | Encodes domain invariants and access patterns in an appropriate structure rather than spreading lifecycle rules across conditionals and phases. |
+| [poteto/principle-never-block-on-the-human](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-never-block-on-the-human/SKILL.md) | principle | stable | Lets reversible execution proceed with reasonable decisions and asynchronous supervision while retaining confirmation for irreversible actions and human control of product direction. |
+| [poteto/principle-outcome-oriented-execution](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-outcome-oriented-execution/SKILL.md) | principle | stable | Allows explicitly scoped transitional breakage during a planned migration so work converges on the verified target architecture without accumulating compatibility scaffolding. |
+| [poteto/principle-prove-it-works](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-prove-it-works/SKILL.md) | principle | stable | Checks task outputs against the actual artifact and, where feasible, keeps a deterministic verification script and evidence for reviewers. |
+| [poteto/principle-redesign-from-first-principles](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-redesign-from-first-principles/SKILL.md) | principle | stable | Integrates a requirement by reconsidering the whole affected design as though the requirement had always existed, then delivering the redesign incrementally. |
+| [poteto/principle-separate-before-serializing-shared-state](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md) | principle | stable | Removes unnecessary shared write targets before introducing locks, and uses structural ownership or serialization when one canonical mutable object is unavoidable. |
+| [poteto/principle-sequence-verifiable-units](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-sequence-verifiable-units/SKILL.md) | principle | stable | Sequences multi-step execution and delivery into small checked units whose order demonstrates correctness to a reviewer. |
+| [poteto/principle-subtract-before-you-add](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-subtract-before-you-add/SKILL.md) | principle | stable | Simplifies the existing base before extending it by removing dead code, redundant rules and references without novel content. |
+| [poteto/principle-test-behavior-not-implementation](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-test-behavior-not-implementation/SKILL.md) | principle | stable | Judges a test by whether it catches broken observable behavior while surviving internal restructuring, then rewrites assertions around the consumer contract. |
+| [poteto/principle-type-system-discipline](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-type-system-discipline/SKILL.md) | principle | stable | Uses types and authoritative schemas to prevent invalid states, semantic primitive mixups and unhandled variants before runtime. |
+| [poteto/recall](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/recall/SKILL.md) | workflow | stable | Rebuilds recent work context across the user's scoped chat history, shared evidence and live PR state. Returns a compact current-state brief before work resumes. |
+| [poteto/reflect](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/reflect/SKILL.md) | workflow | stable | Extracts durable lessons from the current session through three reviewer lenses and a synthesizer. Proposes concrete skill edits and separates structural enforcement work into backlog items. |
+| [poteto/setup-pstack](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/setup-pstack/SKILL.md) | setup | stable | Configures pstack's per-role models and reasoning budget using models the current host actually exposes. Writes an always-applied rule for future sessions. |
+| [poteto/sharpen](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/sharpen/SKILL.md) | utility | stable | Rewrites a task prompt to seek deeper expertise, rawer evidence, concrete methods and an independent correctness check without expanding its scope. |
+| [poteto/show-me-your-work](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/show-me-your-work/SKILL.md) | workflow | stable | Maintains an append-only TSV decision trail for long or unattended work. Audits it against the run transcript and obtains a different-model review before handoff. |
+| [poteto/statechart](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/statechart/SKILL.md) | workflow | stable | Turns a TLA+ model into reader-labeled statecharts and numbered bug paths, or converts an agreed chart into a TLA+ starting point. Reports model scope and whether code-backed counterexamples reproduce. |
+| [poteto/swarm](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/swarm/SKILL.md) | workflow | stable | Fans workers out across slices or declared races and consolidates their terminal results into one evidence-backed report. Missing coverage is recorded rather than counted as a pass. |
+| [poteto/tdd](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/tdd/SKILL.md) | workflow | stable | Fixes a bug with a focused failing-before, passing-after regression check when a practical local test path exists. Uses another executable proof when a new test would be brittle or disproportionate. |
+| [poteto/teach](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/teach/SKILL.md) | teaching | stable | Combines code behavior and historical rationale into a plain, conversational explanation at the learner's pace. Builds diagrams incrementally when they help understanding. |
+| [poteto/technical-writing](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/technical-writing/SKILL.md) | reference | stable | Applies a layered standard for technical documents, choosing a document purpose before refining sentences, instructions and unambiguous language. |
+| [poteto/typescript-best-practices](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/typescript-best-practices/SKILL.md) | reference | stable | Provides TypeScript-specific type modeling and boundary rules, emphasizing explicit variants, verified brands, schema-derived types and behavior checks. |
+| [poteto/unslop](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/unslop/SKILL.md) | utility | stable | Edits prose to remove recurring AI writing patterns while preserving meaning and intended tone. |
+| [poteto/why](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/why/SKILL.md) | workflow | stable | Investigates the historical reasons and constraints behind code across source control and available connected evidence categories. Separates explicit findings, inference, hypotheses and unresolved gaps. |
 
 ## Detailed cards
 
@@ -283,7 +283,7 @@ Answers a specific design question with either a shareable logic demo or several
 
 - **Role / status:** workflow / stable.
 - **Use when:** Test whether a state model handles awkward cases.; Compare structurally different UI directions.
-- **Scope limits:** Catalog interpretation: Avoid using prototype constraints as the standard for production code.; Catalog interpretation: Do not add persistence or tests unless the question actually requires that scope.
+- **Scope limits:** Catalog interpretation: Avoid using prototype constraints as the standard for production code.; Catalog interpretation: Prototype code excludes tests and production hardening; use scratch persistence only when the question explicitly concerns a database.
 - **Result:** One-file HTML logic demo or UI variants; Decision and verdict; Preserved prototype branch and issue pointer
 - **Requirements:** A specific design question; existing project conventions for UI work.; Git branch and issue-context mechanism for final capture.
 - **Possible effects:** read, local_write, external_write, execute
@@ -293,6 +293,7 @@ Answers a specific design question with either a shareable logic demo or several
 - **Evidence:** [skills/engineering/prototype/LOGIC.md:35–48](https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/prototype/LOGIC.md#L35-L48) — Shareable one-file state exploration
 - **Evidence:** [skills/engineering/prototype/UI.md:18–28](https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/prototype/UI.md#L18-L28) — Prefer existing page over a new throwaway route
 - **Evidence:** [skills/engineering/prototype/UI.md:98–112](https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/prototype/UI.md#L98-L112) — Fold decision in and retain prototype separately; no real mutations
+- **Evidence:** [skills/engineering/prototype/SKILL.md:23–24](https://github.com/mattpocock/skills/blob/5beb35b040e3de97e54fa9e386d7e42d15c295c2/skills/engineering/prototype/SKILL.md#L23-L24) — Scratch-persistence exception is separate from the no-tests prototype constraint
 
 ### matt/research
 
@@ -734,9 +735,9 @@ Explores competing type and module designs, synthesizes a usage-first sketch, th
 - **Possible effects:** read, local_write, execute, delegate
 - **Confirmation behavior:** Proceeds to implementation by default. Stops for sign-off only when the invoker explicitly asks for a checkpoint.
 - **Explicit companions/references:** poteto/how, poteto/why, poteto/arena, poteto/interrogate, poteto/principle-exhaust-the-design-space, poteto/principle-foundational-thinking, poteto/principle-outcome-oriented-execution, poteto/principle-redesign-from-first-principles, poteto/principle-fix-root-causes, poteto/principle-subtract-before-you-add
-- **Evidence:** [pstack/skills/architect/SKILL.md:21–47](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/architect/SKILL.md#L21-L47) — Grounding, parallel designs, opt-in checkpoint and implementation default.
-- **Evidence:** [pstack/skills/architect/SKILL.md:51–79](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/architect/SKILL.md#L51-L79) — Implementation, redesign triggers and outputs.
-- **Evidence:** [pstack/skills/architect/references/runner-prompt.md:9–18](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/architect/references/runner-prompt.md#L9-L18) — Usage-first signatures, boundaries and type invariants.
+- **Evidence:** [pstack/skills/architect/SKILL.md:21–47](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/architect/SKILL.md#L21-L47) — Grounding, parallel designs, opt-in checkpoint and implementation default.
+- **Evidence:** [pstack/skills/architect/SKILL.md:51–79](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/architect/SKILL.md#L51-L79) — Implementation, redesign triggers and outputs.
+- **Evidence:** [pstack/skills/architect/references/runner-prompt.md:9–18](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/architect/references/runner-prompt.md#L9-L18) — Usage-first signatures, boundaries and type invariants.
 
 ### poteto/arena
 
@@ -750,8 +751,8 @@ Runs several candidates on the same brief, compares them using a rubric and an i
 - **Possible effects:** read, local_write, execute, delegate
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/poteto-mode, poteto/principle-separate-before-serializing-shared-state, poteto/principle-redesign-from-first-principles, poteto/principle-prove-it-works
-- **Evidence:** [pstack/skills/arena/SKILL.md:13–28](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/arena/SKILL.md#L13-L28) — Shared brief, models, isolated outputs and cross-judge.
-- **Evidence:** [pstack/skills/arena/SKILL.md:30–48](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/arena/SKILL.md#L30-L48) — Rubric selection, grafting, verification and deliverable.
+- **Evidence:** [pstack/skills/arena/SKILL.md:13–28](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/arena/SKILL.md#L13-L28) — Shared brief, models, isolated outputs and cross-judge.
+- **Evidence:** [pstack/skills/arena/SKILL.md:30–48](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/arena/SKILL.md#L30-L48) — Rubric selection, grafting, verification and deliverable.
 
 ### poteto/automate-me
 
@@ -765,9 +766,9 @@ Turns recurring working preferences into a personal mode skill using workspace-s
 - **Possible effects:** read, local_write, external_write, execute, delegate
 - **Confirmation behavior:** Confirms whether to update an existing mode unless already requested, asks structured preference questions, and shows the draft for feedback. Ships through a PR rather than pushing directly to main.
 - **Explicit companions/references:** poteto/unslop, poteto/poteto-mode
-- **Evidence:** [pstack/skills/automate-me/SKILL.md:15–46](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/automate-me/SKILL.md#L15-L46) — Existing-mode intent check, workspace-scoped mining and direct interview.
-- **Evidence:** [pstack/skills/automate-me/SKILL.md:65–83](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/automate-me/SKILL.md#L65-L83) — Authoring, draft feedback and PR delivery.
-- **Evidence:** [pstack/skills/automate-me/SKILL.md:100–103](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/automate-me/SKILL.md#L100-L103) — Narrow workflow exclusions.
+- **Evidence:** [pstack/skills/automate-me/SKILL.md:15–46](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/automate-me/SKILL.md#L15-L46) — Existing-mode intent check, workspace-scoped mining and direct interview.
+- **Evidence:** [pstack/skills/automate-me/SKILL.md:65–83](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/automate-me/SKILL.md#L65-L83) — Authoring, draft feedback and PR delivery.
+- **Evidence:** [pstack/skills/automate-me/SKILL.md:100–103](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/automate-me/SKILL.md#L100-L103) — Narrow workflow exclusions.
 
 ### poteto/benchmark-checklist
 
@@ -781,9 +782,9 @@ Checks whether a measured performance claim is meaningful, repeatable and about 
 - **Possible effects:** read, execute, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/benchmark-checklist/SKILL.md:9–17](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/benchmark-checklist/SKILL.md#L9-L17) — Ballpark exception and machine/script preflight.
-- **Evidence:** [pstack/skills/benchmark-checklist/SKILL.md:21–27](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/benchmark-checklist/SKILL.md#L21-L27) — Limiter, tuning, physical limits, errors, repeated runs and completed work.
-- **Evidence:** [pstack/skills/benchmark-checklist/SKILL.md:29–39](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/benchmark-checklist/SKILL.md#L29-L39) — Reporting and mode playbook links.
+- **Evidence:** [pstack/skills/benchmark-checklist/SKILL.md:9–17](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/benchmark-checklist/SKILL.md#L9-L17) — Ballpark exception and machine/script preflight.
+- **Evidence:** [pstack/skills/benchmark-checklist/SKILL.md:21–27](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/benchmark-checklist/SKILL.md#L21-L27) — Limiter, tuning, physical limits, errors, repeated runs and completed work.
+- **Evidence:** [pstack/skills/benchmark-checklist/SKILL.md:29–39](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/benchmark-checklist/SKILL.md#L29-L39) — Reporting and mode playbook links.
 
 ### poteto/blast-radius
 
@@ -797,8 +798,8 @@ Finds downstream breakage that a diff or caller list can miss and executes a sma
 - **Possible effects:** read, local_write, execute, delegate
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/how, poteto/why, poteto/arena, poteto/unslop
-- **Evidence:** [pstack/skills/blast-radius/SKILL.md:15–29](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/blast-radius/SKILL.md#L15-L29) — Proof ladder and executable checks.
-- **Evidence:** [pstack/skills/blast-radius/SKILL.md:31–48](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/blast-radius/SKILL.md#L31-L48) — Diff, library and downstream investigation; synthesis and output.
+- **Evidence:** [pstack/skills/blast-radius/SKILL.md:15–29](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/blast-radius/SKILL.md#L15-L29) — Proof ladder and executable checks.
+- **Evidence:** [pstack/skills/blast-radius/SKILL.md:31–48](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/blast-radius/SKILL.md#L31-L48) — Diff, library and downstream investigation; synthesis and output.
 
 ### poteto/bro
 
@@ -812,7 +813,7 @@ Restates the previous assistant message in simpler, shorter language without jar
 - **Possible effects:** read
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/bro/SKILL.md:2–7](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/bro/SKILL.md#L2-L7) — Restatement scope and style.
+- **Evidence:** [pstack/skills/bro/SKILL.md:2–7](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/bro/SKILL.md#L2-L7) — Restatement scope and style.
 
 ### poteto/correct
 
@@ -826,8 +827,8 @@ Finds repeated agent mistake classes and changes repository structure or enforce
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Exceptions require a reason, expiry date and human approval on the offending line. No general implementation checkpoint is specified.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/correct/SKILL.md:13–26](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/correct/SKILL.md#L13-L26) — Repeated-class threshold, enforcement order and proof.
-- **Evidence:** [pstack/skills/correct/SKILL.md:28–32](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/correct/SKILL.md#L28-L32) — Agent rule table and reporting.
+- **Evidence:** [pstack/skills/correct/SKILL.md:13–26](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/correct/SKILL.md#L13-L26) — Repeated-class threshold, enforcement order and proof.
+- **Evidence:** [pstack/skills/correct/SKILL.md:28–32](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/correct/SKILL.md#L28-L32) — Agent rule table and reporting.
 
 ### poteto/create-formal-verification-skill
 
@@ -841,8 +842,8 @@ Builds and proves a project-local formal verification workflow for a costly inva
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Asks only for facts not observable in the code. Product code changes require the user to ask.
 - **Explicit companions/references:** poteto/statechart, poteto/maintain-formal-verification-skill
-- **Evidence:** [pstack/skills/create-formal-verification-skill/SKILL.md:13–29](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/create-formal-verification-skill/SKILL.md#L13-L29) — Target choice, tool choice, product-code boundary and scope.
-- **Evidence:** [pstack/skills/create-formal-verification-skill/SKILL.md:31–43](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/create-formal-verification-skill/SKILL.md#L31-L43) — Generated skill, statechart link, deliberate-failure validation and handoff.
+- **Evidence:** [pstack/skills/create-formal-verification-skill/SKILL.md:13–29](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/create-formal-verification-skill/SKILL.md#L13-L29) — Target choice, tool choice, product-code boundary and scope.
+- **Evidence:** [pstack/skills/create-formal-verification-skill/SKILL.md:31–43](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/create-formal-verification-skill/SKILL.md#L31-L43) — Generated skill, statechart link, deliberate-failure validation and handoff.
 
 ### poteto/create-verification-skill
 
@@ -856,8 +857,8 @@ Creates a repository-specific skill that launches, health-checks, drives and cle
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Asks the user only what cannot be observed from the repository. No general approval gate is specified.
 - **Explicit companions/references:** poteto/maintain-verification-skill
-- **Evidence:** [pstack/skills/create-verification-skill/SKILL.md:11–21](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/create-verification-skill/SKILL.md#L11-L21) — Repo interview, harness selection and startup precondition.
-- **Evidence:** [pstack/skills/create-verification-skill/SKILL.md:23–40](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/create-verification-skill/SKILL.md#L23-L40) — Generated sections, observable evidence, feature map and execution proof.
+- **Evidence:** [pstack/skills/create-verification-skill/SKILL.md:11–21](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/create-verification-skill/SKILL.md#L11-L21) — Repo interview, harness selection and startup precondition.
+- **Evidence:** [pstack/skills/create-verification-skill/SKILL.md:23–40](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/create-verification-skill/SKILL.md#L23-L40) — Generated sections, observable evidence, feature map and execution proof.
 
 ### poteto/figure-it-out
 
@@ -871,8 +872,8 @@ Designs a custom, auditable workflow when bundled playbooks do not fit or a chan
 - **Possible effects:** read, local_write, execute, delegate
 - **Confirmation behavior:** Presents framing and tradeoffs before a long commitment; explicitly says a multi-hour run earns one checkpoint, while reversible work proceeds.
 - **Explicit companions/references:** poteto/poteto-mode, poteto/architect, poteto/arena, poteto/show-me-your-work, poteto/principle-prove-it-works, poteto/principle-never-block-on-the-human, poteto/principle-foundational-thinking, poteto/principle-separate-before-serializing-shared-state, poteto/principle-laziness-protocol, poteto/principle-sequence-verifiable-units, poteto/principle-encode-lessons-in-structure
-- **Evidence:** [pstack/skills/figure-it-out/SKILL.md:9–32](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/figure-it-out/SKILL.md#L9-L32) — Workflow-first deliverable, framing checkpoint and decomposition.
-- **Evidence:** [pstack/skills/figure-it-out/SKILL.md:34–52](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/figure-it-out/SKILL.md#L34-L52) — Execution loop, audit trail and final proof.
+- **Evidence:** [pstack/skills/figure-it-out/SKILL.md:9–32](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/figure-it-out/SKILL.md#L9-L32) — Workflow-first deliverable, framing checkpoint and decomposition.
+- **Evidence:** [pstack/skills/figure-it-out/SKILL.md:34–52](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/figure-it-out/SKILL.md#L34-L52) — Execution loop, audit trail and final proof.
 
 ### poteto/how
 
@@ -886,9 +887,9 @@ Explains a subsystem's architecture, runtime flow and ownership using code-groun
 - **Possible effects:** read, delegate
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/poteto-mode
-- **Evidence:** [pstack/skills/how/SKILL.md:9–28](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/how/SKILL.md#L9-L28) — Host-specific agents and complexity-based exploration.
-- **Evidence:** [pstack/skills/how/SKILL.md:30–36](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/how/SKILL.md#L30-L36) — Presentation and output shape.
-- **Evidence:** [pstack/skills/how/references/explainer-prompt.md:19–46](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/how/references/explainer-prompt.md#L19-L46) — Grounded synthesis and optional diagrams.
+- **Evidence:** [pstack/skills/how/SKILL.md:9–28](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/how/SKILL.md#L9-L28) — Host-specific agents and complexity-based exploration.
+- **Evidence:** [pstack/skills/how/SKILL.md:30–36](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/how/SKILL.md#L30-L36) — Presentation and output shape.
+- **Evidence:** [pstack/skills/how/references/explainer-prompt.md:19–46](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/how/references/explainer-prompt.md#L19-L46) — Grounded synthesis and optional diagrams.
 
 ### poteto/in-your-own-words
 
@@ -902,7 +903,7 @@ Restates the user's apparent goals and the underlying problem before work procee
 - **Possible effects:** read
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/in-your-own-words/SKILL.md:2–7](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/in-your-own-words/SKILL.md#L2-L7) — Understanding-check scope.
+- **Evidence:** [pstack/skills/in-your-own-words/SKILL.md:2–7](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/in-your-own-words/SKILL.md#L2-L7) — Understanding-check scope.
 
 ### poteto/interrogate
 
@@ -913,13 +914,14 @@ Obtains independent adversarial reviews from configured models and produces a le
 - **Scope limits:** Catalog interpretation: Do not treat this as permission to apply suggested changes.; Catalog interpretation: It challenges execution against stated intent rather than deciding whether the goal is right.
 - **Result:** Intent statement; Act on, Consider, Noted and Dismissed findings; Model agreement map
 - **Requirements:** Cursor Task subagents and pstack-models.mdc role configuration; fallback model slugs and alias handling are host-specific.; Cursor readonly generalPurpose Task reviewers and git diff or supplied scope.
-- **Possible effects:** read, delegate
+- **Possible effects:** read, execute, delegate
 - **Confirmation behavior:** Asks the user when the change's intent is uncertain. Explicitly does not auto-apply review changes.
 - **Explicit companions/references:** poteto/poteto-mode
-- **Evidence:** [pstack/skills/interrogate/SKILL.md:9–38](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/interrogate/SKILL.md#L9-L38) — Review-only delivery, intent clarification and model roster.
-- **Evidence:** [pstack/skills/interrogate/SKILL.md:40–74](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/interrogate/SKILL.md#L40-L74) — Synthesis and decision buckets.
-- **Evidence:** [pstack/skills/interrogate/references/reviewer-prompt.md:11–15](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/interrogate/references/reviewer-prompt.md#L11-L15) — Reviews execution, not the correctness of intent.
-- **Evidence:** [pstack/skills/interrogate/references/lead-judgment.md:7–19](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/interrogate/references/lead-judgment.md#L7-L19) — Rejects unsupported and preference-only findings.
+- **Evidence:** [pstack/skills/interrogate/SKILL.md:9–38](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/interrogate/SKILL.md#L9-L38) — Review-only delivery, intent clarification and model roster.
+- **Evidence:** [pstack/skills/interrogate/SKILL.md:40–74](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/interrogate/SKILL.md#L40-L74) — Synthesis and decision buckets.
+- **Evidence:** [pstack/skills/interrogate/references/reviewer-prompt.md:11–15](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/interrogate/references/reviewer-prompt.md#L11-L15) — Reviews execution, not the correctness of intent.
+- **Evidence:** [pstack/skills/interrogate/references/lead-judgment.md:7–19](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/interrogate/references/lead-judgment.md#L7-L19) — Rejects unsupported and preference-only findings.
+- **Evidence:** [pstack/skills/interrogate/SKILL.md:13–19](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/interrogate/SKILL.md#L13-L19) — Feature-branch scope explicitly executes git diff before read-only reviewer delegation.
 
 ### poteto/ketchup
 
@@ -933,8 +935,8 @@ Catches the user up on changes since their last message and lists every outstand
 - **Possible effects:** read
 - **Confirmation behavior:** Reports approvals and irreversible actions waiting on the human; does not take those actions during this read-only update.
 - **Explicit companions/references:** poteto/bro
-- **Evidence:** [pstack/skills/ketchup/SKILL.md:9–19](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/ketchup/SKILL.md#L9-L19) — Time window, style, read-only scope and action-item definition.
-- **Evidence:** [pstack/skills/ketchup/SKILL.md:23–43](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/ketchup/SKILL.md#L23-L43) — Reply structure, risks, options and evidence-backed visuals.
+- **Evidence:** [pstack/skills/ketchup/SKILL.md:9–19](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/ketchup/SKILL.md#L9-L19) — Time window, style, read-only scope and action-item definition.
+- **Evidence:** [pstack/skills/ketchup/SKILL.md:23–43](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/ketchup/SKILL.md#L23-L43) — Reply structure, risks, options and evidence-backed visuals.
 
 ### poteto/ketchup-video
 
@@ -948,8 +950,8 @@ Delivers the ketchup catch-up as a short silent slide video, with outstanding de
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/ketchup
-- **Evidence:** [pstack/skills/ketchup-video/SKILL.md:9–19](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/ketchup-video/SKILL.md#L9-L19) — Ketchup inheritance, read-only exception, slide evidence and limits.
-- **Evidence:** [pstack/skills/ketchup-video/SKILL.md:21–23](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/ketchup-video/SKILL.md#L21-L23) — Rendering, timing and frame inspection.
+- **Evidence:** [pstack/skills/ketchup-video/SKILL.md:9–19](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/ketchup-video/SKILL.md#L9-L19) — Ketchup inheritance, read-only exception, slide evidence and limits.
+- **Evidence:** [pstack/skills/ketchup-video/SKILL.md:21–23](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/ketchup-video/SKILL.md#L21-L23) — Rendering, timing and frame inspection.
 
 ### poteto/maintain-formal-verification-skill
 
@@ -963,9 +965,9 @@ Reconciles formal checks with code changes since their synchronization commit. S
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Product code changes require a user request. Properties change only with cited evidence that the intended promise changed.
 - **Explicit companions/references:** poteto/create-formal-verification-skill
-- **Evidence:** [pstack/skills/maintain-formal-verification-skill/SKILL.md:9–28](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/maintain-formal-verification-skill/SKILL.md#L9-L28) — Scope, outcome types and missing-skill route.
-- **Evidence:** [pstack/skills/maintain-formal-verification-skill/SKILL.md:30–44](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/maintain-formal-verification-skill/SKILL.md#L30-L44) — Baseline, history reconciliation, rerun and sync commit.
-- **Evidence:** [pstack/skills/maintain-formal-verification-skill/SKILL.md:46–58](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/maintain-formal-verification-skill/SKILL.md#L46-L58) — Evidence reporting and separate verification change.
+- **Evidence:** [pstack/skills/maintain-formal-verification-skill/SKILL.md:9–28](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/maintain-formal-verification-skill/SKILL.md#L9-L28) — Scope, outcome types and missing-skill route.
+- **Evidence:** [pstack/skills/maintain-formal-verification-skill/SKILL.md:30–44](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/maintain-formal-verification-skill/SKILL.md#L30-L44) — Baseline, history reconciliation, rerun and sync commit.
+- **Evidence:** [pstack/skills/maintain-formal-verification-skill/SKILL.md:46–58](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/maintain-formal-verification-skill/SKILL.md#L46-L58) — Evidence reporting and separate verification change.
 
 ### poteto/maintain-verification-skill
 
@@ -979,8 +981,8 @@ Audits every mapped feature from source and drives every feature live. Ships at 
 - **Possible effects:** read, local_write, external_write, execute, delegate
 - **Confirmation behavior:** Asks which verification skill to target when several exist. Product-code edits are explicitly excluded.
 - **Explicit companions/references:** poteto/create-verification-skill
-- **Evidence:** [pstack/skills/maintain-verification-skill/SKILL.md:9–25](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/maintain-verification-skill/SKILL.md#L9-L25) — Feature-level coverage, limited edit scope and target selection.
-- **Evidence:** [pstack/skills/maintain-verification-skill/SKILL.md:27–39](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/maintain-verification-skill/SKILL.md#L27-L39) — Source wave, mandatory live pass, proof preservation and PR rules.
+- **Evidence:** [pstack/skills/maintain-verification-skill/SKILL.md:9–25](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/maintain-verification-skill/SKILL.md#L9-L25) — Feature-level coverage, limited edit scope and target selection.
+- **Evidence:** [pstack/skills/maintain-verification-skill/SKILL.md:27–39](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/maintain-verification-skill/SKILL.md#L27-L39) — Source wave, mandatory live pass, proof preservation and PR rules.
 
 ### poteto/make-bot-ui
 
@@ -994,9 +996,9 @@ Builds a server-backed page whose buttons wake a Grok Bot through a webhook rout
 - **Possible effects:** read, local_write, external_write, execute, configure
 - **Confirmation behavior:** Waits on any routine confirmation card. Stops after requesting the sender key through a secret card. Tailscale enrollment requires the user's browser approval.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/make-bot-ui/SKILL.md:11–51](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/make-bot-ui/SKILL.md#L11-L51) — Routine creation, confirmation card and user-only secret provisioning.
-- **Evidence:** [pstack/skills/make-bot-ui/SKILL.md:53–73](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/make-bot-ui/SKILL.md#L53-L73) — Server forwarding, key placement and probes.
-- **Evidence:** [pstack/skills/make-bot-ui/SKILL.md:75–103](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/make-bot-ui/SKILL.md#L75-L103) — Tailnet hosting and user machine approval.
+- **Evidence:** [pstack/skills/make-bot-ui/SKILL.md:11–51](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/make-bot-ui/SKILL.md#L11-L51) — Routine creation, confirmation card and user-only secret provisioning.
+- **Evidence:** [pstack/skills/make-bot-ui/SKILL.md:53–73](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/make-bot-ui/SKILL.md#L53-L73) — Server forwarding, key placement and probes.
+- **Evidence:** [pstack/skills/make-bot-ui/SKILL.md:75–103](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/make-bot-ui/SKILL.md#L75-L103) — Tailnet hosting and user machine approval.
 
 ### poteto/no-comments
 
@@ -1010,8 +1012,8 @@ Runs a specialized comment-removal agent, validates its findings and fixes accep
 - **Possible effects:** read, local_write, execute, delegate
 - **Confirmation behavior:** Constraint encodings wait for interactive approval; unattended/eval runs need caller pre-approval. The source says unapproved encodings still result in deleting the comment and reporting the constraint open.
 - **Explicit companions/references:** poteto/poteto-mode, poteto/how, poteto/why, poteto/architect, poteto/principle-fix-root-causes, poteto/principle-redesign-from-first-principles
-- **Evidence:** [pstack/skills/no-comments/SKILL.md:13–24](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/no-comments/SKILL.md#L13-L24) — Scoped delegation, rejections, fixes, approval and report.
-- **Evidence:** [pstack/agents/comment-sicko.md:14–30](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/agents/comment-sicko.md#L14-L30) — Narrow keep exceptions, suppressions and comment-only delegate edits.
+- **Evidence:** [pstack/skills/no-comments/SKILL.md:13–24](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/no-comments/SKILL.md#L13-L24) — Scoped delegation, rejections, fixes, approval and report.
+- **Evidence:** [pstack/agents/comment-sicko.md:14–30](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/agents/comment-sicko.md#L14-L30) — Narrow keep exceptions, suppressions and comment-only delegate edits.
 
 ### poteto/poteto-help
 
@@ -1025,10 +1027,10 @@ Helps choose a pstack setup path, skill, playbook or principle and returns an ex
 - **Possible effects:** read
 - **Confirmation behavior:** May ask one need-category question and offer setup once. A help answer returns a prompt for the user to invoke rather than starting the workflow.
 - **Explicit companions/references:** poteto/setup-pstack, poteto/poteto-mode, poteto/in-your-own-words, poteto/sharpen, poteto/how, poteto/why, poteto/teach, poteto/recall, poteto/ketchup, poteto/ketchup-video, poteto/blast-radius, poteto/architect, poteto/arena, poteto/swarm, poteto/interrogate, poteto/tdd, poteto/typescript-best-practices, poteto/no-comments, poteto/unslop, poteto/technical-writing, poteto/bro, poteto/create-verification-skill, poteto/maintain-verification-skill, poteto/create-formal-verification-skill, poteto/maintain-formal-verification-skill, poteto/statechart, poteto/benchmark-checklist, poteto/figure-it-out, poteto/show-me-your-work, poteto/automate-me, poteto/reflect, poteto/correct, poteto/make-bot-ui
-- **Evidence:** [pstack/skills/poteto-help/SKILL.md:9–34](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-help/SKILL.md#L9-L34) — Help/execution distinction, question categories and setup checks.
-- **Evidence:** [pstack/skills/poteto-help/SKILL.md:38–60](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-help/SKILL.md#L38-L60) — Native onboarding, Cursor and Claude Code support and mode persistence.
-- **Evidence:** [pstack/skills/poteto-help/SKILL.md:62–118](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-help/SKILL.md#L62-L118) — Skill routing table, close calls and external dependencies.
-- **Evidence:** [pstack/skills/poteto-help/SKILL.md:120–135](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-help/SKILL.md#L120-L135) — Playbooks, planning and principle entry points.
+- **Evidence:** [pstack/skills/poteto-help/SKILL.md:9–34](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-help/SKILL.md#L9-L34) — Help/execution distinction, question categories and setup checks.
+- **Evidence:** [pstack/skills/poteto-help/SKILL.md:38–60](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-help/SKILL.md#L38-L60) — Native onboarding, Cursor and Claude Code support and mode persistence.
+- **Evidence:** [pstack/skills/poteto-help/SKILL.md:62–118](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-help/SKILL.md#L62-L118) — Skill routing table, close calls and external dependencies.
+- **Evidence:** [pstack/skills/poteto-help/SKILL.md:120–135](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-help/SKILL.md#L120-L135) — Playbooks, planning and principle entry points.
 
 ### poteto/poteto-mode
 
@@ -1038,18 +1040,20 @@ Coordinates pstack's working style and task-specific playbooks, selecting compan
 - **Use when:** Run a nontrivial task with an explicit goal and a completion check.; Route a bug, feature, performance effort, PR lifecycle or multistage program through a playbook.
 - **Scope limits:** Catalog interpretation: Use a narrow skill directly when the full workflow overhead is unnecessary.; Catalog interpretation: Do not interpret a read-only investigation as permission to implement.; Catalog interpretation: Review host support and approval rules before transferring this orchestration to another agent environment.
 - **Result:** Playbook todo list; Task-specific verified artifacts or cited answers; PRs, plans, prototypes or audit trails as selected by the playbook
-- **Requirements:** Cursor Task subagents and pstack-models.mdc role configuration; fallback model slugs and alias handling are host-specific.; Cursor Task poteto-agent and comment-sicko; built-in create-skill and loop.; cursor-team-kit deslop, control-ui and control-cli for relevant tasks.; Git worktrees and GitHub CLI by default; optional Origin CLI.; Bun for orchestrate bookkeeping, Node for plan validation; app-specific live-control and verification tools.
+- **Requirements:** Cursor Task subagents and pstack-models.mdc role configuration; fallback model slugs and alias handling are host-specific.; Cursor Task poteto-agent and comment-sicko; built-in create-skill and loop.; cursor-team-kit deslop, control-ui and control-cli for relevant tasks.; Git worktrees and GitHub CLI by default; optional Origin CLI.; Bun for orchestrate bookkeeping and the GitHub watcher, whose first use can install frozen dependencies; Node for plan validation; app-specific live-control and verification tools.
 - **Possible effects:** read, local_write, external_write, execute, delegate, configure
 - **Confirmation behavior:** Source permits reversible work and external actions such as team chat or ticket updates without asking, but pauses for force-push to shared branches, deploys, data deletion and customer messages. Playbooks add explicit gates: plans wait for go, Babysit does not authorize merging, Autopilot-stack reserves landing for the human, and named operator gates remain binding.
 - **Explicit companions/references:** poteto/how, poteto/why, poteto/architect, poteto/arena, poteto/swarm, poteto/interrogate, poteto/unslop, poteto/technical-writing, poteto/no-comments, poteto/benchmark-checklist, poteto/figure-it-out, poteto/show-me-your-work, poteto/setup-pstack, poteto/tdd, poteto/ketchup, poteto/principle-boundary-discipline, poteto/principle-model-the-domain, poteto/principle-fix-root-causes, poteto/principle-encode-lessons-in-structure, poteto/principle-guard-the-context-window, poteto/principle-subtract-before-you-add, poteto/principle-foundational-thinking, poteto/principle-build-the-lever, poteto/principle-make-operations-idempotent, poteto/principle-sequence-verifiable-units, poteto/principle-test-behavior-not-implementation, poteto/principle-explain-the-number, poteto/principle-outcome-oriented-execution, poteto/principle-never-block-on-the-human, poteto/principle-redesign-from-first-principles, poteto/principle-minimize-reader-load, poteto/principle-exhaust-the-design-space, poteto/principle-migrate-callers-then-delete-legacy-apis, poteto/principle-attack-the-premise, poteto/principle-laziness-protocol, poteto/principle-experience-first, poteto/principle-prove-it-works, poteto/principle-separate-before-serializing-shared-state, poteto/principle-type-system-discipline
-- **Evidence:** [pstack/skills/poteto-mode/SKILL.md:19–36](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-mode/SKILL.md#L19-L36) — Routing triggers and companion workflows.
-- **Evidence:** [pstack/skills/poteto-mode/SKILL.md:81–101](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-mode/SKILL.md#L81-L101) — Autonomy and host-specific subagent policy.
-- **Evidence:** [pstack/skills/poteto-mode/SKILL.md:121–149](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-mode/SKILL.md#L121-L149) — Playbook categories and task routing.
-- **Evidence:** [pstack/skills/poteto-mode/playbooks/investigation.md:5–12](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-mode/playbooks/investigation.md#L5-L12) — Read-only investigation does not create PRs or implement.
-- **Evidence:** [pstack/skills/poteto-mode/playbooks/multi-phase-plan.md:3–15](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-mode/playbooks/multi-phase-plan.md#L3-L15) — Plan-only output, explicit execution go and high verification requirements.
-- **Evidence:** [pstack/skills/poteto-mode/playbooks/autopilot-stack.md:3–10](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-mode/playbooks/autopilot-stack.md#L3-L10) — Stacked delivery reserves landing for the operator.
-- **Evidence:** [pstack/skills/poteto-mode/playbooks/opening-a-pr.md:24–34](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-mode/playbooks/opening-a-pr.md#L24-L34) — Forge/tool precedence, ready PR default and babysit separation.
-- **Evidence:** [pstack/skills/poteto-mode/playbooks/shipping.md:5–10](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/poteto-mode/playbooks/shipping.md#L5-L10) — Independent per-PR verification and controlled bottom-up landing.
+- **Evidence:** [pstack/skills/poteto-mode/SKILL.md:19–36](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/SKILL.md#L19-L36) — Routing triggers and companion workflows.
+- **Evidence:** [pstack/skills/poteto-mode/SKILL.md:81–101](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/SKILL.md#L81-L101) — Autonomy and host-specific subagent policy.
+- **Evidence:** [pstack/skills/poteto-mode/SKILL.md:121–149](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/SKILL.md#L121-L149) — Playbook categories and task routing.
+- **Evidence:** [pstack/skills/poteto-mode/playbooks/investigation.md:5–12](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/playbooks/investigation.md#L5-L12) — Read-only investigation does not create PRs or implement.
+- **Evidence:** [pstack/skills/poteto-mode/playbooks/multi-phase-plan.md:3–15](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/playbooks/multi-phase-plan.md#L3-L15) — Plan-only output, explicit execution go and high verification requirements.
+- **Evidence:** [pstack/skills/poteto-mode/playbooks/autopilot-stack.md:3–10](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/playbooks/autopilot-stack.md#L3-L10) — Stacked delivery reserves landing for the operator.
+- **Evidence:** [pstack/skills/poteto-mode/playbooks/opening-a-pr.md:24–34](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/playbooks/opening-a-pr.md#L24-L34) — Forge/tool precedence, ready PR default and babysit separation.
+- **Evidence:** [pstack/skills/poteto-mode/playbooks/shipping.md:5–10](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/playbooks/shipping.md#L5-L10) — Independent per-PR verification and controlled bottom-up landing.
+- **Evidence:** [pstack/skills/poteto-mode/scripts/bootstrap.ts:25–38](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/scripts/bootstrap.ts#L25-L38) — Missing or outdated dependency installations run bun install --frozen-lockfile before the CLI continues.
+- **Evidence:** [pstack/skills/poteto-mode/scripts/watch-pr/watch-pr:1–5](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/poteto-mode/scripts/watch-pr/watch-pr#L1-L5) — The GitHub watcher is a Bun entry point and invokes dependency bootstrap before loading its CLI.
 
 ### poteto/principle-attack-the-premise
 
@@ -1063,8 +1067,8 @@ Interrupts repeated failed fixes by making their shared assumption explicit and 
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/principle-build-the-lever, poteto/principle-fix-root-causes, poteto/principle-laziness-protocol
-- **Evidence:** [pstack/skills/principle-attack-the-premise/SKILL.md:9–19](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-attack-the-premise/SKILL.md#L9-L19) — Trigger, premise test, rerunnable check, root-cause continuation and stop condition.
-- **Evidence:** [pstack/skills/principle-attack-the-premise/SKILL.md:21–21](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-attack-the-premise/SKILL.md#L21-L21) — Distinction from redesign around a new requirement.
+- **Evidence:** [pstack/skills/principle-attack-the-premise/SKILL.md:9–19](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-attack-the-premise/SKILL.md#L9-L19) — Trigger, premise test, rerunnable check, root-cause continuation and stop condition.
+- **Evidence:** [pstack/skills/principle-attack-the-premise/SKILL.md:21–21](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-attack-the-premise/SKILL.md#L21-L21) — Distinction from redesign around a new requirement.
 
 ### poteto/principle-boundary-discipline
 
@@ -1078,8 +1082,8 @@ Concentrates parsing, validation and error handling at system boundaries, leavin
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-boundary-discipline/SKILL.md:9–16](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-boundary-discipline/SKILL.md#L9-L16) — Boundary guards, typed internals, pure logic and public domain concepts.
-- **Evidence:** [pstack/skills/principle-boundary-discipline/SKILL.md:20–34](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-boundary-discipline/SKILL.md#L20-L34) — Concrete validation and organization applications and review questions.
+- **Evidence:** [pstack/skills/principle-boundary-discipline/SKILL.md:9–16](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-boundary-discipline/SKILL.md#L9-L16) — Boundary guards, typed internals, pure logic and public domain concepts.
+- **Evidence:** [pstack/skills/principle-boundary-discipline/SKILL.md:20–34](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-boundary-discipline/SKILL.md#L20-L34) — Concrete validation and organization applications and review questions.
 
 ### poteto/principle-build-the-lever
 
@@ -1093,8 +1097,8 @@ Turns nontrivial work into a small rerunnable tool or an explicit delegate recip
 - **Possible effects:** read, local_write, execute, delegate
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/principle-laziness-protocol, poteto/principle-prove-it-works
-- **Evidence:** [pstack/skills/principle-build-the-lever/SKILL.md:8–18](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-build-the-lever/SKILL.md#L8-L18) — Triviality threshold, first-unit proof, deterministic tools and optional delegate contract.
-- **Evidence:** [pstack/skills/principle-build-the-lever/SKILL.md:19–23](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-build-the-lever/SKILL.md#L19-L23) — Commit condition, minimal tooling and verification companion.
+- **Evidence:** [pstack/skills/principle-build-the-lever/SKILL.md:8–18](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-build-the-lever/SKILL.md#L8-L18) — Triviality threshold, first-unit proof, deterministic tools and optional delegate contract.
+- **Evidence:** [pstack/skills/principle-build-the-lever/SKILL.md:19–23](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-build-the-lever/SKILL.md#L19-L23) — Commit condition, minimal tooling and verification companion.
 
 ### poteto/principle-encode-lessons-in-structure
 
@@ -1108,8 +1112,8 @@ Replaces repeated instructions or corrections with an enforceable structural rul
 - **Possible effects:** local_write, configure
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-encode-lessons-in-structure/SKILL.md:2–3](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-encode-lessons-in-structure/SKILL.md#L2-L3) — Recurring-instruction trigger and structural enforcement choices.
-- **Evidence:** [pstack/skills/principle-encode-lessons-in-structure/SKILL.md:9–11](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-encode-lessons-in-structure/SKILL.md#L9-L11) — Judgment fallback and structural-fix-only corollary.
+- **Evidence:** [pstack/skills/principle-encode-lessons-in-structure/SKILL.md:2–3](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-encode-lessons-in-structure/SKILL.md#L2-L3) — Recurring-instruction trigger and structural enforcement choices.
+- **Evidence:** [pstack/skills/principle-encode-lessons-in-structure/SKILL.md:9–11](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-encode-lessons-in-structure/SKILL.md#L9-L11) — Judgment fallback and structural-fix-only corollary.
 
 ### poteto/principle-exhaust-the-design-space
 
@@ -1123,8 +1127,8 @@ Resolves unfamiliar architecture or interaction choices by comparing a few compe
 - **Possible effects:** local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-exhaust-the-design-space/SKILL.md:2–3](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-exhaust-the-design-space/SKILL.md#L2-L3) — Novelty, absence of precedent, multiple prototypes and comparison.
-- **Evidence:** [pstack/skills/principle-exhaust-the-design-space/SKILL.md:9–9](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-exhaust-the-design-space/SKILL.md#L9-L9) — Product decisions whose experience depends on feel.
+- **Evidence:** [pstack/skills/principle-exhaust-the-design-space/SKILL.md:2–3](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-exhaust-the-design-space/SKILL.md#L2-L3) — Novelty, absence of precedent, multiple prototypes and comparison.
+- **Evidence:** [pstack/skills/principle-exhaust-the-design-space/SKILL.md:9–9](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-exhaust-the-design-space/SKILL.md#L9-L9) — Product decisions whose experience depends on feel.
 
 ### poteto/principle-experience-first
 
@@ -1138,8 +1142,8 @@ Prioritizes the experience of consumers and maintainers when deciding scope and 
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-experience-first/SKILL.md:9–15](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-experience-first/SKILL.md#L9-L15) — Scope, polish, prototype and core-loop criteria.
-- **Evidence:** [pstack/skills/principle-experience-first/SKILL.md:17–19](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-experience-first/SKILL.md#L17-L19) — Consumers include maintainers and API users; target versus sequence distinction.
+- **Evidence:** [pstack/skills/principle-experience-first/SKILL.md:9–15](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-experience-first/SKILL.md#L9-L15) — Scope, polish, prototype and core-loop criteria.
+- **Evidence:** [pstack/skills/principle-experience-first/SKILL.md:17–19](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-experience-first/SKILL.md#L17-L19) — Consumers include maintainers and API users; target versus sequence distinction.
 
 ### poteto/principle-explain-the-number
 
@@ -1153,8 +1157,8 @@ Qualifies a measured performance or evaluation result by identifying its limiter
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/benchmark-checklist
-- **Evidence:** [pstack/skills/principle-explain-the-number/SKILL.md:9–15](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-explain-the-number/SKILL.md#L9-L15) — Measurement procedure, evidence retention and benchmark/eval routing.
-- **Evidence:** [pstack/skills/principle-explain-the-number/SKILL.md:17–17](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-explain-the-number/SKILL.md#L17-L17) — Distinction from checking output reality.
+- **Evidence:** [pstack/skills/principle-explain-the-number/SKILL.md:9–15](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-explain-the-number/SKILL.md#L9-L15) — Measurement procedure, evidence retention and benchmark/eval routing.
+- **Evidence:** [pstack/skills/principle-explain-the-number/SKILL.md:17–17](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-explain-the-number/SKILL.md#L17-L17) — Distinction from checking output reality.
 
 ### poteto/principle-fix-root-causes
 
@@ -1168,8 +1172,8 @@ Traces a reproduced symptom to the first wrong decision and distinguishes legiti
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-fix-root-causes/SKILL.md:9–19](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-fix-root-causes/SKILL.md#L9-L19) — Definition of root cause, reproduce/instrument loop, state legitimacy and pattern-wide fixes.
-- **Evidence:** [pstack/skills/principle-fix-root-causes/SKILL.md:20–21](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-fix-root-causes/SKILL.md#L20-L21) — Reject workaround comments and propose a cheap persistent signal.
+- **Evidence:** [pstack/skills/principle-fix-root-causes/SKILL.md:9–19](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-fix-root-causes/SKILL.md#L9-L19) — Definition of root cause, reproduce/instrument loop, state legitimacy and pattern-wide fixes.
+- **Evidence:** [pstack/skills/principle-fix-root-causes/SKILL.md:20–21](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-fix-root-causes/SKILL.md#L20-L21) — Reject workaround comments and propose a cheap persistent signal.
 
 ### poteto/principle-foundational-thinking
 
@@ -1183,8 +1187,8 @@ Orders work around sound data structures and shared foundations so later increme
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-foundational-thinking/SKILL.md:9–19](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-foundational-thinking/SKILL.md#L9-L19) — Structural option value, data shapes, abstraction restraint, concurrent isolation and scaffold sequence.
-- **Evidence:** [pstack/skills/principle-foundational-thinking/SKILL.md:21–21](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-foundational-thinking/SKILL.md#L21-L21) — Subtraction precedes scaffolding.
+- **Evidence:** [pstack/skills/principle-foundational-thinking/SKILL.md:9–19](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-foundational-thinking/SKILL.md#L9-L19) — Structural option value, data shapes, abstraction restraint, concurrent isolation and scaffold sequence.
+- **Evidence:** [pstack/skills/principle-foundational-thinking/SKILL.md:21–21](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-foundational-thinking/SKILL.md#L21-L21) — Subtraction precedes scaffolding.
 
 ### poteto/principle-guard-the-context-window
 
@@ -1198,8 +1202,8 @@ Controls reasoning load by bounding phases and moving bulk reading to delegates 
 - **Possible effects:** read, delegate
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-guard-the-context-window/SKILL.md:2–3](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-guard-the-context-window/SKILL.md#L2-L3) — Context-pressure triggers, bulk delegation and summary strategy.
-- **Evidence:** [pstack/skills/principle-guard-the-context-window/SKILL.md:9–12](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-guard-the-context-window/SKILL.md#L9-L12) — Reason for the rule and scope/turn-budget controls.
+- **Evidence:** [pstack/skills/principle-guard-the-context-window/SKILL.md:2–3](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-guard-the-context-window/SKILL.md#L2-L3) — Context-pressure triggers, bulk delegation and summary strategy.
+- **Evidence:** [pstack/skills/principle-guard-the-context-window/SKILL.md:9–12](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-guard-the-context-window/SKILL.md#L9-L12) — Reason for the rule and scope/turn-budget controls.
 
 ### poteto/principle-laziness-protocol
 
@@ -1213,8 +1217,8 @@ Keeps refactors and additions small by consolidating repeated choices and avoidi
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-laziness-protocol/SKILL.md:2–3](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-laziness-protocol/SKILL.md#L2-L3) — Refactor, diff-size and abstraction triggers.
-- **Evidence:** [pstack/skills/principle-laziness-protocol/SKILL.md:9–10](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-laziness-protocol/SKILL.md#L9-L10) — Decision consolidation and smallest sufficient change.
+- **Evidence:** [pstack/skills/principle-laziness-protocol/SKILL.md:2–3](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-laziness-protocol/SKILL.md#L2-L3) — Refactor, diff-size and abstraction triggers.
+- **Evidence:** [pstack/skills/principle-laziness-protocol/SKILL.md:9–10](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-laziness-protocol/SKILL.md#L9-L10) — Decision consolidation and smallest sufficient change.
 
 ### poteto/principle-make-operations-idempotent
 
@@ -1228,8 +1232,8 @@ Designs state-changing work to reconcile current state with the goal so retries 
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-make-operations-idempotent/SKILL.md:9–15](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-make-operations-idempotent/SKILL.md#L9-L15) — Retry convergence, goal comparison and stale artifact design.
-- **Evidence:** [pstack/skills/principle-make-operations-idempotent/SKILL.md:17–22](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-make-operations-idempotent/SKILL.md#L17-L22) — Repeated-run and every-crash-point review tests.
+- **Evidence:** [pstack/skills/principle-make-operations-idempotent/SKILL.md:9–15](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-make-operations-idempotent/SKILL.md#L9-L15) — Retry convergence, goal comparison and stale artifact design.
+- **Evidence:** [pstack/skills/principle-make-operations-idempotent/SKILL.md:17–22](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-make-operations-idempotent/SKILL.md#L17-L22) — Repeated-run and every-crash-point review tests.
 
 ### poteto/principle-migrate-callers-then-delete-legacy-apis
 
@@ -1243,8 +1247,8 @@ Keeps an internal API simplification coherent by migrating callers and removing 
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md:2–3](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md#L2-L3) — Internal API migration and same-wave deletion.
-- **Evidence:** [pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md:9–14](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md#L9-L14) — Contract-test changes and explicit applicability conditions.
+- **Evidence:** [pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md:2–3](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md#L2-L3) — Internal API migration and same-wave deletion.
+- **Evidence:** [pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md:9–14](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md#L9-L14) — Contract-test changes and explicit applicability conditions.
 
 ### poteto/principle-minimize-reader-load
 
@@ -1258,7 +1262,7 @@ Evaluates maintainability through the indirections a reader must trace and the m
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-minimize-reader-load/SKILL.md:9–18](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-minimize-reader-load/SKILL.md#L9-L18) — Two reader-load axes, layer and state changes, interface compression and traceability test.
+- **Evidence:** [pstack/skills/principle-minimize-reader-load/SKILL.md:9–18](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-minimize-reader-load/SKILL.md#L9-L18) — Two reader-load axes, layer and state changes, interface compression and traceability test.
 
 ### poteto/principle-model-the-domain
 
@@ -1272,8 +1276,8 @@ Encodes domain invariants and access patterns in an appropriate structure rather
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-model-the-domain/SKILL.md:9–20](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-model-the-domain/SKILL.md#L9-L20) — Domain encoding and concrete structural alternatives.
-- **Evidence:** [pstack/skills/principle-model-the-domain/SKILL.md:22–24](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-model-the-domain/SKILL.md#L22-L24) — Abstraction restraint and signs of scattered lifecycle knowledge.
+- **Evidence:** [pstack/skills/principle-model-the-domain/SKILL.md:9–20](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-model-the-domain/SKILL.md#L9-L20) — Domain encoding and concrete structural alternatives.
+- **Evidence:** [pstack/skills/principle-model-the-domain/SKILL.md:22–24](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-model-the-domain/SKILL.md#L22-L24) — Abstraction restraint and signs of scattered lifecycle knowledge.
 
 ### poteto/principle-never-block-on-the-human
 
@@ -1287,7 +1291,7 @@ Lets reversible execution proceed with reasonable decisions and asynchronous sup
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Proceed on reversible work without blocking; irreversible actions such as force-push, production-data deletion and external messages require confirmation. Product direction remains with the human.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-never-block-on-the-human/SKILL.md:9–15](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-never-block-on-the-human/SKILL.md#L9-L15) — Asynchronous supervision, reversible action examples, irreversible confirmation and product ownership.
+- **Evidence:** [pstack/skills/principle-never-block-on-the-human/SKILL.md:9–15](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-never-block-on-the-human/SKILL.md#L9-L15) — Asynchronous supervision, reversible action examples, irreversible confirmation and product ownership.
 
 ### poteto/principle-outcome-oriented-execution
 
@@ -1301,7 +1305,7 @@ Allows explicitly scoped transitional breakage during a planned migration so wor
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-outcome-oriented-execution/SKILL.md:9–21](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-outcome-oriented-execution/SKILL.md#L9-L21) — End-state priority, planned reversible breakage and verification guardrails.
+- **Evidence:** [pstack/skills/principle-outcome-oriented-execution/SKILL.md:9–21](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-outcome-oriented-execution/SKILL.md#L9-L21) — End-state priority, planned reversible breakage and verification guardrails.
 
 ### poteto/principle-prove-it-works
 
@@ -1315,8 +1319,8 @@ Checks task outputs against the actual artifact and, where feasible, keeps a det
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/show-me-your-work
-- **Evidence:** [pstack/skills/principle-prove-it-works/SKILL.md:9–16](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-prove-it-works/SKILL.md#L9-L16) — Direct reality checks and rejection of proxy evidence.
-- **Evidence:** [pstack/skills/principle-prove-it-works/SKILL.md:18–22](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-prove-it-works/SKILL.md#L18-L22) — Scripted checks, visible artifact and audit-trail companion.
+- **Evidence:** [pstack/skills/principle-prove-it-works/SKILL.md:9–16](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-prove-it-works/SKILL.md#L9-L16) — Direct reality checks and rejection of proxy evidence.
+- **Evidence:** [pstack/skills/principle-prove-it-works/SKILL.md:18–22](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-prove-it-works/SKILL.md#L18-L22) — Scripted checks, visible artifact and audit-trail companion.
 
 ### poteto/principle-redesign-from-first-principles
 
@@ -1330,7 +1334,7 @@ Integrates a requirement by reconsidering the whole affected design as though th
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-redesign-from-first-principles/SKILL.md:9–16](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-redesign-from-first-principles/SKILL.md#L9-L16) — Whole-design reconsideration, affected-reference propagation and incremental delivery.
+- **Evidence:** [pstack/skills/principle-redesign-from-first-principles/SKILL.md:9–16](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-redesign-from-first-principles/SKILL.md#L9-L16) — Whole-design reconsideration, affected-reference propagation and incremental delivery.
 
 ### poteto/principle-separate-before-serializing-shared-state
 
@@ -1338,13 +1342,13 @@ Removes unnecessary shared write targets before introducing locks, and uses stru
 
 - **Role / status:** principle / stable.
 - **Use when:** Two workers may update the same state file, branch or key.; A proposed lock may be avoidable through independent owned outputs.
-- **Scope limits:** Catalog interpretation: There are no concurrent mutable writers.; Catalog interpretation: Instruction-only coordination is being treated as an adequate lock.
+- **Scope limits:** Catalog interpretation: There are no concurrent mutable writers.
 - **Result:** Shared-state ownership map; Independent write targets merged at the reporting boundary; Structural single-writer or atomic coordination where required
 - **Requirements:** None explicitly stated in the interpreted source.
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md:9–16](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md#L9-L16) — Eliminate sharing first, race rationale, ownership partitioning and structural serialization.
+- **Evidence:** [pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md:9–16](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md#L9-L16) — Eliminate sharing first, race rationale, ownership partitioning and structural serialization.
 
 ### poteto/principle-sequence-verifiable-units
 
@@ -1358,7 +1362,7 @@ Sequences multi-step execution and delivery into small checked units whose order
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/principle-prove-it-works, poteto/principle-build-the-lever
-- **Evidence:** [pstack/skills/principle-sequence-verifiable-units/SKILL.md:9–17](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-sequence-verifiable-units/SKILL.md#L9-L17) — Per-unit green gates, clean-trunk baseline, delivery proof order and verification companions.
+- **Evidence:** [pstack/skills/principle-sequence-verifiable-units/SKILL.md:9–17](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-sequence-verifiable-units/SKILL.md#L9-L17) — Per-unit green gates, clean-trunk baseline, delivery proof order and verification companions.
 
 ### poteto/principle-subtract-before-you-add
 
@@ -1372,7 +1376,7 @@ Simplifies the existing base before extending it by removing dead code, redundan
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-subtract-before-you-add/SKILL.md:9–18](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-subtract-before-you-add/SKILL.md#L9-L18) — Continual simplification, removal order, observed scope and redundant-reference deletion.
+- **Evidence:** [pstack/skills/principle-subtract-before-you-add/SKILL.md:9–18](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-subtract-before-you-add/SKILL.md#L9-L18) — Continual simplification, removal order, observed scope and redundant-reference deletion.
 
 ### poteto/principle-test-behavior-not-implementation
 
@@ -1380,14 +1384,14 @@ Judges a test by whether it catches broken observable behavior while surviving i
 
 - **Role / status:** principle / stable.
 - **Use when:** Writing or reviewing regression tests.; A refactor repeatedly breaks tests despite identical consumer-visible behavior.
-- **Scope limits:** Catalog interpretation: The assertion targets a private helper or internal call order that no consumer observes.; Catalog interpretation: A test checks data it constructed itself without exercising the relevant interface.
+- **Scope limits:** Catalog interpretation: The task needs test-harness setup or a complete testing strategy rather than a rule for judging assertions against an observable consumer contract.
 - **Result:** Contract-driven test cases; Assertions that catch behavioral regressions and survive internal refactors
 - **Requirements:** None explicitly stated in the interpreted source.
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/principle-test-behavior-not-implementation/SKILL.md:9–16](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-test-behavior-not-implementation/SKILL.md#L9-L16) — Observable behavior definition, two-edit test-quality check and requirement-derived expectations.
-- **Evidence:** [pstack/skills/principle-test-behavior-not-implementation/SKILL.md:18–20](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-test-behavior-not-implementation/SKILL.md#L18-L20) — External effects, precise contract-dependent assertions and invariants.
+- **Evidence:** [pstack/skills/principle-test-behavior-not-implementation/SKILL.md:9–16](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-test-behavior-not-implementation/SKILL.md#L9-L16) — Observable behavior definition, two-edit test-quality check and requirement-derived expectations.
+- **Evidence:** [pstack/skills/principle-test-behavior-not-implementation/SKILL.md:18–20](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-test-behavior-not-implementation/SKILL.md#L18-L20) — External effects, precise contract-dependent assertions and invariants.
 
 ### poteto/principle-type-system-discipline
 
@@ -1401,8 +1405,8 @@ Uses types and authoritative schemas to prevent invalid states, semantic primiti
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/typescript-best-practices, poteto/principle-boundary-discipline, poteto/principle-encode-lessons-in-structure
-- **Evidence:** [pstack/skills/principle-type-system-discipline/SKILL.md:2–3](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-type-system-discipline/SKILL.md#L2-L3) — Static-language scope and core type-system applications.
-- **Evidence:** [pstack/skills/principle-type-system-discipline/SKILL.md:9–13](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/principle-type-system-discipline/SKILL.md#L9-L13) — Semantic branding, external parsing, schema derivation and explicit companions.
+- **Evidence:** [pstack/skills/principle-type-system-discipline/SKILL.md:2–3](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-type-system-discipline/SKILL.md#L2-L3) — Static-language scope and core type-system applications.
+- **Evidence:** [pstack/skills/principle-type-system-discipline/SKILL.md:9–13](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/principle-type-system-discipline/SKILL.md#L9-L13) — Semantic branding, external parsing, schema derivation and explicit companions.
 
 ### poteto/recall
 
@@ -1416,8 +1420,8 @@ Rebuilds recent work context across the user's scoped chat history, shared evide
 - **Possible effects:** read, execute, delegate
 - **Confirmation behavior:** States the search window/topic/workspace. Never reads another project's transcripts without being asked.
 - **Explicit companions/references:** poteto/why, poteto/automate-me, poteto/unslop, poteto/poteto-mode
-- **Evidence:** [pstack/skills/recall/SKILL.md:13–21](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/recall/SKILL.md#L13-L21) — Scoped transcripts, default seven-day window, shared record and live verification.
-- **Evidence:** [pstack/skills/recall/SKILL.md:24–35](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/recall/SKILL.md#L24-L35) — Brief output and privacy boundary.
+- **Evidence:** [pstack/skills/recall/SKILL.md:13–21](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/recall/SKILL.md#L13-L21) — Scoped transcripts, default seven-day window, shared record and live verification.
+- **Evidence:** [pstack/skills/recall/SKILL.md:24–35](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/recall/SKILL.md#L24-L35) — Brief output and privacy boundary.
 
 ### poteto/reflect
 
@@ -1431,9 +1435,9 @@ Extracts durable lessons from the current session through three reviewer lenses 
 - **Possible effects:** read, local_write, external_write, execute, delegate
 - **Confirmation behavior:** Waits for explicit approval of a chosen subset before editing skills and shows the destination first. Backlog tracker filing proceeds without waiting; never opens a PR or pushes.
 - **Explicit companions/references:** poteto/poteto-mode, poteto/principle-encode-lessons-in-structure
-- **Evidence:** [pstack/skills/reflect/SKILL.md:9–27](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/reflect/SKILL.md#L9-L27) — Trigger, scoped transcript discovery and reviewer host assumptions.
-- **Evidence:** [pstack/skills/reflect/SKILL.md:37–60](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/reflect/SKILL.md#L37-L60) — Synthesis, structural check, approval, automatic backlog filing and safe destination.
-- **Evidence:** [pstack/skills/reflect/references/judgment-reviewer.md:3–5](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/reflect/references/judgment-reviewer.md#L3-L5) — Reviewers are forbidden to modify state and constrain lookups to cited context.
+- **Evidence:** [pstack/skills/reflect/SKILL.md:9–27](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/reflect/SKILL.md#L9-L27) — Trigger, scoped transcript discovery and reviewer host assumptions.
+- **Evidence:** [pstack/skills/reflect/SKILL.md:37–60](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/reflect/SKILL.md#L37-L60) — Synthesis, structural check, approval, automatic backlog filing and safe destination.
+- **Evidence:** [pstack/skills/reflect/references/judgment-reviewer.md:3–5](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/reflect/references/judgment-reviewer.md#L3-L5) — Reviewers are forbidden to modify state and constrain lookups to cited context.
 
 ### poteto/setup-pstack
 
@@ -1447,10 +1451,10 @@ Configures pstack's per-role models and reasoning budget using models the curren
 - **Possible effects:** read, local_write, configure
 - **Confirmation behavior:** Asks for a budget and confirmation of every role/model table before writing. Verification generators are invoked only if the user accepts each optional offer.
 - **Explicit companions/references:** poteto/create-verification-skill, poteto/create-formal-verification-skill
-- **Evidence:** [pstack/skills/setup-pstack/SKILL.md:8–18](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/setup-pstack/SKILL.md#L8-L18) — Configuration destination and model detection.
-- **Evidence:** [pstack/skills/setup-pstack/SKILL.md:20–39](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/setup-pstack/SKILL.md#L20-L39) — Budget, explicit table confirmation, validation and overwrite.
-- **Evidence:** [pstack/skills/setup-pstack/SKILL.md:68–78](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/setup-pstack/SKILL.md#L68-L78) — New-session activation and opt-in verification offers.
-- **Evidence:** [pstack/docs/harness/claude-code.md:40–46](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/docs/harness/claude-code.md#L40-L46) — Claude Code-specific setup mapping.
+- **Evidence:** [pstack/skills/setup-pstack/SKILL.md:8–18](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/setup-pstack/SKILL.md#L8-L18) — Configuration destination and model detection.
+- **Evidence:** [pstack/skills/setup-pstack/SKILL.md:20–39](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/setup-pstack/SKILL.md#L20-L39) — Budget, explicit table confirmation, validation and overwrite.
+- **Evidence:** [pstack/skills/setup-pstack/SKILL.md:68–78](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/setup-pstack/SKILL.md#L68-L78) — New-session activation and opt-in verification offers.
+- **Evidence:** [pstack/docs/harness/claude-code.md:40–46](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/docs/harness/claude-code.md#L40-L46) — Claude Code-specific setup mapping.
 
 ### poteto/sharpen
 
@@ -1464,7 +1468,7 @@ Rewrites a task prompt to seek deeper expertise, rawer evidence, concrete method
 - **Possible effects:** read
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/sharpen/SKILL.md:7–16](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/sharpen/SKILL.md#L7-L16) — Depth questions, rewrite-only outcome and user-owned choices.
+- **Evidence:** [pstack/skills/sharpen/SKILL.md:7–16](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/sharpen/SKILL.md#L7-L16) — Depth questions, rewrite-only outcome and user-owned choices.
 
 ### poteto/show-me-your-work
 
@@ -1478,9 +1482,9 @@ Maintains an append-only TSV decision trail for long or unattended work. Audits 
 - **Possible effects:** read, local_write, execute, delegate
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/unslop, poteto/poteto-mode, poteto/principle-encode-lessons-in-structure
-- **Evidence:** [pstack/skills/show-me-your-work/SKILL.md:13–22](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/show-me-your-work/SKILL.md#L13-L22) — Decision trail schema.
-- **Evidence:** [pstack/skills/show-me-your-work/SKILL.md:36–52](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/show-me-your-work/SKILL.md#L36-L52) — Helper, per-run boundaries, local default and append-only rule.
-- **Evidence:** [pstack/skills/show-me-your-work/SKILL.md:55–74](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/show-me-your-work/SKILL.md#L55-L74) — Transcript audit and mandatory cross-model review.
+- **Evidence:** [pstack/skills/show-me-your-work/SKILL.md:13–22](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/show-me-your-work/SKILL.md#L13-L22) — Decision trail schema.
+- **Evidence:** [pstack/skills/show-me-your-work/SKILL.md:36–52](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/show-me-your-work/SKILL.md#L36-L52) — Helper, per-run boundaries, local default and append-only rule.
+- **Evidence:** [pstack/skills/show-me-your-work/SKILL.md:55–74](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/show-me-your-work/SKILL.md#L55-L74) — Transcript audit and mandatory cross-model review.
 
 ### poteto/statechart
 
@@ -1490,13 +1494,14 @@ Turns a TLA+ model into reader-labeled statecharts and numbered bug paths, or co
 - **Use when:** Explain a modeled race or invariant violation as observable steps.; Agree on a behavior chart before implementation or audit code against an existing spec.
 - **Scope limits:** Catalog interpretation: Do not claim model traces alone prove code behavior without replay.; Catalog interpretation: Use a simple ordinary diagram when formal checking adds no useful evidence.
 - **Result:** PNG and Mermaid charts; Bug stories and summary.json; TLA+ skeleton or model comparison and regeneration command
-- **Requirements:** Node and bundled statechart.mjs.; TLC and Java; first run downloads about 305 MB through mise unless existing tools are configured.; Scratch folder outside the repository and PNG inspection capability.
+- **Requirements:** Node and bundled statechart.mjs.; TLC and Java; first run downloads about 305 MB through mise unless existing tools are configured.; Scratch folder outside the repository and PNG inspection capability.; npm for first PNG rendering, which installs Pele and resvg into a user cache.
 - **Possible effects:** read, local_write, execute, configure
 - **Confirmation behavior:** Reader/behavior owners agree on chart-to-spec behavior. Design bugs and code/chart differences are taken back to those people for a decision.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/statechart/SKILL.md:9–17](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/statechart/SKILL.md#L9-L17) — Reader labels, installation/network assumptions and direction selection.
-- **Evidence:** [pstack/skills/statechart/SKILL.md:21–26](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/statechart/SKILL.md#L21-L26) — Invariants, bug paths, rendering and replay against code.
-- **Evidence:** [pstack/skills/statechart/SKILL.md:28–36](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/statechart/SKILL.md#L28-L36) — Chart agreement, reader decisions and outputs.
+- **Evidence:** [pstack/skills/statechart/SKILL.md:9–17](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/statechart/SKILL.md#L9-L17) — Reader labels, installation/network assumptions and direction selection.
+- **Evidence:** [pstack/skills/statechart/SKILL.md:21–26](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/statechart/SKILL.md#L21-L26) — Invariants, bug paths, rendering and replay against code.
+- **Evidence:** [pstack/skills/statechart/SKILL.md:28–36](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/statechart/SKILL.md#L28-L36) — Chart agreement, reader decisions and outputs.
+- **Evidence:** [pstack/skills/statechart/scripts/statechart-help.mjs:119–126](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/statechart/scripts/statechart-help.mjs#L119-L126) — PNG rendering has a separate npm-installed Pele/resvg dependency cache and can fail when installation is unavailable.
 
 ### poteto/swarm
 
@@ -1510,8 +1515,8 @@ Fans workers out across slices or declared races and consolidates their terminal
 - **Possible effects:** read, local_write, execute, delegate
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/poteto-mode
-- **Evidence:** [pstack/skills/swarm/SKILL.md:18–31](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/swarm/SKILL.md#L18-L31) — Done predicate, race rules, model, isolation and cloud default.
-- **Evidence:** [pstack/skills/swarm/SKILL.md:33–41](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/swarm/SKILL.md#L33-L41) — Dropouts, SHA/method validation and reporting.
+- **Evidence:** [pstack/skills/swarm/SKILL.md:18–31](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/swarm/SKILL.md#L18-L31) — Done predicate, race rules, model, isolation and cloud default.
+- **Evidence:** [pstack/skills/swarm/SKILL.md:33–41](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/swarm/SKILL.md#L33-L41) — Dropouts, SHA/method validation and reporting.
 
 ### poteto/tdd
 
@@ -1525,9 +1530,9 @@ Fixes a bug with a focused failing-before, passing-after regression check when a
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/tdd/SKILL.md:3–11](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/tdd/SKILL.md#L3-L11) — Bug-fix trigger and impractical-test exclusion.
-- **Evidence:** [pstack/skills/tdd/SKILL.md:15–26](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/tdd/SKILL.md#L15-L26) — Fail-first cadence and alternative executable checks.
-- **Evidence:** [pstack/skills/tdd/SKILL.md:28–42](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/tdd/SKILL.md#L28-L42) — Guardrails and evidence reporting.
+- **Evidence:** [pstack/skills/tdd/SKILL.md:3–11](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/tdd/SKILL.md#L3-L11) — Bug-fix trigger and impractical-test exclusion.
+- **Evidence:** [pstack/skills/tdd/SKILL.md:15–26](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/tdd/SKILL.md#L15-L26) — Fail-first cadence and alternative executable checks.
+- **Evidence:** [pstack/skills/tdd/SKILL.md:28–42](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/tdd/SKILL.md#L28-L42) — Guardrails and evidence reporting.
 
 ### poteto/teach
 
@@ -1541,8 +1546,8 @@ Combines code behavior and historical rationale into a plain, conversational exp
 - **Possible effects:** read, delegate
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/how, poteto/why, poteto/unslop
-- **Evidence:** [pstack/skills/teach/SKILL.md:9–16](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/teach/SKILL.md#L9-L16) — Explanation-only scope, actual how/why invocations and conversational pace.
-- **Evidence:** [pstack/skills/teach/SKILL.md:17–21](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/teach/SKILL.md#L17-L21) — Progressive visuals, tool choice and final output.
+- **Evidence:** [pstack/skills/teach/SKILL.md:9–16](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/teach/SKILL.md#L9-L16) — Explanation-only scope, actual how/why invocations and conversational pace.
+- **Evidence:** [pstack/skills/teach/SKILL.md:17–21](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/teach/SKILL.md#L17-L21) — Progressive visuals, tool choice and final output.
 
 ### poteto/technical-writing
 
@@ -1556,9 +1561,9 @@ Applies a layered standard for technical documents, choosing a document purpose 
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/unslop
-- **Evidence:** [pstack/skills/technical-writing/SKILL.md:9–19](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/technical-writing/SKILL.md#L9-L19) — Plain language, repo vocabulary and non-destructive rule escape.
-- **Evidence:** [pstack/skills/technical-writing/SKILL.md:30–49](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/technical-writing/SKILL.md#L30-L49) — Diataxis document modes.
-- **Evidence:** [pstack/skills/technical-writing/SKILL.md:91–96](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/technical-writing/SKILL.md#L91-L96) — Unslop companion, PR applicability and product UI exclusion.
+- **Evidence:** [pstack/skills/technical-writing/SKILL.md:9–19](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/technical-writing/SKILL.md#L9-L19) — Plain language, repo vocabulary and non-destructive rule escape.
+- **Evidence:** [pstack/skills/technical-writing/SKILL.md:30–49](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/technical-writing/SKILL.md#L30-L49) — Diataxis document modes.
+- **Evidence:** [pstack/skills/technical-writing/SKILL.md:91–96](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/technical-writing/SKILL.md#L91-L96) — Unslop companion, PR applicability and product UI exclusion.
 
 ### poteto/typescript-best-practices
 
@@ -1572,8 +1577,8 @@ Provides TypeScript-specific type modeling and boundary rules, emphasizing expli
 - **Possible effects:** read, local_write, execute
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/principle-type-system-discipline, poteto/principle-boundary-discipline
-- **Evidence:** [pstack/skills/typescript-best-practices/SKILL.md:3–10](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/typescript-best-practices/SKILL.md#L3-L10) — TypeScript scope and initial principle.
-- **Evidence:** [pstack/skills/typescript-best-practices/SKILL.md:14–31](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/typescript-best-practices/SKILL.md#L14-L31) — Modeling, narrowing, boundaries, real tests and structured telemetry.
+- **Evidence:** [pstack/skills/typescript-best-practices/SKILL.md:3–10](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/typescript-best-practices/SKILL.md#L3-L10) — TypeScript scope and initial principle.
+- **Evidence:** [pstack/skills/typescript-best-practices/SKILL.md:14–31](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/typescript-best-practices/SKILL.md#L14-L31) — Modeling, narrowing, boundaries, real tests and structured telemetry.
 
 ### poteto/unslop
 
@@ -1587,9 +1592,9 @@ Edits prose to remove recurring AI writing patterns while preserving meaning and
 - **Possible effects:** read, local_write
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** None recorded.
-- **Evidence:** [pstack/skills/unslop/SKILL.md:9–13](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/unslop/SKILL.md#L9-L13) — Editing scope and stable pattern identifiers.
-- **Evidence:** [pstack/skills/unslop/SKILL.md:17–37](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/unslop/SKILL.md#L17-L37) — Content, vocabulary and formatting patterns.
-- **Evidence:** [pstack/skills/unslop/SKILL.md:41–62](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/unslop/SKILL.md#L41-L62) — Communication, filler, jargon and plain-language rules.
+- **Evidence:** [pstack/skills/unslop/SKILL.md:9–13](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/unslop/SKILL.md#L9-L13) — Editing scope and stable pattern identifiers.
+- **Evidence:** [pstack/skills/unslop/SKILL.md:17–37](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/unslop/SKILL.md#L17-L37) — Content, vocabulary and formatting patterns.
+- **Evidence:** [pstack/skills/unslop/SKILL.md:41–62](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/unslop/SKILL.md#L41-L62) — Communication, filler, jargon and plain-language rules.
 
 ### poteto/why
 
@@ -1603,7 +1608,7 @@ Investigates the historical reasons and constraints behind code across source co
 - **Possible effects:** read, execute, delegate
 - **Confirmation behavior:** Not explicitly specified in this skill.
 - **Explicit companions/references:** poteto/how, poteto/poteto-mode
-- **Evidence:** [pstack/skills/why/SKILL.md:9–27](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/why/SKILL.md#L9-L27) — Read-only investigation purpose, host modes and git/PR anchors.
-- **Evidence:** [pstack/skills/why/SKILL.md:31–75](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/why/SKILL.md#L31-L75) — Parallel evidence categories and documented skip rules.
-- **Evidence:** [pstack/skills/why/SKILL.md:77–94](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/why/SKILL.md#L77-L94) — Synthesis, confidence language, outputs and planning constraints.
-- **Evidence:** [pstack/skills/why/references/synthesizer-prompt.md:29–45](https://github.com/cursor/plugins/blob/9580c23696ac8d7abed0c166f2f9918800afb819/pstack/skills/why/references/synthesizer-prompt.md#L29-L45) — Confidence tiers and explicit prohibition on writes.
+- **Evidence:** [pstack/skills/why/SKILL.md:9–27](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/why/SKILL.md#L9-L27) — Read-only investigation purpose, host modes and git/PR anchors.
+- **Evidence:** [pstack/skills/why/SKILL.md:31–75](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/why/SKILL.md#L31-L75) — Parallel evidence categories and documented skip rules.
+- **Evidence:** [pstack/skills/why/SKILL.md:77–94](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/why/SKILL.md#L77-L94) — Synthesis, confidence language, outputs and planning constraints.
+- **Evidence:** [pstack/skills/why/references/synthesizer-prompt.md:29–45](https://github.com/cursor/plugins/blob/99b609a72323b70204eab407c622f436e858e112/pstack/skills/why/references/synthesizer-prompt.md#L29-L45) — Confidence tiers and explicit prohibition on writes.

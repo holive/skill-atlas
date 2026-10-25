@@ -629,6 +629,7 @@
     ],
     "effects": [
       "read",
+      "execute",
       "delegate"
     ],
     "confirmation": "Asks the user when the change's intent is uncertain. Explicitly does not auto-apply review changes.",
@@ -659,6 +660,12 @@
         "start_line": 7,
         "end_line": 19,
         "supports": "Rejects unsupported and preference-only findings."
+      },
+      {
+        "path": "pstack/skills/interrogate/SKILL.md",
+        "start_line": 13,
+        "end_line": 19,
+        "supports": "Feature-branch scope explicitly executes git diff before read-only reviewer delegation."
       }
     ]
   },
@@ -1100,7 +1107,7 @@
       "Cursor Task poteto-agent and comment-sicko; built-in create-skill and loop.",
       "cursor-team-kit deslop, control-ui and control-cli for relevant tasks.",
       "Git worktrees and GitHub CLI by default; optional Origin CLI.",
-      "Bun for orchestrate bookkeeping, Node for plan validation; app-specific live-control and verification tools."
+      "Bun for orchestrate bookkeeping and the GitHub watcher, whose first use can install frozen dependencies; Node for plan validation; app-specific live-control and verification tools."
     ],
     "effects": [
       "read",
@@ -1200,6 +1207,18 @@
         "start_line": 5,
         "end_line": 10,
         "supports": "Independent per-PR verification and controlled bottom-up landing."
+      },
+      {
+        "path": "pstack/skills/poteto-mode/scripts/bootstrap.ts",
+        "start_line": 25,
+        "end_line": 38,
+        "supports": "Missing or outdated dependency installations run bun install --frozen-lockfile before the CLI continues."
+      },
+      {
+        "path": "pstack/skills/poteto-mode/scripts/watch-pr/watch-pr",
+        "start_line": 1,
+        "end_line": 5,
+        "supports": "The GitHub watcher is a Bun entry point and invokes dependency bootstrap before loading its CLI."
       }
     ]
   },
@@ -1491,7 +1510,8 @@
     "requirements": [
       "Node and bundled statechart.mjs.",
       "TLC and Java; first run downloads about 305 MB through mise unless existing tools are configured.",
-      "Scratch folder outside the repository and PNG inspection capability."
+      "Scratch folder outside the repository and PNG inspection capability.",
+      "npm for first PNG rendering, which installs Pele and resvg into a user cache."
     ],
     "effects": [
       "read",
@@ -1519,6 +1539,12 @@
         "start_line": 28,
         "end_line": 36,
         "supports": "Chart agreement, reader decisions and outputs."
+      },
+      {
+        "path": "pstack/skills/statechart/scripts/statechart-help.mjs",
+        "start_line": 119,
+        "end_line": 126,
+        "supports": "PNG rendering has a separate npm-installed Pele/resvg dependency cache and can fail when installation is unavailable."
       }
     ]
   },

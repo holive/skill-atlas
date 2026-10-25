@@ -23,6 +23,8 @@ The interface and catalog are in English. `catalog/navigation.json` owns goal-se
 
 ## Snapshot
 
+Latest refresh: [2026-10-25 maintenance report](docs/maintenance/2026-10-25.md), including six interpretation clarifications; the catalog still contains 96 skills.
+
 - **Matt:** 38 skills, of which 27 are in the promoted engineering/productivity buckets, 7 are beta and 4 are misc/unpromoted.
 - **Poteto:** 58 pstack skills, comprising 34 workflows/routers/utilities and 24 principles.
 - **Supporting material:** full Matt repository; pstack and cursor-team-kit directories plus repository root files from cursor/plugins. Cursor-team-kit is dependency context, not a third primary collection.
