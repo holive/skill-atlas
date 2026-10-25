@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "poteto/principle-attack-the-premise",
+    "kind": "principle",
+    "summary": "Interrupts repeated failed fixes by making their shared assumption explicit and testing it before another attempt.",
+    "intents": [
+      "debug",
+      "test"
+    ],
+    "when_to_use": [
+      "Two fixes based on the same explanation fail the same check."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: A new requirement calls for redesign rather than falsifying an assumed fact."
+    ],
+    "outputs": [
+      "Written shared premise",
+      "Rerunnable discriminating observation",
+      "Evidence-based next debugging direction"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/principle-build-the-lever",
+      "poteto/principle-fix-root-causes",
+      "poteto/principle-laziness-protocol"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-attack-the-premise/SKILL.md",
+        "start_line": 9,
+        "end_line": 19,
+        "supports": "Trigger, premise test, rerunnable check, root-cause continuation and stop condition."
+      },
+      {
+        "path": "pstack/skills/principle-attack-the-premise/SKILL.md",
+        "start_line": 21,
+        "end_line": 21,
+        "supports": "Distinction from redesign around a new requirement."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-boundary-discipline",
+    "kind": "principle",
+    "summary": "Concentrates parsing, validation and error handling at system boundaries, leaving internal business logic expressed as typed pure functions.",
+    "intents": [
+      "design",
+      "implement",
+      "review"
+    ],
+    "when_to_use": [
+      "Wiring a CLI, configuration parser, network adapter or external API.",
+      "Reviewing redundant checks buried inside domain logic."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The task needs a complete implementation workflow rather than a placement rule.",
+      "Catalog interpretation: The supposedly internal input has not actually been parsed into a trusted domain type."
+    ],
+    "outputs": [
+      "Boundary parsing and validation policy",
+      "Pure domain functions with thin framework wiring"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-boundary-discipline/SKILL.md",
+        "start_line": 9,
+        "end_line": 16,
+        "supports": "Boundary guards, typed internals, pure logic and public domain concepts."
+      },
+      {
+        "path": "pstack/skills/principle-boundary-discipline/SKILL.md",
+        "start_line": 20,
+        "end_line": 34,
+        "supports": "Concrete validation and organization applications and review questions."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-build-the-lever",
+    "kind": "principle",
+    "summary": "Turns nontrivial work into a small rerunnable tool or an explicit delegate recipe, making the result reproducible for reviewers.",
+    "intents": [
+      "implement",
+      "test",
+      "improve"
+    ],
+    "when_to_use": [
+      "A migration or analysis needs a repeatable transformation.",
+      "A one-off nontrivial task needs a check a reviewer can rerun."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The work is a couple of obvious trivial edits.",
+      "Catalog interpretation: A framework would cost more than the smallest script that does or proves the job."
+    ],
+    "outputs": [
+      "Codemod, script, generator or protected delegate recipe",
+      "Comparison against a manually completed first unit"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/principle-laziness-protocol",
+      "poteto/principle-prove-it-works"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-build-the-lever/SKILL.md",
+        "start_line": 8,
+        "end_line": 18,
+        "supports": "Triviality threshold, first-unit proof, deterministic tools and optional delegate contract."
+      },
+      {
+        "path": "pstack/skills/principle-build-the-lever/SKILL.md",
+        "start_line": 19,
+        "end_line": 23,
+        "supports": "Commit condition, minimal tooling and verification companion."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-encode-lessons-in-structure",
+    "kind": "principle",
+    "summary": "Replaces repeated instructions or corrections with an enforceable structural rule where possible; judgment-heavy lessons receive a clearer instruction and failure example.",
+    "intents": [
+      "improve",
+      "test",
+      "setup"
+    ],
+    "when_to_use": [
+      "An agent needs the same correction for a second time.",
+      "A recurring rule could become a lint, metadata flag or runtime check."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The instruction is novel and there is no recurring pattern yet.",
+      "Catalog interpretation: The lesson requires judgment that cannot be encoded; improve its explanation and example instead."
+    ],
+    "outputs": [
+      "Lint, metadata flag, runtime check or script",
+      "Clearer instruction with a failure example when enforcement is infeasible"
+    ],
+    "requirements": [],
+    "effects": [
+      "local_write",
+      "configure"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+        "start_line": 2,
+        "end_line": 3,
+        "supports": "Recurring-instruction trigger and structural enforcement choices."
+      },
+      {
+        "path": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+        "start_line": 9,
+        "end_line": 11,
+        "supports": "Judgment fallback and structural-fix-only corollary."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-exhaust-the-design-space",
+    "kind": "principle",
+    "summary": "Resolves unfamiliar architecture or interaction choices by comparing a few competing prototypes before selecting an approach.",
+    "intents": [
+      "design",
+      "plan"
+    ],
+    "when_to_use": [
+      "A novel UI interaction has no precedent in the codebase.",
+      "A product choice depends on how alternatives feel."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: An established codebase pattern already settles the choice.",
+      "Catalog interpretation: The task is a straightforward implementation with no meaningful competing design."
+    ],
+    "outputs": [
+      "Two or three competing prototypes",
+      "Side-by-side comparison informing a design commitment"
+    ],
+    "requirements": [],
+    "effects": [
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+        "start_line": 2,
+        "end_line": 3,
+        "supports": "Novelty, absence of precedent, multiple prototypes and comparison."
+      },
+      {
+        "path": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
+        "start_line": 9,
+        "end_line": 9,
+        "supports": "Product decisions whose experience depends on feel."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-experience-first",
+    "kind": "principle",
+    "summary": "Prioritizes the experience of consumers and maintainers when deciding scope and polish, using prototypes to test design choices early.",
+    "intents": [
+      "design",
+      "plan",
+      "implement"
+    ],
+    "when_to_use": [
+      "Feature scope must trade quantity against quality.",
+      "An API or UI design favors implementation convenience at a consumer's expense."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The question is work sequencing; this principle selects the target experience."
+    ],
+    "outputs": [
+      "Justified feature scope",
+      "Prototype-informed design choice",
+      "Polished core workflow and feedback states"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-experience-first/SKILL.md",
+        "start_line": 9,
+        "end_line": 15,
+        "supports": "Scope, polish, prototype and core-loop criteria."
+      },
+      {
+        "path": "pstack/skills/principle-experience-first/SKILL.md",
+        "start_line": 17,
+        "end_line": 19,
+        "supports": "Consumers include maintainers and API users; target versus sequence distinction."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-explain-the-number",
+    "kind": "principle",
+    "summary": "Qualifies a measured performance or evaluation result by identifying its limiter, testing alternative explanations and retaining run evidence.",
+    "intents": [
+      "research",
+      "test",
+      "review"
+    ],
+    "when_to_use": [
+      "Reporting a measured speedup, regression or latency.",
+      "Deciding whether an evaluation score reflects the intended task."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: There is no measured number to interpret.",
+      "Catalog interpretation: The only question is whether a produced artifact exists or works at all."
+    ],
+    "outputs": [
+      "Named limiter tied to profiles or counters and source",
+      "Run count, spread and alternative-explanation evidence"
+    ],
+    "requirements": [
+      "Limiter evidence from profiling or system counters during a run, mapped to source; code-reading guesses are insufficient."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/benchmark-checklist"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-explain-the-number/SKILL.md",
+        "start_line": 9,
+        "end_line": 15,
+        "supports": "Measurement procedure, evidence retention and benchmark/eval routing."
+      },
+      {
+        "path": "pstack/skills/principle-explain-the-number/SKILL.md",
+        "start_line": 17,
+        "end_line": 17,
+        "supports": "Distinction from checking output reality."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-fix-root-causes",
+    "kind": "principle",
+    "summary": "Traces a reproduced symptom to the first wrong decision and distinguishes legitimate states needing handling from impossible states that should never be produced.",
+    "intents": [
+      "debug",
+      "test"
+    ],
+    "when_to_use": [
+      "A defensive guard or retry appears to hide a defect.",
+      "A failure after restart may originate in persisted state."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The task needs a complete debugging phase workflow; this is a root-cause discipline within one."
+    ],
+    "outputs": [
+      "Reproduced fault and root-cause trace",
+      "Fix across all instances of the faulty pattern",
+      "Proposed cheap observability signal when diagnosis was difficult"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-fix-root-causes/SKILL.md",
+        "start_line": 9,
+        "end_line": 19,
+        "supports": "Definition of root cause, reproduce/instrument loop, state legitimacy and pattern-wide fixes."
+      },
+      {
+        "path": "pstack/skills/principle-fix-root-causes/SKILL.md",
+        "start_line": 20,
+        "end_line": 21,
+        "supports": "Reject workaround comments and propose a cheap persistent signal."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-foundational-thinking",
+    "kind": "principle",
+    "summary": "Orders work around sound data structures and shared foundations so later increments remain simple and coherent.",
+    "intents": [
+      "design",
+      "plan",
+      "implement"
+    ],
+    "when_to_use": [
+      "Choosing core types and dominant access patterns before logic.",
+      "Sequencing scaffolding and feature work or deciding what concurrent actors share."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: A new abstraction adds cleverness without improving data structure or downstream work.",
+      "Catalog interpretation: Scaffolding would preserve dead code that should be removed first."
+    ],
+    "outputs": [
+      "Core data shape and access-pattern choices",
+      "Foundation-first sequence of coherent increments",
+      "Concurrent-state isolation decision"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-foundational-thinking/SKILL.md",
+        "start_line": 9,
+        "end_line": 19,
+        "supports": "Structural option value, data shapes, abstraction restraint, concurrent isolation and scaffold sequence."
+      },
+      {
+        "path": "pstack/skills/principle-foundational-thinking/SKILL.md",
+        "start_line": 21,
+        "end_line": 21,
+        "supports": "Subtraction precedes scaffolding."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-guard-the-context-window",
+    "kind": "principle",
+    "summary": "Controls reasoning load by bounding phases and moving bulk reading to delegates while retaining summaries in the coordinating context.",
+    "intents": [
+      "plan",
+      "research",
+      "operate"
+    ],
+    "when_to_use": [
+      "Long files or large outputs are filling the context.",
+      "Planning investigation fan-out without flooding the main thread."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The work is small enough that delegation adds overhead without reducing meaningful context pressure."
+    ],
+    "outputs": [
+      "Bounded file scope and phase budgets",
+      "Delegated bulk work with coordinating summaries"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-guard-the-context-window/SKILL.md",
+        "start_line": 2,
+        "end_line": 3,
+        "supports": "Context-pressure triggers, bulk delegation and summary strategy."
+      },
+      {
+        "path": "pstack/skills/principle-guard-the-context-window/SKILL.md",
+        "start_line": 9,
+        "end_line": 12,
+        "supports": "Reason for the rule and scope/turn-budget controls."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-laziness-protocol",
+    "kind": "principle",
+    "summary": "Keeps refactors and additions small by consolidating repeated choices and avoiding unnecessary layers or abstractions.",
+    "intents": [
+      "improve",
+      "design",
+      "review"
+    ],
+    "when_to_use": [
+      "Sizing a refactor or evaluating an abstraction proposal.",
+      "The same decision is being threaded or repeated across callers."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Minimizing lines would fail to solve the actual problem or preserve duplicated decisions."
+    ],
+    "outputs": [
+      "Minimal sufficient diff",
+      "One source of truth for a repeated decision"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-laziness-protocol/SKILL.md",
+        "start_line": 2,
+        "end_line": 3,
+        "supports": "Refactor, diff-size and abstraction triggers."
+      },
+      {
+        "path": "pstack/skills/principle-laziness-protocol/SKILL.md",
+        "start_line": 9,
+        "end_line": 10,
+        "supports": "Decision consolidation and smallest sufficient change."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-make-operations-idempotent",
+    "kind": "principle",
+    "summary": "Designs state-changing work to reconcile current state with the goal so retries and interrupted runs converge safely.",
+    "intents": [
+      "design",
+      "implement",
+      "test"
+    ],
+    "when_to_use": [
+      "A command, processing loop or lifecycle action can be retried after a crash.",
+      "Temporary files, claimed jobs or stale locks survive partial execution."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The operation is purely observational and cannot leave partial state."
+    ],
+    "outputs": [
+      "Current-state reconciliation steps",
+      "Recognizable stale artifacts",
+      "Repeat-run and crash-point convergence checks"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
+        "start_line": 9,
+        "end_line": 15,
+        "supports": "Retry convergence, goal comparison and stale artifact design."
+      },
+      {
+        "path": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
+        "start_line": 17,
+        "end_line": 22,
+        "supports": "Repeated-run and every-crash-point review tests."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-migrate-callers-then-delete-legacy-apis",
+    "kind": "principle",
+    "summary": "Keeps an internal API simplification coherent by migrating callers and removing the old API in the same wave, with tests aligned to the new contract.",
+    "intents": [
+      "improve",
+      "implement",
+      "test"
+    ],
+    "when_to_use": [
+      "Replacing an internal API as part of a simplification."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: External consumers require backward compatibility.",
+      "Catalog interpretation: The project cannot coordinate a breaking change."
+    ],
+    "outputs": [
+      "Migrated callers",
+      "Deleted legacy API",
+      "Tests for the new contract"
+    ],
+    "requirements": [
+      "No external users depend on backward compatibility; the project can absorb coordinated breaking changes as part of simplification or refactoring."
+    ],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+        "start_line": 2,
+        "end_line": 3,
+        "supports": "Internal API migration and same-wave deletion."
+      },
+      {
+        "path": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
+        "start_line": 9,
+        "end_line": 14,
+        "supports": "Contract-test changes and explicit applicability conditions."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-minimize-reader-load",
+    "kind": "principle",
+    "summary": "Evaluates maintainability through the indirections a reader must trace and the mutable state they must remember, then removes layers or narrows state.",
+    "intents": [
+      "design",
+      "review",
+      "improve"
+    ],
+    "when_to_use": [
+      "A new maintainer cannot quickly trace a value's origin or mutations.",
+      "A wrapper or adapter adds a broad surface without hiding meaningful complexity."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: A layer actually compresses meaningful decisions and reduces reader work."
+    ],
+    "outputs": [
+      "Reduced pass-through layers",
+      "Narrower state scope and derived values",
+      "Interface compression and traceability assessment"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-minimize-reader-load/SKILL.md",
+        "start_line": 9,
+        "end_line": 18,
+        "supports": "Two reader-load axes, layer and state changes, interface compression and traceability test."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-model-the-domain",
+    "kind": "principle",
+    "summary": "Encodes domain invariants and access patterns in an appropriate structure rather than spreading lifecycle rules across conditionals and phases.",
+    "intents": [
+      "design",
+      "implement",
+      "improve"
+    ],
+    "when_to_use": [
+      "Stateful logic keeps adding booleans or branches.",
+      "Several files repeat the same shape assumption or domain invariant."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The current shape is clear, local and unlikely to grow.",
+      "Catalog interpretation: An abstraction adds indirection without removing branches, duplicated rules or invalid states."
+    ],
+    "outputs": [
+      "Domain-aligned state machine, typed model, registry or module boundary",
+      "Explicit invariant and access-pattern design"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-model-the-domain/SKILL.md",
+        "start_line": 9,
+        "end_line": 20,
+        "supports": "Domain encoding and concrete structural alternatives."
+      },
+      {
+        "path": "pstack/skills/principle-model-the-domain/SKILL.md",
+        "start_line": 22,
+        "end_line": 24,
+        "supports": "Abstraction restraint and signs of scattered lifecycle knowledge."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-never-block-on-the-human",
+    "kind": "principle",
+    "summary": "Lets reversible execution proceed with reasonable decisions and asynchronous supervision while retaining confirmation for irreversible actions and human control of product direction.",
+    "intents": [
+      "operate",
+      "implement",
+      "plan"
+    ],
+    "when_to_use": [
+      "An agent is about to ask permission for a reversible code or note edit."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: An action is irreversible, such as force-push, deleting production data or sending external messages.",
+      "Catalog interpretation: The unresolved choice is product direction owned by the human."
+    ],
+    "outputs": [
+      "Completed reversible work with an explanation",
+      "Confirmation boundary for irreversible actions"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Proceed on reversible work without blocking; irreversible actions such as force-push, production-data deletion and external messages require confirmation. Product direction remains with the human.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-never-block-on-the-human/SKILL.md",
+        "start_line": 9,
+        "end_line": 15,
+        "supports": "Asynchronous supervision, reversible action examples, irreversible confirmation and product ownership."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-outcome-oriented-execution",
+    "kind": "principle",
+    "summary": "Allows explicitly scoped transitional breakage during a planned migration so work converges on the verified target architecture without accumulating compatibility scaffolding.",
+    "intents": [
+      "plan",
+      "implement",
+      "improve"
+    ],
+    "when_to_use": [
+      "A planned rewrite has explicit phase and verification boundaries."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Intermediate breakage is unplanned, unscoped or not reversible.",
+      "Catalog interpretation: The task lacks a completion gate for full static and runtime verification."
+    ],
+    "outputs": [
+      "Declared temporary-breakage boundaries",
+      "Target architecture without throwaway compatibility code",
+      "High-signal phase checks and full completion verification"
+    ],
+    "requirements": [
+      "A planned rewrite or migration with explicit phase boundaries; declared acceptable breakage and full static/runtime verification at completion."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+        "start_line": 9,
+        "end_line": 21,
+        "supports": "End-state priority, planned reversible breakage and verification guardrails."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-prove-it-works",
+    "kind": "principle",
+    "summary": "Checks task outputs against the actual artifact and, where feasible, keeps a deterministic verification script and evidence for reviewers.",
+    "intents": [
+      "test",
+      "review",
+      "operate"
+    ],
+    "when_to_use": [
+      "An agent is about to declare a task complete.",
+      "A claim relies on freshness, cached output or a delegate's self-report."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The question is measurement magnitude or validity of a speedup rather than output reality."
+    ],
+    "outputs": [
+      "Direct observation of the real output",
+      "Rerunnable comparison script and visible evidence artifact"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/show-me-your-work"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-prove-it-works/SKILL.md",
+        "start_line": 9,
+        "end_line": 16,
+        "supports": "Direct reality checks and rejection of proxy evidence."
+      },
+      {
+        "path": "pstack/skills/principle-prove-it-works/SKILL.md",
+        "start_line": 18,
+        "end_line": 22,
+        "supports": "Scripted checks, visible artifact and audit-trail companion."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-redesign-from-first-principles",
+    "kind": "principle",
+    "summary": "Integrates a requirement by reconsidering the whole affected design as though the requirement had always existed, then delivering the redesign incrementally.",
+    "intents": [
+      "design",
+      "plan",
+      "improve"
+    ],
+    "when_to_use": [
+      "A new requirement would otherwise be bolted onto an existing architecture."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Repeated failed fixes require testing an assumed fact rather than accommodating a new requirement."
+    ],
+    "outputs": [
+      "Requirement-informed target design",
+      "Updated affected types, documentation, examples and rationale",
+      "Incremental delivery sequence"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+        "start_line": 9,
+        "end_line": 16,
+        "supports": "Whole-design reconsideration, affected-reference propagation and incremental delivery."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-separate-before-serializing-shared-state",
+    "kind": "principle",
+    "summary": "Removes unnecessary shared write targets before introducing locks, and uses structural ownership or serialization when one canonical mutable object is unavoidable.",
+    "intents": [
+      "design",
+      "implement",
+      "review"
+    ],
+    "when_to_use": [
+      "Two workers may update the same state file, branch or key.",
+      "A proposed lock may be avoidable through independent owned outputs."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: There are no concurrent mutable writers.",
+      "Catalog interpretation: Instruction-only coordination is being treated as an adequate lock."
+    ],
+    "outputs": [
+      "Shared-state ownership map",
+      "Independent write targets merged at the reporting boundary",
+      "Structural single-writer or atomic coordination where required"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+        "start_line": 9,
+        "end_line": 16,
+        "supports": "Eliminate sharing first, race rationale, ownership partitioning and structural serialization."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-sequence-verifiable-units",
+    "kind": "principle",
+    "summary": "Sequences multi-step execution and delivery into small checked units whose order demonstrates correctness to a reviewer.",
+    "intents": [
+      "plan",
+      "implement",
+      "test"
+    ],
+    "when_to_use": [
+      "A migration or sweep applies many similar changes.",
+      "Commits or PRs need a replayable proof order, such as failing test before fix."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: A migration deliberately permits scoped transitional breakage; reconcile the verification unit with that declared boundary before combining principles."
+    ],
+    "outputs": [
+      "Small before/after units with passing checks",
+      "Commit or PR sequence that demonstrates the change"
+    ],
+    "requirements": [
+      "The source asks for rebasing onto clean trunk before per-unit checks so they measure the real baseline."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/principle-prove-it-works",
+      "poteto/principle-build-the-lever"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+        "start_line": 9,
+        "end_line": 17,
+        "supports": "Per-unit green gates, clean-trunk baseline, delivery proof order and verification companions."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-subtract-before-you-add",
+    "kind": "principle",
+    "summary": "Simplifies the existing base before extending it by removing dead code, redundant rules and references without novel content.",
+    "intents": [
+      "plan",
+      "improve",
+      "implement"
+    ],
+    "when_to_use": [
+      "Sequencing an addition, refactor or rewrite with existing dead weight.",
+      "Agent prompts or reference files repeat content without adding meaning."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Removal would discard required behavior or an observed use rather than speculative complexity."
+    ],
+    "outputs": [
+      "Subtraction-first work sequence",
+      "Smaller code or instruction surface ready for extension"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
+        "start_line": 9,
+        "end_line": 18,
+        "supports": "Continual simplification, removal order, observed scope and redundant-reference deletion."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-test-behavior-not-implementation",
+    "kind": "principle",
+    "summary": "Judges a test by whether it catches broken observable behavior while surviving internal restructuring, then rewrites assertions around the consumer contract.",
+    "intents": [
+      "test",
+      "review",
+      "improve"
+    ],
+    "when_to_use": [
+      "Writing or reviewing regression tests.",
+      "A refactor repeatedly breaks tests despite identical consumer-visible behavior."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The assertion targets a private helper or internal call order that no consumer observes.",
+      "Catalog interpretation: A test checks data it constructed itself without exercising the relevant interface."
+    ],
+    "outputs": [
+      "Contract-driven test cases",
+      "Assertions that catch behavioral regressions and survive internal refactors"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+        "start_line": 9,
+        "end_line": 16,
+        "supports": "Observable behavior definition, two-edit test-quality check and requirement-derived expectations."
+      },
+      {
+        "path": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+        "start_line": 18,
+        "end_line": 20,
+        "supports": "External effects, precise contract-dependent assertions and invariants."
+      }
+    ]
+  },
+  {
+    "id": "poteto/principle-type-system-discipline",
+    "kind": "principle",
+    "summary": "Uses types and authoritative schemas to prevent invalid states, semantic primitive mixups and unhandled variants before runtime.",
+    "intents": [
+      "design",
+      "implement",
+      "review"
+    ],
+    "when_to_use": [
+      "Designing signatures in a statically typed language.",
+      "External data or parallel hand-maintained types need a trusted parsing boundary or authoritative schema."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The environment has no static type system for the proposed compile-time guarantees.",
+      "Catalog interpretation: The question is TypeScript syntax; consult the dedicated TypeScript skill alongside this general rule."
+    ],
+    "outputs": [
+      "Semantically distinct primitive types",
+      "Parsed boundary domain model",
+      "Schema-derived authoritative types"
+    ],
+    "requirements": [
+      "A statically typed language for compiler-enforced guarantees; TypeScript-specific syntax is delegated to typescript-best-practices."
+    ],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/typescript-best-practices",
+      "poteto/principle-boundary-discipline",
+      "poteto/principle-encode-lessons-in-structure"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/principle-type-system-discipline/SKILL.md",
+        "start_line": 2,
+        "end_line": 3,
+        "supports": "Static-language scope and core type-system applications."
+      },
+      {
+        "path": "pstack/skills/principle-type-system-discipline/SKILL.md",
+        "start_line": 9,
+        "end_line": 13,
+        "supports": "Semantic branding, external parsing, schema derivation and explicit companions."
+      }
+    ]
+  }
+]

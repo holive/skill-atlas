@@ -1,0 +1,20 @@
+{
+  "status": "pass",
+  "direction": "Classic editorial webpage, following the supplied visual reference.",
+  "changes": [
+    "Times-style serif typography",
+    "Centered reading column with inset sections",
+    "Standard blue underlined links",
+    "Thin gray rules",
+    "Plain native-style controls",
+    "Text emphasis in place of modern cards"
+  ],
+  "application_scripts_unchanged": true,
+  "module_case": "module-isolated-strategy",
+  "mobile_width": 320,
+  "mobile_no_horizontal_overflow": true,
+  "module_search_first": "matt/codebase-design",
+  "standalone_console_errors": [],
+  "offline_regressions": "35 goal cases, 7 searches and 22 original baseline cases passed",
+  "html_sha256": "3e4b93939c3239f026cb0d16dc8cd54381072d6125c756738db692bcc125b0b0"
+}

@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skill Atlas — find a useful next skill</title>
+  <style>
+    :root { color-scheme: light; }
+    * { box-sizing: border-box; }
+    body { max-width: 52rem; margin: 0 auto; padding: 1.5rem 1rem 3rem; color: #111; background: #fff; font: 18px/1.45 "Times New Roman", Times, serif; }
+    h1, h2, h3, h4, legend { line-height: 1.15; }
+    h1 { margin: 0 0 .25rem; font-size: 2rem; }
+    h2 { margin: 0 0 1rem; font-size: 1.7rem; }
+    h3, h4 { margin: 0 0 .5rem; font-size: 1.2rem; }
+    p { margin: .9rem 0; }
+    main > p { margin-top: .25rem; }
+    a { color: #0000ee; text-decoration: underline; overflow-wrap: anywhere; }
+    a:visited { color: #551a8b; }
+    nav { margin: 1rem 0 0; padding-bottom: 1rem; border-bottom: 1px solid #999; }
+    nav a { white-space: nowrap; }
+    #guide, #browse, #feedback { max-width: 42rem; margin: 0 auto; padding: 1.6rem 0; scroll-margin-top: 1.5rem; }
+    hr { margin: .5rem 0; border: 0; border-top: 1px solid #999; }
+    fieldset { min-width: 0; margin: 0 0 1rem; padding: 0; border: 0; }
+    legend { padding: 0; margin-bottom: .8rem; font-size: 1.25rem; font-weight: bold; }
+    #goal-form legend { font-size: 1rem; font-style: italic; font-weight: normal; }
+    #goals, #choices { display: grid; gap: .25rem; }
+    #goals label, #choices label { display: flex; align-items: flex-start; gap: .55rem; padding: .35rem .25rem; cursor: pointer; }
+    #goals label:hover, #choices label:hover { background: #f5f5f5; }
+    #goals label:has(input:checked) > span > span, #choices label:has(input:checked) > span > span { font-weight: bold; }
+    #goals small { display: block; margin-top: .1rem; font-size: .9rem; line-height: 1.35; color: #333; font-weight: normal; }
+    input[type="radio"], input[type="checkbox"] { width: 1rem; height: 1rem; accent-color: auto; }
+    #goals input, #choices input { flex: 0 0 auto; margin: .3rem 0 0; }
+    button, input, select, textarea { font: inherit; }
+    button { min-height: 2.3rem; margin: .25rem .4rem .25rem 0; padding: .25rem .7rem; color: #111; background: #eee; border: 2px outset #ccc; border-radius: 0; cursor: pointer; }
+    button:active:not(:disabled) { border-style: inset; }
+    button:disabled { color: #666; cursor: not-allowed; }
+    :focus-visible { outline: 2px dotted #222; outline-offset: 3px; }
+    #selected-goal { margin: 0 0 1.25rem; font: .9rem/1.4 "Courier New", monospace; }
+    #guide:has(#goal-form[hidden]) > #guide-heading { display: none; }
+    #result-heading { font-size: 2rem; }
+    #why { font-size: 1.1rem; font-style: italic; }
+    #primary { margin: 1.5rem 0; padding-left: 1.1rem; border-left: 2px solid #999; }
+    #primary article { margin: 0; padding: 0; border: 0; }
+    #primary h3 { font-size: 1.4rem; }
+    #result-panel > p:has(#next-step) { margin: 1.4rem 0; font-style: italic; }
+    #alternative-panel { margin: 1.8rem 0; }
+    article { margin: 1.3rem 0; padding-bottom: 1.2rem; border-bottom: 1px solid #bbb; }
+    article > p:first-of-type, #snapshot { color: #333; font: .9rem/1.4 "Courier New", monospace; }
+    details { margin: 1rem 0; }
+    summary { width: fit-content; color: #333; cursor: pointer; font-size: .95rem; }
+    details[open] > summary { margin-bottom: .8rem; }
+    #history button { text-align: left; font-size: .95rem; }
+    ul, ol { padding-left: 1.4rem; }
+    li + li { margin-top: .3rem; }
+    textarea, input[type="search"], select { max-width: 100%; padding: .3rem .4rem; color: #111; background: #fff; border: 1px solid #888; border-radius: 0; }
+    textarea, input[type="search"] { width: 100%; }
+    textarea { resize: vertical; }
+    #search { min-height: 2.4rem; }
+    #feedback-status:not(:empty) { font-weight: bold; }
+    @media (max-width: 600px) {
+      body { padding: 1rem .9rem 2rem; }
+      h1, #result-heading { font-size: 1.8rem; }
+      #guide, #browse, #feedback { padding: 1.4rem 0; }
+    }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Find a useful next skill</h1>
+  <p>Choose the result you need, or search the catalog. Recommendations explain scope and prerequisites; they do not run a skill.</p>
+  <nav><a href="#guide">Help me choose</a> · <a href="#browse">Search all skills</a></nav>
+
+  <section id="guide" aria-labelledby="guide-heading">
+    <h2 id="guide-heading" tabindex="-1">What do you want to leave with?</h2>
+    <form id="goal-form"><fieldset><legend>Choose a goal</legend><div id="goals"></div></fieldset><button type="submit">Continue</button></form>
+    <p id="selected-goal" hidden></p>
+    <section id="question-panel" hidden>
+      <form id="question-form">
+        <fieldset><legend id="question-heading" tabindex="-1"></legend><p id="question-hint"></p><div id="choices"></div></fieldset>
+        <button type="submit">Continue</button><button type="button" id="unsure">Not sure</button>
+      </form>
+      <div id="uncertain-panel" hidden>
+        <p>These are possible directions, not a settled recommendation. Compare their results, or <a href="#browse">search the catalog</a>.</p>
+        <ul id="nearby"></ul>
+      </div>
+    </section>
+    <section id="result-panel" hidden aria-labelledby="result-heading">
+      <h2 id="result-heading" tabindex="-1"></h2>
+      <p id="why"></p>
+      <div id="primary"></div>
+      <p><strong>Do next:</strong> <span id="next-step"></span></p>
+      <p><strong>Scope:</strong> <span id="boundary"></span></p>
+      <p id="playbook" hidden></p>
+      <div id="prerequisites"></div>
+      <section id="alternative-panel" hidden><h3>Choose the other approach if…</h3><p id="alternative-when"></p><div id="alternative"></div></section>
+      <details id="support-panel"><summary>Support, only if needed</summary><div id="support"></div></details>
+    </section>
+    <p id="navigation-controls" hidden><button type="button" id="back">Back</button><button type="button" id="change-goal">Change goal</button></p>
+    <details id="history-panel" hidden><summary>Your choices</summary><ol id="history"></ol></details>
+  </section>
+
+  <hr>
+  <section id="browse" aria-labelledby="browse-heading">
+    <h2 id="browse-heading">Search or browse the catalog</h2>
+    <p><label for="search">Search names, tasks and expected results</label></p>
+    <input id="search" type="search" placeholder="Example: test a module without running the system" aria-describedby="search-help">
+    <p id="search-help">Local keyword search, including related English and Portuguese terms. Matches are candidates to inspect; they do not change the guided answers.</p>
+    <p><label for="collection">Collection:</label> <select id="collection"><option value="">Both collections</option><option value="matt">Matt</option><option value="poteto">Poteto</option></select></p>
+    <p><label><input id="include-unpromoted" type="checkbox"> Include beta and specialized skills</label><br><label><input id="include-principles" type="checkbox"> Include principles</label></p>
+    <p id="search-status" role="status"></p>
+    <div id="matches"></div>
+    <p id="no-matches" hidden>No matches with these terms and filters. Try fewer words, another task description, or include the other categories.</p>
+    <button type="button" id="more" hidden>Show 10 more</button>
+  </section>
+
+  <hr>
+  <section id="feedback" aria-labelledby="feedback-heading">
+    <h2 id="feedback-heading">Record a real test</h2>
+    <p>Feedback stays in this browser. Download it to keep or share a copy.</p>
+    <form id="feedback-form">
+      <p><label for="scenario">Test note — does not change recommendations</label></p>
+      <textarea id="scenario" rows="2" placeholder="What were you trying to do?"></textarea>
+      <p id="feedback-context">Choose a goal or evaluate a search match first.</p>
+      <p><label for="selected-skill">What would you use next?</label><br><select id="selected-skill" required><option value="">Choose a skill, or none</option></select></p>
+      <p><label for="rating">How well does this fit?</label><br><select id="rating" required><option value="">Choose a rating</option><option value="useful">Useful</option><option value="partly">Partly useful</option><option value="wrong">Wrong recommendation</option><option value="unclear">Question is unclear</option></select></p>
+      <p><label for="comment">What should change? (optional)</label></p><textarea id="comment" rows="3"></textarea>
+      <button type="submit" id="save-feedback" disabled>Save test</button><button type="button" id="clear-note">Clear test note</button>
+    </form>
+    <p id="feedback-status" role="status"></p><button type="button" id="download" disabled>Download feedback (0)</button>
+  </section>
+  <details><summary>About this version</summary><p>Source-backed interpretations of Matt Pocock's skills and Poteto's pstack. The catalog includes experimental entries, references and principles; their inclusion is not proof of installation, compatibility or authorization.</p><p>The page works offline. No search or feedback is sent to a server. Skill links open pinned upstream sources. Actual selection success still needs calibration with real tasks.</p><p id="snapshot"></p></details>
+  <noscript><p>Enable JavaScript to use the guide and search.</p></noscript>
+</main>
+<script id="atlas-data" type="application/json">__ATLAS_DATA__</script>
+<script>__ATLAS_CORE__</script>
+<script>
+'use strict';
+const data = JSON.parse(document.getElementById('atlas-data').textContent);
+const $ = id => document.getElementById(id);
+let goal = null, answers = {}, visibleMatches = 10, evaluatedMatch = null, tests = [];
+const storageKey = 'skill-atlas-feedback-v2';
+try { const saved = JSON.parse(localStorage.getItem(storageKey) || '[]'); if (Array.isArray(saved)) tests = saved; } catch (_) {}
+
+function el(tag, text) { const node = document.createElement(tag); if (text !== undefined) node.textContent = text; return node; }
+function link(text, href) {
+  const node = el('a', text), url = new URL(href);
+  if (url.protocol !== 'https:' || url.hostname !== 'github.com') throw new Error('Unexpected source URL');
+  node.href = url.href; node.target = '_blank'; node.rel = 'noopener noreferrer'; return node;
+}
+function list(items) { const node = el('ul'); for (const item of items) node.append(el('li', item)); return node; }
+function field(parent, title, items) { if (items.length) parent.append(el('p', title), list(items)); }
+function card(id, compact = false) {
+  const skill = data.skills[id], info = skill.interpretation, node = el('article'); node.dataset.skillId = id;
+  const title = el(compact ? 'h4' : 'h3'); title.append(link(id, skill.source_url));
+  node.append(title, el('p', `${info.kind} · ${skill.status} · ${skill.collection === 'matt' ? 'Matt' : 'Poteto'}`), el('p', info.summary));
+  const detail = el('details'); detail.append(el('summary', 'Scope, requirements and source evidence'));
+  field(detail, 'Use when', info.when_to_use); field(detail, 'Scope limits', info.avoid_when);
+  field(detail, 'Expected result', info.outputs); field(detail, 'Requirements', info.requirements);
+  field(detail, 'Confirmation behavior', [info.confirmation]);
+  const effects = {read:'Read source material',local_write:'Edit local files',external_write:'Update external services',execute:'Run commands or checks',delegate:'Delegate work',configure:'Change configuration'};
+  field(detail, 'Possible actions, depending on the task', info.effects.map(value => effects[value] || value));
+  const evidence = el('ul');
+  for (const item of info.evidence) { const li = el('li'), source = data.sources[skill.collection]; li.append(link(item.supports, `${source.repository}/blob/${source.commit}/${item.path}#L${item.start_line}-L${item.end_line}`)); evidence.append(li); }
+  detail.append(evidence); node.append(detail); return node;
+}
+function radios(parent, name, choices, selected) {
+  parent.replaceChildren();
+  for (const choice of choices) {
+    const row = el('div'), label = el('label'), input = el('input'); input.type = 'radio'; input.name = name; input.value = choice.id; input.required = true; input.checked = choice.id === selected;
+    const text = el('span'), title = el('span', choice.label); title.id = `${name}-${choice.id}-label`;
+    input.setAttribute('aria-labelledby', title.id); text.append(title);
+    if (choice.description) { const description = el('small', choice.description); description.id = `${name}-${choice.id}-description`; input.setAttribute('aria-describedby', description.id); text.append(description); }
+    label.append(input, text); row.append(label); parent.append(row);
+  }
+}
+function state() { return SkillAtlas.resolve(data.navigation, goal, answers); }
+function outcomeDescendants(id, seen = new Set()) {
+  if (seen.has(id)) return []; seen.add(id);
+  if (data.navigation.outcomes[id]) return [id];
+  return data.navigation.questions[id].choices.flatMap(choice => outcomeDescendants(choice.next, seen));
+}
+function feedbackOptions(current) {
+  const old = $('selected-skill').value, select = $('selected-skill'); select.replaceChildren(new Option('Choose a skill, or none', ''));
+  let ids = [];
+  if (evaluatedMatch) { ids = [evaluatedMatch]; $('feedback-context').textContent = `Search match: ${evaluatedMatch}`; }
+  else if (current.state === 'result') { ids = [current.value.primary, current.value.alternative?.id, ...current.value.support.map(item => item.id)].filter(Boolean); $('feedback-context').textContent = `Guided result: ${current.value.title}`; }
+  else if (current.state === 'question') $('feedback-context').textContent = `Question: ${current.value.question}`;
+  else $('feedback-context').textContent = 'Choose a goal or evaluate a search match first.';
+  for (const id of [...new Set(ids)]) select.add(new Option(id, id));
+  select.add(new Option('None fits / I still do not know', 'none'));
+  if ([...select.options].some(item => item.value === old)) select.value = old;
+  $('save-feedback').disabled = !evaluatedMatch && current.state === 'goal';
+}
+function renderGuide(focus = true) {
+  const current = state(), choosing = current.state === 'goal';
+  $('goal-form').hidden = !choosing; $('selected-goal').hidden = choosing; $('navigation-controls').hidden = choosing;
+  $('selected-goal').textContent = choosing ? '' : 'Goal: ' + data.navigation.goals.find(item => item.id === goal).label;
+  $('question-panel').hidden = current.state !== 'question'; $('result-panel').hidden = current.state !== 'result';
+  $('question-panel').dataset.questionId = current.state === 'question' ? current.id : '';
+  $('result-panel').dataset.outcomeId = current.state === 'result' ? current.id : '';
+  $('uncertain-panel').hidden = true;
+  if (choosing) radios($('goals'), 'goal', data.navigation.goals, goal);
+  if (current.state === 'question') {
+    $('question-heading').textContent = current.value.question; $('question-hint').textContent = current.value.hint;
+    radios($('choices'), 'answer', current.value.choices);
+  }
+  if (current.state === 'result') {
+    const result = current.value;
+    $('result-heading').textContent = result.title; $('why').textContent = result.why;
+    $('next-step').textContent = result.next_step; $('boundary').textContent = result.boundary;
+    $('playbook').hidden = !result.playbook; $('playbook').textContent = result.playbook ? 'Poteto mode playbook: ' + result.playbook : '';
+    $('prerequisites').replaceChildren(); field($('prerequisites'), 'Before using this', result.prerequisites);
+    if (result.primary.startsWith('poteto/')) $('prerequisites').append(el('p', 'Pstack documents Cursor and a Claude Code adapter. Host-specific tools may need adaptation in Codex. Installation and available tools have not been checked.'));
+    $('primary').replaceChildren(card(result.primary));
+    $('alternative-panel').hidden = !result.alternative;
+    if (result.alternative) { $('alternative-when').textContent = result.alternative.when; $('alternative').replaceChildren(card(result.alternative.id, true)); }
+    $('support-panel').hidden = !result.support.length; $('support-panel').open = false; $('support').replaceChildren();
+    for (const support of result.support) { $('support').append(el('p', support.when), card(support.id, true)); }
+  }
+  $('back').disabled = choosing; $('history-panel').hidden = choosing;
+  $('history').replaceChildren();
+  for (let n = 0; n < current.trail.length; n++) {
+    const step = current.trail[n], row = el('li'), button = el('button', step.question + ' — ' + step.label); button.type = 'button';
+    button.addEventListener('click', () => { answers = Object.fromEntries(current.trail.slice(0, n).map(item => [item.questionId, item.answer])); evaluatedMatch = null; renderGuide(); });
+    row.append(button); $('history').append(row);
+  }
+  feedbackOptions(current);
+  if (focus) $(choosing ? 'guide-heading' : current.state === 'question' ? 'question-heading' : 'result-heading').focus();
+}
+$('goal-form').addEventListener('submit', event => { event.preventDefault(); goal = new FormData(event.currentTarget).get('goal'); answers = {}; evaluatedMatch = null; renderGuide(); });
+$('question-form').addEventListener('submit', event => { event.preventDefault(); const current = state(); answers[current.id] = new FormData(event.currentTarget).get('answer'); evaluatedMatch = null; renderGuide(); });
+$('back').addEventListener('click', () => {
+  const current = state(); evaluatedMatch = null;
+  if (!current.trail.length) goal = null;
+  else answers = Object.fromEntries(current.trail.slice(0, -1).map(item => [item.questionId, item.answer]));
+  renderGuide();
+});
+$('change-goal').addEventListener('click', () => { goal = null; answers = {}; evaluatedMatch = null; renderGuide(); });
+$('unsure').addEventListener('click', () => {
+  const current = state(); $('uncertain-panel').hidden = !$('uncertain-panel').hidden; $('nearby').replaceChildren();
+  for (const id of [...new Set(outcomeDescendants(current.id))].slice(0, 6)) { const result = data.navigation.outcomes[id]; $('nearby').append(el('li', result.title + ': ' + result.why)); }
+});
+function renderSearch(resetLimit = true) {
+  if (resetLimit) visibleMatches = 10;
+  const results = SkillAtlas.search(data.skills, $('search').value, {collection:$('collection').value, includeUnpromoted:$('include-unpromoted').checked, includePrinciples:$('include-principles').checked}, data.vocabulary);
+  $('search-status').textContent = `Showing ${Math.min(visibleMatches, results.length)} of ${results.length} matches (${data.snapshot.skill_count} skills in the full catalog).`;
+  $('matches').replaceChildren(); $('no-matches').hidden = results.length !== 0; $('more').hidden = results.length <= visibleMatches;
+  for (const match of results.slice(0, visibleMatches)) {
+    const node = card(match.skill.id);
+    if (match.matched.length) node.append(el('p', 'Related keywords: ' + match.matched.join(', ')));
+    const button = el('button', 'Evaluate this match'); button.type = 'button';
+    button.addEventListener('click', () => { evaluatedMatch = match.skill.id; if (!$('scenario').value) $('scenario').value = $('search').value; feedbackOptions(state()); $('feedback-heading').tabIndex = -1; $('feedback-heading').focus(); });
+    node.append(button); $('matches').append(node);
+  }
+}
+$('search').addEventListener('input', () => renderSearch());
+for (const id of ['collection','include-unpromoted','include-principles']) $(id).addEventListener('change', () => renderSearch());
+$('more').addEventListener('click', () => { visibleMatches += 10; renderSearch(false); });
+function updateTestCount() { $('download').disabled = !tests.length; $('download').textContent = `Download feedback (${tests.length})`; }
+$('feedback-form').addEventListener('submit', event => {
+  event.preventDefault(); const current = state(); if ($('save-feedback').disabled) return;
+  tests.push({version:2,saved_at:new Date().toISOString(),snapshot:data.snapshot,mode:evaluatedMatch?'search':'guide',scenario:$('scenario').value.trim(),goal:evaluatedMatch?null:goal,answers:evaluatedMatch?[]:current.trail,outcome_id:!evaluatedMatch&&current.state==='result'?current.id:null,primary:evaluatedMatch||(current.state==='result'?current.value.primary:null),search_query:$('search').value,search_filters:{collection:$('collection').value,include_unpromoted:$('include-unpromoted').checked,include_principles:$('include-principles').checked},evaluated_match:evaluatedMatch,selected_skill:$('selected-skill').value,rating:$('rating').value,comment:$('comment').value.trim()});
+  let saved = false; try { localStorage.setItem(storageKey,JSON.stringify(tests)); saved = true; } catch (_) {}
+  $('feedback-status').textContent = saved ? 'Test saved in this browser. Download feedback to keep or share a copy.' : 'Saved for this session only. Download feedback before closing the page.';
+  $('rating').value = ''; $('comment').value = ''; updateTestCount();
+});
+$('clear-note').addEventListener('click', () => { $('scenario').value = ''; });
+$('download').addEventListener('click', () => {
+  const url = URL.createObjectURL(new Blob([JSON.stringify({format:'skill-atlas-feedback-v2',tests},null,2)],{type:'application/json'})), anchor = el('a');
+  anchor.href = url; anchor.download = 'skill-atlas-feedback-v2.json'; document.body.append(anchor); anchor.click(); anchor.remove(); setTimeout(() => URL.revokeObjectURL(url),1000);
+});
+$('snapshot').textContent = `Version 2. ${data.snapshot.skill_count} cataloged skills. Goal selection and search share the same source-backed catalog.`;
+renderGuide(false); renderSearch(); updateTestCount();
+</script>
+</body>
+</html>

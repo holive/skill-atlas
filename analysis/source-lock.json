@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "interpretation_completed_at": "2026-10-25T01:48:19.250461+00:00",
+  "basis": "All 96 primary SKILL.md files were read in full by source-reading agents; selected supporting files and all 23 Poteto mode playbooks were read for material semantics. This lock prevents accidental reuse of analyses with changed snapshots; it does not certify semantic truth.",
+  "sources": {
+    "matt": {
+      "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
+      "snapshot_tree_sha256": "5a4750438942dfbcbb7a51227ec600c62afac26f6edbf4dc28741127da28cccb"
+    },
+    "poteto": {
+      "commit": "9580c23696ac8d7abed0c166f2f9918800afb819",
+      "snapshot_tree_sha256": "23171478cdfbf5cb06a9d87759e0cf55fd3d4169c5f113623f25d0f20553c3e3"
+    }
+  },
+  "artifacts": {
+    "analysis/matt.json": "842afea2bd05fd4dc8dad3518b25cbb41829b554b8c616c86f1df8ea539ff3ee",
+    "analysis/poteto-workflows.json": "b7d17dbdcafd82c48a27a81148b063bb0d492ec9fe8075aa4613af2ff6d634fa",
+    "analysis/poteto-principles.json": "b6460feb4f0461822c30e1bb2d59e59377b7cfe36d50d9e679c5032d3da2edb4",
+    "catalog/routes.json": "0058cdb02f8835f3585a9994123cc8fa00b9be6a3cdb6a605538717d4f48a396",
+    "catalog/compatibility.json": "1722cbd010629cbe40d145e9f52e3ace557a941c09849b1c74ca08dcca106103",
+    "catalog/scenarios.json": "d1ba817926ddd2ca9c7b6a7ae0cbae09e0905516a6fda24e10ab949e81a45389"
+  }
+}

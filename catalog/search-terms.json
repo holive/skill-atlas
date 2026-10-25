@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "description": "Curated local keyword vocabulary; matching does not establish eligibility or authorize execution.",
+  "stopwords": [
+    "a",
+    "an",
+    "the",
+    "in",
+    "on",
+    "for",
+    "of",
+    "with",
+    "without",
+    "to",
+    "and",
+    "or",
+    "how",
+    "can",
+    "i",
+    "my",
+    "me",
+    "want",
+    "need",
+    "do",
+    "does",
+    "is",
+    "be",
+    "are",
+    "whole",
+    "entire",
+    "analyze",
+    "analysis",
+    "this",
+    "that",
+    "as",
+    "it",
+    "at",
+    "by",
+    "from",
+    "some",
+    "um",
+    "uma",
+    "o",
+    "os",
+    "as",
+    "de",
+    "do",
+    "da",
+    "dos",
+    "das",
+    "para",
+    "como",
+    "sem",
+    "eu",
+    "meu",
+    "quero",
+    "preciso",
+    "inteiro",
+    "toda",
+    "todo"
+  ],
+  "synonyms": {
+    "test": [
+      "tests",
+      "testing",
+      "testar",
+      "teste",
+      "testes"
+    ],
+    "module": [
+      "modules",
+      "modulo",
+      "modulos"
+    ],
+    "isolated": [
+      "isolation",
+      "isolating",
+      "isolado",
+      "isolada",
+      "isolados"
+    ],
+    "system": [
+      "systems",
+      "application",
+      "applications",
+      "app",
+      "sistema"
+    ],
+    "run": [
+      "running",
+      "execute",
+      "executing",
+      "start",
+      "starting",
+      "rodar",
+      "executar",
+      "iniciar"
+    ],
+    "dependency": [
+      "dependencies",
+      "dependencia",
+      "dependencias"
+    ],
+    "spec": [
+      "specification",
+      "specifications",
+      "requisitos",
+      "especificacao"
+    ],
+    "bug": [
+      "bugs",
+      "defect",
+      "defects",
+      "erro",
+      "erros"
+    ],
+    "review": [
+      "reviewing",
+      "revisar",
+      "revisao"
+    ],
+    "prompt": [
+      "prompts"
+    ],
+    "parallel": [
+      "parallelism",
+      "paralelo",
+      "paralelismo"
+    ],
+    "diagram": [
+      "diagrams",
+      "diagrama",
+      "diagramas"
+    ]
+  },
+  "aliases": {
+    "matt/codebase-design": "test module without run full system isolated unit test testability seam dependency injection public interface modulo isolado sem rodar sistema",
+    "matt/tdd": "test first red green unit test feature test integration test agreed public interface testar comportamento isolated test module public seam",
+    "poteto/tdd": "bug regression test failing cheap local reproduction",
+    "matt/diagnosing-bugs": "diagnose bug intermittent flake regression broken slow investigar erro",
+    "matt/to-spec": "agreed decisions write spec requirements specification before implementation document settled discussion",
+    "matt/to-tickets": "break spec tasks dependencies blocking graph tickets issues",
+    "matt/triage": "incoming raw bug reports issues classify prioritize triagem",
+    "matt/retro": "retrospective repeated agent mistakes improve environment navigation",
+    "matt/to-questionnaire": "questionnaire stakeholder external knowledge questions someone else",
+    "matt/handoff": "resume transfer coding work context colleague another agent",
+    "poteto/recall": "resume coding recover context history memory recent work",
+    "poteto/how": "explain module subsystem dependencies architecture mechanics walkthrough",
+    "poteto/why": "historical rationale why design decision reasons evidence",
+    "poteto/sharpen": "rewrite improve prompt task brief instruction",
+    "poteto/swarm": "parallel workers coverage partition separate independent tasks",
+    "poteto/arena": "parallel competing implementations compare candidates same brief bakeoff",
+    "poteto/correct": "recurring repeated agent mistakes structural enforcement prevent errors",
+    "poteto/reflect": "lessons session improve skills retrospective",
+    "poteto/statechart": "state machine transitions diagram TLA model formal states",
+    "poteto/create-verification-skill": "create browser app verification harness smoke e2e end to end",
+    "poteto/maintain-verification-skill": "update repair existing verification harness feature coverage drift",
+    "poteto/create-formal-verification-skill": "create formal model invariant bounded verification",
+    "poteto/maintain-formal-verification-skill": "update formal model drift invariant code synchronization",
+    "matt/teach": "course lessons learning persistent workspace aprender curso",
+    "poteto/teach": "explain concept conversational understanding explicar",
+    "matt/code-review": "diff review specification standards correctness",
+    "poteto/interrogate": "adversarial diff review multiple model perspectives",
+    "poteto/poteto-mode": "feature refactoring performance shipping babysit PR readiness autonomous orchestration workflow",
+    "matt/wizard": "human setup credentials dashboard interactive procedure",
+    "matt/setup-matt-pocock-skills": "configure Matt issue tracker glossary setup repo",
+    "poteto/setup-pstack": "configure Poteto pstack model roles setup",
+    "poteto/typescript-best-practices": "TypeScript types discriminated unions branded primitives TS TSX"
+  }
+}

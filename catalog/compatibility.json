@@ -1,0 +1,224 @@
+{
+  "schema_version": 1,
+  "status": "Curator interpretations of pinned source evidence; not upstream compatibility guarantees.",
+  "notes": [
+    {
+      "id": "one-owner",
+      "relation": "conditional_composition",
+      "skills": [
+        "matt/implement",
+        "matt/implement-spec",
+        "poteto/poteto-mode"
+      ],
+      "interpretation": "Choose one execution coordinator for a task; treat the other complete workflow as an alternative. Borrow a focused reference only when its constraints fit the chosen workflow.",
+      "evidence": [
+        {
+          "collection": "matt",
+          "path": "skills/engineering/implement/SKILL.md",
+          "start_line": 7,
+          "end_line": 17,
+          "supports": "Owns implementation through tests, review, QA and commit."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/poteto-mode/SKILL.md",
+          "start_line": 121,
+          "end_line": 125,
+          "supports": "Owns playbook selection and its required steps."
+        }
+      ]
+    },
+    {
+      "id": "tdd-name-collision",
+      "relation": "different_scope",
+      "skills": [
+        "matt/tdd",
+        "poteto/tdd"
+      ],
+      "interpretation": "Matt covers feature and bug TDD at confirmed public seams; Poteto is a practical bug regression route with explicit alternatives when test setup is disproportionate. Qualify every reference and preserve the confirmation difference.",
+      "evidence": [
+        {
+          "collection": "matt",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "start_line": 18,
+          "end_line": 26,
+          "supports": "User-confirmed public testing seams."
+        },
+        {
+          "collection": "matt",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "start_line": 34,
+          "end_line": 38,
+          "supports": "Red-green loop; refactoring occurs at review."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/tdd/SKILL.md",
+          "start_line": 9,
+          "end_line": 26,
+          "supports": "Bug regression scope and impractical-test fallback."
+        }
+      ]
+    },
+    {
+      "id": "teach-name-collision",
+      "relation": "different_deliverable",
+      "skills": [
+        "matt/teach",
+        "poteto/teach"
+      ],
+      "interpretation": "Matt creates a persistent learning workspace with lessons and history. Poteto explains a body of work through how/why investigations. Select by desired result rather than name similarity.",
+      "evidence": [
+        {
+          "collection": "matt",
+          "path": "skills/productivity/teach/SKILL.md",
+          "start_line": 8,
+          "end_line": 20,
+          "supports": "Stateful learning workspace."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/teach/SKILL.md",
+          "start_line": 9,
+          "end_line": 15,
+          "supports": "Conversational explanation using how and why."
+        }
+      ]
+    },
+    {
+      "id": "approval-policy",
+      "relation": "different_gates",
+      "skills": [
+        "matt/grilling",
+        "matt/tdd",
+        "poteto/poteto-mode"
+      ],
+      "interpretation": "Surface source approval checkpoints as part of the comparison. Upstream autonomy prose cannot grant authority beyond the human request, actual tools or host policy.",
+      "evidence": [
+        {
+          "collection": "matt",
+          "path": "skills/productivity/grilling/SKILL.md",
+          "start_line": 28,
+          "end_line": 30,
+          "supports": "Human decisions and final shared-understanding gate."
+        },
+        {
+          "collection": "matt",
+          "path": "skills/engineering/tdd/SKILL.md",
+          "start_line": 22,
+          "end_line": 24,
+          "supports": "Testing-seam confirmation."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/poteto-mode/SKILL.md",
+          "start_line": 81,
+          "end_line": 87,
+          "supports": "Reversible actions and always-pause source policy."
+        }
+      ]
+    },
+    {
+      "id": "host-readiness",
+      "relation": "host_dependent",
+      "skills": [
+        "poteto/poteto-mode",
+        "poteto/poteto-help",
+        "poteto/setup-pstack"
+      ],
+      "interpretation": "Pstack has Cursor assumptions and an explicit Claude Code adapter. Inclusion in this catalog does not establish Codex execution support or model availability.",
+      "evidence": [
+        {
+          "collection": "poteto",
+          "path": "pstack/docs/harness/claude-code.md",
+          "start_line": 3,
+          "end_line": 38,
+          "supports": "Existing Claude Code mappings and model fallback."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/poteto-mode/SKILL.md",
+          "start_line": 91,
+          "end_line": 101,
+          "supports": "Task, agent type and model-role requirements."
+        }
+      ]
+    },
+    {
+      "id": "architecture-effects",
+      "relation": "different_effects",
+      "skills": [
+        "matt/codebase-design",
+        "poteto/architect"
+      ],
+      "interpretation": "Matt codebase-design is a vocabulary reference. Poteto architect explores candidates and implements by default. A design-only request needs an explicit checkpoint.",
+      "evidence": [
+        {
+          "collection": "matt",
+          "path": "skills/engineering/codebase-design/SKILL.md",
+          "start_line": 8,
+          "end_line": 18,
+          "supports": "Reference vocabulary and module interface definitions."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/architect/SKILL.md",
+          "start_line": 41,
+          "end_line": 53,
+          "supports": "Default implementation and optional requested checkpoint."
+        }
+      ]
+    },
+    {
+      "id": "review-preparation-effects",
+      "relation": "mutation_before_review",
+      "skills": [
+        "matt/code-review",
+        "poteto/no-comments",
+        "poteto/interrogate"
+      ],
+      "interpretation": "Distinguish reporting a review from modifying code in preparation for review. No-comments can delete comments; it must not be treated as a read-only quality checklist.",
+      "evidence": [
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/no-comments/SKILL.md",
+          "start_line": 19,
+          "end_line": 24,
+          "supports": "Delegated comment deletion and approval rules."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/interrogate/SKILL.md",
+          "start_line": 9,
+          "end_line": 23,
+          "supports": "Review scope without automatically applying findings."
+        }
+      ]
+    },
+    {
+      "id": "migration-unit-scope",
+      "relation": "conditional_tension",
+      "skills": [
+        "poteto/principle-outcome-oriented-execution",
+        "poteto/principle-sequence-verifiable-units"
+      ],
+      "interpretation": "Choose explicit phase and verification-unit boundaries. Planned reversible intermediate breakage and green completed units are conditional constraints, not an unconditional pair of defaults.",
+      "evidence": [
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+          "start_line": 13,
+          "end_line": 21,
+          "supports": "Allows planned scoped intermediate breakage with final verification."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+          "start_line": 9,
+          "end_line": 15,
+          "supports": "Each completed unit is checked before the next."
+        }
+      ]
+    }
+  ]
+}

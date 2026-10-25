@@ -1,0 +1,12 @@
+{
+  "interval_days": 14,
+  "status": "ACTIVE",
+  "runner": "Codex local thread heartbeat",
+  "automation_id": "rebuild-skill-atlas-every-14-days",
+  "thread_id": "01a1709e-6429-7bc3-ac04-789ac21acecb",
+  "timezone": "America/Sao_Paulo",
+  "publication": "https://holive.github.io/skill-atlas/",
+  "repository": "https://github.com/holive/skill-atlas",
+  "interpretation": "Agent-led complete reread when downloaded source content changes; scripts only inventory, validate and render.",
+  "availability": "Maintenance requires the local Mac and Codex app; GitHub Pages hosting does not."
+}

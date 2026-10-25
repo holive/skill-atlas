@@ -1,0 +1,1885 @@
+[
+  {
+    "id": "poteto/architect",
+    "kind": "workflow",
+    "summary": "Explores competing type and module designs, synthesizes a usage-first sketch, then implements against it. The human design checkpoint is opt-in.",
+    "intents": [
+      "design",
+      "implement"
+    ],
+    "when_to_use": [
+      "A nontrivial change could lock in the wrong module boundary.",
+      "A requirement changes ownership or layering."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use a read-only explanation workflow when implementation is unwanted.",
+      "Catalog interpretation: Request with checkpoint when the sketch must be reviewed before implementation."
+    ],
+    "outputs": [
+      "Usage sketch and type signatures",
+      "Module map and design rationale",
+      "Implementation against the selected sketch"
+    ],
+    "requirements": [
+      "Cursor Task subagents and pstack-models.mdc role configuration; fallback model slugs and alias handling are host-specific.",
+      "Todo-list support and isolated candidate output directories or git worktrees."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Proceeds to implementation by default. Stops for sign-off only when the invoker explicitly asks for a checkpoint.",
+    "companions": [
+      "poteto/how",
+      "poteto/why",
+      "poteto/arena",
+      "poteto/interrogate",
+      "poteto/principle-exhaust-the-design-space",
+      "poteto/principle-foundational-thinking",
+      "poteto/principle-outcome-oriented-execution",
+      "poteto/principle-redesign-from-first-principles",
+      "poteto/principle-fix-root-causes",
+      "poteto/principle-subtract-before-you-add"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/architect/SKILL.md",
+        "start_line": 21,
+        "end_line": 47,
+        "supports": "Grounding, parallel designs, opt-in checkpoint and implementation default."
+      },
+      {
+        "path": "pstack/skills/architect/SKILL.md",
+        "start_line": 51,
+        "end_line": 79,
+        "supports": "Implementation, redesign triggers and outputs."
+      },
+      {
+        "path": "pstack/skills/architect/references/runner-prompt.md",
+        "start_line": 9,
+        "end_line": 18,
+        "supports": "Usage-first signatures, boundaries and type invariants."
+      }
+    ]
+  },
+  {
+    "id": "poteto/arena",
+    "kind": "workflow",
+    "summary": "Runs several candidates on the same brief, compares them using a rubric and an independent judge, and combines selected strengths into one verified artifact.",
+    "intents": [
+      "design",
+      "implement",
+      "review"
+    ],
+    "when_to_use": [
+      "One artifact admits several plausible designs.",
+      "You want a bakeoff rather than separate investigation slices."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use swarm for partitioned coverage without synthesizing competing artifacts.",
+      "Catalog interpretation: Avoid for a settled, trivial shape where multiple full attempts add little."
+    ],
+    "outputs": [
+      "Synthesized artifact",
+      "Synthesis note with selected base, grafts, rejected choices and verification"
+    ],
+    "requirements": [
+      "Cursor Task subagents and pstack-models.mdc role configuration; fallback model slugs and alias handling are host-specific.",
+      "Task background spawning; isolated per-candidate worktree or scratch output."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/poteto-mode",
+      "poteto/principle-separate-before-serializing-shared-state",
+      "poteto/principle-redesign-from-first-principles",
+      "poteto/principle-prove-it-works"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/arena/SKILL.md",
+        "start_line": 13,
+        "end_line": 28,
+        "supports": "Shared brief, models, isolated outputs and cross-judge."
+      },
+      {
+        "path": "pstack/skills/arena/SKILL.md",
+        "start_line": 30,
+        "end_line": 48,
+        "supports": "Rubric selection, grafting, verification and deliverable."
+      }
+    ]
+  },
+  {
+    "id": "poteto/automate-me",
+    "kind": "workflow",
+    "summary": "Turns recurring working preferences into a personal mode skill using workspace-scoped history and direct questions. Revises an existing mode instead of starting over by default.",
+    "intents": [
+      "setup",
+      "improve",
+      "write"
+    ],
+    "when_to_use": [
+      "Capture a recurring personal working style for agents.",
+      "Refresh an existing personal mode with recent evidence."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use ordinary skill authoring for one narrow workflow.",
+      "Catalog interpretation: Do not mine unrelated projects to infer preferences."
+    ],
+    "outputs": [
+      "Personal -mode SKILL.md",
+      "Worktree commit and pull request"
+    ],
+    "requirements": [
+      "Cursor built-in create-skill, AskQuestion, workspace agent-transcripts path and Cursor skill directories.",
+      "Git and pull-request workflow; user handle or chosen identifier."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Confirms whether to update an existing mode unless already requested, asks structured preference questions, and shows the draft for feedback. Ships through a PR rather than pushing directly to main.",
+    "companions": [
+      "poteto/unslop",
+      "poteto/poteto-mode"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/automate-me/SKILL.md",
+        "start_line": 15,
+        "end_line": 46,
+        "supports": "Existing-mode intent check, workspace-scoped mining and direct interview."
+      },
+      {
+        "path": "pstack/skills/automate-me/SKILL.md",
+        "start_line": 65,
+        "end_line": 83,
+        "supports": "Authoring, draft feedback and PR delivery."
+      },
+      {
+        "path": "pstack/skills/automate-me/SKILL.md",
+        "start_line": 100,
+        "end_line": 103,
+        "supports": "Narrow workflow exclusions."
+      }
+    ]
+  },
+  {
+    "id": "poteto/benchmark-checklist",
+    "kind": "workflow",
+    "summary": "Checks whether a measured performance claim is meaningful, repeatable and about completed work. Produces a verdict with units, spread and the identified limiter.",
+    "intents": [
+      "test",
+      "review",
+      "research",
+      "improve"
+    ],
+    "when_to_use": [
+      "Report a measured speedup or regression.",
+      "Choose between implementations or validate an optimization harness."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not select an option from an untuned comparison.",
+      "Catalog interpretation: Use the explicitly lighter path only for a requested ballpark."
+    ],
+    "outputs": [
+      "Performance verdict",
+      "Primary measurement with run count, range and limiter evidence"
+    ],
+    "requirements": [
+      "A runnable benchmark and realistic workload.",
+      "Host commands uptime and nproc; profiling tools appropriate to the runtime or OS, with Linux-specific examples."
+    ],
+    "effects": [
+      "read",
+      "execute",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/benchmark-checklist/SKILL.md",
+        "start_line": 9,
+        "end_line": 17,
+        "supports": "Ballpark exception and machine/script preflight."
+      },
+      {
+        "path": "pstack/skills/benchmark-checklist/SKILL.md",
+        "start_line": 21,
+        "end_line": 27,
+        "supports": "Limiter, tuning, physical limits, errors, repeated runs and completed work."
+      },
+      {
+        "path": "pstack/skills/benchmark-checklist/SKILL.md",
+        "start_line": 29,
+        "end_line": 39,
+        "supports": "Reporting and mode playbook links."
+      }
+    ]
+  },
+  {
+    "id": "poteto/blast-radius",
+    "kind": "workflow",
+    "summary": "Finds downstream breakage that a diff or caller list can miss and executes a small proof of the safety fact the change depends on.",
+    "intents": [
+      "review",
+      "research",
+      "test"
+    ],
+    "when_to_use": [
+      "A small change has uncertain effects outside its immediate callers.",
+      "An integration or teardown change depends on library behavior."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use how for a runtime walkthrough without a proposed change.",
+      "Catalog interpretation: Do not equate a persuasive writeup with an executed safety proof."
+    ],
+    "outputs": [
+      "Safety fact proved or marked unproven",
+      "Confirmed risks, cleared cases and cheapest regression check"
+    ],
+    "requirements": [
+      "Access to the real shipped library/code and an executable check; git and PR history through why."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/how",
+      "poteto/why",
+      "poteto/arena",
+      "poteto/unslop"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/blast-radius/SKILL.md",
+        "start_line": 15,
+        "end_line": 29,
+        "supports": "Proof ladder and executable checks."
+      },
+      {
+        "path": "pstack/skills/blast-radius/SKILL.md",
+        "start_line": 31,
+        "end_line": 48,
+        "supports": "Diff, library and downstream investigation; synthesis and output."
+      }
+    ]
+  },
+  {
+    "id": "poteto/bro",
+    "kind": "utility",
+    "summary": "Restates the previous assistant message in simpler, shorter language without jargon.",
+    "intents": [
+      "learn",
+      "write"
+    ],
+    "when_to_use": [
+      "The last reply was hard to understand."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use teach when the underlying topic needs fresh investigation."
+    ],
+    "outputs": [
+      "Plain-language restatement"
+    ],
+    "requirements": [],
+    "effects": [
+      "read"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/bro/SKILL.md",
+        "start_line": 2,
+        "end_line": 7,
+        "supports": "Restatement scope and style."
+      }
+    ]
+  },
+  {
+    "id": "poteto/correct",
+    "kind": "workflow",
+    "summary": "Finds repeated agent mistake classes and changes repository structure or enforcement so they are harder to repeat. Demonstrates each new check on a real past mistake.",
+    "intents": [
+      "improve",
+      "implement",
+      "test"
+    ],
+    "when_to_use": [
+      "The same agent mistake has occurred at least twice.",
+      "A documented repository rule keeps being ignored."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not turn a one-off preference into a repeated mistake class without evidence.",
+      "Catalog interpretation: Prefer structural enforcement over adding more instructions alone."
+    ],
+    "outputs": [
+      "One commit per addressed mistake class",
+      "Checks demonstrated failing on past mistakes",
+      "Rule-to-enforcement table and rationale"
+    ],
+    "requirements": [
+      "Repository commits, reverts, review comments and agent instruction files; local and CI check commands."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Exceptions require a reason, expiry date and human approval on the offending line. No general implementation checkpoint is specified.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/correct/SKILL.md",
+        "start_line": 13,
+        "end_line": 26,
+        "supports": "Repeated-class threshold, enforcement order and proof."
+      },
+      {
+        "path": "pstack/skills/correct/SKILL.md",
+        "start_line": 28,
+        "end_line": 32,
+        "supports": "Agent rule table and reporting."
+      }
+    ]
+  },
+  {
+    "id": "poteto/create-formal-verification-skill",
+    "kind": "workflow",
+    "summary": "Builds and proves a project-local formal verification workflow for a costly invariant tests seldom reach. Records model scope, assumptions and the code synchronization commit.",
+    "intents": [
+      "test",
+      "setup",
+      "research"
+    ],
+    "when_to_use": [
+      "Concurrency, retries or state-machine ordering threaten an important invariant.",
+      "Code needs bounded or stronger verification beyond example tests."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not claim a bounded model proves the whole system.",
+      "Catalog interpretation: Report product bugs rather than changing product code without a request."
+    ],
+    "outputs": [
+      "Verification model or code-level harness",
+      "Project-local verify skill with coverage and sync commit",
+      "Broken-variant demonstration and plain-language findings"
+    ],
+    "requirements": [
+      "An installable, reproducible verifier fitting the code and property; TLA+ is the stated default for interleavings."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Asks only for facts not observable in the code. Product code changes require the user to ask.",
+    "companions": [
+      "poteto/statechart",
+      "poteto/maintain-formal-verification-skill"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/create-formal-verification-skill/SKILL.md",
+        "start_line": 13,
+        "end_line": 29,
+        "supports": "Target choice, tool choice, product-code boundary and scope."
+      },
+      {
+        "path": "pstack/skills/create-formal-verification-skill/SKILL.md",
+        "start_line": 31,
+        "end_line": 43,
+        "supports": "Generated skill, statechart link, deliberate-failure validation and handoff."
+      }
+    ]
+  },
+  {
+    "id": "poteto/create-verification-skill",
+    "kind": "workflow",
+    "summary": "Creates a repository-specific skill that launches, health-checks, drives and cleans up the real app. Seeds a user-facing feature map and executes one complete journey before handoff.",
+    "intents": [
+      "setup",
+      "test"
+    ],
+    "when_to_use": [
+      "A project lacks a reliable way for agents to prove observable behavior.",
+      "An app needs a launch, doctor, drive and evidence recipe."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not generate untested steps against a broken startup base.",
+      "Catalog interpretation: Do not drive a shared user instance when isolation is unavailable."
+    ],
+    "outputs": [
+      ".cursor/skills/verify-<app>/SKILL.md and helpers",
+      "Feature README and initial feature journey files",
+      "Evidence from an end-to-end proof with cleanup"
+    ],
+    "requirements": [
+      "A runnable app and repository launch commands.",
+      "An appropriate harness such as browser/CDP, existing Playwright/Cypress, HTTP or isolated PTY/tmux."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Asks the user only what cannot be observed from the repository. No general approval gate is specified.",
+    "companions": [
+      "poteto/maintain-verification-skill"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/create-verification-skill/SKILL.md",
+        "start_line": 11,
+        "end_line": 21,
+        "supports": "Repo interview, harness selection and startup precondition."
+      },
+      {
+        "path": "pstack/skills/create-verification-skill/SKILL.md",
+        "start_line": 23,
+        "end_line": 40,
+        "supports": "Generated sections, observable evidence, feature map and execution proof."
+      }
+    ]
+  },
+  {
+    "id": "poteto/figure-it-out",
+    "kind": "workflow",
+    "summary": "Designs a custom, auditable workflow when bundled playbooks do not fit or a change is ambitious. Runs small hypothesis-driven units against an explicit completion predicate.",
+    "intents": [
+      "plan",
+      "implement",
+      "improve"
+    ],
+    "when_to_use": [
+      "A large migration needs a task-specific sequence of verifiable units.",
+      "A human will review a long run after stepping away."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use a narrower playbook for a routine focused change.",
+      "Catalog interpretation: Use the mode Orchestrate playbook for a standing multiday program."
+    ],
+    "outputs": [
+      "Written bespoke phase list",
+      "Verified units and decision trail",
+      "Final predicate verdict with open gaps"
+    ],
+    "requirements": [
+      "Todo-list support, executable verification harness and isolated branches or worktrees for writers."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Presents framing and tradeoffs before a long commitment; explicitly says a multi-hour run earns one checkpoint, while reversible work proceeds.",
+    "companions": [
+      "poteto/poteto-mode",
+      "poteto/architect",
+      "poteto/arena",
+      "poteto/show-me-your-work",
+      "poteto/principle-prove-it-works",
+      "poteto/principle-never-block-on-the-human",
+      "poteto/principle-foundational-thinking",
+      "poteto/principle-separate-before-serializing-shared-state",
+      "poteto/principle-laziness-protocol",
+      "poteto/principle-sequence-verifiable-units",
+      "poteto/principle-encode-lessons-in-structure"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/figure-it-out/SKILL.md",
+        "start_line": 9,
+        "end_line": 32,
+        "supports": "Workflow-first deliverable, framing checkpoint and decomposition."
+      },
+      {
+        "path": "pstack/skills/figure-it-out/SKILL.md",
+        "start_line": 34,
+        "end_line": 52,
+        "supports": "Execution loop, audit trail and final proof."
+      }
+    ]
+  },
+  {
+    "id": "poteto/how",
+    "kind": "workflow",
+    "summary": "Explains a subsystem's architecture, runtime flow and ownership using code-grounded exploration. Scales from one explainer to several explorers and a synthesizer.",
+    "intents": [
+      "learn",
+      "research",
+      "design"
+    ],
+    "when_to_use": [
+      "Understand how a subsystem works before changing it.",
+      "Determine which module owns a behavior or where new code should live."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use why for historical motivation rather than runtime mechanics.",
+      "Catalog interpretation: Take the single-explainer route for narrow questions."
+    ],
+    "outputs": [
+      "Architectural explanation with applicable overview, concepts, flow, file map and gotchas"
+    ],
+    "requirements": [
+      "Cursor Task subagents and pstack-models.mdc role configuration; fallback model slugs and alias handling are host-specific.",
+      "Cursor generalPurpose readonly Task subagents and code read/search access."
+    ],
+    "effects": [
+      "read",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/poteto-mode"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/how/SKILL.md",
+        "start_line": 9,
+        "end_line": 28,
+        "supports": "Host-specific agents and complexity-based exploration."
+      },
+      {
+        "path": "pstack/skills/how/SKILL.md",
+        "start_line": 30,
+        "end_line": 36,
+        "supports": "Presentation and output shape."
+      },
+      {
+        "path": "pstack/skills/how/references/explainer-prompt.md",
+        "start_line": 19,
+        "end_line": 46,
+        "supports": "Grounded synthesis and optional diagrams."
+      }
+    ]
+  },
+  {
+    "id": "poteto/in-your-own-words",
+    "kind": "utility",
+    "summary": "Restates the user's apparent goals and the underlying problem before work proceeds.",
+    "intents": [
+      "clarify"
+    ],
+    "when_to_use": [
+      "Check whether the agent understood the requested outcome."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use a planning or research workflow when the problem still needs investigation."
+    ],
+    "outputs": [
+      "Restated goals and problem"
+    ],
+    "requirements": [],
+    "effects": [
+      "read"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/in-your-own-words/SKILL.md",
+        "start_line": 2,
+        "end_line": 7,
+        "supports": "Understanding-check scope."
+      }
+    ]
+  },
+  {
+    "id": "poteto/interrogate",
+    "kind": "workflow",
+    "summary": "Obtains independent adversarial reviews from configured models and produces a lead judgment rather than automatically fixing the findings.",
+    "intents": [
+      "review"
+    ],
+    "when_to_use": [
+      "Stress-test a change for correctness, security and design weaknesses.",
+      "Get a diverse review panel for a contested implementation."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not treat this as permission to apply suggested changes.",
+      "Catalog interpretation: It challenges execution against stated intent rather than deciding whether the goal is right."
+    ],
+    "outputs": [
+      "Intent statement",
+      "Act on, Consider, Noted and Dismissed findings",
+      "Model agreement map"
+    ],
+    "requirements": [
+      "Cursor Task subagents and pstack-models.mdc role configuration; fallback model slugs and alias handling are host-specific.",
+      "Cursor readonly generalPurpose Task reviewers and git diff or supplied scope."
+    ],
+    "effects": [
+      "read",
+      "delegate"
+    ],
+    "confirmation": "Asks the user when the change's intent is uncertain. Explicitly does not auto-apply review changes.",
+    "companions": [
+      "poteto/poteto-mode"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/interrogate/SKILL.md",
+        "start_line": 9,
+        "end_line": 38,
+        "supports": "Review-only delivery, intent clarification and model roster."
+      },
+      {
+        "path": "pstack/skills/interrogate/SKILL.md",
+        "start_line": 40,
+        "end_line": 74,
+        "supports": "Synthesis and decision buckets."
+      },
+      {
+        "path": "pstack/skills/interrogate/references/reviewer-prompt.md",
+        "start_line": 11,
+        "end_line": 15,
+        "supports": "Reviews execution, not the correctness of intent."
+      },
+      {
+        "path": "pstack/skills/interrogate/references/lead-judgment.md",
+        "start_line": 7,
+        "end_line": 19,
+        "supports": "Rejects unsupported and preference-only findings."
+      }
+    ]
+  },
+  {
+    "id": "poteto/ketchup",
+    "kind": "utility",
+    "summary": "Catches the user up on changes since their last message and lists every outstanding decision with enough context to act from the reply.",
+    "intents": [
+      "handoff",
+      "learn"
+    ],
+    "when_to_use": [
+      "Return to a chat after autonomous work or agent results.",
+      "See what is done and which calls still belong to you."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use recall for work spanning recent chats.",
+      "Catalog interpretation: Do not start jobs, change code or post externally while preparing this update."
+    ],
+    "outputs": [
+      "Concise current-state update",
+      "Existing inline visuals",
+      "Complete, decidable action-item list"
+    ],
+    "requirements": [
+      "Read access to the current PR, check and agent state when this chat touched them.",
+      "Existing screenshots or recordings; Mermaid or visualize for suitable derived diagrams."
+    ],
+    "effects": [
+      "read"
+    ],
+    "confirmation": "Reports approvals and irreversible actions waiting on the human; does not take those actions during this read-only update.",
+    "companions": [
+      "poteto/bro"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/ketchup/SKILL.md",
+        "start_line": 9,
+        "end_line": 19,
+        "supports": "Time window, style, read-only scope and action-item definition."
+      },
+      {
+        "path": "pstack/skills/ketchup/SKILL.md",
+        "start_line": 23,
+        "end_line": 43,
+        "supports": "Reply structure, risks, options and evidence-backed visuals."
+      }
+    ]
+  },
+  {
+    "id": "poteto/ketchup-video",
+    "kind": "utility",
+    "summary": "Delivers the ketchup catch-up as a short silent slide video, with outstanding decisions retained as text under it.",
+    "intents": [
+      "handoff",
+      "learn"
+    ],
+    "when_to_use": [
+      "A visual catch-up is easier to follow as a short animated sequence."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use ordinary ketchup when video production adds little.",
+      "Catalog interpretation: Use only existing work evidence rather than inventing screens."
+    ],
+    "outputs": [
+      "Silent landscape video",
+      "Text action items and remaining work"
+    ],
+    "requirements": [
+      "A video renderer and existing screenshots, recordings, diffs or data.",
+      "A scratch output location outside the repository."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/ketchup"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/ketchup-video/SKILL.md",
+        "start_line": 9,
+        "end_line": 19,
+        "supports": "Ketchup inheritance, read-only exception, slide evidence and limits."
+      },
+      {
+        "path": "pstack/skills/ketchup-video/SKILL.md",
+        "start_line": 21,
+        "end_line": 23,
+        "supports": "Rendering, timing and frame inspection."
+      }
+    ]
+  },
+  {
+    "id": "poteto/maintain-formal-verification-skill",
+    "kind": "workflow",
+    "summary": "Reconciles formal checks with code changes since their synchronization commit. Separates verification drift from real product bugs and proves updated checks can still fail.",
+    "intents": [
+      "test",
+      "improve"
+    ],
+    "when_to_use": [
+      "Merges or refactors changed verified code without rechecking its model.",
+      "An old passing formal check may describe stale behavior."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use create-formal-verification-skill when no project check exists.",
+      "Catalog interpretation: Keep product fixes separate and do not weaken properties to obtain a pass."
+    ],
+    "outputs": [
+      "Per-check in sync, updated, bug or blocked verdict",
+      "Verification-only updates and synchronized coverage records",
+      "Counterexample or deliberate-break evidence"
+    ],
+    "requirements": [
+      "Existing project-local formal verification skill, its verifier command and git history."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Product code changes require a user request. Properties change only with cited evidence that the intended promise changed.",
+    "companions": [
+      "poteto/create-formal-verification-skill"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/maintain-formal-verification-skill/SKILL.md",
+        "start_line": 9,
+        "end_line": 28,
+        "supports": "Scope, outcome types and missing-skill route."
+      },
+      {
+        "path": "pstack/skills/maintain-formal-verification-skill/SKILL.md",
+        "start_line": 30,
+        "end_line": 44,
+        "supports": "Baseline, history reconciliation, rerun and sync commit."
+      },
+      {
+        "path": "pstack/skills/maintain-formal-verification-skill/SKILL.md",
+        "start_line": 46,
+        "end_line": 58,
+        "supports": "Evidence reporting and separate verification change."
+      }
+    ]
+  },
+  {
+    "id": "poteto/maintain-verification-skill",
+    "kind": "workflow",
+    "summary": "Audits every mapped feature from source and drives every feature live. Ships at most one PR limited to proven verification documentation or harness corrections.",
+    "intents": [
+      "test",
+      "improve"
+    ],
+    "when_to_use": [
+      "An existing app verification skill or feature map may have drifted."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use create-verification-skill when no suitable skill exists.",
+      "Catalog interpretation: Do not repair product regressions inside the verification-maintenance change."
+    ],
+    "outputs": [
+      "Clean, changed or blocked outcome",
+      "Feature coverage and drift notes in scratch storage",
+      "At most one PR of proven skill/map/harness corrections"
+    ],
+    "requirements": [
+      "Existing project-local verification skill with feature map and runnable drive harness.",
+      "Parallel readonly source-reader subagents; coordinator-owned serial live driving or isolated CLI sessions."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Asks which verification skill to target when several exist. Product-code edits are explicitly excluded.",
+    "companions": [
+      "poteto/create-verification-skill"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/maintain-verification-skill/SKILL.md",
+        "start_line": 9,
+        "end_line": 25,
+        "supports": "Feature-level coverage, limited edit scope and target selection."
+      },
+      {
+        "path": "pstack/skills/maintain-verification-skill/SKILL.md",
+        "start_line": 27,
+        "end_line": 39,
+        "supports": "Source wave, mandatory live pass, proof preservation and PR rules."
+      }
+    ]
+  },
+  {
+    "id": "poteto/make-bot-ui",
+    "kind": "workflow",
+    "summary": "Builds a server-backed page whose buttons wake a Grok Bot through a webhook routine, then exposes the page on a Tailscale network.",
+    "intents": [
+      "implement",
+      "operate",
+      "setup"
+    ],
+    "when_to_use": [
+      "A custom dashboard or control page should wake a Grok Bot."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not select for a generic static website without a bot webhook.",
+      "Catalog interpretation: Treat Cursor routine and secret-request features as host requirements, not portable APIs."
+    ],
+    "outputs": [
+      "Webhook routine",
+      "Local UI and server-side webhook forwarding",
+      "Tailnet URLs and verified harmless probe"
+    ],
+    "requirements": [
+      "Cursor/Grok Bot update_state routine creation and SendToUser secret-request cards.",
+      "User-provided webhook URL and sender key through the secret channel.",
+      "Local server and Tailscale; installation can require sudo and network access."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute",
+      "configure"
+    ],
+    "confirmation": "Waits on any routine confirmation card. Stops after requesting the sender key through a secret card. Tailscale enrollment requires the user's browser approval.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/make-bot-ui/SKILL.md",
+        "start_line": 11,
+        "end_line": 51,
+        "supports": "Routine creation, confirmation card and user-only secret provisioning."
+      },
+      {
+        "path": "pstack/skills/make-bot-ui/SKILL.md",
+        "start_line": 53,
+        "end_line": 73,
+        "supports": "Server forwarding, key placement and probes."
+      },
+      {
+        "path": "pstack/skills/make-bot-ui/SKILL.md",
+        "start_line": 75,
+        "end_line": 103,
+        "supports": "Tailnet hosting and user machine approval."
+      }
+    ]
+  },
+  {
+    "id": "poteto/no-comments",
+    "kind": "workflow",
+    "summary": "Runs a specialized comment-removal agent, validates its findings and fixes accepted in-scope code workarounds. Can propose structural replacements for claimed constraints.",
+    "intents": [
+      "review",
+      "improve",
+      "implement"
+    ],
+    "when_to_use": [
+      "Prepare a scoped diff for review under pstack's strict comment policy.",
+      "Replace workaround explanations with code that makes the behavior clear."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not select when the task is to preserve or merely proofread comments.",
+      "Catalog interpretation: Do not allow a root-cause argument to expand the caller's file boundary."
+    ],
+    "outputs": [
+      "Scoped comment deletions",
+      "Accepted root-cause fixes and optional architect sketch",
+      "Report of encodings, unenforced constraints and open work"
+    ],
+    "requirements": [
+      "Cursor Task subagent_type comment-sicko and caller files/diff or base-branch diff."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Constraint encodings wait for interactive approval; unattended/eval runs need caller pre-approval. The source says unapproved encodings still result in deleting the comment and reporting the constraint open.",
+    "companions": [
+      "poteto/poteto-mode",
+      "poteto/how",
+      "poteto/why",
+      "poteto/architect",
+      "poteto/principle-fix-root-causes",
+      "poteto/principle-redesign-from-first-principles"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/no-comments/SKILL.md",
+        "start_line": 13,
+        "end_line": 24,
+        "supports": "Scoped delegation, rejections, fixes, approval and report."
+      },
+      {
+        "path": "pstack/agents/comment-sicko.md",
+        "start_line": 14,
+        "end_line": 30,
+        "supports": "Narrow keep exceptions, suppressions and comment-only delegate edits."
+      }
+    ]
+  },
+  {
+    "id": "poteto/poteto-help",
+    "kind": "router",
+    "summary": "Helps choose a pstack setup path, skill, playbook or principle and returns an example prompt with a source link. It distinguishes help from an actual request to execute work.",
+    "intents": [
+      "clarify",
+      "setup",
+      "learn"
+    ],
+    "when_to_use": [
+      "Find the right pstack entry point without memorizing its skills.",
+      "Understand setup, cost, host support or why a run drifted."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Help questions should not start a token-consuming workflow.",
+      "Catalog interpretation: Read the destination skill before recommending its detailed behavior."
+    ],
+    "outputs": [
+      "Direct answer with public source link",
+      "At most one tailored example prompt",
+      "Optional need-category question"
+    ],
+    "requirements": [
+      "Read access to the installed pstack files and relevant guide pages.",
+      "Cursor-specific setup and model state checks; Claude Code adapter for that host."
+    ],
+    "effects": [
+      "read"
+    ],
+    "confirmation": "May ask one need-category question and offer setup once. A help answer returns a prompt for the user to invoke rather than starting the workflow.",
+    "companions": [
+      "poteto/setup-pstack",
+      "poteto/poteto-mode",
+      "poteto/in-your-own-words",
+      "poteto/sharpen",
+      "poteto/how",
+      "poteto/why",
+      "poteto/teach",
+      "poteto/recall",
+      "poteto/ketchup",
+      "poteto/ketchup-video",
+      "poteto/blast-radius",
+      "poteto/architect",
+      "poteto/arena",
+      "poteto/swarm",
+      "poteto/interrogate",
+      "poteto/tdd",
+      "poteto/typescript-best-practices",
+      "poteto/no-comments",
+      "poteto/unslop",
+      "poteto/technical-writing",
+      "poteto/bro",
+      "poteto/create-verification-skill",
+      "poteto/maintain-verification-skill",
+      "poteto/create-formal-verification-skill",
+      "poteto/maintain-formal-verification-skill",
+      "poteto/statechart",
+      "poteto/benchmark-checklist",
+      "poteto/figure-it-out",
+      "poteto/show-me-your-work",
+      "poteto/automate-me",
+      "poteto/reflect",
+      "poteto/correct",
+      "poteto/make-bot-ui"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/poteto-help/SKILL.md",
+        "start_line": 9,
+        "end_line": 34,
+        "supports": "Help/execution distinction, question categories and setup checks."
+      },
+      {
+        "path": "pstack/skills/poteto-help/SKILL.md",
+        "start_line": 38,
+        "end_line": 60,
+        "supports": "Native onboarding, Cursor and Claude Code support and mode persistence."
+      },
+      {
+        "path": "pstack/skills/poteto-help/SKILL.md",
+        "start_line": 62,
+        "end_line": 118,
+        "supports": "Skill routing table, close calls and external dependencies."
+      },
+      {
+        "path": "pstack/skills/poteto-help/SKILL.md",
+        "start_line": 120,
+        "end_line": 135,
+        "supports": "Playbooks, planning and principle entry points."
+      }
+    ]
+  },
+  {
+    "id": "poteto/poteto-mode",
+    "kind": "router",
+    "summary": "Coordinates pstack's working style and task-specific playbooks, selecting companion skills for grounding, design, delegation, verification and delivery. Its scope ranges from read-only investigation to autonomous PR programs.",
+    "intents": [
+      "clarify",
+      "plan",
+      "implement",
+      "debug",
+      "review",
+      "research",
+      "design",
+      "test",
+      "write",
+      "handoff",
+      "operate",
+      "improve"
+    ],
+    "when_to_use": [
+      "Run a nontrivial task with an explicit goal and a completion check.",
+      "Route a bug, feature, performance effort, PR lifecycle or multistage program through a playbook."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use a narrow skill directly when the full workflow overhead is unnecessary.",
+      "Catalog interpretation: Do not interpret a read-only investigation as permission to implement.",
+      "Catalog interpretation: Review host support and approval rules before transferring this orchestration to another agent environment."
+    ],
+    "outputs": [
+      "Playbook todo list",
+      "Task-specific verified artifacts or cited answers",
+      "PRs, plans, prototypes or audit trails as selected by the playbook"
+    ],
+    "requirements": [
+      "Cursor Task subagents and pstack-models.mdc role configuration; fallback model slugs and alias handling are host-specific.",
+      "Cursor Task poteto-agent and comment-sicko; built-in create-skill and loop.",
+      "cursor-team-kit deslop, control-ui and control-cli for relevant tasks.",
+      "Git worktrees and GitHub CLI by default; optional Origin CLI.",
+      "Bun for orchestrate bookkeeping, Node for plan validation; app-specific live-control and verification tools."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute",
+      "delegate",
+      "configure"
+    ],
+    "confirmation": "Source permits reversible work and external actions such as team chat or ticket updates without asking, but pauses for force-push to shared branches, deploys, data deletion and customer messages. Playbooks add explicit gates: plans wait for go, Babysit does not authorize merging, Autopilot-stack reserves landing for the human, and named operator gates remain binding.",
+    "companions": [
+      "poteto/how",
+      "poteto/why",
+      "poteto/architect",
+      "poteto/arena",
+      "poteto/swarm",
+      "poteto/interrogate",
+      "poteto/unslop",
+      "poteto/technical-writing",
+      "poteto/no-comments",
+      "poteto/benchmark-checklist",
+      "poteto/figure-it-out",
+      "poteto/show-me-your-work",
+      "poteto/setup-pstack",
+      "poteto/tdd",
+      "poteto/ketchup",
+      "poteto/principle-boundary-discipline",
+      "poteto/principle-model-the-domain",
+      "poteto/principle-fix-root-causes",
+      "poteto/principle-encode-lessons-in-structure",
+      "poteto/principle-guard-the-context-window",
+      "poteto/principle-subtract-before-you-add",
+      "poteto/principle-foundational-thinking",
+      "poteto/principle-build-the-lever",
+      "poteto/principle-make-operations-idempotent",
+      "poteto/principle-sequence-verifiable-units",
+      "poteto/principle-test-behavior-not-implementation",
+      "poteto/principle-explain-the-number",
+      "poteto/principle-outcome-oriented-execution",
+      "poteto/principle-never-block-on-the-human",
+      "poteto/principle-redesign-from-first-principles",
+      "poteto/principle-minimize-reader-load",
+      "poteto/principle-exhaust-the-design-space",
+      "poteto/principle-migrate-callers-then-delete-legacy-apis",
+      "poteto/principle-attack-the-premise",
+      "poteto/principle-laziness-protocol",
+      "poteto/principle-experience-first",
+      "poteto/principle-prove-it-works",
+      "poteto/principle-separate-before-serializing-shared-state",
+      "poteto/principle-type-system-discipline"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/poteto-mode/SKILL.md",
+        "start_line": 19,
+        "end_line": 36,
+        "supports": "Routing triggers and companion workflows."
+      },
+      {
+        "path": "pstack/skills/poteto-mode/SKILL.md",
+        "start_line": 81,
+        "end_line": 101,
+        "supports": "Autonomy and host-specific subagent policy."
+      },
+      {
+        "path": "pstack/skills/poteto-mode/SKILL.md",
+        "start_line": 121,
+        "end_line": 149,
+        "supports": "Playbook categories and task routing."
+      },
+      {
+        "path": "pstack/skills/poteto-mode/playbooks/investigation.md",
+        "start_line": 5,
+        "end_line": 12,
+        "supports": "Read-only investigation does not create PRs or implement."
+      },
+      {
+        "path": "pstack/skills/poteto-mode/playbooks/multi-phase-plan.md",
+        "start_line": 3,
+        "end_line": 15,
+        "supports": "Plan-only output, explicit execution go and high verification requirements."
+      },
+      {
+        "path": "pstack/skills/poteto-mode/playbooks/autopilot-stack.md",
+        "start_line": 3,
+        "end_line": 10,
+        "supports": "Stacked delivery reserves landing for the operator."
+      },
+      {
+        "path": "pstack/skills/poteto-mode/playbooks/opening-a-pr.md",
+        "start_line": 24,
+        "end_line": 34,
+        "supports": "Forge/tool precedence, ready PR default and babysit separation."
+      },
+      {
+        "path": "pstack/skills/poteto-mode/playbooks/shipping.md",
+        "start_line": 5,
+        "end_line": 10,
+        "supports": "Independent per-PR verification and controlled bottom-up landing."
+      }
+    ]
+  },
+  {
+    "id": "poteto/recall",
+    "kind": "workflow",
+    "summary": "Rebuilds recent work context across the user's scoped chat history, shared evidence and live PR state. Returns a compact current-state brief before work resumes.",
+    "intents": [
+      "handoff",
+      "research"
+    ],
+    "when_to_use": [
+      "Find where work on a named feature stands across recent chats.",
+      "Recover decisions, failed approaches and the most useful next move."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use the mode Session pickup playbook for one specific prior chat.",
+      "Catalog interpretation: Use automate-me to turn habits into lasting agent instructions."
+    ],
+    "outputs": [
+      "Capsule and status-tagged threads",
+      "Recurring problems and one next action"
+    ],
+    "requirements": [
+      "Workspace-scoped Cursor JSONL transcripts.",
+      "git and gh for live checks; available MCP evidence sources through why."
+    ],
+    "effects": [
+      "read",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "States the search window/topic/workspace. Never reads another project's transcripts without being asked.",
+    "companions": [
+      "poteto/why",
+      "poteto/automate-me",
+      "poteto/unslop",
+      "poteto/poteto-mode"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/recall/SKILL.md",
+        "start_line": 13,
+        "end_line": 21,
+        "supports": "Scoped transcripts, default seven-day window, shared record and live verification."
+      },
+      {
+        "path": "pstack/skills/recall/SKILL.md",
+        "start_line": 24,
+        "end_line": 35,
+        "supports": "Brief output and privacy boundary."
+      }
+    ]
+  },
+  {
+    "id": "poteto/reflect",
+    "kind": "workflow",
+    "summary": "Extracts durable lessons from the current session through three reviewer lenses and a synthesizer. Proposes concrete skill edits and separates structural enforcement work into backlog items.",
+    "intents": [
+      "improve",
+      "review"
+    ],
+    "when_to_use": [
+      "A substantial finished session exposed recurring process or skill gaps."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Skip trivial sessions or lessons already covered by correctly followed instructions.",
+      "Catalog interpretation: Do not edit plugin cache copies or treat every one-off as a durable rule."
+    ],
+    "outputs": [
+      "Accepted, Rejected and Backlog findings",
+      "User-approved skill-copy edits",
+      "Filed backlog items and applied-edit summary"
+    ],
+    "requirements": [
+      "Active workspace transcript or fallback session digest.",
+      "Cursor generalPurpose agent-mode Task subagents with MCP access; built-in create-skill for substantive authoring.",
+      "A team devex/backlog tracker for backlog filing."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Waits for explicit approval of a chosen subset before editing skills and shows the destination first. Backlog tracker filing proceeds without waiting; never opens a PR or pushes.",
+    "companions": [
+      "poteto/poteto-mode",
+      "poteto/principle-encode-lessons-in-structure"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/reflect/SKILL.md",
+        "start_line": 9,
+        "end_line": 27,
+        "supports": "Trigger, scoped transcript discovery and reviewer host assumptions."
+      },
+      {
+        "path": "pstack/skills/reflect/SKILL.md",
+        "start_line": 37,
+        "end_line": 60,
+        "supports": "Synthesis, structural check, approval, automatic backlog filing and safe destination."
+      },
+      {
+        "path": "pstack/skills/reflect/references/judgment-reviewer.md",
+        "start_line": 3,
+        "end_line": 5,
+        "supports": "Reviewers are forbidden to modify state and constrain lookups to cited context."
+      }
+    ]
+  },
+  {
+    "id": "poteto/setup-pstack",
+    "kind": "setup",
+    "summary": "Configures pstack's per-role models and reasoning budget using models the current host actually exposes. Writes an always-applied rule for future sessions.",
+    "intents": [
+      "setup"
+    ],
+    "when_to_use": [
+      "Choose a smaller budget or adjust the models used for each pstack role.",
+      "Configure a new pstack installation."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not write unconfirmed real model slugs.",
+      "Catalog interpretation: Do not assume a Cursor .mdc rule is loaded by another host."
+    ],
+    "outputs": [
+      "~/.cursor/rules/pstack-models.mdc",
+      "Validated role/model table and budget",
+      "Optional offered verification setup"
+    ],
+    "requirements": [
+      "Cursor Task model availability, AskQuestion and writable user rules directory.",
+      "Claude Code uses the documented adapter and a different rules path."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "configure"
+    ],
+    "confirmation": "Asks for a budget and confirmation of every role/model table before writing. Verification generators are invoked only if the user accepts each optional offer.",
+    "companions": [
+      "poteto/create-verification-skill",
+      "poteto/create-formal-verification-skill"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/setup-pstack/SKILL.md",
+        "start_line": 8,
+        "end_line": 18,
+        "supports": "Configuration destination and model detection."
+      },
+      {
+        "path": "pstack/skills/setup-pstack/SKILL.md",
+        "start_line": 20,
+        "end_line": 39,
+        "supports": "Budget, explicit table confirmation, validation and overwrite."
+      },
+      {
+        "path": "pstack/skills/setup-pstack/SKILL.md",
+        "start_line": 68,
+        "end_line": 78,
+        "supports": "New-session activation and opt-in verification offers."
+      },
+      {
+        "path": "pstack/docs/harness/claude-code.md",
+        "start_line": 40,
+        "end_line": 46,
+        "supports": "Claude Code-specific setup mapping."
+      }
+    ]
+  },
+  {
+    "id": "poteto/sharpen",
+    "kind": "utility",
+    "summary": "Rewrites a task prompt to seek deeper expertise, rawer evidence, concrete methods and an independent correctness check without expanding its scope.",
+    "intents": [
+      "clarify",
+      "plan"
+    ],
+    "when_to_use": [
+      "Improve a prompt before sending it to an agent."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not execute the rewritten task or decide choices that belong to the user."
+    ],
+    "outputs": [
+      "Four-part depth assessment",
+      "Rewritten prompt"
+    ],
+    "requirements": [],
+    "effects": [
+      "read"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/sharpen/SKILL.md",
+        "start_line": 7,
+        "end_line": 16,
+        "supports": "Depth questions, rewrite-only outcome and user-owned choices."
+      }
+    ]
+  },
+  {
+    "id": "poteto/show-me-your-work",
+    "kind": "workflow",
+    "summary": "Maintains an append-only TSV decision trail for long or unattended work. Audits it against the run transcript and obtains a different-model review before handoff.",
+    "intents": [
+      "handoff",
+      "review",
+      "operate"
+    ],
+    "when_to_use": [
+      "A reviewer must trust a long run after stepping away.",
+      "Track hypotheses, pivots and verification results as a run proceeds."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not log every trivial action or silently rewrite earlier rows.",
+      "Catalog interpretation: Keep the log local unless the work warrants committing an audit artifact."
+    ],
+    "outputs": [
+      "Canonical decision TSV",
+      "Transcript audit with superseding corrections",
+      "Cross-model Attention flags"
+    ],
+    "requirements": [
+      "Writable local work area, optional bundled log.sh helper and workspace transcript.",
+      "A subagent on a different model family for trail review."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/unslop",
+      "poteto/poteto-mode",
+      "poteto/principle-encode-lessons-in-structure"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/show-me-your-work/SKILL.md",
+        "start_line": 13,
+        "end_line": 22,
+        "supports": "Decision trail schema."
+      },
+      {
+        "path": "pstack/skills/show-me-your-work/SKILL.md",
+        "start_line": 36,
+        "end_line": 52,
+        "supports": "Helper, per-run boundaries, local default and append-only rule."
+      },
+      {
+        "path": "pstack/skills/show-me-your-work/SKILL.md",
+        "start_line": 55,
+        "end_line": 74,
+        "supports": "Transcript audit and mandatory cross-model review."
+      }
+    ]
+  },
+  {
+    "id": "poteto/statechart",
+    "kind": "workflow",
+    "summary": "Turns a TLA+ model into reader-labeled statecharts and numbered bug paths, or converts an agreed chart into a TLA+ starting point. Reports model scope and whether code-backed counterexamples reproduce.",
+    "intents": [
+      "design",
+      "learn",
+      "test",
+      "review"
+    ],
+    "when_to_use": [
+      "Explain a modeled race or invariant violation as observable steps.",
+      "Agree on a behavior chart before implementation or audit code against an existing spec."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not claim model traces alone prove code behavior without replay.",
+      "Catalog interpretation: Use a simple ordinary diagram when formal checking adds no useful evidence."
+    ],
+    "outputs": [
+      "PNG and Mermaid charts",
+      "Bug stories and summary.json",
+      "TLA+ skeleton or model comparison and regeneration command"
+    ],
+    "requirements": [
+      "Node and bundled statechart.mjs.",
+      "TLC and Java; first run downloads about 305 MB through mise unless existing tools are configured.",
+      "Scratch folder outside the repository and PNG inspection capability."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "configure"
+    ],
+    "confirmation": "Reader/behavior owners agree on chart-to-spec behavior. Design bugs and code/chart differences are taken back to those people for a decision.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/statechart/SKILL.md",
+        "start_line": 9,
+        "end_line": 17,
+        "supports": "Reader labels, installation/network assumptions and direction selection."
+      },
+      {
+        "path": "pstack/skills/statechart/SKILL.md",
+        "start_line": 21,
+        "end_line": 26,
+        "supports": "Invariants, bug paths, rendering and replay against code."
+      },
+      {
+        "path": "pstack/skills/statechart/SKILL.md",
+        "start_line": 28,
+        "end_line": 36,
+        "supports": "Chart agreement, reader decisions and outputs."
+      }
+    ]
+  },
+  {
+    "id": "poteto/swarm",
+    "kind": "workflow",
+    "summary": "Fans workers out across slices or declared races and consolidates their terminal results into one evidence-backed report. Missing coverage is recorded rather than counted as a pass.",
+    "intents": [
+      "research",
+      "review",
+      "test",
+      "operate"
+    ],
+    "when_to_use": [
+      "Cover a matrix of independent checks.",
+      "Race workers or partition exploration over a large target."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use arena when competing artifacts need base selection and grafting.",
+      "Catalog interpretation: Do not accept measurement results without the exact requested commits and method."
+    ],
+    "outputs": [
+      "Consolidated result table",
+      "Issues, coverage gaps and dropouts",
+      "Declared race outcome"
+    ],
+    "requirements": [
+      "Cursor Task subagents and pstack-models.mdc role configuration; fallback model slugs and alias handling are host-specific.",
+      "Cursor cloud Task agents by default; local workers only for resources on the user's computer."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/poteto-mode"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/swarm/SKILL.md",
+        "start_line": 18,
+        "end_line": 31,
+        "supports": "Done predicate, race rules, model, isolation and cloud default."
+      },
+      {
+        "path": "pstack/skills/swarm/SKILL.md",
+        "start_line": 33,
+        "end_line": 41,
+        "supports": "Dropouts, SHA/method validation and reporting."
+      }
+    ]
+  },
+  {
+    "id": "poteto/tdd",
+    "kind": "workflow",
+    "summary": "Fixes a bug with a focused failing-before, passing-after regression check when a practical local test path exists. Uses another executable proof when a new test would be brittle or disproportionate.",
+    "intents": [
+      "debug",
+      "test",
+      "implement"
+    ],
+    "when_to_use": [
+      "A bug has an obvious cheap regression test.",
+      "The user explicitly asks for a failing test or TDD."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not build broad new infrastructure solely to satisfy the cadence.",
+      "Catalog interpretation: Do not use implementation-mirroring tests or weaken assertions to match wrong behavior."
+    ],
+    "outputs": [
+      "Focused regression test or closest executable check",
+      "Small production fix",
+      "Failing-before and passing-after evidence"
+    ],
+    "requirements": [
+      "Existing practical test target or another executable reproduction surface."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/tdd/SKILL.md",
+        "start_line": 3,
+        "end_line": 11,
+        "supports": "Bug-fix trigger and impractical-test exclusion."
+      },
+      {
+        "path": "pstack/skills/tdd/SKILL.md",
+        "start_line": 15,
+        "end_line": 26,
+        "supports": "Fail-first cadence and alternative executable checks."
+      },
+      {
+        "path": "pstack/skills/tdd/SKILL.md",
+        "start_line": 28,
+        "end_line": 42,
+        "supports": "Guardrails and evidence reporting."
+      }
+    ]
+  },
+  {
+    "id": "poteto/teach",
+    "kind": "teaching",
+    "summary": "Combines code behavior and historical rationale into a plain, conversational explanation at the learner's pace. Builds diagrams incrementally when they help understanding.",
+    "intents": [
+      "learn"
+    ],
+    "when_to_use": [
+      "Understand a change or unfamiliar subsystem rather than modify it."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not use as an implementation workflow or a quiz-based course generator.",
+      "Catalog interpretation: Avoid a full historical sweep when a narrow question suffices."
+    ],
+    "outputs": [
+      "Layered plain-language explanation",
+      "Incremental diagrams or generated spatial illustrations when useful"
+    ],
+    "requirements": [
+      "how and why dependencies, including host-specific subagents and relevant source access.",
+      "Image-generation tool for spatial explanations; Mermaid for structured flows."
+    ],
+    "effects": [
+      "read",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/how",
+      "poteto/why",
+      "poteto/unslop"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/teach/SKILL.md",
+        "start_line": 9,
+        "end_line": 16,
+        "supports": "Explanation-only scope, actual how/why invocations and conversational pace."
+      },
+      {
+        "path": "pstack/skills/teach/SKILL.md",
+        "start_line": 17,
+        "end_line": 21,
+        "supports": "Progressive visuals, tool choice and final output."
+      }
+    ]
+  },
+  {
+    "id": "poteto/technical-writing",
+    "kind": "reference",
+    "summary": "Applies a layered standard for technical documents, choosing a document purpose before refining sentences, instructions and unambiguous language.",
+    "intents": [
+      "write",
+      "review"
+    ],
+    "when_to_use": [
+      "Write or review documentation, an RFC, README, PR description or commit message."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use product copy guidelines for UI strings.",
+      "Catalog interpretation: Do not force a rule that makes a sentence worse."
+    ],
+    "outputs": [
+      "Rewritten or newly written technical prose",
+      "Clear tutorial, how-to, reference or explanation structure"
+    ],
+    "requirements": [
+      "Real repository terminology and commands when documenting code."
+    ],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/unslop"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/technical-writing/SKILL.md",
+        "start_line": 9,
+        "end_line": 19,
+        "supports": "Plain language, repo vocabulary and non-destructive rule escape."
+      },
+      {
+        "path": "pstack/skills/technical-writing/SKILL.md",
+        "start_line": 30,
+        "end_line": 49,
+        "supports": "Diataxis document modes."
+      },
+      {
+        "path": "pstack/skills/technical-writing/SKILL.md",
+        "start_line": 91,
+        "end_line": 96,
+        "supports": "Unslop companion, PR applicability and product UI exclusion."
+      }
+    ]
+  },
+  {
+    "id": "poteto/typescript-best-practices",
+    "kind": "reference",
+    "summary": "Provides TypeScript-specific type modeling and boundary rules, emphasizing explicit variants, verified brands, schema-derived types and behavior checks.",
+    "intents": [
+      "implement",
+      "review",
+      "design"
+    ],
+    "when_to_use": [
+      "Read or edit .ts or .tsx code."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not route non-TypeScript work to this language-specific rule set.",
+      "Catalog interpretation: Avoid treating stylistic advice as an independent task plan."
+    ],
+    "outputs": [
+      "TypeScript changes or review guidance aligned with stated rules"
+    ],
+    "requirements": [
+      "TypeScript code; repository schema library and framework test primitives where present."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/principle-type-system-discipline",
+      "poteto/principle-boundary-discipline"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/typescript-best-practices/SKILL.md",
+        "start_line": 3,
+        "end_line": 10,
+        "supports": "TypeScript scope and initial principle."
+      },
+      {
+        "path": "pstack/skills/typescript-best-practices/SKILL.md",
+        "start_line": 14,
+        "end_line": 31,
+        "supports": "Modeling, narrowing, boundaries, real tests and structured telemetry."
+      }
+    ]
+  },
+  {
+    "id": "poteto/unslop",
+    "kind": "utility",
+    "summary": "Edits prose to remove recurring AI writing patterns while preserving meaning and intended tone.",
+    "intents": [
+      "write",
+      "review"
+    ],
+    "when_to_use": [
+      "Clean generated prose, documentation or agent replies."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not remove meaningful uncertainty just because hedging can be overused.",
+      "Catalog interpretation: Use a technical-document structure workflow when the document's purpose is unclear."
+    ],
+    "outputs": [
+      "Plain, more concrete prose preserving intended meaning"
+    ],
+    "requirements": [],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "pstack/skills/unslop/SKILL.md",
+        "start_line": 9,
+        "end_line": 13,
+        "supports": "Editing scope and stable pattern identifiers."
+      },
+      {
+        "path": "pstack/skills/unslop/SKILL.md",
+        "start_line": 17,
+        "end_line": 37,
+        "supports": "Content, vocabulary and formatting patterns."
+      },
+      {
+        "path": "pstack/skills/unslop/SKILL.md",
+        "start_line": 41,
+        "end_line": 62,
+        "supports": "Communication, filler, jargon and plain-language rules."
+      }
+    ]
+  },
+  {
+    "id": "poteto/why",
+    "kind": "workflow",
+    "summary": "Investigates the historical reasons and constraints behind code across source control and available connected evidence categories. Separates explicit findings, inference, hypotheses and unresolved gaps.",
+    "intents": [
+      "research",
+      "learn",
+      "review"
+    ],
+    "when_to_use": [
+      "Find why a design, defensive check or threshold exists.",
+      "Recover regression history or planning constraints before changing behavior."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use how for current runtime mechanics.",
+      "Catalog interpretation: Do not infer author intent solely from code or hide unavailable evidence categories."
+    ],
+    "outputs": [
+      "Cited, confidence-separated rationale",
+      "Sources consulted and explicit gaps",
+      "Preserve/Change/Avoid/Risk constraints when a change follows"
+    ],
+    "requirements": [
+      "Cursor Task subagents and pstack-models.mdc role configuration; fallback model slugs and alias handling are host-specific.",
+      "Cursor generalPurpose agent-mode Task subagents to retain MCP access.",
+      "git and gh for source history; available MCPs for tickets, docs, chat, observability, errors and analytics."
+    ],
+    "effects": [
+      "read",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "poteto/how",
+      "poteto/poteto-mode"
+    ],
+    "evidence": [
+      {
+        "path": "pstack/skills/why/SKILL.md",
+        "start_line": 9,
+        "end_line": 27,
+        "supports": "Read-only investigation purpose, host modes and git/PR anchors."
+      },
+      {
+        "path": "pstack/skills/why/SKILL.md",
+        "start_line": 31,
+        "end_line": 75,
+        "supports": "Parallel evidence categories and documented skip rules."
+      },
+      {
+        "path": "pstack/skills/why/SKILL.md",
+        "start_line": 77,
+        "end_line": 94,
+        "supports": "Synthesis, confidence language, outputs and planning constraints."
+      },
+      {
+        "path": "pstack/skills/why/references/synthesizer-prompt.md",
+        "start_line": 29,
+        "end_line": 45,
+        "supports": "Confidence tiers and explicit prohibition on writes."
+      }
+    ]
+  }
+]

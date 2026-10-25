@@ -1,0 +1,2030 @@
+[
+  {
+    "id": "matt/ask-matt",
+    "kind": "router",
+    "summary": "Selects an entry skill and a route through Matt’s collection, including idea-to-build work, diagnosis, maintenance, and context handoffs. It distinguishes standalone tools from shared reference layers.",
+    "intents": [
+      "clarify",
+      "plan"
+    ],
+    "when_to_use": [
+      "You know your situation but cannot remember which Matt skill fits.",
+      "You need to choose a multi-session build flow or a context transition."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Use the chosen skill’s full instructions before acting; this is orientation, not a substitute."
+    ],
+    "outputs": [
+      "Recommended skill or skill sequence",
+      "Context-transition recommendation"
+    ],
+    "requirements": [
+      "Read each recommended SKILL.md before explaining or skipping it.",
+      "Engineering flows assume setup-matt-pocock-skills configuration."
+    ],
+    "effects": [
+      "read"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [
+      "matt/grill-with-docs",
+      "matt/handoff",
+      "matt/prototype",
+      "matt/to-spec",
+      "matt/to-tickets",
+      "matt/implement",
+      "matt/implement-spec",
+      "matt/tdd",
+      "matt/code-review",
+      "matt/pr",
+      "matt/retro",
+      "matt/triage",
+      "matt/diagnosing-bugs",
+      "matt/wayfinder",
+      "matt/improve-codebase-architecture",
+      "matt/domain-modeling",
+      "matt/codebase-design",
+      "matt/grill-me",
+      "matt/grilling",
+      "matt/research",
+      "matt/to-questionnaire",
+      "matt/wizard",
+      "matt/wait-what",
+      "matt/teach",
+      "matt/writing-for-agents",
+      "matt/setup-matt-pocock-skills"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/ask-matt/SKILL.md",
+        "start_line": 11,
+        "end_line": 30,
+        "supports": "Router, idea flow and build-size branch"
+      },
+      {
+        "path": "skills/engineering/ask-matt/SKILL.md",
+        "start_line": 42,
+        "end_line": 67,
+        "supports": "Diagnosis, incoming work, large planning and reference layers"
+      },
+      {
+        "path": "skills/engineering/ask-matt/SKILL.md",
+        "start_line": 81,
+        "end_line": 97,
+        "supports": "Standalone routes and setup prerequisite"
+      },
+      {
+        "path": "skills/engineering/ask-matt/PHASE-BOUNDARIES.md",
+        "start_line": 19,
+        "end_line": 38,
+        "supports": "Ordered continue, clear, handoff, subagent, compact decision tree"
+      }
+    ]
+  },
+  {
+    "id": "matt/chief-of-staff",
+    "kind": "workflow",
+    "summary": "Coordinates a long-running goal through background subagents while maintaining dated, source-linked knowledge in a durable wiki. It combines tactical delivery with improving the environment for later work.",
+    "intents": [
+      "plan",
+      "operate",
+      "improve"
+    ],
+    "when_to_use": [
+      "A sustained goal requires strategic continuity and multiple delegated tasks."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Beta workflow; do not present it as part of the stable plugin.",
+      "Catalog interpretation: Requires an explicit shared wiki location before new durable memory writes."
+    ],
+    "outputs": [
+      "Coordinated task progress",
+      "Interlinked historical wiki",
+      "Suggested recurring schedules and environment improvements"
+    ],
+    "requirements": [
+      "Background subagents.",
+      "Agreed wiki location; scheduling only where the harness supports it."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "delegate"
+    ],
+    "confirmation": "Agrees wiki location before the first write if none exists. Suggests schedules; automatic creation is not specified.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/in-progress/chief-of-staff/SKILL.md",
+        "start_line": 7,
+        "end_line": 28,
+        "supports": "Long-running coordination, schedules, delegation and wiki agreement"
+      },
+      {
+        "path": "skills/in-progress/chief-of-staff/SKILL.md",
+        "start_line": 30,
+        "end_line": 47,
+        "supports": "Historical, dated, source-linked wiki operations"
+      },
+      {
+        "path": "skills/in-progress/chief-of-staff/SKILL.md",
+        "start_line": 49,
+        "end_line": 68,
+        "supports": "Environmental improvement mandate"
+      }
+    ]
+  },
+  {
+    "id": "matt/claude-handoff",
+    "kind": "utility",
+    "summary": "Writes a redacted temporary handoff and immediately seeds a named Claude background agent with it. This extends the portable handoff concept with a Claude-specific launch.",
+    "intents": [
+      "handoff",
+      "operate"
+    ],
+    "when_to_use": [
+      "Resume current work in a fresh background Claude session."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Beta and Claude-specific; not a portable launch command for all agents."
+    ],
+    "outputs": [
+      "Temporary handoff summary",
+      "Named background Claude agent"
+    ],
+    "requirements": [
+      "Claude CLI supporting --bg and --name; user manages launched jobs with claude agents.",
+      "Writable OS temporary directory."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/in-progress/claude-handoff/SKILL.md",
+        "start_line": 8,
+        "end_line": 18,
+        "supports": "Background command, descriptive name, pointers and redaction"
+      }
+    ]
+  },
+  {
+    "id": "matt/code-review",
+    "kind": "workflow",
+    "summary": "Reviews a fixed-point diff in two independent tracks: repository standards and conformity to the originating spec. It reports each track separately, with repository rules taking precedence over heuristic code smells.",
+    "intents": [
+      "review"
+    ],
+    "when_to_use": [
+      "Review a branch or committed work since a known base.",
+      "Check whether a change matches both the requested behavior and repository conventions."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Resolve a valid nonempty comparison first.",
+      "Catalog interpretation: A missing spec can be reported as skipped rather than invented."
+    ],
+    "outputs": [
+      "Separate Standards and Spec findings",
+      "Counts and worst finding within each axis"
+    ],
+    "requirements": [
+      "Git repository and a fixed point; source uses a merge-base three-dot diff.",
+      "Configured issue tracker; otherwise requests setup-matt-pocock-skills.",
+      "Parallel subagents."
+    ],
+    "effects": [
+      "read",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Asks for the fixed point if absent and for a spec source if none can be found. No approval gate for reporting is stated.",
+    "companions": [
+      "matt/setup-matt-pocock-skills"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/code-review/SKILL.md",
+        "start_line": 6,
+        "end_line": 23,
+        "supports": "Two axes, delegation, fixed point and diff preconditions"
+      },
+      {
+        "path": "skills/engineering/code-review/SKILL.md",
+        "start_line": 25,
+        "end_line": 41,
+        "supports": "Spec discovery and repository precedence"
+      },
+      {
+        "path": "skills/engineering/code-review/SKILL.md",
+        "start_line": 58,
+        "end_line": 80,
+        "supports": "Subagent reporting and separate aggregation"
+      }
+    ]
+  },
+  {
+    "id": "matt/codebase-design",
+    "kind": "reference",
+    "summary": "Provides a shared vocabulary for placing small public interfaces over substantial behavior. Supporting guides cover dependency-aware deepening and comparing alternative interface designs.",
+    "intents": [
+      "design",
+      "improve",
+      "test"
+    ],
+    "when_to_use": [
+      "Choose a module interface or testing seam.",
+      "Compare ways to consolidate architectural friction."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not treat this reference as an automatic implementation request.",
+      "Catalog interpretation: Avoid adding speculative seams when nothing actually varies."
+    ],
+    "outputs": [
+      "Consistent design vocabulary",
+      "Interface and dependency strategy",
+      "Compared alternative designs when requested"
+    ],
+    "requirements": [
+      "Parallel subagents for the optional Design It Twice branch."
+    ],
+    "effects": [
+      "read",
+      "delegate"
+    ],
+    "confirmation": "The alternative-design branch shows the problem space to the user, then starts subagents without waiting; it later presents a recommendation.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/engineering/codebase-design/SKILL.md",
+        "start_line": 8,
+        "end_line": 28,
+        "supports": "Deep-module vocabulary and intended result"
+      },
+      {
+        "path": "skills/engineering/codebase-design/SKILL.md",
+        "start_line": 60,
+        "end_line": 65,
+        "supports": "Interface-oriented principles and seam criterion"
+      },
+      {
+        "path": "skills/engineering/codebase-design/SKILL.md",
+        "start_line": 111,
+        "end_line": 114,
+        "supports": "Conditional supporting guides"
+      },
+      {
+        "path": "skills/engineering/codebase-design/DESIGN-IT-TWICE.md",
+        "start_line": 11,
+        "end_line": 23,
+        "supports": "User-facing framing and 3+ parallel designs"
+      },
+      {
+        "path": "skills/engineering/codebase-design/DEEPENING.md",
+        "start_line": 9,
+        "end_line": 35,
+        "supports": "Dependency-specific testing and replacement strategy"
+      }
+    ]
+  },
+  {
+    "id": "matt/diagnosing-bugs",
+    "kind": "workflow",
+    "summary": "Builds a tight feedback command that catches the exact failure, minimizes the reproduction, tests ranked hypotheses, and verifies a fix. It treats an inadequate testing seam as an architectural finding rather than manufacturing a misleading regression test.",
+    "intents": [
+      "debug",
+      "test"
+    ],
+    "when_to_use": [
+      "A bug resists a first inspection or is intermittent.",
+      "A performance regression needs measurement and isolation."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not recommend hypothesizing before a red-capable feedback command exists.",
+      "Catalog interpretation: Production instrumentation requires the permission requested by this workflow."
+    ],
+    "outputs": [
+      "Runnable symptom-specific reproduction",
+      "Ranked falsifiable hypotheses",
+      "Fix and regression test, or documented missing seam",
+      "Cleaned instrumentation and verified original scenario"
+    ],
+    "requirements": [
+      "Access to an environment or artifact that reproduces the symptom.",
+      "A runnable test, HTTP/CLI/browser harness, or structured human feedback loop."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Shows hypotheses before testing but does not block if the user is away. If no loop can be built, stops to request access, captured evidence, or permission for temporary production instrumentation.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+        "start_line": 14,
+        "end_line": 16,
+        "supports": "Redaction and sensitive-output handling"
+      },
+      {
+        "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+        "start_line": 24,
+        "end_line": 35,
+        "supports": "Feedback-loop options"
+      },
+      {
+        "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+        "start_line": 53,
+        "end_line": 66,
+        "supports": "Hard loop precondition and request for access or instrumentation"
+      },
+      {
+        "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+        "start_line": 90,
+        "end_line": 98,
+        "supports": "Hypothesis checkpoint does not block"
+      },
+      {
+        "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+        "start_line": 114,
+        "end_line": 138,
+        "supports": "Regression seam, fix, original-loop verification and cleanup"
+      }
+    ]
+  },
+  {
+    "id": "matt/domain-modeling",
+    "kind": "reference",
+    "summary": "Sharpens a project’s domain terms against user scenarios and actual code, recording agreed language in glossaries. It offers short decision records only for meaningful, nonobvious, hard-to-reverse tradeoffs.",
+    "intents": [
+      "clarify",
+      "design",
+      "write"
+    ],
+    "when_to_use": [
+      "An overloaded term is causing design ambiguity.",
+      "A domain glossary or qualifying architectural decision needs recording."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not use a domain glossary as a specification or implementation scratchpad.",
+      "Catalog interpretation: Routine decisions that fail the ADR criteria do not need an ADR."
+    ],
+    "outputs": [
+      "Updated GLOSSARY.md or context glossary",
+      "Optional numbered ADR"
+    ],
+    "requirements": [
+      "Working directory; follows GLOSSARY-MAP.md when present."
+    ],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Surfaces contradictions for the user to resolve; captures terms when resolved. Offers ADRs sparingly after all three criteria hold.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/engineering/domain-modeling/SKILL.md",
+        "start_line": 8,
+        "end_line": 8,
+        "supports": "Active modeling rather than only reading vocabulary"
+      },
+      {
+        "path": "skills/engineering/domain-modeling/SKILL.md",
+        "start_line": 24,
+        "end_line": 40,
+        "supports": "Context layout and lazy file creation"
+      },
+      {
+        "path": "skills/engineering/domain-modeling/SKILL.md",
+        "start_line": 44,
+        "end_line": 74,
+        "supports": "Resolve terms, cross-check code, write inline and qualify ADRs"
+      },
+      {
+        "path": "skills/engineering/domain-modeling/ADR-FORMAT.md",
+        "start_line": 3,
+        "end_line": 15,
+        "supports": "Small numbered local decision records"
+      }
+    ]
+  },
+  {
+    "id": "matt/git-guardrails-claude-code",
+    "kind": "setup",
+    "summary": "Installs a Claude Code PreToolUse hook that blocks configured risky Git command patterns before Bash execution. Project or global scope is chosen by the user.",
+    "intents": [
+      "setup",
+      "operate"
+    ],
+    "when_to_use": [
+      "Configure explicit Git command restrictions for Claude Code."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Claude-specific hook; do not treat it as a portable policy engine.",
+      "Catalog interpretation: Pattern blocking should not be described as complete command-security verification."
+    ],
+    "outputs": [
+      "Copied executable Git hook",
+      "Merged Claude settings hook configuration"
+    ],
+    "requirements": [
+      "Claude Code Bash hooks; Bash and jq in the bundled script.",
+      "Writable project or global .claude configuration, depending on scope."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "configure"
+    ],
+    "confirmation": "Asks project versus global scope, then asks about adding or removing blocked patterns.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+        "start_line": 8,
+        "end_line": 24,
+        "supports": "Hook purpose and scope question"
+      },
+      {
+        "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+        "start_line": 26,
+        "end_line": 39,
+        "supports": "Copy and configure hook"
+      },
+      {
+        "path": "skills/misc/git-guardrails-claude-code/SKILL.md",
+        "start_line": 81,
+        "end_line": 95,
+        "supports": "Merge settings, customization question and verification"
+      },
+      {
+        "path": "skills/misc/git-guardrails-claude-code/scripts/block-dangerous-git.sh",
+        "start_line": 3,
+        "end_line": 21,
+        "supports": "jq input parsing and regex-based command blocking"
+      }
+    ]
+  },
+  {
+    "id": "matt/grill-me",
+    "kind": "workflow",
+    "summary": "Runs the shared interview primitive to sharpen a plan or design without the repository-documentation wrapper.",
+    "intents": [
+      "clarify",
+      "plan",
+      "design"
+    ],
+    "when_to_use": [
+      "Stress-test an idea when no working directory is available."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: For persistent project vocabulary and decisions in a repository, use grill-with-docs."
+    ],
+    "outputs": [
+      "Confirmed shared understanding"
+    ],
+    "requirements": [
+      "Skill invocation for grilling."
+    ],
+    "effects": [
+      "read",
+      "delegate"
+    ],
+    "confirmation": "Inherits grilling’s wait for user decisions and final confirmation of shared understanding.",
+    "companions": [
+      "matt/grilling"
+    ],
+    "evidence": [
+      {
+        "path": "skills/productivity/grill-me/SKILL.md",
+        "start_line": 2,
+        "end_line": 7,
+        "supports": "Interview wrapper invokes grilling"
+      },
+      {
+        "path": "skills/productivity/grilling/SKILL.md",
+        "start_line": 28,
+        "end_line": 30,
+        "supports": "Fact-finding delegation and final human confirmation"
+      },
+      {
+        "path": "skills/engineering/ask-matt/SKILL.md",
+        "start_line": 85,
+        "end_line": 86,
+        "supports": "Stateless wrapper and repository alternative"
+      }
+    ]
+  },
+  {
+    "id": "matt/grill-with-docs",
+    "kind": "workflow",
+    "summary": "Combines a structured interview with persistent domain modeling so clarified decisions and vocabulary survive in the repository.",
+    "intents": [
+      "clarify",
+      "plan",
+      "design"
+    ],
+    "when_to_use": [
+      "Sharpen an idea in a repository while maintaining shared language."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: For a conversation with no working directory, grill-me is the upstream router’s alternative."
+    ],
+    "outputs": [
+      "Shared understanding",
+      "Glossary updates and qualifying ADRs"
+    ],
+    "requirements": [
+      "Skill invocation support for grilling and domain-modeling."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "delegate"
+    ],
+    "confirmation": "Inherits grilling’s wait for decisions and final confirmation, plus domain-modeling’s inline agreed documentation.",
+    "companions": [
+      "matt/grilling",
+      "matt/domain-modeling"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/grill-with-docs/SKILL.md",
+        "start_line": 2,
+        "end_line": 7,
+        "supports": "Wrapper invokes both primitive skills"
+      },
+      {
+        "path": "skills/productivity/grilling/SKILL.md",
+        "start_line": 28,
+        "end_line": 30,
+        "supports": "User owns decisions and confirms understanding"
+      },
+      {
+        "path": "skills/engineering/domain-modeling/SKILL.md",
+        "start_line": 60,
+        "end_line": 74,
+        "supports": "Persistent glossary and conditional ADR writes"
+      }
+    ]
+  },
+  {
+    "id": "matt/grilling",
+    "kind": "workflow",
+    "summary": "Interviews the user in rounds of currently answerable decisions, advancing a dependency-aware design tree. The agent researches facts while the user owns the choices.",
+    "intents": [
+      "clarify",
+      "plan",
+      "design"
+    ],
+    "when_to_use": [
+      "Stress-test an idea, design or decision until assumptions are explicit."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not ask the user factual questions the agent can investigate.",
+      "Catalog interpretation: Do not act on the plan before shared understanding is confirmed."
+    ],
+    "outputs": [
+      "Settled design tree",
+      "Confirmed shared understanding"
+    ],
+    "requirements": [
+      "Subagents for environmental fact-finding when needed."
+    ],
+    "effects": [
+      "read",
+      "delegate"
+    ],
+    "confirmation": "Waits after each frontier of questions and requires final user confirmation before acting.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/productivity/grilling/SKILL.md",
+        "start_line": 6,
+        "end_line": 8,
+        "supports": "Round-based design-tree interview"
+      },
+      {
+        "path": "skills/productivity/grilling/SKILL.md",
+        "start_line": 24,
+        "end_line": 30,
+        "supports": "Recommended answers, facts versus decisions and final gate"
+      }
+    ]
+  },
+  {
+    "id": "matt/handoff",
+    "kind": "utility",
+    "summary": "Writes a portable, redacted summary so another agent can resume the work, referencing existing artifacts instead of copying them.",
+    "intents": [
+      "handoff",
+      "write"
+    ],
+    "when_to_use": [
+      "Move work to another harness, directory or colleague.",
+      "Fork a side task while preserving the current discussion."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: The file does not itself launch or message a new agent."
+    ],
+    "outputs": [
+      "Temporary Markdown handoff with suggested skills"
+    ],
+    "requirements": [
+      "Writable OS temporary directory."
+    ],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/productivity/handoff/SKILL.md",
+        "start_line": 8,
+        "end_line": 16,
+        "supports": "Temporary artifact, skill suggestions, pointers and redaction"
+      }
+    ]
+  },
+  {
+    "id": "matt/implement",
+    "kind": "workflow",
+    "summary": "Builds a supplied specification or tickets with tests at agreed seams, regular focused checks, and a final two-axis review. It commits completed work to the current branch.",
+    "intents": [
+      "implement",
+      "test"
+    ],
+    "when_to_use": [
+      "A scoped piece of work already has a spec or tickets.",
+      "Implement one ready ticket in a fresh context."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Clarify an ambiguous ticket reference before implementation.",
+      "Catalog interpretation: For orchestration of an entire ticket graph, implement-spec is the separate route."
+    ],
+    "outputs": [
+      "Implemented code and tests",
+      "Review results",
+      "Commit on the current branch"
+    ],
+    "requirements": [
+      "Spec or tickets; issue-tracker access for ticket references.",
+      "Project typecheck and test commands.",
+      "Companion TDD and review capabilities, including parallel reviewers."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Asks when a ticket reference is ambiguous; TDD requires pre-agreed testing seams. No extra commit confirmation is specified.",
+    "companions": [
+      "matt/tdd",
+      "matt/code-review"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/implement/SKILL.md",
+        "start_line": 7,
+        "end_line": 17,
+        "supports": "Fetch ticket, TDD, checks, review and commit"
+      },
+      {
+        "path": "skills/engineering/tdd/SKILL.md",
+        "start_line": 22,
+        "end_line": 24,
+        "supports": "Mandatory human seam agreement"
+      }
+    ]
+  },
+  {
+    "id": "matt/implement-spec",
+    "kind": "workflow",
+    "summary": "Orchestrates a specified ticket dependency graph across implementer worktrees, merging ready work onto one integration branch. It performs a final integration review and resolves work through the configured tracker.",
+    "intents": [
+      "implement",
+      "test",
+      "operate"
+    ],
+    "when_to_use": [
+      "A multi-ticket spec is ready and you want parallel implementation."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Not an initial discovery or specification workflow.",
+      "Catalog interpretation: Requires coordination support for branches, worktrees and subagents."
+    ],
+    "outputs": [
+      "Implemented integration branch",
+      "Completed tickets or review-ready PR",
+      "Removed implementer worktrees"
+    ],
+    "requirements": [
+      "Spec with tickets and blocking relationships.",
+      "Configured issue tracker; otherwise requests setup-matt-pocock-skills.",
+      "Background subagents, Git branches and worktrees; shared file access for optional exploration notes."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Conditional draft PR creation depends on tracker workflow or user request. It otherwise proceeds through implementation and ticket resolution; TDD seam confirmation remains part of the companion skill.",
+    "companions": [
+      "matt/setup-matt-pocock-skills",
+      "matt/tdd",
+      "matt/code-review"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/implement-spec/SKILL.md",
+        "start_line": 7,
+        "end_line": 17,
+        "supports": "Spec graph and coordination assumptions"
+      },
+      {
+        "path": "skills/engineering/implement-spec/SKILL.md",
+        "start_line": 21,
+        "end_line": 40,
+        "supports": "Integration branch, worktrees, draft/ready PR, review, resolution and cleanup"
+      }
+    ]
+  },
+  {
+    "id": "matt/improve-codebase-architecture",
+    "kind": "workflow",
+    "summary": "Surveys recent areas of change for architectural friction and produces a visual report of deepening candidates. After the user chooses one, it interviews them about the design and records resolved domain decisions.",
+    "intents": [
+      "improve",
+      "design",
+      "clarify"
+    ],
+    "when_to_use": [
+      "You want architectural improvement candidates grounded in real maintenance friction."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not jump to interface proposals before the user chooses a candidate.",
+      "Catalog interpretation: Purely theoretical refactors without observed friction are weak fits."
+    ],
+    "outputs": [
+      "Temporary self-contained architecture-review HTML",
+      "Ranked before/after candidates",
+      "Follow-up design decisions and optional domain docs"
+    ],
+    "requirements": [
+      "Codebase and optional Git history, glossary and ADRs.",
+      "Subagent exploration; HTML uses Tailwind and Mermaid CDNs.",
+      "OS-specific file opener for the generated report."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Asks which candidate to explore before the grilling loop. Offers an ADR for a load-bearing rejection reason.",
+    "companions": [
+      "matt/codebase-design",
+      "matt/grilling",
+      "matt/domain-modeling"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+        "start_line": 13,
+        "end_line": 27,
+        "supports": "Vocabulary, domain context, hot spots and delegated scan"
+      },
+      {
+        "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+        "start_line": 37,
+        "end_line": 60,
+        "supports": "Visual temporary report and candidate selection gate"
+      },
+      {
+        "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+        "start_line": 62,
+        "end_line": 71,
+        "supports": "Grilling, inline docs and offered ADR"
+      }
+    ]
+  },
+  {
+    "id": "matt/loop-me",
+    "kind": "workflow",
+    "summary": "Interviews the user about recurring activities and turns selected loops into implementable workflow specifications. It maintains workspace notes and creates, edits or deletes specs as decisions settle.",
+    "intents": [
+      "clarify",
+      "plan",
+      "write"
+    ],
+    "when_to_use": [
+      "Discover repeatable personal or work activities worth specifying."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Beta; not the implementation or scheduling of a workflow.",
+      "Catalog interpretation: Do not require AI, schedules or human checkpoints when the design does not need them."
+    ],
+    "outputs": [
+      "workflows/*.md specifications",
+      "NOTES.md about the user’s world"
+    ],
+    "requirements": [
+      "Stateful working directory.",
+      "Shared grilling discipline."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "delegate"
+    ],
+    "confirmation": "Runs grilling with user decisions; completion requires an implementer to need no further questions. Checkpoints in the resulting workflow are design choices, not mandatory.",
+    "companions": [
+      "matt/grilling"
+    ],
+    "evidence": [
+      {
+        "path": "skills/in-progress/loop-me/SKILL.md",
+        "start_line": 8,
+        "end_line": 22,
+        "supports": "Grilling, loop/workflow distinction and optional structure"
+      },
+      {
+        "path": "skills/in-progress/loop-me/SKILL.md",
+        "start_line": 25,
+        "end_line": 32,
+        "supports": "Implementability criterion and workspace files"
+      }
+    ]
+  },
+  {
+    "id": "matt/migrate-to-shoehorn",
+    "kind": "workflow",
+    "summary": "Replaces TypeScript test-data assertions with shoehorn helpers for partial or intentionally invalid inputs. It installs the helper package and verifies types after migration.",
+    "intents": [
+      "improve",
+      "test"
+    ],
+    "when_to_use": [
+      "Test fixtures rely on broad as assertions or unwieldy full objects."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Test code only; the source excludes production use."
+    ],
+    "outputs": [
+      "Migrated test fixtures",
+      "Installed @total-typescript/shoehorn dependency",
+      "Typecheck result"
+    ],
+    "requirements": [
+      "TypeScript test files; source installation command uses npm.",
+      "@total-typescript/shoehorn."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "configure"
+    ],
+    "confirmation": "Asks which test files and data needs motivate the migration before installing and changing tests.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+        "start_line": 10,
+        "end_line": 12,
+        "supports": "Partial data and test-only scope"
+      },
+      {
+        "path": "skills/misc/migrate-to-shoehorn/SKILL.md",
+        "start_line": 97,
+        "end_line": 118,
+        "supports": "Helper selection, questions, install, migration and typecheck"
+      }
+    ]
+  },
+  {
+    "id": "matt/pr",
+    "kind": "reference",
+    "summary": "Shapes a concise pull request body around a small explanatory visual, concrete before/after evidence, and rollback difficulty plus blast radius.",
+    "intents": [
+      "write",
+      "review"
+    ],
+    "when_to_use": [
+      "A pull request body needs to explain a concrete change."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Not a review process or a merge instruction."
+    ],
+    "outputs": [
+      "PR body with Summary, Evidence and Merge Danger"
+    ],
+    "requirements": [
+      "Change details and concrete before/after evidence.",
+      "GLOSSARY.md vocabulary when available."
+    ],
+    "effects": [
+      "read"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/engineering/pr/SKILL.md",
+        "start_line": 12,
+        "end_line": 37,
+        "supports": "PR body template and writing scope"
+      },
+      {
+        "path": "skills/engineering/pr/SKILL.md",
+        "start_line": 154,
+        "end_line": 170,
+        "supports": "Small visuals, evidence and merge-risk framing"
+      }
+    ]
+  },
+  {
+    "id": "matt/prototype",
+    "kind": "workflow",
+    "summary": "Answers a specific design question with either a shareable logic demo or several switchable UI variants. It captures the validated decision and preserves the exploratory artifact outside the main branch.",
+    "intents": [
+      "design",
+      "clarify",
+      "implement"
+    ],
+    "when_to_use": [
+      "Test whether a state model handles awkward cases.",
+      "Compare structurally different UI directions."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Avoid using prototype constraints as the standard for production code.",
+      "Catalog interpretation: Do not add persistence or tests unless the question actually requires that scope."
+    ],
+    "outputs": [
+      "One-file HTML logic demo or UI variants",
+      "Decision and verdict",
+      "Preserved prototype branch and issue pointer"
+    ],
+    "requirements": [
+      "A specific design question; existing project conventions for UI work.",
+      "Git branch and issue-context mechanism for final capture."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute"
+    ],
+    "confirmation": "May ask to identify the question if the user is present; if unreachable, makes and states a context-based branch assumption. UI selection and demo feedback drive the answer.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/engineering/prototype/SKILL.md",
+        "start_line": 8,
+        "end_line": 26,
+        "supports": "Question branches, runnable artifacts, limits and capture"
+      },
+      {
+        "path": "skills/engineering/prototype/LOGIC.md",
+        "start_line": 35,
+        "end_line": 48,
+        "supports": "Shareable one-file state exploration"
+      },
+      {
+        "path": "skills/engineering/prototype/UI.md",
+        "start_line": 18,
+        "end_line": 28,
+        "supports": "Prefer existing page over a new throwaway route"
+      },
+      {
+        "path": "skills/engineering/prototype/UI.md",
+        "start_line": 98,
+        "end_line": 112,
+        "supports": "Fold decision in and retain prototype separately; no real mutations"
+      }
+    ]
+  },
+  {
+    "id": "matt/research",
+    "kind": "workflow",
+    "summary": "Delegates a question to a background agent that follows claims to primary sources and leaves a cited Markdown research note.",
+    "intents": [
+      "research"
+    ],
+    "when_to_use": [
+      "Gather official API facts or source-backed answers while other work continues."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Not a replacement for deciding how findings affect the design."
+    ],
+    "outputs": [
+      "Cited Markdown findings in the repository"
+    ],
+    "requirements": [
+      "Background-agent support and access to the relevant primary sources."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "delegate"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/engineering/research/SKILL.md",
+        "start_line": 6,
+        "end_line": 12,
+        "supports": "Background research, source standard and local artifact"
+      }
+    ]
+  },
+  {
+    "id": "matt/retro",
+    "kind": "workflow",
+    "summary": "Examines a coding session for improvements to the agent’s environment, such as navigation, automated checks, review standards and information access. It presents prioritized candidates rather than directly prescribing feature changes.",
+    "intents": [
+      "improve",
+      "review"
+    ],
+    "when_to_use": [
+      "A build went sideways or recurring mistakes suggest missing guardrails."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Not a retrospective on product functionality or a generic code refactor.",
+      "Catalog interpretation: Inspect existing checks before proposing new ones."
+    ],
+    "outputs": [
+      "Severity-ordered environment improvement recommendations"
+    ],
+    "requirements": [
+      "Primary session context or accessible logs.",
+      "Existing repository check configuration and steering documents."
+    ],
+    "effects": [
+      "read"
+    ],
+    "confirmation": "Presents candidates to the user; no separate approval or implementation step is specified.",
+    "companions": [
+      "matt/writing-for-agents"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/retro/SKILL.md",
+        "start_line": 7,
+        "end_line": 25,
+        "supports": "Environment focus, companion reference, source inspection and recommendations"
+      }
+    ]
+  },
+  {
+    "id": "matt/scaffold-exercises",
+    "kind": "utility",
+    "summary": "Creates numbered course exercise directories with problem, solution or explainer stubs and validates them with the AI Hero course linter. It commits the completed structure.",
+    "intents": [
+      "write",
+      "setup",
+      "learn"
+    ],
+    "when_to_use": [
+      "An AI Hero-style course plan needs correctly named exercise stubs."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Host-course convention and linter must be available; not a generic course generator."
+    ],
+    "outputs": [
+      "Numbered section and exercise folders",
+      "Nonempty variant readmes",
+      "Linted and committed scaffold"
+    ],
+    "requirements": [
+      "pnpm ai-hero-cli internal lint.",
+      "Git repository and course-plan input."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/misc/scaffold-exercises/SKILL.md",
+        "start_line": 8,
+        "end_line": 25,
+        "supports": "Course linter, commit and structure"
+      },
+      {
+        "path": "skills/misc/scaffold-exercises/SKILL.md",
+        "start_line": 29,
+        "end_line": 50,
+        "supports": "Required files and scaffold workflow"
+      },
+      {
+        "path": "skills/misc/scaffold-exercises/SKILL.md",
+        "start_line": 65,
+        "end_line": 71,
+        "supports": "History-preserving moves and rerun lint"
+      }
+    ]
+  },
+  {
+    "id": "matt/setup-matt-pocock-skills",
+    "kind": "setup",
+    "summary": "Configures the repository’s tracker, optional triage labels and domain-document conventions for Matt’s engineering workflows. It preserves existing steering files and allows local Markdown, GitHub, GitLab or a custom tracker.",
+    "intents": [
+      "setup"
+    ],
+    "when_to_use": [
+      "Prepare a repository before using the engineering flows.",
+      "Intentionally switch the configured issue tracker."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Avoid recreating configuration that only needs a direct edit.",
+      "Catalog interpretation: Do not create a second steering file when one already exists."
+    ],
+    "outputs": [
+      "docs/agents tracker/domain configuration",
+      "Optional triage-label configuration and created labels",
+      "Agent skills navigation block"
+    ],
+    "requirements": [
+      "Repository inspection; gh for GitHub or glab for GitLab operations.",
+      "User-provided workflow for other trackers."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute",
+      "configure"
+    ],
+    "confirmation": "Presents findings, asks tracker and applicable layout/label questions, then shows draft files for edits before writing. Single-context docs default without a question.",
+    "companions": [
+      "matt/triage"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+        "start_line": 9,
+        "end_line": 15,
+        "supports": "Setup scope and confirm-before-write posture"
+      },
+      {
+        "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+        "start_line": 38,
+        "end_line": 61,
+        "supports": "Tracker variants and conditional questions"
+      },
+      {
+        "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+        "start_line": 63,
+        "end_line": 82,
+        "supports": "Draft review and steering-file preservation"
+      },
+      {
+        "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+        "start_line": 102,
+        "end_line": 118,
+        "supports": "Optional remote labels and configuration output"
+      },
+      {
+        "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+        "start_line": 3,
+        "end_line": 15,
+        "supports": "Local tracker publication is file creation, not necessarily a remote write"
+      }
+    ]
+  },
+  {
+    "id": "matt/setup-pre-commit",
+    "kind": "setup",
+    "summary": "Installs Husky, lint-staged and Prettier to format staged files and run available typecheck/test scripts at commit time. It verifies the setup by committing through the new hook.",
+    "intents": [
+      "setup",
+      "improve",
+      "test"
+    ],
+    "when_to_use": [
+      "A JavaScript repository needs commit-time formatting and checks."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Not a language-independent hook recipe.",
+      "Catalog interpretation: Missing typecheck or test scripts are reported and omitted rather than invented."
+    ],
+    "outputs": [
+      "Husky hook and lint-staged configuration",
+      "Optional new Prettier configuration",
+      "Dependency and prepare-script updates",
+      "Smoke-test commit"
+    ],
+    "requirements": [
+      "JavaScript package manager; detects npm, pnpm, yarn or Bun.",
+      "Installs husky, lint-staged and prettier; recipe targets Husky v9+."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "configure"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/misc/setup-pre-commit/SKILL.md",
+        "start_line": 8,
+        "end_line": 35,
+        "supports": "Setup components, package manager and initialization"
+      },
+      {
+        "path": "skills/misc/setup-pre-commit/SKILL.md",
+        "start_line": 37,
+        "end_line": 59,
+        "supports": "Hook steps and config behavior"
+      },
+      {
+        "path": "skills/misc/setup-pre-commit/SKILL.md",
+        "start_line": 73,
+        "end_line": 91,
+        "supports": "Verification, explicit commit and hook smoke test"
+      }
+    ]
+  },
+  {
+    "id": "matt/setup-ts-deep-modules",
+    "kind": "setup",
+    "summary": "Adds dependency-cruiser checks to enforce package entry points and private implementation folders in a TypeScript repository. It creates a copyable example and demonstrates enforcement with pass–fail–pass evidence.",
+    "intents": [
+      "setup",
+      "improve",
+      "test"
+    ],
+    "when_to_use": [
+      "Enforce package-level imports through public root files."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Beta; the package layout is a deliberate convention, not a universal architecture rule.",
+      "Catalog interpretation: Existing dependency-cruiser configuration must be merged rather than overwritten."
+    ],
+    "outputs": [
+      "Dependency-cruiser configuration and lint:boundaries check",
+      "Example package",
+      "Package README and steering-file pointer",
+      "Observed pass–fail–pass boundary check"
+    ],
+    "requirements": [
+      "TypeScript repository with a package manager.",
+      "Installs dependency-cruiser as a dev dependency.",
+      "Flat package roots; template references tsconfig.json."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute",
+      "configure"
+    ],
+    "confirmation": "Confirms package root if an obvious different convention already exists. It otherwise follows the prescribed setup and validates enforcement.",
+    "companions": [
+      "matt/codebase-design"
+    ],
+    "evidence": [
+      {
+        "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+        "start_line": 9,
+        "end_line": 35,
+        "supports": "Enforced public/private shape and scope"
+      },
+      {
+        "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+        "start_line": 39,
+        "end_line": 65,
+        "supports": "Environment detection, config merge, installation and wiring"
+      },
+      {
+        "path": "skills/in-progress/setup-ts-deep-modules/SKILL.md",
+        "start_line": 67,
+        "end_line": 95,
+        "supports": "Example, enforcement proof and docs"
+      },
+      {
+        "path": "skills/in-progress/setup-ts-deep-modules/dependency-cruiser.config.cjs",
+        "start_line": 88,
+        "end_line": 93,
+        "supports": "Template TypeScript resolver assumptions"
+      }
+    ]
+  },
+  {
+    "id": "matt/tdd",
+    "kind": "workflow",
+    "summary": "Implements behavior one failing test and minimal implementation at a time, using agreed public testing seams. Its current rules reserve refactoring for the later review stage.",
+    "intents": [
+      "test",
+      "implement"
+    ],
+    "when_to_use": [
+      "Build a concrete behavior test-first.",
+      "Fix a behavior with regression coverage at a public seam."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Avoid unconfirmed seams and tests coupled to internal collaborators.",
+      "Catalog interpretation: Do not batch all tests before implementation or fold speculative refactoring into the loop."
+    ],
+    "outputs": [
+      "Behavior-focused tests",
+      "Incremental passing implementation"
+    ],
+    "requirements": [
+      "User agreement on testing seams before writing tests.",
+      "Runnable project testing environment; glossary and ADR context when present."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Requires the user to confirm the seams before any test is written.",
+    "companions": [
+      "matt/codebase-design",
+      "matt/code-review"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/tdd/SKILL.md",
+        "start_line": 8,
+        "end_line": 16,
+        "supports": "Behavioral test reference"
+      },
+      {
+        "path": "skills/engineering/tdd/SKILL.md",
+        "start_line": 18,
+        "end_line": 26,
+        "supports": "Mandatory agreed seams and design vocabulary"
+      },
+      {
+        "path": "skills/engineering/tdd/SKILL.md",
+        "start_line": 28,
+        "end_line": 38,
+        "supports": "Anti-patterns, red-green slices and review-stage refactoring"
+      },
+      {
+        "path": "skills/engineering/tdd/mocking.md",
+        "start_line": 3,
+        "end_line": 14,
+        "supports": "Mocks at system boundaries rather than owned internals"
+      }
+    ]
+  },
+  {
+    "id": "matt/teach",
+    "kind": "teaching",
+    "summary": "Builds a persistent learning workspace with short HTML lessons, reference materials, sources and evidence of learning. It chooses practice relative to the learner’s mission and recorded progress.",
+    "intents": [
+      "learn",
+      "research",
+      "write"
+    ],
+    "when_to_use": [
+      "Learn a topic across multiple sessions with cumulative exercises and references."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: A quick explanation without a learning workspace is a different scope.",
+      "Catalog interpretation: Do not confuse coverage with demonstrated learning."
+    ],
+    "outputs": [
+      "MISSION.md and curated RESOURCES.md",
+      "HTML lessons and reference sheets",
+      "Reusable assets and learning records"
+    ],
+    "requirements": [
+      "Current working directory becomes the teaching workspace.",
+      "Access to high-trust source material; optional OS opener for lessons."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "execute"
+    ],
+    "confirmation": "Questions the user to establish a missing mission and confirms before changing it. User community preferences must be respected.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/productivity/teach/SKILL.md",
+        "start_line": 8,
+        "end_line": 20,
+        "supports": "Persistent workspace and artifacts"
+      },
+      {
+        "path": "skills/productivity/teach/SKILL.md",
+        "start_line": 49,
+        "end_line": 69,
+        "supports": "Short lessons and reusable components"
+      },
+      {
+        "path": "skills/productivity/teach/SKILL.md",
+        "start_line": 73,
+        "end_line": 95,
+        "supports": "Mission, explicit change confirmation and trusted sources"
+      },
+      {
+        "path": "skills/productivity/teach/SKILL.md",
+        "start_line": 116,
+        "end_line": 120,
+        "supports": "Community preference"
+      },
+      {
+        "path": "skills/productivity/teach/LEARNING-RECORD-FORMAT.md",
+        "start_line": 29,
+        "end_line": 42,
+        "supports": "Records require evidence or durable prior knowledge, not activity logs"
+      }
+    ]
+  },
+  {
+    "id": "matt/to-questionnaire",
+    "kind": "utility",
+    "summary": "Creates a discovery questionnaire for one external knowledge holder after clarifying who receives it and what the user needs back. It writes a local document for asynchronous completion or a meeting.",
+    "intents": [
+      "clarify",
+      "write"
+    ],
+    "when_to_use": [
+      "A decision depends on facts held by another person."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Not an interview of the user about a subject they cannot answer.",
+      "Catalog interpretation: Writing the questionnaire does not authorize sending it."
+    ],
+    "outputs": [
+      "to-questionnaire-<slug>.md with context, prioritized questions and answer stubs"
+    ],
+    "requirements": [
+      "User identifies the recipient’s role and needed decisions or facts."
+    ],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Asks two exchanges about the recipient and required outcome before writing. No send operation is specified.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/productivity/to-questionnaire/SKILL.md",
+        "start_line": 7,
+        "end_line": 20,
+        "supports": "Gap-directed discovery, two exchanges and local write"
+      },
+      {
+        "path": "skills/productivity/to-questionnaire/SKILL.md",
+        "start_line": 24,
+        "end_line": 52,
+        "supports": "Document form"
+      }
+    ]
+  },
+  {
+    "id": "matt/to-spec",
+    "kind": "workflow",
+    "summary": "Synthesizes existing discussion into a detailed feature specification and publishes it to the configured tracker. It includes user stories, decisions, test strategy and explicit scope.",
+    "intents": [
+      "plan",
+      "write"
+    ],
+    "when_to_use": [
+      "An idea has already been discussed and is ready to become a buildable spec."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Not an interview to discover unresolved requirements."
+    ],
+    "outputs": [
+      "Published spec marked ready-for-agent",
+      "Agreed test seams"
+    ],
+    "requirements": [
+      "Conversation context and codebase understanding.",
+      "Configured tracker and triage-label vocabulary; otherwise requests setup-matt-pocock-skills."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute"
+    ],
+    "confirmation": "Checks proposed test seams with the user before writing and publishing the spec; it explicitly avoids a new requirements interview.",
+    "companions": [
+      "matt/setup-matt-pocock-skills"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/to-spec/SKILL.md",
+        "start_line": 7,
+        "end_line": 19,
+        "supports": "Synthesis-only scope, setup and test seam checkpoint"
+      },
+      {
+        "path": "skills/engineering/to-spec/SKILL.md",
+        "start_line": 23,
+        "end_line": 69,
+        "supports": "Spec outputs, user stories, decisions and scope"
+      }
+    ]
+  },
+  {
+    "id": "matt/to-tickets",
+    "kind": "workflow",
+    "summary": "Breaks an existing plan into independently verifiable vertical tickets with explicit blockers. It supports a local one-file-per-ticket tracker and remote native dependencies, with an expand–contract exception for wide refactors.",
+    "intents": [
+      "plan",
+      "write"
+    ],
+    "when_to_use": [
+      "Split a ready spec into fresh-session implementation tickets.",
+      "Sequence a mechanical refactor that cannot safely land as vertical slices."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Do not triage generated tickets again; they are agent-ready by construction.",
+      "Catalog interpretation: Do not modify or close a parent issue as part of ticket publication."
+    ],
+    "outputs": [
+      "Approved ticket breakdown",
+      "Published tickets and blocking graph"
+    ],
+    "requirements": [
+      "Plan, spec or current discussion.",
+      "Configured tracker and label vocabulary; otherwise requests setup-matt-pocock-skills."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute"
+    ],
+    "confirmation": "Iterates on granularity and blocking edges until the user approves the breakdown, then publishes.",
+    "companions": [
+      "matt/setup-matt-pocock-skills"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/to-tickets/SKILL.md",
+        "start_line": 9,
+        "end_line": 17,
+        "supports": "Inputs and configuration"
+      },
+      {
+        "path": "skills/engineering/to-tickets/SKILL.md",
+        "start_line": 25,
+        "end_line": 40,
+        "supports": "Vertical slicing and wide-refactor exception"
+      },
+      {
+        "path": "skills/engineering/to-tickets/SKILL.md",
+        "start_line": 42,
+        "end_line": 67,
+        "supports": "Human approval before local or remote publication; parent remains untouched"
+      }
+    ]
+  },
+  {
+    "id": "matt/triage",
+    "kind": "workflow",
+    "summary": "Classifies and verifies incoming requests, interviews the maintainer when needed, and applies a triage state with a durable agent brief. External PRs participate only when enabled or specifically named.",
+    "intents": [
+      "clarify",
+      "plan",
+      "operate"
+    ],
+    "when_to_use": [
+      "Raw bug reports or feature requests need maintainer decisions.",
+      "An external contribution needs verification and a next-step brief."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Generated agent-ready implementation tickets do not need this intake process.",
+      "Catalog interpretation: Conflicting roles or unusual transitions require maintainer direction."
+    ],
+    "outputs": [
+      "Category and triage state",
+      "Agent brief or needs-info notes",
+      "Conditional rejection knowledge-base entry and closure"
+    ],
+    "requirements": [
+      "Configured issue tracker and role-to-label mapping.",
+      "Codebase access and runnable verification for claims."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "Waits for direction after recommending a state. Asks on conflicting states or unusual transitions; quick overrides confirm impending role/comment/close changes before acting.",
+    "companions": [
+      "matt/setup-matt-pocock-skills",
+      "matt/grilling",
+      "matt/domain-modeling"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/triage/SKILL.md",
+        "start_line": 9,
+        "end_line": 17,
+        "supports": "Tracker workflow and AI disclaimer"
+      },
+      {
+        "path": "skills/engineering/triage/SKILL.md",
+        "start_line": 39,
+        "end_line": 45,
+        "supports": "Role invariants and unusual-transition approval"
+      },
+      {
+        "path": "skills/engineering/triage/SKILL.md",
+        "start_line": 64,
+        "end_line": 90,
+        "supports": "PR scope, verify, interview, writes, closure and checkpoints"
+      },
+      {
+        "path": "skills/engineering/triage/AGENT-BRIEF.md",
+        "start_line": 3,
+        "end_line": 5,
+        "supports": "Brief is the authoritative behavioral contract"
+      },
+      {
+        "path": "skills/engineering/triage/OUT-OF-SCOPE.md",
+        "start_line": 84,
+        "end_line": 97,
+        "supports": "Only rejected enhancements enter rejection memory"
+      }
+    ]
+  },
+  {
+    "id": "matt/wait-what",
+    "kind": "utility",
+    "summary": "Re-explains the preceding message with missing context, simplified English and the project’s established vocabulary.",
+    "intents": [
+      "clarify",
+      "learn"
+    ],
+    "when_to_use": [
+      "The last explanation did not land and needs a clearer pitch."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Not a request to restart the whole underlying workflow."
+    ],
+    "outputs": [
+      "Clearer contextualized explanation"
+    ],
+    "requirements": [
+      "GLOSSARY.md or GLOSSARY-MAP.md when present; ASD-STE100 style reference in the request."
+    ],
+    "effects": [
+      "read"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/productivity/wait-what/SKILL.md",
+        "start_line": 2,
+        "end_line": 7,
+        "supports": "Re-pitch instruction and vocabulary requirement"
+      }
+    ]
+  },
+  {
+    "id": "matt/wayfinder",
+    "kind": "workflow",
+    "summary": "Maps a very large uncertain effort as linked decision tickets, resolving one non-research ticket per session as the frontier becomes clear. By default it delivers decisions and a handoff to implementation planning.",
+    "intents": [
+      "plan",
+      "clarify",
+      "research",
+      "design"
+    ],
+    "when_to_use": [
+      "A greenfield project or large feature exceeds a single reasoning session."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: A well-scoped build with a visible route does not need a map.",
+      "Catalog interpretation: Do not confuse decision tickets with implementation tasks unless the effort explicitly overrides the planning default."
+    ],
+    "outputs": [
+      "Decision map and linked tickets",
+      "Resolution comments and updated frontier",
+      "Research or prototype assets linked from tickets"
+    ],
+    "requirements": [
+      "Configured tracker supporting maps, children, claims and blockers; local Markdown fallback.",
+      "Subagents for research; branch/push access for research artifacts."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute",
+      "delegate"
+    ],
+    "confirmation": "HITL decisions must come from live human exchange. If charting finds no fog, stops to ask how to proceed; charting itself stops after creating the map and research work.",
+    "companions": [
+      "matt/setup-matt-pocock-skills",
+      "matt/research",
+      "matt/prototype",
+      "matt/grilling",
+      "matt/domain-modeling"
+    ],
+    "evidence": [
+      {
+        "path": "skills/engineering/wayfinder/SKILL.md",
+        "start_line": 11,
+        "end_line": 25,
+        "supports": "Planning default and configured tracker"
+      },
+      {
+        "path": "skills/engineering/wayfinder/SKILL.md",
+        "start_line": 65,
+        "end_line": 80,
+        "supports": "Decision-ticket types, claims and human ownership"
+      },
+      {
+        "path": "skills/engineering/wayfinder/SKILL.md",
+        "start_line": 103,
+        "end_line": 128,
+        "supports": "Session limit, charting and resolution operations"
+      },
+      {
+        "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+        "start_line": 21,
+        "end_line": 30,
+        "supports": "Local map and claim mechanics"
+      }
+    ]
+  },
+  {
+    "id": "matt/wizard",
+    "kind": "utility",
+    "summary": "Authors a staged interactive Bash procedure for actions only the human can complete. The generated script guides browser steps, captures values and can persist local environment variables and GitHub settings.",
+    "intents": [
+      "setup",
+      "operate",
+      "handoff"
+    ],
+    "when_to_use": [
+      "Credentials, provisioning or a cutover is blocked on human-only steps."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: If the agent can perform the step itself, this is the wrong route.",
+      "Catalog interpretation: The authoring agent should not run the full interactive script itself."
+    ],
+    "outputs": [
+      "Verified executable wizard script",
+      "Instructions for the human to run it",
+      "Optional documented repeatable setup path"
+    ],
+    "requirements": [
+      "Bash; optional shellcheck.",
+      "Bundled template; a browser opener where available.",
+      "Authenticated gh for GitHub writes, with documented manual fallback."
+    ],
+    "effects": [
+      "read",
+      "local_write",
+      "external_write",
+      "execute",
+      "configure"
+    ],
+    "confirmation": "Confirms stage order and captured-value destinations before authoring. Generated stages confirm before irreversible actions; the human runs the procedure.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/engineering/wizard/SKILL.md",
+        "start_line": 8,
+        "end_line": 12,
+        "supports": "Wizard result, supported effects and ephemeral default"
+      },
+      {
+        "path": "skills/engineering/wizard/SKILL.md",
+        "start_line": 18,
+        "end_line": 25,
+        "supports": "Stage-scope confirmation"
+      },
+      {
+        "path": "skills/engineering/wizard/SKILL.md",
+        "start_line": 33,
+        "end_line": 44,
+        "supports": "Template use, irreversible gates, static validation and handoff"
+      },
+      {
+        "path": "skills/engineering/wizard/template.sh",
+        "start_line": 137,
+        "end_line": 178,
+        "supports": "Actual .env and conditional GitHub secret/variable mutations"
+      }
+    ]
+  },
+  {
+    "id": "matt/writing-beats",
+    "kind": "workflow",
+    "summary": "Shapes fixed raw material into an article through user-selected narrative beats, tracking which concepts the audience already understands. Each accepted beat is written before alternatives for the next move are offered.",
+    "intents": [
+      "write",
+      "clarify"
+    ],
+    "when_to_use": [
+      "You have raw material and want to choose an article’s path one beat at a time."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Beta; this is shaping fixed material rather than gathering new fragments.",
+      "Catalog interpretation: Do not write ahead of the selected beat."
+    ],
+    "outputs": [
+      "Separate article document",
+      "A progression of selected beats and grounded concepts"
+    ],
+    "requirements": [
+      "Markdown raw-material file and an agreed article output path."
+    ],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Settles audience prerequisites, offers 2–3 choices and waits for the user to select each beat before writing.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/in-progress/writing-beats/SKILL.md",
+        "start_line": 9,
+        "end_line": 19,
+        "supports": "Fixed-input shaping and per-beat selection"
+      },
+      {
+        "path": "skills/in-progress/writing-beats/SKILL.md",
+        "start_line": 27,
+        "end_line": 38,
+        "supports": "Concept prerequisites and grounding"
+      },
+      {
+        "path": "skills/in-progress/writing-beats/SKILL.md",
+        "start_line": 60,
+        "end_line": 65,
+        "supports": "One write at a time and preserve edits"
+      }
+    ]
+  },
+  {
+    "id": "matt/writing-for-agents",
+    "kind": "reference",
+    "summary": "Guides the structure and wording of documents agents consume, using conditional pointers, explicit completion criteria and a single source for each meaning. A supporting guide explains skill invocation and router design.",
+    "intents": [
+      "write",
+      "improve"
+    ],
+    "when_to_use": [
+      "Create or edit a skill, steering file or agent-facing reference."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Not a general prose style guide for a human audience.",
+      "Catalog interpretation: Do not assume its documented invocation mechanics are universal across hosts."
+    ],
+    "outputs": [
+      "More predictable agent-facing instructions",
+      "Sharper context pointers and completion criteria"
+    ],
+    "requirements": [
+      "Read supporting SKILL-MECHANICS.md when authoring a skill."
+    ],
+    "effects": [
+      "read"
+    ],
+    "confirmation": "Not explicitly specified in this skill.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/productivity/writing-for-agents/SKILL.md",
+        "start_line": 6,
+        "end_line": 18,
+        "supports": "Scope and conditional context pointers"
+      },
+      {
+        "path": "skills/productivity/writing-for-agents/SKILL.md",
+        "start_line": 29,
+        "end_line": 59,
+        "supports": "Information hierarchy, completion criteria and splitting"
+      },
+      {
+        "path": "skills/productivity/writing-for-agents/SKILL.md",
+        "start_line": 76,
+        "end_line": 81,
+        "supports": "Single source, relevance and pruning"
+      },
+      {
+        "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+        "start_line": 9,
+        "end_line": 22,
+        "supports": "Host-oriented invocation distinctions and router guidance"
+      }
+    ]
+  },
+  {
+    "id": "matt/writing-fragments",
+    "kind": "workflow",
+    "summary": "Interviews the author to collect unstructured fragments that could become future writing. It appends them to a single raw-material document without imposing an outline.",
+    "intents": [
+      "write",
+      "clarify"
+    ],
+    "when_to_use": [
+      "Explore a subject before deciding what article to write."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Beta; structure and article shaping are outside this skill."
+    ],
+    "outputs": [
+      "Append-only Markdown fragment collection"
+    ],
+    "requirements": [
+      "Agreed output path; prompts if absent."
+    ],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Asks for the path once; then appends fragments without requesting approval for each save. Specific edits or cuts follow user requests.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/in-progress/writing-fragments/SKILL.md",
+        "start_line": 9,
+        "end_line": 17,
+        "supports": "Exploration only, immediate capture and path question"
+      },
+      {
+        "path": "skills/in-progress/writing-fragments/SKILL.md",
+        "start_line": 69,
+        "end_line": 77,
+        "supports": "No imposed order, silent appends and reread-before-write"
+      }
+    ]
+  },
+  {
+    "id": "matt/writing-shape",
+    "kind": "workflow",
+    "summary": "Turns a fixed raw-material file into a separate article through user-agreed openings, paragraphs and format choices. It keeps track of conceptual prerequisites and preserves the input unchanged.",
+    "intents": [
+      "write",
+      "clarify"
+    ],
+    "when_to_use": [
+      "You have a transcript or fragment pile and want collaborative paragraph-level shaping."
+    ],
+    "avoid_when": [
+      "Catalog interpretation: Beta; not new-fragment discovery, publication or editing the source material."
+    ],
+    "outputs": [
+      "Separate article document",
+      "Agreed argument, opening and grounded progression"
+    ],
+    "requirements": [
+      "Raw-material Markdown file read in full.",
+      "Agreed article output path."
+    ],
+    "effects": [
+      "read",
+      "local_write"
+    ],
+    "confirmation": "Settles reader prerequisites, requires a chosen opening, writes agreed blocks and leaves completion to the user.",
+    "companions": [],
+    "evidence": [
+      {
+        "path": "skills/in-progress/writing-shape/SKILL.md",
+        "start_line": 9,
+        "end_line": 26,
+        "supports": "Read-only source and user-led shaping loop"
+      },
+      {
+        "path": "skills/in-progress/writing-shape/SKILL.md",
+        "start_line": 53,
+        "end_line": 71,
+        "supports": "Gap handling, format choices and preserving article edits"
+      },
+      {
+        "path": "skills/in-progress/writing-shape/SKILL.md",
+        "start_line": 73,
+        "end_line": 77,
+        "supports": "Scope exclusions"
+      }
+    ]
+  }
+]

@@ -1,0 +1,330 @@
+{
+  "schema_version": 1,
+  "status": "Curated offline regression scenarios; not a user study or model-quality benchmark.",
+  "scenarios": [
+    {
+      "scenario": "A reproducible bug needs diagnosis and a practical regression fix.",
+      "expected_outcome": "debug",
+      "answers": {
+        "software": "yes",
+        "broken": "yes"
+      },
+      "required_candidates": [
+        "matt/diagnosing-bugs",
+        "poteto/poteto-mode"
+      ]
+    },
+    {
+      "scenario": "Explain historical design reasons without changing the product.",
+      "expected_outcome": "rationale",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "yes",
+        "existing_system": "yes",
+        "historical_reason": "yes"
+      },
+      "required_candidates": [
+        "poteto/why"
+      ]
+    },
+    {
+      "scenario": "Trace how an existing subsystem works.",
+      "expected_outcome": "explanation",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "yes",
+        "existing_system": "yes",
+        "historical_reason": "no"
+      },
+      "required_candidates": [
+        "poteto/how"
+      ]
+    },
+    {
+      "scenario": "Research a focused question from primary sources.",
+      "expected_outcome": "research",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "yes",
+        "existing_system": "no"
+      },
+      "required_candidates": [
+        "matt/research"
+      ]
+    },
+    {
+      "scenario": "Review an existing diff against its intended behavior.",
+      "expected_outcome": "review",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "no",
+        "existing_change": "yes",
+        "shipping": "no"
+      },
+      "required_candidates": [
+        "matt/code-review",
+        "poteto/interrogate"
+      ]
+    },
+    {
+      "scenario": "Get a PR ready, distinguishing readiness from permission to merge.",
+      "expected_outcome": "delivery",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "no",
+        "existing_change": "yes",
+        "shipping": "yes"
+      },
+      "required_candidates": [
+        "poteto/poteto-mode"
+      ]
+    },
+    {
+      "scenario": "Design tests for a new feature at agreed public interfaces.",
+      "expected_outcome": "test",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "no",
+        "existing_change": "no",
+        "testing": "yes"
+      },
+      "required_candidates": [
+        "matt/tdd"
+      ]
+    },
+    {
+      "scenario": "Evaluate module shape while making design-only expectations explicit.",
+      "expected_outcome": "design",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "no",
+        "existing_change": "no",
+        "testing": "no",
+        "architecture": "yes"
+      },
+      "required_candidates": [
+        "matt/improve-codebase-architecture",
+        "poteto/architect"
+      ]
+    },
+    {
+      "scenario": "Implement a settled graph of dependent tickets.",
+      "expected_outcome": "parallel_build",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "no",
+        "existing_change": "no",
+        "testing": "no",
+        "architecture": "no",
+        "decided": "yes",
+        "ticket_graph": "yes"
+      },
+      "required_candidates": [
+        "matt/implement-spec"
+      ]
+    },
+    {
+      "scenario": "Implement one settled piece of work.",
+      "expected_outcome": "build",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "no",
+        "existing_change": "no",
+        "testing": "no",
+        "architecture": "no",
+        "decided": "yes",
+        "ticket_graph": "no"
+      },
+      "required_candidates": [
+        "matt/implement"
+      ]
+    },
+    {
+      "scenario": "Test a state-model idea with a throwaway executable.",
+      "expected_outcome": "prototype",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "no",
+        "existing_change": "no",
+        "testing": "no",
+        "architecture": "no",
+        "decided": "no",
+        "experiment": "yes"
+      },
+      "required_candidates": [
+        "matt/prototype"
+      ]
+    },
+    {
+      "scenario": "Map a foggy effort that exceeds one conversation.",
+      "expected_outcome": "map_effort",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "no",
+        "existing_change": "no",
+        "testing": "no",
+        "architecture": "no",
+        "decided": "no",
+        "experiment": "no",
+        "large_effort": "yes"
+      },
+      "required_candidates": [
+        "matt/wayfinder"
+      ]
+    },
+    {
+      "scenario": "Clarify a bounded software idea before a spec.",
+      "expected_outcome": "clarify_software",
+      "answers": {
+        "software": "yes",
+        "broken": "no",
+        "understand": "no",
+        "existing_change": "no",
+        "testing": "no",
+        "architecture": "no",
+        "decided": "no",
+        "experiment": "no",
+        "large_effort": "no"
+      },
+      "required_candidates": [
+        "matt/grill-with-docs"
+      ]
+    },
+    {
+      "scenario": "Build a multi-session course with saved lessons.",
+      "expected_outcome": "course",
+      "answers": {
+        "software": "no",
+        "learning": "yes",
+        "learning_workspace": "yes"
+      },
+      "required_candidates": [
+        "matt/teach"
+      ]
+    },
+    {
+      "scenario": "Explain a body of work conversationally without a course workspace.",
+      "expected_outcome": "plain_teaching",
+      "answers": {
+        "software": "no",
+        "learning": "yes",
+        "learning_workspace": "no"
+      },
+      "required_candidates": [
+        "poteto/teach"
+      ]
+    },
+    {
+      "scenario": "Transfer current work to another person or directory.",
+      "expected_outcome": "handoff",
+      "answers": {
+        "software": "no",
+        "learning": "no",
+        "continuity": "yes",
+        "transfer": "yes"
+      },
+      "required_candidates": [
+        "matt/handoff"
+      ]
+    },
+    {
+      "scenario": "Recover context or catch up on a current conversation.",
+      "expected_outcome": "catch_up",
+      "answers": {
+        "software": "no",
+        "learning": "no",
+        "continuity": "yes",
+        "transfer": "no"
+      },
+      "required_candidates": [
+        "poteto/recall",
+        "poteto/ketchup"
+      ]
+    },
+    {
+      "scenario": "Write an agent-facing instruction document.",
+      "expected_outcome": "agent_writing",
+      "answers": {
+        "software": "no",
+        "learning": "no",
+        "continuity": "no",
+        "writing": "yes",
+        "agent_document": "yes"
+      },
+      "required_candidates": [
+        "matt/writing-for-agents"
+      ]
+    },
+    {
+      "scenario": "Edit technical prose.",
+      "expected_outcome": "prose",
+      "answers": {
+        "software": "no",
+        "learning": "no",
+        "continuity": "no",
+        "writing": "yes",
+        "agent_document": "no"
+      },
+      "required_candidates": [
+        "poteto/technical-writing"
+      ]
+    },
+    {
+      "scenario": "Identify a setup step that only the human can perform.",
+      "expected_outcome": "setup",
+      "answers": {
+        "software": "no",
+        "learning": "no",
+        "continuity": "no",
+        "writing": "no",
+        "configuration": "yes"
+      },
+      "required_candidates": [
+        "matt/wizard"
+      ]
+    },
+    {
+      "scenario": "Clarify a general idea without a repository.",
+      "expected_outcome": "clarify_general",
+      "answers": {
+        "software": "no",
+        "learning": "no",
+        "continuity": "no",
+        "writing": "no",
+        "configuration": "no",
+        "general_idea": "yes",
+        "project_directory": "no"
+      },
+      "required_candidates": [
+        "matt/grill-me"
+      ]
+    },
+    {
+      "scenario": "The situation is still unclear; offer a native guide.",
+      "expected_outcome": "unclear",
+      "answers": {
+        "software": "no",
+        "learning": "no",
+        "continuity": "no",
+        "writing": "no",
+        "configuration": "no",
+        "general_idea": "no"
+      },
+      "required_candidates": [
+        "matt/ask-matt",
+        "poteto/poteto-help"
+      ]
+    }
+  ]
+}

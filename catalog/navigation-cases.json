@@ -1,0 +1,323 @@
+{
+  "cases": [
+    {
+      "scenario": "Explain existing behavior",
+      "goal": "understand",
+      "answers": {
+        "understand-focus": "behavior"
+      },
+      "expected_outcome": "explain-system",
+      "expected_primary": "poteto/how"
+    },
+    {
+      "scenario": "Recover the reasons behind a design",
+      "goal": "understand",
+      "answers": {
+        "understand-focus": "rationale"
+      },
+      "expected_outcome": "recover-rationale",
+      "expected_primary": "poteto/why"
+    },
+    {
+      "scenario": "Research a bounded question",
+      "goal": "understand",
+      "answers": {
+        "understand-focus": "research"
+      },
+      "expected_outcome": "research-topic",
+      "expected_primary": "matt/research"
+    },
+    {
+      "scenario": "Analyze how to test a module in a system without running the whole system; isolated tests are allowed.",
+      "goal": "test",
+      "answers": {
+        "test-intent": "strategy",
+        "module-execution": "isolated"
+      },
+      "expected_outcome": "module-isolated-strategy",
+      "expected_primary": "matt/codebase-design"
+    },
+    {
+      "scenario": "Analyze how to test a module without running the whole system; no code execution is allowed at all.",
+      "goal": "test",
+      "answers": {
+        "test-intent": "strategy",
+        "module-execution": "analysis"
+      },
+      "expected_outcome": "module-analysis-strategy",
+      "expected_primary": "matt/codebase-design"
+    },
+    {
+      "scenario": "Build feature behavior one failing test at a time",
+      "goal": "test",
+      "answers": {
+        "test-intent": "feature"
+      },
+      "expected_outcome": "feature-test-first",
+      "expected_primary": "matt/tdd"
+    },
+    {
+      "scenario": "Lock down a known bug with a focused regression",
+      "goal": "test",
+      "answers": {
+        "test-intent": "regression"
+      },
+      "expected_outcome": "bug-regression",
+      "expected_primary": "poteto/tdd"
+    },
+    {
+      "scenario": "Create a repeatable real-app verification workflow",
+      "goal": "test",
+      "answers": {
+        "test-intent": "app",
+        "app-check-state": "create"
+      },
+      "expected_outcome": "create-app-check",
+      "expected_primary": "poteto/create-verification-skill"
+    },
+    {
+      "scenario": "Audit an existing app verification workflow",
+      "goal": "test",
+      "answers": {
+        "test-intent": "app",
+        "app-check-state": "maintain"
+      },
+      "expected_outcome": "maintain-app-check",
+      "expected_primary": "poteto/maintain-verification-skill"
+    },
+    {
+      "scenario": "Create a scoped invariant verification workflow",
+      "goal": "test",
+      "answers": {
+        "test-intent": "formal"
+      },
+      "expected_outcome": "formal-check",
+      "expected_primary": "poteto/create-formal-verification-skill"
+    },
+    {
+      "scenario": "Clarify decisions and preserve the domain language",
+      "goal": "plan",
+      "answers": {
+        "plan-state": "open"
+      },
+      "expected_outcome": "clarify-plan",
+      "expected_primary": "matt/grill-with-docs"
+    },
+    {
+      "scenario": "Turn settled discussion into a specification",
+      "goal": "plan",
+      "answers": {
+        "plan-state": "settled"
+      },
+      "expected_outcome": "write-spec",
+      "expected_primary": "matt/to-spec"
+    },
+    {
+      "scenario": "Split an agreed plan into verifiable work",
+      "goal": "plan",
+      "answers": {
+        "plan-state": "tickets"
+      },
+      "expected_outcome": "split-tickets",
+      "expected_primary": "matt/to-tickets"
+    },
+    {
+      "scenario": "Implement a bounded specification",
+      "goal": "implement",
+      "answers": {
+        "implementation-size": "scoped"
+      },
+      "expected_outcome": "implement-scoped",
+      "expected_primary": "matt/implement"
+    },
+    {
+      "scenario": "Implement a specification across its ticket graph",
+      "goal": "implement",
+      "answers": {
+        "implementation-size": "graph"
+      },
+      "expected_outcome": "implement-ticket-graph",
+      "expected_primary": "matt/implement-spec"
+    },
+    {
+      "scenario": "Diagnose and fix a reproducible failure",
+      "goal": "diagnose",
+      "answers": {
+        "diagnosis-result": "fix"
+      },
+      "expected_outcome": "diagnose-fix",
+      "expected_primary": "matt/diagnosing-bugs"
+    },
+    {
+      "scenario": "Diagnose a live runtime symptom",
+      "goal": "diagnose",
+      "answers": {
+        "diagnosis-result": "live"
+      },
+      "expected_outcome": "diagnose-live",
+      "expected_primary": "poteto/poteto-mode"
+    },
+    {
+      "scenario": "Use a reference for interface and seam design",
+      "goal": "design",
+      "answers": {
+        "design-depth": "advice"
+      },
+      "expected_outcome": "design-reference",
+      "expected_primary": "matt/codebase-design"
+    },
+    {
+      "scenario": "Prototype to answer one design question",
+      "goal": "design",
+      "answers": {
+        "design-depth": "prototype"
+      },
+      "expected_outcome": "design-prototype",
+      "expected_primary": "matt/prototype"
+    },
+    {
+      "scenario": "Compare architectural shapes, then implement",
+      "goal": "design",
+      "answers": {
+        "design-depth": "build"
+      },
+      "expected_outcome": "design-implement",
+      "expected_primary": "poteto/architect"
+    },
+    {
+      "scenario": "Report standards and specification findings",
+      "goal": "review",
+      "answers": {
+        "review-result": "report"
+      },
+      "expected_outcome": "review-standards-spec",
+      "expected_primary": "matt/code-review"
+    },
+    {
+      "scenario": "Get an independent adversarial verdict",
+      "goal": "review",
+      "answers": {
+        "review-result": "adversarial"
+      },
+      "expected_outcome": "review-adversarial",
+      "expected_primary": "poteto/interrogate"
+    },
+    {
+      "scenario": "Write an evidence-backed PR description",
+      "goal": "review",
+      "answers": {
+        "review-result": "body"
+      },
+      "expected_outcome": "write-pr-body",
+      "expected_primary": "matt/pr"
+    },
+    {
+      "scenario": "Make an existing PR ready for a merge decision",
+      "goal": "review",
+      "answers": {
+        "review-result": "ready"
+      },
+      "expected_outcome": "ready-pr",
+      "expected_primary": "poteto/poteto-mode"
+    },
+    {
+      "scenario": "Verify and land an explicitly authorized PR run",
+      "goal": "review",
+      "answers": {
+        "review-result": "ship"
+      },
+      "expected_outcome": "ship-pr",
+      "expected_primary": "poteto/poteto-mode"
+    },
+    {
+      "scenario": "Learn through a code-grounded conversation",
+      "goal": "write-learn",
+      "answers": {
+        "writing-learning": "explain"
+      },
+      "expected_outcome": "learn-conversation",
+      "expected_primary": "poteto/teach"
+    },
+    {
+      "scenario": "Create a persistent learning workspace",
+      "goal": "write-learn",
+      "answers": {
+        "writing-learning": "workspace"
+      },
+      "expected_outcome": "learn-workspace",
+      "expected_primary": "matt/teach"
+    },
+    {
+      "scenario": "Structure and clarify technical writing",
+      "goal": "write-learn",
+      "answers": {
+        "writing-learning": "document"
+      },
+      "expected_outcome": "technical-document",
+      "expected_primary": "poteto/technical-writing"
+    },
+    {
+      "scenario": "Triage requests into actionable work",
+      "goal": "improve",
+      "answers": {
+        "improvement-target": "triage"
+      },
+      "expected_outcome": "triage-requests",
+      "expected_primary": "matt/triage"
+    },
+    {
+      "scenario": "Find improvements to the agent’s working environment",
+      "goal": "improve",
+      "answers": {
+        "improvement-target": "retro"
+      },
+      "expected_outcome": "session-retrospective",
+      "expected_primary": "matt/retro"
+    },
+    {
+      "scenario": "Prevent recurring classes of agent mistakes",
+      "goal": "improve",
+      "answers": {
+        "improvement-target": "mistakes"
+      },
+      "expected_outcome": "prevent-mistakes",
+      "expected_primary": "poteto/correct"
+    },
+    {
+      "scenario": "Improve the prompt without expanding the task",
+      "goal": "improve",
+      "answers": {
+        "improvement-target": "prompt"
+      },
+      "expected_outcome": "sharpen-task",
+      "expected_primary": "poteto/sharpen"
+    },
+    {
+      "scenario": "Coordinate parallel coverage or candidate work",
+      "goal": "improve",
+      "answers": {
+        "improvement-target": "parallel"
+      },
+      "expected_outcome": "coordinate-workers",
+      "expected_primary": "poteto/swarm"
+    },
+    {
+      "scenario": "Prepare a portable handoff for the next session",
+      "goal": "context",
+      "answers": {
+        "context-action": "next-agent"
+      },
+      "expected_outcome": "portable-handoff",
+      "expected_primary": "matt/handoff"
+    },
+    {
+      "scenario": "Catch up on this chat and outstanding decisions",
+      "goal": "context",
+      "answers": {
+        "context-action": "me"
+      },
+      "expected_outcome": "catch-up",
+      "expected_primary": "poteto/ketchup"
+    }
+  ]
+}

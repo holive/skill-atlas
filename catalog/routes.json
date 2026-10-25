@@ -1,0 +1,523 @@
+{
+  "schema_version": 1,
+  "language": "en",
+  "status": "Initial curated decision graph; human calibration pending.",
+  "start": "software",
+  "interpretation_policy": "Every outcome is an attributed selection aid, not an upstream instruction or authorization. Candidates are alternatives. Support entries are conditional companions.",
+  "selection_after_routing": [
+    "Check the concrete deliverable and distinguish the alternatives named in the outcome.",
+    "Check source-specific requirements and installed host support.",
+    "Choose one workflow owner when alternatives both coordinate work.",
+    "Show evidence, limits, setup needs, and a qualified ID before invocation."
+  ],
+  "questions": {
+    "software": {
+      "question": "Is your main goal to change, assess, or understand software?",
+      "answers": {
+        "yes": "broken",
+        "no": "learning"
+      }
+    },
+    "broken": {
+      "question": "Is something broken, flaky, or slower than expected?",
+      "answers": {
+        "yes": "debug",
+        "no": "understand"
+      }
+    },
+    "understand": {
+      "question": "Is your main goal to gather evidence or understand something?",
+      "answers": {
+        "yes": "existing_system",
+        "no": "existing_change"
+      }
+    },
+    "existing_system": {
+      "question": "Are you asking about an existing system or change?",
+      "answers": {
+        "yes": "historical_reason",
+        "no": "research"
+      }
+    },
+    "historical_reason": {
+      "question": "Do you mainly want to know why it was built this way?",
+      "answers": {
+        "yes": "rationale",
+        "no": "explanation"
+      }
+    },
+    "existing_change": {
+      "question": "Do you already have a change to evaluate or deliver?",
+      "answers": {
+        "yes": "shipping",
+        "no": "testing"
+      }
+    },
+    "shipping": {
+      "question": "Is your immediate goal to get a PR ready or land it?",
+      "answers": {
+        "yes": "delivery",
+        "no": "review"
+      }
+    },
+    "testing": {
+      "question": "Is your immediate goal a test strategy or a regression test?",
+      "answers": {
+        "yes": "test",
+        "no": "architecture"
+      }
+    },
+    "architecture": {
+      "question": "Is your main problem module design or architectural complexity?",
+      "answers": {
+        "yes": "design",
+        "no": "decided"
+      }
+    },
+    "decided": {
+      "question": "Is the intended outcome decided enough to start building?",
+      "answers": {
+        "yes": "ticket_graph",
+        "no": "experiment"
+      }
+    },
+    "ticket_graph": {
+      "question": "Do you have a dependency graph of ready implementation tickets?",
+      "answers": {
+        "yes": "parallel_build",
+        "no": "build"
+      }
+    },
+    "experiment": {
+      "question": "Could a small executable experiment settle the open question?",
+      "answers": {
+        "yes": "prototype",
+        "no": "large_effort"
+      }
+    },
+    "large_effort": {
+      "question": "Is planning this effort too large for one conversation?",
+      "answers": {
+        "yes": "map_effort",
+        "no": "clarify_software"
+      }
+    },
+    "learning": {
+      "question": "Is your main goal to learn or understand a topic?",
+      "answers": {
+        "yes": "learning_workspace",
+        "no": "continuity"
+      }
+    },
+    "learning_workspace": {
+      "question": "Do you want saved lessons and a learning history over multiple sessions?",
+      "answers": {
+        "yes": "course",
+        "no": "plain_teaching"
+      }
+    },
+    "continuity": {
+      "question": "Do you need to transfer work, resume it, or catch up?",
+      "answers": {
+        "yes": "transfer",
+        "no": "writing"
+      }
+    },
+    "transfer": {
+      "question": "Do you need a portable handoff to a different agent, person, or directory?",
+      "answers": {
+        "yes": "handoff",
+        "no": "catch_up"
+      }
+    },
+    "writing": {
+      "question": "Is the deliverable writing, documentation, or agent instructions?",
+      "answers": {
+        "yes": "agent_document",
+        "no": "configuration"
+      }
+    },
+    "agent_document": {
+      "question": "Will an agent consume the document or skill you are authoring?",
+      "answers": {
+        "yes": "agent_writing",
+        "no": "prose"
+      }
+    },
+    "configuration": {
+      "question": "Is someone blocked by setup or configuration?",
+      "answers": {
+        "yes": "setup",
+        "no": "general_idea"
+      }
+    },
+    "general_idea": {
+      "question": "Do you need to clarify a plan, decision, or idea?",
+      "answers": {
+        "yes": "project_directory",
+        "no": "unclear"
+      }
+    },
+    "project_directory": {
+      "question": "Are you working in a writable project directory?",
+      "answers": {
+        "yes": "clarify_software",
+        "no": "clarify_general"
+      }
+    }
+  },
+  "outcomes": {
+    "debug": {
+      "title": "Diagnose a bug or performance regression",
+      "candidates": [
+        "matt/diagnosing-bugs",
+        "poteto/poteto-mode"
+      ],
+      "support": [
+        "poteto/benchmark-checklist",
+        "poteto/tdd"
+      ],
+      "rationale": "Matt gives a staged diagnosis loop; Poteto mode offers distinct bug, performance, runtime and trace playbooks.",
+      "constraints": [
+        "Choose one workflow owner.",
+        "Distinguish diagnosis-only from permission to fix.",
+        "Use benchmark-checklist only when making measurements; Poteto TDD is for a practical regression target."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "rationale": {
+      "title": "Find the reasons behind an existing design",
+      "candidates": [
+        "poteto/why",
+        "matt/research"
+      ],
+      "support": [
+        "matt/domain-modeling"
+      ],
+      "rationale": "Poteto why searches historical evidence categories; Matt research delegates primary-source reading into a cited note.",
+      "constraints": [
+        "Confirm which historical sources are accessible.",
+        "Missing evidence stays unknown; do not invent rationale."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "explanation": {
+      "title": "Explain an existing system",
+      "candidates": [
+        "poteto/how",
+        "poteto/teach"
+      ],
+      "support": [
+        "matt/codebase-design"
+      ],
+      "rationale": "How traces mechanisms; teach combines mechanisms and rationale into an explanation.",
+      "constraints": [
+        "Choose how for a technical walkthrough or teach for conversational understanding.",
+        "Matt codebase-design is useful vocabulary only when module shape is the question."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "research": {
+      "title": "Research a focused technical question",
+      "candidates": [
+        "matt/research",
+        "poteto/how"
+      ],
+      "support": [],
+      "rationale": "Matt research produces a cited research artifact; Poteto how can investigate a focused technical mechanism.",
+      "constraints": [
+        "Choose how only for a mechanism question; use research for broader reading legwork.",
+        "Define the question and evidence needed before delegating."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "delivery": {
+      "title": "Get a pull request ready or ship it",
+      "candidates": [
+        "poteto/poteto-mode"
+      ],
+      "support": [
+        "matt/pr",
+        "poteto/blast-radius"
+      ],
+      "rationale": "Poteto mode distinguishes PR babysitting from independent shipping verification.",
+      "constraints": [
+        "Select readiness versus shipping explicitly.",
+        "Shipping and external writes require the host and user authorization; this catalog grants none.",
+        "Matt pr is a body-writing reference, not a PR lifecycle coordinator."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "review": {
+      "title": "Review an existing diff",
+      "candidates": [
+        "matt/code-review",
+        "poteto/interrogate"
+      ],
+      "support": [
+        "poteto/blast-radius"
+      ],
+      "rationale": "Matt separates Standards and Spec reviewers; Poteto uses multiple model perspectives and supporting evidence.",
+      "constraints": [
+        "Pin the base and exact reviewed contents.",
+        "Choose one review reporting contract and verify model/tool availability."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "test": {
+      "title": "Choose a test-first workflow",
+      "candidates": [
+        "matt/tdd",
+        "poteto/tdd"
+      ],
+      "support": [
+        "matt/codebase-design",
+        "poteto/principle-test-behavior-not-implementation"
+      ],
+      "rationale": "Matt covers incremental feature and bug TDD at confirmed public seams; Poteto targets cheap practical bug regression checks.",
+      "constraints": [
+        "Use matt/tdd for feature TDD and confirm test seams as its source requires.",
+        "Use poteto/tdd for a bug with a practical failing-before check; it explicitly allows other verification when a test is impractical.",
+        "The two IDs are alternatives, not interchangeable names."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "design": {
+      "title": "Improve module design",
+      "candidates": [
+        "matt/improve-codebase-architecture",
+        "poteto/architect"
+      ],
+      "support": [
+        "matt/codebase-design",
+        "matt/domain-modeling"
+      ],
+      "rationale": "Matt surveys a codebase for deepening opportunities; Poteto architect settles caller usage and module shape for a chosen change.",
+      "constraints": [
+        "Use the survey when the target is unknown; architect when the change is known.",
+        "The vocabulary references support a workflow and do not replace it.",
+        "Poteto architect implements by default; explicitly request a design-only checkpoint when you only want advice."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "parallel_build": {
+      "title": "Implement a ticket dependency graph",
+      "candidates": [
+        "matt/implement-spec",
+        "poteto/poteto-mode"
+      ],
+      "support": [
+        "matt/tdd",
+        "poteto/show-me-your-work"
+      ],
+      "rationale": "Matt explicitly manages a frontier of tickets on an integration branch; Poteto supplies orchestration and multi-phase playbooks.",
+      "constraints": [
+        "Start from a settled spec and blocking edges.",
+        "Verify worktree and delegation support; choose one integration owner.",
+        "Do not substitute Matt experimental chief-of-staff by default."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "build": {
+      "title": "Implement a settled piece of work",
+      "candidates": [
+        "matt/implement",
+        "poteto/poteto-mode"
+      ],
+      "support": [
+        "matt/tdd",
+        "matt/code-review"
+      ],
+      "rationale": "Matt runs a settled unit through its test/review flow; Poteto mode selects a feature or refactoring playbook.",
+      "constraints": [
+        "Resolve intended behavior and test seams before relying on Matt implementation.",
+        "Check host adaptation before choosing Poteto."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "prototype": {
+      "title": "Resolve an empirical design question",
+      "candidates": [
+        "matt/prototype",
+        "poteto/poteto-mode"
+      ],
+      "support": [],
+      "rationale": "Both provide a prototype route that answers an observable question with a small executable artifact.",
+      "constraints": [
+        "Define the question and a decision criterion.",
+        "For Poteto select the Prototype playbook.",
+        "Keep product preferences distinct from observable facts."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "map_effort": {
+      "title": "Plan an effort larger than one session",
+      "candidates": [
+        "matt/wayfinder",
+        "poteto/figure-it-out"
+      ],
+      "support": [
+        "matt/to-spec",
+        "matt/to-tickets"
+      ],
+      "rationale": "Matt maps unresolved decisions into a shared ticket map; Poteto designs a bespoke playbook for a substantial run.",
+      "constraints": [
+        "Wayfinder is planning, not implementation; collapse decisions into a spec before building.",
+        "Choose one planning owner and an explicit handoff artifact."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "clarify_software": {
+      "title": "Clarify a software idea before specifying it",
+      "candidates": [
+        "matt/grill-with-docs",
+        "poteto/in-your-own-words"
+      ],
+      "support": [
+        "matt/domain-modeling",
+        "matt/to-spec"
+      ],
+      "rationale": "Matt conducts a full decision interview with domain documents; Poteto in-your-own-words first checks the agent understood the request.",
+      "constraints": [
+        "These differ in depth: playback alone does not settle the design.",
+        "If playback exposes unresolved decisions, continue with an interview or Poteto help rather than assume them."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "course": {
+      "title": "Learn through a persistent teaching workspace",
+      "candidates": [
+        "matt/teach"
+      ],
+      "support": [],
+      "rationale": "Matt teach maintains lessons, resources and learning history across sessions.",
+      "constraints": [
+        "Requires a writable learning workspace.",
+        "Do not select Poteto teach when persistent course artifacts are the intended result."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "plain_teaching": {
+      "title": "Get a conversational explanation",
+      "candidates": [
+        "poteto/teach"
+      ],
+      "support": [
+        "poteto/how",
+        "poteto/why"
+      ],
+      "rationale": "Poteto teach explains a body of work using mechanism and rationale investigations.",
+      "constraints": [
+        "Best for an existing body of work or concept in context.",
+        "For a general learning program, choose the persistent-course branch."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "handoff": {
+      "title": "Create a portable handoff",
+      "candidates": [
+        "matt/handoff"
+      ],
+      "support": [
+        "poteto/show-me-your-work"
+      ],
+      "rationale": "Matt handoff creates a portable continuation document; decision trails can supply evidence for a long task.",
+      "constraints": [
+        "Use at an appropriate phase boundary for portability.",
+        "A decision trail is supporting evidence, not a replacement handoff."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "catch_up": {
+      "title": "Recover context or report progress",
+      "candidates": [
+        "poteto/recall",
+        "poteto/ketchup"
+      ],
+      "support": [],
+      "rationale": "Recall reconstructs recent context from available records; ketchup explains changes within the current chat.",
+      "constraints": [
+        "Choose recall for recovery across records and ketchup for this-chat progress.",
+        "History tools and accessible source records are prerequisites."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "agent_writing": {
+      "title": "Write instructions or skills for agents",
+      "candidates": [
+        "matt/writing-for-agents",
+        "poteto/automate-me"
+      ],
+      "support": [
+        "poteto/technical-writing"
+      ],
+      "rationale": "Matt supplies agent-document principles; automate-me derives a personal mode from observed work.",
+      "constraints": [
+        "Use automate-me only for a personal mode supported by actual work history.",
+        "For a general new skill, consult the host skill-authoring workflow."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "prose": {
+      "title": "Write or edit technical prose",
+      "candidates": [
+        "poteto/technical-writing",
+        "poteto/unslop"
+      ],
+      "support": [
+        "matt/pr"
+      ],
+      "rationale": "Technical-writing structures technical documents; unslop edits prose style.",
+      "constraints": [
+        "Use Matt pr only when the deliverable is a PR body.",
+        "Experimental writing-beats/fragments/shape stay opt-in in this compilation."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "setup": {
+      "title": "Resolve setup or configuration prerequisites",
+      "candidates": [
+        "matt/wizard",
+        "matt/setup-matt-pocock-skills",
+        "poteto/setup-pstack"
+      ],
+      "support": [],
+      "rationale": "These solve different setup needs: human-only steps, Matt repo conventions, or Poteto model configuration.",
+      "constraints": [
+        "Select the matching setup need; do not run all candidates.",
+        "Wizard is appropriate only for steps the agent cannot perform.",
+        "Setup-pstack configures a supported host; it does not install Codex compatibility."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "unclear": {
+      "title": "Ask a native router to narrow the situation",
+      "candidates": [
+        "matt/ask-matt",
+        "poteto/poteto-help"
+      ],
+      "support": [],
+      "rationale": "Both collections already include guidance for choosing a skill or sequence.",
+      "constraints": [
+        "Choose a collection guide rather than running both full flows.",
+        "If the task falls outside these collections, say so instead of forcing a skill recommendation."
+      ],
+      "classification": "Curator interpretation; compare candidates rather than invoking all of them."
+    },
+    "clarify_general": {
+      "title": "Clarify an idea without a project workspace",
+      "candidates": [
+        "matt/grill-me"
+      ],
+      "support": [
+        "matt/grilling"
+      ],
+      "rationale": "Matt grill-me is the stateless interview wrapper for situations without a working directory.",
+      "constraints": [
+        "Use grill-with-docs instead when the interview should leave project glossary and decision records.",
+        "The interview clarifies decisions; it does not authorize execution."
+      ],
+      "classification": "Curator interpretation; source-grounded candidate, not an invocation."
+    }
+  }
+}
