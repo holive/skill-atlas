@@ -1,11 +1,11 @@
 {
   "status": "pass",
   "goals": 10,
-  "questions": 12,
+  "questions": 13,
   "outcomes": 35,
-  "guided_scenarios": 35,
-  "search_scenarios": 7,
-  "all_skills_browsable": 96,
+  "guided_scenarios": 36,
+  "search_scenarios": 11,
+  "all_skills_browsable": 97,
   "user_module_case": {
     "isolated": "module-isolated-strategy",
     "analysis_only": "module-analysis-strategy",

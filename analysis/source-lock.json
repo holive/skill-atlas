@@ -1,23 +1,23 @@
 {
   "schema_version": 1,
-  "interpretation_completed_at": "2026-10-25T09:10:09.003438+00:00",
-  "basis": "Scheduled complete reread of all 96 primary SKILL.md files by three source-reading agents, all 23 Poteto mode playbooks and relevant support files. Six existing interpretation scope/effect/dependency omissions were corrected; upstream primary skill bytes are unchanged. This lock prevents stale input reuse, not semantic error.",
+  "interpretation_completed_at": "2026-11-18T21:09:23.309538+00:00",
+  "basis": "Complete 2026-11-18 agent-led reread of all 97 primary SKILL.md files, all 22 current Poteto mode playbooks and selected material supporting files. Interpretation, composition and selection boundaries reconciled to pinned sources. This lock guards stale inputs; it does not establish semantic truth or host compatibility.",
   "sources": {
     "matt": {
-      "commit": "5beb35b040e3de97e54fa9e386d7e42d15c295c2",
-      "snapshot_tree_sha256": "5a4750438942dfbcbb7a51227ec600c62afac26f6edbf4dc28741127da28cccb"
+      "commit": "5863806dd4e15c63174bee4e7515a4256792ecfa",
+      "snapshot_tree_sha256": "afa99d94c04bf30f184a04451aeddfc544ef6382361fa44bce619889132f3cad"
     },
     "poteto": {
-      "commit": "99b609a72323b70204eab407c622f436e858e112",
-      "snapshot_tree_sha256": "d7ae8a1e78e37a2c15333f3f2f78a88e4013d4c7446a99a76f05f212329ef8d0"
+      "commit": "35a90942a7f02e1ebbc2443643179815f2147954",
+      "snapshot_tree_sha256": "d1d9daede65d014b9fa3463217ae4cbb4ddc273e16dd00c5a456f3fbf15db6a6"
     }
   },
   "artifacts": {
-    "analysis/matt.json": "040db8f8156ce4ace19bbd378662755b27201955f8bd628112df052c8c0831a0",
-    "analysis/poteto-workflows.json": "7db2dd3a795c43b7f879d893da4cedbd99a28c7fb0a01ca2e05178fb8d613016",
-    "analysis/poteto-principles.json": "d86b00051f5a78023b5e69b25a91b9110dad7fad96fa533efdee7847eaf1b7e9",
-    "catalog/routes.json": "0058cdb02f8835f3585a9994123cc8fa00b9be6a3cdb6a605538717d4f48a396",
-    "catalog/compatibility.json": "1722cbd010629cbe40d145e9f52e3ace557a941c09849b1c74ca08dcca106103",
+    "analysis/matt.json": "134aeb6bc46267b4aed33996d52fca8722dc7bc3fdaaaccd5779dafe0b3517b8",
+    "analysis/poteto-workflows.json": "0f2c643bd628c6a525c140b18d37108b6c77ffa2e757cdaeecff79d02689d203",
+    "analysis/poteto-principles.json": "9f3eae7398612454c9dced5b9e88c1811b7d0e746306d44f8d3fef763ecbd4fc",
+    "catalog/routes.json": "a82a97fe1e060f16ea7183b1d1ae913b821f83e64d28627da513e64388fea173",
+    "catalog/compatibility.json": "3c300f36df169ad39d82931fbcc08e1d3c6a58f72e34e812a551b91d75fb17e5",
     "catalog/scenarios.json": "d1ba817926ddd2ca9c7b6a7ae0cbae09e0905516a6fda24e10ab949e81a45389"
   }
 }

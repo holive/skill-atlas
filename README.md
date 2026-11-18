@@ -8,7 +8,7 @@ Live site: **[Skill Atlas](https://holive.github.io/skill-atlas/)**. This source
 
 Open [the interactive guide and local search](index.html) directly in a browser. It is a self-contained HTML file with basic styling and no server or network requirement. Choose one of 10 goals and answer up to two discriminating follow-ups. Results explain one suggested next skill or reference, a concrete next step, prerequisites, scope, and a conditional alternative. Backtracking preserves test notes and unfinished feedback.
 
-Search names, tasks and expected results locally, with related English and Portuguese terms and collection/lifecycle filters. All 96 entries are browsable; experimental/specialized entries and principles are explicit opt-ins. Keyword matches are candidates, not execution authorization. Feedback records the skill the user would choose (or none), stays in this browser, and can be downloaded as JSON.
+Search names, tasks and expected results locally, with related English and Portuguese terms and collection/lifecycle filters. All 97 entries are browsable; experimental/specialized entries and principles are explicit opt-ins. Keyword matches are candidates, not execution authorization. Feedback records the skill the user would choose (or none), stays in this browser, and can be downloaded as JSON.
 
 The interface and catalog are in English. `catalog/navigation.json` owns goal-selection rules. `catalog/search-terms.json` owns the curated search vocabulary. The shared resolver and keyword matcher live in `tools/navigation-core.js`, used by both the page and offline checks. `tools/page-template.html` owns the interface; `tools/render_page.py` embeds the shared data and logic into `index.html`. Normal catalog rendering rebuilds the page too. The original binary routes remain an archived comparison baseline, not the active UI rules.
 
@@ -17,19 +17,19 @@ The interface and catalog are in English. `catalog/navigation.json` owns goal-se
 | [Compilation report](docs/COMPILATION.md) | Findings, scope, strategy and what still needs calibration. |
 | [Decision guide](docs/DECISION-GUIDE.md) | Goal-first selection with 35 explained recommendations. |
 | [Version 2 notes](docs/V2.md) | Changes, module-testing case, verification and limits. |
-| [Complete catalog](docs/CATALOG.md) | All 96 source-grounded skill cards, requirements, effects and evidence. |
+| [Complete catalog](docs/CATALOG.md) | All 97 source-grounded skill cards, requirements, effects and evidence. |
 | [Composition and differences](docs/COMPARISON.md) | Eight material distinctions and conditional composition notes. |
 | [Recompilation procedure](docs/RECOMPILE.md) | How to repeat this process every 14 days after validation. |
 
 ## Snapshot
 
-Latest refresh: [2026-10-25 maintenance report](docs/maintenance/2026-10-25.md), including six interpretation clarifications; the catalog still contains 96 skills.
+Latest refresh: [2026-11-18 maintenance report](docs/maintenance/2026-11-18.md), covering upstream workflow changes and a new experimental software-factory reference. The catalog contains 97 skills.
 
-- **Matt:** 38 skills, of which 27 are in the promoted engineering/productivity buckets, 7 are beta and 4 are misc/unpromoted.
+- **Matt:** 39 skills, of which 27 are in the promoted engineering/productivity buckets, 8 are beta and 4 are misc/unpromoted.
 - **Poteto:** 58 pstack skills, comprising 34 workflows/routers/utilities and 24 principles.
 - **Supporting material:** full Matt repository; pstack and cursor-team-kit directories plus repository root files from cursor/plugins. Cursor-team-kit is dependency context, not a third primary collection.
 - Exact source commits, source-file hashes and interpreted-artifact hashes are preserved in [the inventory](catalog/source-inventory.json) and [the analysis lock](analysis/source-lock.json).
-- All primary SKILL.md files were read. All 23 Poteto mode playbooks and selected references informed interpretation. Supporting scripts were not executed or exhaustively audited.
+- All primary SKILL.md files were read. All 22 current Poteto mode playbooks and selected references informed interpretation. Supporting scripts were not executed or exhaustively audited.
 
 ## Working model
 
@@ -55,7 +55,7 @@ python3 tools/render_catalog.py
 python3 tools/catalog.py compile
 ```
 
-The [validation report](catalog/validation.json) retains 22 baseline routing checks and adds 35 version 2 goal scenarios and seven search checks, plus source integrity, evidence bounds, compatibility notes, missing-context handling, stale-source rejection and deterministic rendering. Browser checks cover all 35 guided outcomes, local search, filters, changed answers, notes and feedback saving. These checks do not establish semantic truth, improved real-user selection success or host execution compatibility.
+The [validation report](catalog/validation.json) retains 22 baseline routing checks and adds 36 version 2 goal scenarios and eleven search checks, plus source integrity, evidence bounds, compatibility notes, missing-context handling, stale-source rejection and deterministic rendering. The initial browser report covers all 35 guided outcomes, local search, filters, changed answers, notes and feedback saving. The maintenance report records the current source and interaction checks. These checks do not establish semantic truth, improved real-user selection success or host execution compatibility.
 
 ## Provenance and attribution
 

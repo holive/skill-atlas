@@ -58,6 +58,7 @@ for (const fixture of fixtures) {
 }
 assert.equal(covered.size, Object.keys(outcomes).length);
 assert.equal(resolve(navigation, null).state, 'goal');
+assert.equal(resolve(navigation, 'review', {'review-result':'adversarial'}).id, 'review-execution');
 assert.equal(resolve(navigation, 'test').id, 'test-intent');
 assert.equal(resolve(navigation, 'test', {'test-intent':'strategy'}).id, 'module-execution');
 assert.throws(() => resolve(navigation, 'test', {'test-intent':'invented-answer'}), /Unknown answer/);
@@ -77,10 +78,14 @@ const keywordCases = [
   ['triage incoming reports', 'matt/triage'],
   ['parallel coverage workers', 'poteto/swarm'],
   ['improve prompt', 'poteto/sharpen'],
-  ['matt/tdd', 'matt/tdd']
+  ['matt/tdd', 'matt/tdd'],
+  ['software factory', 'matt/software-factory', {includeUnpromoted:true}],
+  ['fabrica software', 'matt/software-factory', {includeUnpromoted:true}],
+  ['before measurement noise floor', 'poteto/principle-explain-the-number', {includePrinciples:true}],
+  ['antes medir ruido', 'poteto/principle-explain-the-number', {includePrinciples:true}]
 ];
-for (const [query, expected] of keywordCases) {
-  const matches = search(data.skills, query, {}, data.vocabulary);
+for (const [query, expected, options = {}] of keywordCases) {
+  const matches = search(data.skills, query, options, data.vocabulary);
   assert.equal(matches[0]?.skill.id, expected, query);
 }
 assert.equal(search(data.skills, 'zxqv-no-such-capability', {}, data.vocabulary).length, 0);

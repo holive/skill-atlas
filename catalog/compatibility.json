@@ -22,8 +22,8 @@
         {
           "collection": "poteto",
           "path": "pstack/skills/poteto-mode/SKILL.md",
-          "start_line": 121,
-          "end_line": 125,
+          "start_line": 106,
+          "end_line": 110,
           "supports": "Owns playbook selection and its required steps."
         }
       ]
@@ -91,9 +91,10 @@
       "skills": [
         "matt/grilling",
         "matt/tdd",
-        "poteto/poteto-mode"
+        "poteto/poteto-mode",
+        "poteto/principle-never-block-on-the-human"
       ],
-      "interpretation": "Surface source approval checkpoints as part of the comparison. Upstream autonomy prose cannot grant authority beyond the human request, actual tools or host policy.",
+      "interpretation": "Surface each source approval checkpoint. The mode permits reversible team-chat and ticket actions, while Never Block requires confirmation for external messages and worker guidance stops for messages outside the run. These source boundaries differ; upstream autonomy cannot grant authority beyond the human request, actual tools or host policy.",
       "evidence": [
         {
           "collection": "matt",
@@ -112,9 +113,23 @@
         {
           "collection": "poteto",
           "path": "pstack/skills/poteto-mode/SKILL.md",
-          "start_line": 81,
-          "end_line": 87,
+          "start_line": 74,
+          "end_line": 80,
           "supports": "Reversible actions and always-pause source policy."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/principle-never-block-on-the-human/SKILL.md",
+          "start_line": 9,
+          "end_line": 15,
+          "supports": "The leaf keeps external-message confirmation distinct from reversible local work."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/poteto-mode/worker.md",
+          "start_line": 3,
+          "end_line": 7,
+          "supports": "Worker restrictions include messages to someone outside the run."
         }
       ]
     },
@@ -138,20 +153,20 @@
         {
           "collection": "poteto",
           "path": "pstack/skills/poteto-mode/SKILL.md",
-          "start_line": 91,
-          "end_line": 101,
+          "start_line": 84,
+          "end_line": 100,
           "supports": "Task, agent type and model-role requirements."
         }
       ]
     },
     {
       "id": "architecture-effects",
-      "relation": "different_effects",
+      "relation": "different_deliverable",
       "skills": [
         "matt/codebase-design",
         "poteto/architect"
       ],
-      "interpretation": "Matt codebase-design is a vocabulary reference. Poteto architect explores candidates and implements by default. A design-only request needs an explicit checkpoint.",
+      "interpretation": "Matt codebase-design supplies shared interface and seam vocabulary. The current Poteto architect leaf traces affected systems and compares concrete sketches before code, using arena only for large or contested designs. It no longer specifies its former automatic implementation phase or optional checkpoint. Request implementation separately when that is the next phase.",
       "evidence": [
         {
           "collection": "matt",
@@ -163,9 +178,9 @@
         {
           "collection": "poteto",
           "path": "pstack/skills/architect/SKILL.md",
-          "start_line": 41,
-          "end_line": 53,
-          "supports": "Default implementation and optional requested checkpoint."
+          "start_line": 9,
+          "end_line": 11,
+          "supports": "Current pre-code comparison of two shapes and conditional arena; former automatic implementation/checkpoint phases are absent."
         }
       ]
     },
@@ -177,21 +192,28 @@
         "poteto/no-comments",
         "poteto/interrogate"
       ],
-      "interpretation": "Distinguish reporting a review from modifying code in preparation for review. No-comments can delete comments; it must not be treated as a read-only quality checklist.",
+      "interpretation": "Distinguish standards/specification reporting, executable adversarial probes, and code cleanup. Interrogate creates isolated reproductions and keeps rerun-proven findings without applying product fixes. No-comments can delete comments and implement scoped root-cause fixes; it is not a read-only quality checklist.",
       "evidence": [
         {
-          "collection": "poteto",
-          "path": "pstack/skills/no-comments/SKILL.md",
-          "start_line": 19,
-          "end_line": 24,
-          "supports": "Delegated comment deletion and approval rules."
+          "collection": "matt",
+          "path": "skills/engineering/code-review/SKILL.md",
+          "start_line": 6,
+          "end_line": 12,
+          "supports": "Separate standards/specification reporting tracks."
         },
         {
           "collection": "poteto",
           "path": "pstack/skills/interrogate/SKILL.md",
           "start_line": 9,
-          "end_line": 23,
-          "supports": "Review scope without automatically applying findings."
+          "end_line": 25,
+          "supports": "Executable adversarial reproductions and reruns, without product fixes."
+        },
+        {
+          "collection": "poteto",
+          "path": "pstack/skills/no-comments/SKILL.md",
+          "start_line": 19,
+          "end_line": 24,
+          "supports": "Comment deletions, scoped implementation and approval-gated encoding."
         }
       ]
     },
@@ -215,7 +237,7 @@
           "collection": "poteto",
           "path": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
           "start_line": 9,
-          "end_line": 15,
+          "end_line": 13,
           "supports": "Each completed unit is checked before the next."
         }
       ]

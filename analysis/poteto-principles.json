@@ -2,21 +2,22 @@
   {
     "id": "poteto/principle-attack-the-premise",
     "kind": "principle",
-    "summary": "Interrupts repeated failed fixes by making their shared assumption explicit and testing it before another attempt.",
+    "summary": "Interrupts fixes that repeatedly fail the same gate by writing down their common premise and testing it directly before another attempt.",
     "intents": [
       "debug",
       "test"
     ],
     "when_to_use": [
-      "Two fixes based on the same explanation fail the same check."
+      "Two or more fixes based on the same premise fail the same check.",
+      "The distribution of failures suggests one part is consistently put at a disadvantage."
     ],
     "avoid_when": [
       "Catalog interpretation: A new requirement calls for redesign rather than falsifying an assumed fact."
     ],
     "outputs": [
       "Written shared premise",
-      "Rerunnable discriminating observation",
-      "Evidence-based next debugging direction"
+      "Discriminating observation testing the premise",
+      "Next debugging direction grounded in what the failures share"
     ],
     "requirements": [],
     "effects": [
@@ -25,23 +26,13 @@
       "execute"
     ],
     "confirmation": "Not explicitly specified in this skill.",
-    "companions": [
-      "poteto/principle-build-the-lever",
-      "poteto/principle-fix-root-causes",
-      "poteto/principle-laziness-protocol"
-    ],
+    "companions": [],
     "evidence": [
       {
         "path": "pstack/skills/principle-attack-the-premise/SKILL.md",
         "start_line": 9,
-        "end_line": 19,
-        "supports": "Trigger, premise test, rerunnable check, root-cause continuation and stop condition."
-      },
-      {
-        "path": "pstack/skills/principle-attack-the-premise/SKILL.md",
-        "start_line": 21,
-        "end_line": 21,
-        "supports": "Distinction from redesign around a new requirement."
+        "end_line": 15,
+        "supports": "Repeated-failure trigger, written premise, discriminating observation and evidence-led next direction."
       }
     ]
   },
@@ -63,8 +54,8 @@
       "Catalog interpretation: The supposedly internal input has not actually been parsed into a trusted domain type."
     ],
     "outputs": [
-      "Boundary parsing and validation policy",
-      "Pure domain functions with thin framework wiring"
+      "Raw inputs parsed into domain types at system boundaries",
+      "Pure business functions with thin framework wiring"
     ],
     "requirements": [],
     "effects": [
@@ -76,15 +67,15 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-boundary-discipline/SKILL.md",
-        "start_line": 9,
-        "end_line": 16,
-        "supports": "Boundary guards, typed internals, pure logic and public domain concepts."
+        "start_line": 3,
+        "end_line": 3,
+        "supports": "System-boundary and adapter scope."
       },
       {
         "path": "pstack/skills/principle-boundary-discipline/SKILL.md",
-        "start_line": 20,
-        "end_line": 34,
-        "supports": "Concrete validation and organization applications and review questions."
+        "start_line": 9,
+        "end_line": 11,
+        "supports": "Boundary parsing, trusted internal types, pure business logic and thin shell; two placement tests."
       }
     ]
   },
@@ -106,8 +97,8 @@
       "Catalog interpretation: A framework would cost more than the smallest script that does or proves the job."
     ],
     "outputs": [
-      "Codemod, script, generator or protected delegate recipe",
-      "Comparison against a manually completed first unit"
+      "Small rerunnable script, codemod, generator, check or protected delegate skill",
+      "Tool verified against a manually completed first unit"
     ],
     "requirements": [],
     "effects": [
@@ -117,22 +108,13 @@
       "delegate"
     ],
     "confirmation": "Not explicitly specified in this skill.",
-    "companions": [
-      "poteto/principle-laziness-protocol",
-      "poteto/principle-prove-it-works"
-    ],
+    "companions": [],
     "evidence": [
       {
         "path": "pstack/skills/principle-build-the-lever/SKILL.md",
-        "start_line": 8,
-        "end_line": 18,
-        "supports": "Triviality threshold, first-unit proof, deterministic tools and optional delegate contract."
-      },
-      {
-        "path": "pstack/skills/principle-build-the-lever/SKILL.md",
-        "start_line": 19,
-        "end_line": 23,
-        "supports": "Commit condition, minimal tooling and verification companion."
+        "start_line": 9,
+        "end_line": 14,
+        "supports": "Nontriviality threshold, first-unit proof, rerun safety, deterministic-tool preference, fenced delegates and persistent file artifact."
       }
     ]
   },
@@ -150,8 +132,7 @@
       "A recurring rule could become a lint, metadata flag or runtime check."
     ],
     "avoid_when": [
-      "Catalog interpretation: The instruction is novel and there is no recurring pattern yet.",
-      "Catalog interpretation: The lesson requires judgment that cannot be encoded; improve its explanation and example instead."
+      "Catalog interpretation: The instruction is novel and there is no recurring pattern yet."
     ],
     "outputs": [
       "Lint, metadata flag, runtime check or script",
@@ -167,15 +148,15 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
-        "start_line": 2,
+        "start_line": 3,
         "end_line": 3,
-        "supports": "Recurring-instruction trigger and structural enforcement choices."
+        "supports": "Repeated-instruction trigger and structural enforcement options."
       },
       {
         "path": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
         "start_line": 9,
         "end_line": 11,
-        "supports": "Judgment fallback and structural-fix-only corollary."
+        "supports": "Judgment fallback and structural-only fix corollary."
       }
     ]
   },
@@ -209,15 +190,15 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
-        "start_line": 2,
+        "start_line": 3,
         "end_line": 3,
-        "supports": "Novelty, absence of precedent, multiple prototypes and comparison."
+        "supports": "Novel interaction or architecture without precedent; compare two or three prototypes."
       },
       {
         "path": "pstack/skills/principle-exhaust-the-design-space/SKILL.md",
         "start_line": 9,
         "end_line": 9,
-        "supports": "Product decisions whose experience depends on feel."
+        "supports": "Product choices whose experience depends on feel."
       }
     ]
   },
@@ -254,39 +235,41 @@
         "path": "pstack/skills/principle-experience-first/SKILL.md",
         "start_line": 9,
         "end_line": 15,
-        "supports": "Scope, polish, prototype and core-loop criteria."
+        "supports": "Justified scope, polish, prototype and core-loop criteria."
       },
       {
         "path": "pstack/skills/principle-experience-first/SKILL.md",
         "start_line": 17,
         "end_line": 19,
-        "supports": "Consumers include maintainers and API users; target versus sequence distinction."
+        "supports": "Consumers include maintainers and API users; experience target differs from foundation-first sequence."
       }
     ]
   },
   {
     "id": "poteto/principle-explain-the-number",
     "kind": "principle",
-    "summary": "Qualifies a measured performance or evaluation result by identifying its limiter, testing alternative explanations and retaining run evidence.",
+    "summary": "Makes measurement decision-led by declaring the result that would change a choice, finding the observed limiter, and ruling out misleading alternative explanations before trusting a number. It stops when run-to-run spread exceeds the effect and retains the run evidence.",
     "intents": [
       "research",
       "test",
       "review"
     ],
     "when_to_use": [
-      "Reporting a measured speedup, regression or latency.",
-      "Deciding whether an evaluation score reflects the intended task."
+      "Designing a measurement before running it: state the decision, a result that would change it and the noise floor.",
+      "Trusting or reporting a measured speedup, regression, throughput or latency.",
+      "Checking whether an evaluation result reflects completed, relevant work across trials and models."
     ],
     "avoid_when": [
-      "Catalog interpretation: There is no measured number to interpret.",
-      "Catalog interpretation: The only question is whether a produced artifact exists or works at all."
+      "Catalog interpretation: No measurement is planned or available to interpret.",
+      "Catalog interpretation: The only question is whether an artifact exists or works at all; use direct verification before interpreting magnitude."
     ],
     "outputs": [
-      "Named limiter tied to profiles or counters and source",
-      "Run count, spread and alternative-explanation evidence"
+      "Predeclared decision, decision-changing result and noise floor",
+      "Limiter tied to a profile or counters and mapped to source",
+      "Run count, spread and evidence excluding alternative explanations"
     ],
     "requirements": [
-      "Limiter evidence from profiling or system counters during a run, mapped to source; code-reading guesses are insufficient."
+      "Limiter evidence from a profile or counters taken during a run, mapped to source; reading code alone is insufficient."
     ],
     "effects": [
       "read",
@@ -300,15 +283,21 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-explain-the-number/SKILL.md",
-        "start_line": 9,
-        "end_line": 15,
-        "supports": "Measurement procedure, evidence retention and benchmark/eval routing."
+        "start_line": 3,
+        "end_line": 3,
+        "supports": "Applies before measuring as well as before trusting or reporting results."
       },
       {
         "path": "pstack/skills/principle-explain-the-number/SKILL.md",
-        "start_line": 17,
-        "end_line": 17,
-        "supports": "Distinction from checking output reality."
+        "start_line": 9,
+        "end_line": 12,
+        "supports": "Predeclared decision threshold and noise floor, measured limiter, alternative explanations and retained run evidence."
+      },
+      {
+        "path": "pstack/skills/principle-explain-the-number/SKILL.md",
+        "start_line": 14,
+        "end_line": 14,
+        "supports": "Explicit benchmark-checklist route and evaluation-specific questions."
       }
     ]
   },
@@ -321,16 +310,16 @@
       "test"
     ],
     "when_to_use": [
-      "A defensive guard or retry appears to hide a defect.",
-      "A failure after restart may originate in persisted state."
+      "A guard, retry, swallowed error or discarded state appears to hide a defect.",
+      "A reproduced symptom needs tracing to the first wrong decision."
     ],
     "avoid_when": [
       "Catalog interpretation: The task needs a complete debugging phase workflow; this is a root-cause discipline within one."
     ],
     "outputs": [
-      "Reproduced fault and root-cause trace",
-      "Fix across all instances of the faulty pattern",
-      "Proposed cheap observability signal when diagnosis was difficult"
+      "Reproduction and root-cause trace",
+      "Pattern-wide fix that distinguishes legitimate from impossible states",
+      "Proposed cheap always-on signal when the deciding fact was hard to discover"
     ],
     "requirements": [],
     "effects": [
@@ -344,14 +333,8 @@
       {
         "path": "pstack/skills/principle-fix-root-causes/SKILL.md",
         "start_line": 9,
-        "end_line": 19,
-        "supports": "Definition of root cause, reproduce/instrument loop, state legitimacy and pattern-wide fixes."
-      },
-      {
-        "path": "pstack/skills/principle-fix-root-causes/SKILL.md",
-        "start_line": 20,
-        "end_line": 21,
-        "supports": "Reject workaround comments and propose a cheap persistent signal."
+        "end_line": 14,
+        "supports": "First wrong decision, reproduction and instrumentation, legitimate-state distinction, pattern-wide fix and proposed observability signal."
       }
     ]
   },
@@ -369,7 +352,7 @@
       "Sequencing scaffolding and feature work or deciding what concurrent actors share."
     ],
     "avoid_when": [
-      "Catalog interpretation: A new abstraction adds cleverness without improving data structure or downstream work.",
+      "Catalog interpretation: An abstraction adds complexity without improving the data shape or downstream work.",
       "Catalog interpretation: Scaffolding would preserve dead code that should be removed first."
     ],
     "outputs": [
@@ -387,15 +370,15 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-foundational-thinking/SKILL.md",
-        "start_line": 9,
-        "end_line": 19,
-        "supports": "Structural option value, data shapes, abstraction restraint, concurrent isolation and scaffold sequence."
+        "start_line": 3,
+        "end_line": 3,
+        "supports": "Core-type, scaffold sequencing and concurrent-state scope."
       },
       {
         "path": "pstack/skills/principle-foundational-thinking/SKILL.md",
-        "start_line": 21,
-        "end_line": 21,
-        "supports": "Subtraction precedes scaffolding."
+        "start_line": 9,
+        "end_line": 13,
+        "supports": "Dominant access patterns, structural reuse, concurrent isolation and scaffolding after dead-code removal."
       }
     ]
   },
@@ -429,15 +412,15 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-guard-the-context-window/SKILL.md",
-        "start_line": 2,
+        "start_line": 3,
         "end_line": 3,
-        "supports": "Context-pressure triggers, bulk delegation and summary strategy."
+        "supports": "Context-pressure triggers, bulk delegation and coordinating summaries."
       },
       {
         "path": "pstack/skills/principle-guard-the-context-window/SKILL.md",
         "start_line": 9,
         "end_line": 12,
-        "supports": "Reason for the rule and scope/turn-budget controls."
+        "supports": "Reason for the rule and file-scope, phase and turn-budget limits."
       }
     ]
   },
@@ -471,7 +454,7 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-laziness-protocol/SKILL.md",
-        "start_line": 2,
+        "start_line": 3,
         "end_line": 3,
         "supports": "Refactor, diff-size and abstraction triggers."
       },
@@ -501,7 +484,8 @@
     ],
     "outputs": [
       "Current-state reconciliation steps",
-      "Recognizable stale artifacts",
+      "Stale artifacts identifiable after every possible interruption",
+      "Temporary-path writes renamed into place",
       "Repeat-run and crash-point convergence checks"
     ],
     "requirements": [],
@@ -516,14 +500,14 @@
       {
         "path": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
         "start_line": 9,
-        "end_line": 15,
-        "supports": "Retry convergence, goal comparison and stale artifact design."
+        "end_line": 11,
+        "supports": "Converge state-changing work by reading present state and applying only the gap to the goal."
       },
       {
         "path": "pstack/skills/principle-make-operations-idempotent/SKILL.md",
-        "start_line": 17,
-        "end_line": 22,
-        "supports": "Repeated-run and every-crash-point review tests."
+        "start_line": 13,
+        "end_line": 15,
+        "supports": "Crash-point-valid stale evidence, temporary-write then rename, repeat-run and interrupted-run tests."
       }
     ]
   },
@@ -560,7 +544,7 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
-        "start_line": 2,
+        "start_line": 3,
         "end_line": 3,
         "supports": "Internal API migration and same-wave deletion."
       },
@@ -568,7 +552,7 @@
         "path": "pstack/skills/principle-migrate-callers-then-delete-legacy-apis/SKILL.md",
         "start_line": 9,
         "end_line": 14,
-        "supports": "Contract-test changes and explicit applicability conditions."
+        "supports": "Tests updated to new contract; no external compatibility dependence and coordinated breaking-change conditions."
       }
     ]
   },
@@ -590,8 +574,9 @@
     ],
     "outputs": [
       "Reduced pass-through layers",
-      "Narrower state scope and derived values",
-      "Interface compression and traceability assessment"
+      "Narrower mutable-state scope and derived values",
+      "Invariant named once at the boundary",
+      "Traceability assessment for value origin and mutation"
     ],
     "requirements": [],
     "effects": [
@@ -604,8 +589,8 @@
       {
         "path": "pstack/skills/principle-minimize-reader-load/SKILL.md",
         "start_line": 9,
-        "end_line": 18,
-        "supports": "Two reader-load axes, layer and state changes, interface compression and traceability test."
+        "end_line": 15,
+        "supports": "Independent layer and state axes; forwarding-layer collapse, narrower state, boundary invariant and 30-second traceability test."
       }
     ]
   },
@@ -641,14 +626,14 @@
       {
         "path": "pstack/skills/principle-model-the-domain/SKILL.md",
         "start_line": 9,
-        "end_line": 20,
-        "supports": "Domain encoding and concrete structural alternatives."
+        "end_line": 11,
+        "supports": "Domain encoding and concrete state-machine, typed-model, registry, reducer and collection alternatives."
       },
       {
         "path": "pstack/skills/principle-model-the-domain/SKILL.md",
-        "start_line": 22,
-        "end_line": 24,
-        "supports": "Abstraction restraint and signs of scattered lifecycle knowledge."
+        "start_line": 13,
+        "end_line": 15,
+        "supports": "Restraint for clear local shapes and warning signs of scattering or coupled booleans."
       }
     ]
   },
@@ -677,14 +662,20 @@
       "read",
       "local_write"
     ],
-    "confirmation": "Proceed on reversible work without blocking; irreversible actions such as force-push, production-data deletion and external messages require confirmation. Product direction remains with the human.",
+    "confirmation": "The leaf says reversible code, note and task edits proceed without blocking, while force-pushes, production-data deletion and external messages require confirmation; product direction remains human-owned. The surrounding router has different external-action wording, so these leaf boundaries must stay visible.",
     "companions": [],
     "evidence": [
       {
         "path": "pstack/skills/principle-never-block-on-the-human/SKILL.md",
         "start_line": 9,
         "end_line": 15,
-        "supports": "Asynchronous supervision, reversible action examples, irreversible confirmation and product ownership."
+        "supports": "Asynchronous supervision, reversible execution, irreversible confirmation and human product ownership."
+      },
+      {
+        "path": "pstack/skills/poteto-mode/SKILL.md",
+        "start_line": 74,
+        "end_line": 80,
+        "supports": "Surrounding router permits team chat, ticket updates and eval launches without asking, but pauses for irreversible writes including customer messages; this differs from the leaf external-message rule."
       }
     ]
   },
@@ -701,8 +692,9 @@
       "A planned rewrite has explicit phase and verification boundaries."
     ],
     "avoid_when": [
-      "Catalog interpretation: Intermediate breakage is unplanned, unscoped or not reversible.",
-      "Catalog interpretation: The task lacks a completion gate for full static and runtime verification."
+      "Catalog interpretation: Intermediate breakage is unplanned, unscoped or irreversible.",
+      "Catalog interpretation: No explicit verification boundary or full static/runtime completion gate exists.",
+      "Catalog interpretation: A green-per-step workflow is already chosen; reconcile phase and unit boundaries before combining this principle with it."
     ],
     "outputs": [
       "Declared temporary-breakage boundaries",
@@ -723,15 +715,21 @@
       {
         "path": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
         "start_line": 9,
+        "end_line": 15,
+        "supports": "End-state integrity and only planned, scoped, reversible transitional breakage."
+      },
+      {
+        "path": "pstack/skills/principle-outcome-oriented-execution/SKILL.md",
+        "start_line": 17,
         "end_line": 21,
-        "supports": "End-state priority, planned reversible breakage and verification guardrails."
+        "supports": "Explicit migration phases, declared breakage, active-area checks and full completion verification."
       }
     ]
   },
   {
     "id": "poteto/principle-prove-it-works",
     "kind": "principle",
-    "summary": "Checks task outputs against the actual artifact and, where feasible, keeps a deterministic verification script and evidence for reviewers.",
+    "summary": "Verifies completion against the actual output and favors a deterministic repeatable check whose evidence a human can inspect.",
     "intents": [
       "test",
       "review",
@@ -746,7 +744,7 @@
     ],
     "outputs": [
       "Direct observation of the real output",
-      "Rerunnable comparison script and visible evidence artifact"
+      "Rerunnable check when feasible and human-visible evidence"
     ],
     "requirements": [],
     "effects": [
@@ -755,21 +753,19 @@
       "execute"
     ],
     "confirmation": "Not explicitly specified in this skill.",
-    "companions": [
-      "poteto/show-me-your-work"
-    ],
+    "companions": [],
     "evidence": [
       {
         "path": "pstack/skills/principle-prove-it-works/SKILL.md",
-        "start_line": 9,
-        "end_line": 16,
-        "supports": "Direct reality checks and rejection of proxy evidence."
+        "start_line": 3,
+        "end_line": 3,
+        "supports": "Completion trigger and checking the actual artifact instead of compilation or self-report."
       },
       {
         "path": "pstack/skills/principle-prove-it-works/SKILL.md",
-        "start_line": 18,
-        "end_line": 22,
-        "supports": "Scripted checks, visible artifact and audit-trail companion."
+        "start_line": 9,
+        "end_line": 11,
+        "supports": "Direct observations, checking the observation method, deterministic reruns and visible evidence; commit only for later auditability."
       }
     ]
   },
@@ -803,9 +799,15 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+        "start_line": 3,
+        "end_line": 3,
+        "supports": "New-requirement integration scope."
+      },
+      {
+        "path": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
         "start_line": 9,
         "end_line": 16,
-        "supports": "Whole-design reconsideration, affected-reference propagation and incremental delivery."
+        "supports": "Affected-file reading, whole-design reconsideration, propagation through references and incremental delivery."
       }
     ]
   },
@@ -840,9 +842,15 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+        "start_line": 3,
+        "end_line": 3,
+        "supports": "Concurrent mutable-writer scope."
+      },
+      {
+        "path": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
         "start_line": 9,
-        "end_line": 16,
-        "supports": "Eliminate sharing first, race rationale, ownership partitioning and structural serialization."
+        "end_line": 11,
+        "supports": "Independent fact outputs, merge-on-read, shared-field race and structural serialization only for a real invariant."
       }
     ]
   },
@@ -863,28 +871,29 @@
       "Catalog interpretation: A migration deliberately permits scoped transitional breakage; reconcile the verification unit with that declared boundary before combining principles."
     ],
     "outputs": [
-      "Small before/after units with passing checks",
-      "Commit or PR sequence that demonstrates the change"
+      "Small known-good/change/check units with passing gates",
+      "Commit or PR order that demonstrates the change"
     ],
-    "requirements": [
-      "The source asks for rebasing onto clean trunk before per-unit checks so they measure the real baseline."
-    ],
+    "requirements": [],
     "effects": [
       "read",
       "local_write",
       "execute"
     ],
     "confirmation": "Not explicitly specified in this skill.",
-    "companions": [
-      "poteto/principle-prove-it-works",
-      "poteto/principle-build-the-lever"
-    ],
+    "companions": [],
     "evidence": [
       {
         "path": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
         "start_line": 9,
-        "end_line": 17,
-        "supports": "Per-unit green gates, clean-trunk baseline, delivery proof order and verification companions."
+        "end_line": 11,
+        "supports": "Known-good bracket, one change, green check before next; applies even when tooling makes edits."
+      },
+      {
+        "path": "pstack/skills/principle-sequence-verifiable-units/SKILL.md",
+        "start_line": 13,
+        "end_line": 13,
+        "supports": "Proof-ordered delivery and independently landing commits."
       }
     ]
   },
@@ -919,8 +928,14 @@
       {
         "path": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
         "start_line": 9,
+        "end_line": 11,
+        "supports": "Continuous subtraction-first simplification with the same or smaller surface."
+      },
+      {
+        "path": "pstack/skills/principle-subtract-before-you-add/SKILL.md",
+        "start_line": 13,
         "end_line": 18,
-        "supports": "Continual simplification, removal order, observed scope and redundant-reference deletion."
+        "supports": "Remove before building, observed scope, no speculative guards and deletion of redundant prompt/reference content."
       }
     ]
   },
@@ -935,14 +950,16 @@
     ],
     "when_to_use": [
       "Writing or reviewing regression tests.",
-      "A refactor repeatedly breaks tests despite identical consumer-visible behavior."
+      "Tests assert private helpers, internal call order or test-constructed data.",
+      "An internal refactor breaks tests while consumer-visible behavior stays the same."
     ],
     "avoid_when": [
       "Catalog interpretation: The task needs test-harness setup or a complete testing strategy rather than a rule for judging assertions against an observable consumer contract."
     ],
     "outputs": [
-      "Contract-driven test cases",
-      "Assertions that catch behavioral regressions and survive internal refactors"
+      "Contract-derived test cases through the public interface",
+      "Assertions that catch behavioral regressions and survive internal refactors",
+      "Positive counterpart cases and caller-relevant error-type assertions"
     ],
     "requirements": [],
     "effects": [
@@ -955,15 +972,21 @@
     "evidence": [
       {
         "path": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
-        "start_line": 9,
-        "end_line": 16,
-        "supports": "Observable behavior definition, two-edit test-quality check and requirement-derived expectations."
+        "start_line": 3,
+        "end_line": 3,
+        "supports": "Applies when writing, changing or keeping tests."
       },
       {
         "path": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
-        "start_line": 18,
-        "end_line": 20,
-        "supports": "External effects, precise contract-dependent assertions and invariants."
+        "start_line": 9,
+        "end_line": 14,
+        "supports": "Observable interface/effects contract and behavior-break versus internal-refactor test-quality checks."
+      },
+      {
+        "path": "pstack/skills/principle-test-behavior-not-implementation/SKILL.md",
+        "start_line": 16,
+        "end_line": 16,
+        "supports": "Rewrite/delete failing test designs, independent expected values, external effects, positive counterparts and caller-used error types."
       }
     ]
   },
@@ -998,22 +1021,26 @@
     ],
     "confirmation": "Not explicitly specified in this skill.",
     "companions": [
-      "poteto/typescript-best-practices",
-      "poteto/principle-boundary-discipline",
-      "poteto/principle-encode-lessons-in-structure"
+      "poteto/typescript-best-practices"
     ],
     "evidence": [
       {
         "path": "pstack/skills/principle-type-system-discipline/SKILL.md",
-        "start_line": 2,
+        "start_line": 3,
         "end_line": 3,
-        "supports": "Static-language scope and core type-system applications."
+        "supports": "Any statically typed language; impossible states, semantic primitives, boundaries and exhaustiveness."
       },
       {
         "path": "pstack/skills/principle-type-system-discipline/SKILL.md",
         "start_line": 9,
         "end_line": 13,
-        "supports": "Semantic branding, external parsing, schema derivation and explicit companions."
+        "supports": "Compiler guarantees, validated brands, parsed external data including database rows and schema-derived types."
+      },
+      {
+        "path": "pstack/skills/principle-type-system-discipline/SKILL.md",
+        "start_line": 15,
+        "end_line": 15,
+        "supports": "Explicit TypeScript syntax companion."
       }
     ]
   }

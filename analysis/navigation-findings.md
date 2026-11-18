@@ -85,3 +85,8 @@ Source paths below are relative to `/Users/hugooliveira/projects/skill-atlas/sou
 - The menu intentionally does not expose all 96 source entries. Full-catalog search is required to avoid making unrouted specialized or experimental entries invisible.
 - Poteto’s source names Cursor-specific agents, model roles, control skills, cloud tools, and project-local directories. Recommendations preserve these requirements; the page does not install or invoke them.
 - No refresh or upstream interpretation change is performed here. This graph is grounded in the current pinned full compilation; biweekly source refresh still needs the separate catalog workflow.
+
+
+## 2026-11-18 maintenance reconciliation
+
+The current guide adds a review-execution question before Interrogate, offers architecture sketches without the removed automatic implementation phase, refreshes source readiness and approval boundaries, and exposes the experimental software-factory reference only through opt-in search. All 36 guided scenarios and current browser paths passed. See `docs/maintenance/2026-11-18.md` and the navigation lock for current evidence; earlier notes above describe the original release.

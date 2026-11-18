@@ -1,11 +1,11 @@
 {
   "status": "pass",
-  "skills": 96,
+  "skills": 97,
   "collections": {
-    "matt": 38,
+    "matt": 39,
     "poteto": 58
   },
-  "evidence_references": 251,
+  "evidence_references": 305,
   "route_outcomes": 22,
   "limits": [
     "Checks source coverage, integrity, line ranges and graph structure, not semantic truth.",
@@ -14,7 +14,7 @@
   "scenario_checks": 22,
   "outcomes_covered": 22,
   "compatibility_notes": 8,
-  "compatibility_evidence": 18,
+  "compatibility_evidence": 21,
   "rejected_invalid_inputs": [
     "missing skill",
     "unknown companion",
@@ -32,11 +32,11 @@
   "goal_navigation": {
     "status": "pass",
     "goals": 10,
-    "questions": 12,
+    "questions": 13,
     "outcomes": 35,
-    "guided_scenarios": 35,
-    "search_scenarios": 7,
-    "all_skills_browsable": 96,
+    "guided_scenarios": 36,
+    "search_scenarios": 11,
+    "all_skills_browsable": 97,
     "user_module_case": {
       "isolated": "module-isolated-strategy",
       "analysis_only": "module-analysis-strategy",

@@ -75,18 +75,18 @@ Live instrumentation and repository fixes have different action scopes.
 
 ### design-depth: How far should design work go?
 
-Poteto architect continues to implementation by default; choose reference advice if that is outside scope.
+Choose shared design vocabulary, a throwaway experiment, or concrete architecture sketches before implementation.
 
 - Advice on module interfaces and seams only → `design-reference`
 - A throwaway prototype to answer a design question → `design-prototype`
-- Compare designs, then implement the chosen shape → `design-implement`
+- Compare concrete architecture sketches before implementation → `design-implement`
 
 ### review-result: What should happen after the review?
 
 Reviewing, making a PR ready, and merging it are distinct tasks.
 
 - Report code findings against standards and a spec → `review-standards-spec`
-- Challenge a change with independent model reviews → `review-adversarial`
+- Challenge a change with independent adversarial checks → `review-execution`
 - Write the pull request description → `write-pr-body`
 - Drive an existing PR to merge-ready; do not merge → `ready-pr`
 - Independently verify and land authorized PRs → `ship-pr`
@@ -116,6 +116,13 @@ These routes also apply to coding projects; no software/non-software fork is req
 - A fresh agent or next session must continue the work → `portable-handoff`
 - I need to catch up on this chat and its open decisions → `catch-up`
 
+### review-execution: May reviewers create and run isolated reproductions?
+
+Poteto interrogate now keeps only findings proved by a run. Source-only review uses Matt’s standards and specification reports.
+
+- Yes; isolated worktrees and executable probes are allowed → `review-adversarial`
+- Source and diff inspection only; do not run the product or create probes → `review-standards-spec`
+
 ## Recommendations
 
 ### explain-system: Explain existing behavior
@@ -129,21 +136,21 @@ It grounds an architectural explanation in code, ownership, and runtime flow.
 **Scope:** This is an explanation. It does not authorize implementing changes.
 
 - Prerequisite: Access to the relevant code.
-- Prerequisite: An agent host able to support or adapt the source workflow’s explorer and explainer roles.
+- Prerequisite: An agent host able to run or adapt one read-only explanation subagent.
 - Alternative: poteto/teach — You want a conversational lesson that combines behavior and rationale.
 
 ### recover-rationale: Recover the reasons behind a design
 
 **Suggested next:** poteto/why
 
-It investigates historical constraints and explicitly separates findings from inference.
+It reads the commits and PR discussions that introduced and later changed the target, marks inference, and reports unanswered questions.
 
 **Do next:** Name the design decision and collect code anchors, source-control history, and any available decision records.
 
 **Scope:** Missing evidence stays a gap; plausible rationale is not a confirmed historical fact.
 
-- Prerequisite: Relevant source-control history.
-- Prerequisite: Access to any connected evidence sources to be queried; unavailable categories must be reported.
+- Prerequisite: Access to relevant commits and PR discussions.
+- Prerequisite: Additional evidence sources if the historical trail is thin.
 - Alternative: poteto/how — The real question is what the code does today, rather than why it was chosen.
 
 ### research-topic: Research a bounded question
@@ -158,7 +165,7 @@ It traces claims to primary sources and saves a cited research note.
 
 - Prerequisite: A bounded research question.
 - Prerequisite: Access to relevant primary sources and a writable notes destination.
-- Prerequisite: Background research-agent capability or a stated adaptation.
+- Prerequisite: A background research agent with a fresh context window, or a stated adaptation.
 - Alternative: poteto/why — The question is specifically historical rationale for code already in your repository.
 
 ### module-isolated-strategy: Plan isolated module tests without starting the system
@@ -256,7 +263,7 @@ It compares each feature map entry with source and live behavior, then corrects 
 
 It chooses a tool for one costly invariant, ties the model to real code, and demonstrates that the check can fail.
 
-**Do next:** State the invariant and user harm, pick the smallest appropriate verifier, record assumptions and bounds, and test a deliberately broken variant.
+**Do next:** State the invariant and harm. Use TLA+ for bad-order or interleaving questions, and a code verifier or real-code generated-input checks for input properties. Record bounds and prove a broken variant fails.
 
 **Scope:** A pass covers only stated scope and assumptions. Report real product violations without changing product code unless requested.
 
@@ -322,20 +329,20 @@ It implements supplied work with agreed test seams, focused checks, final review
 - Prerequisite: A supplied spec or unambiguous tickets.
 - Prerequisite: Permission to edit and commit in the intended checkout.
 - Prerequisite: Agreed testing seams and repository checks.
-- Alternative: poteto/architect — The work needs competing interface designs followed by implementation, rather than a settled shape.
+- Alternative: poteto/architect — The interface shape still needs competing sketches before implementation can begin.
 
 ### implement-ticket-graph: Implement a specification across its ticket graph
 
 **Suggested next:** matt/implement-spec
 
-It dispatches ready tickets into worktrees and integrates them on one branch with a final review.
+It dispatches each ready ticket to a fresh implementer in its own worktree and integrates the results before final review.
 
 **Do next:** Read the spec and blocking relationships, create the integration branch, and execute the ready frontier with bounded implementer worktrees.
 
 **Scope:** This creates branches and worktrees, merges implementation, and resolves work through the configured tracker. It is a wider orchestration commitment.
 
 - Prerequisite: An existing spec with associated dependency-linked tickets.
-- Prerequisite: Configured tracker, worktree support, and parallel-agent capability.
+- Prerequisite: Configured tracker, worktree support, and fresh parallel agents with separate context windows.
 - Prerequisite: Authorization for code, commits, integration merges, and relevant tracker updates.
 - Alternative: matt/implement — The work is a single bounded change that does not need graph orchestration.
 
@@ -394,22 +401,22 @@ It builds throwaway logic demos or switchable UI variants whose shape follows a 
 
 - Prerequisite: A specific behavioral or interface question.
 - Prerequisite: Permission to create throwaway artifacts in a suitable location.
-- Alternative: poteto/architect — You want synthesized architectural designs followed by implementation.
+- Alternative: poteto/architect — You need concrete architectural sketches rather than an executable throwaway experiment.
 
-### design-implement: Compare architectural shapes, then implement
+### design-implement: Compare architecture sketches before implementation
 
 **Suggested next:** poteto/architect
 
-It grounds the surrounding system, compares structurally distinct sketches, and implements the selected design.
+The current skill traces affected systems, compares two interface and ownership shapes, and uses arena for a large or contested design.
 
-**Do next:** Supply constraints and caller usage, compare at least two shapes, and request an explicit checkpoint if you need approval before implementation.
+**Do next:** Trace the affected systems, sketch two different shapes, and choose the smallest interface with clear state ownership. Agree the implementation scope afterward.
 
-**Scope:** Implementation is the default after synthesis. A design-only request needs a checkpoint or a narrower reference route.
+**Scope:** Use it for pre-code sketches. A large or contested design can invoke arena, which creates and runs candidate artifacts; agree that scope first. The current leaf no longer specifies automatic implementation or a named checkpoint.
 
-- Prerequisite: Permission for design sketches and implementation.
-- Prerequisite: Available or explicitly adapted arena and model roles.
-- Prerequisite: Access to the surrounding code and constraints.
-- Alternative: matt/codebase-design — You want interface advice only, without implementation.
+- Prerequisite: Access to the surrounding systems and caller constraints.
+- Prerequisite: Arena capability or an explicit adaptation only when the design is large or contested.
+- Alternative: matt/codebase-design — You need shared module and seam vocabulary rather than concrete architectural sketches.
+- Conditional support: matt/implement — After the design is settled, you explicitly request implementation and agree the testing seams.
 
 ### review-standards-spec: Report standards and specification findings
 
@@ -421,24 +428,25 @@ It pins a diff and reviews repository standards and spec compliance on separate 
 
 **Scope:** The output is review findings. Missing specification coverage is reported, and review does not itself authorize code fixes or merging.
 
-- Prerequisite: A nonempty diff from a valid fixed point.
+- Prerequisite: A nonempty committed comparison from a valid fixed point to HEAD; separately freeze any uncommitted work before expecting it in this diff.
 - Prerequisite: Repository standards and the spec source, if available.
-- Prerequisite: Support for the separate review tracks.
-- Alternative: poteto/interrogate — You want a synthesized adversarial judgment from diverse model reviewers rather than two separate standards/spec reports.
+- Prerequisite: Separate standards/specification reviewers with fresh context windows.
+- Alternative: poteto/interrogate — You permit isolated executable reproductions and want independent adversaries to prove failures rather than report standards/specification findings.
 
-### review-adversarial: Get an independent adversarial verdict
+### review-adversarial: Prove adversarial findings with executable reproductions
 
 **Suggested next:** poteto/interrogate
 
-It gives reviewers the same intent and artifact, then synthesizes their independent challenges.
+Independent adversaries try to break the change, and the coordinator reruns each reported reproduction before keeping it.
 
-**Do next:** State the intended result, package the exact files or diff, and run the configured independent reviewers.
+**Do next:** State the intent and exact scope, isolate each adversary in a worktree, run focused reproductions, and independently rerun the findings that survive.
 
-**Scope:** The deliverable is a verdict. The source explicitly does not auto-apply fixes.
+**Scope:** Reviewers may write and run isolated repros. The workflow reports verified failures and does not apply product fixes; unrun speculation is dropped.
 
-- Prerequisite: A clear intent and exact artifact to review.
-- Prerequisite: Multiple suitable model reviewers available or an explicit adaptation.
-- Alternative: matt/code-review — Your priority is separate standards and spec-compliance reports.
+- Prerequisite: A clear intent, exact scope, and the relevant working-tree changes.
+- Prerequisite: Permission and an environment for isolated worktrees and executable probes against real code.
+- Prerequisite: Suitable independent model reviewers or an explicit host adaptation.
+- Alternative: matt/code-review — You need source-and-diff review without executing product reproductions.
 
 ### write-pr-body: Write an evidence-backed PR description
 
@@ -460,9 +468,9 @@ It structures the body around a small explanatory view, before/after evidence, a
 
 The Babysit playbook manages the merge frontier, review threads, and CI until the forge says it is merge-ready.
 
-**Do next:** Identify the existing PR or ordered stack, select check or drive mode, and resolve the frontier’s relevant blockers.
+**Do next:** Declare drive, threads-only, or check mode. Stop on a conflict or stale base and name the owner’s rebase and drift sweep; otherwise resolve the selected frontier blockers.
 
-**Scope:** Babysitting does not authorize merging. The source also limits topology changes and escalates conflicts to the owner.
+**Scope:** Babysitting never authorizes merging, rebasing, retargeting, or force-pushing. Opening a PR does not itself start babysitting.
 
 - Prerequisite: An existing PR or ordered stack.
 - Prerequisite: Forge CLI access, relevant watcher capability, and permission for scoped fixes and thread replies.
@@ -476,12 +484,12 @@ The Babysit playbook manages the merge frontier, review threads, and CI until th
 
 The Shipping playbook requires independent per-PR runtime verdicts and lands only the contiguous verified run from the bottom.
 
-**Do next:** Identify the explicitly authorized PR set, obtain current independent verdicts, and land only the verified bottom-up run.
+**Do next:** Identify the authorized PR run and ceiling, obtain independent non-author live verdicts, check that each verdict still covers the current patch, and land only the contiguous verified run bottom-up.
 
 **Scope:** This merges code and can retarget or move dependent branches. A green CI check alone is not its runtime verification verdict.
 
 - Prerequisite: Explicit authorization to land the selected PRs.
-- Prerequisite: Merge-ready PRs and independent verdicts covering their current patches.
+- Prerequisite: Merge-ready PRs and independent live verdicts for the current patches, with patch-id or build-equivalence receipts when relying on an older verdict.
 - Prerequisite: Forge CLI and independent runtime-verification capability, with environment adaptation checked.
 - Alternative: poteto/poteto-mode — Use the Babysit playbook instead if the request ends at merge readiness.
 - Poteto mode playbook: Shipping
@@ -552,7 +560,7 @@ It inspects an actual coding session for navigation, checks, standards, tooling,
 **Scope:** The first deliverable is prioritized candidates, not automatic feature changes or silent edits to global instructions.
 
 - Prerequisite: Access to the selected session records and repository check configuration.
-- Alternative: poteto/reflect — You specifically want durable skill-edit proposals using the session’s multiple review lenses.
+- Alternative: poteto/reflect — You want the complete active transcript mined for durable, approval-gated edits to locally copied skills.
 
 ### prevent-mistakes: Prevent recurring classes of agent mistakes
 
@@ -572,9 +580,9 @@ It requires evidence of repetition and prefers structural enforcement over anoth
 
 **Suggested next:** poteto/sharpen
 
-It asks what expert methods, raw evidence, and independent correctness checks the task is missing.
+It rewrites the task around expert methods, raw evidence, independent checks, and prototypes for choices an experiment can settle.
 
-**Do next:** Supply the current task prompt; rewrite it around stronger evidence and methods while leaving the user’s decisions open.
+**Do next:** Supply the task prompt; ask the rewrite to include experimental prototypes for observable choices while leaving product and preference decisions to you.
 
 **Scope:** The output is a revised prompt. It does not execute the rewritten task or add unrelated scope.
 

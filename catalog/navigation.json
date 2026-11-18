@@ -202,7 +202,7 @@
     },
     "design-depth": {
       "question": "How far should design work go?",
-      "hint": "Poteto architect continues to implementation by default; choose reference advice if that is outside scope.",
+      "hint": "Choose shared design vocabulary, a throwaway experiment, or concrete architecture sketches before implementation.",
       "choices": [
         {
           "id": "advice",
@@ -216,7 +216,7 @@
         },
         {
           "id": "build",
-          "label": "Compare designs, then implement the chosen shape",
+          "label": "Compare concrete architecture sketches before implementation",
           "next": "design-implement"
         }
       ]
@@ -232,8 +232,8 @@
         },
         {
           "id": "adversarial",
-          "label": "Challenge a change with independent model reviews",
-          "next": "review-adversarial"
+          "label": "Challenge a change with independent adversarial checks",
+          "next": "review-execution"
         },
         {
           "id": "body",
@@ -319,6 +319,22 @@
           "next": "catch-up"
         }
       ]
+    },
+    "review-execution": {
+      "question": "May reviewers create and run isolated reproductions?",
+      "hint": "Poteto interrogate now keeps only findings proved by a run. Source-only review uses Matt’s standards and specification reports.",
+      "choices": [
+        {
+          "id": "allowed",
+          "label": "Yes; isolated worktrees and executable probes are allowed",
+          "next": "review-adversarial"
+        },
+        {
+          "id": "source-only",
+          "label": "Source and diff inspection only; do not run the product or create probes",
+          "next": "review-standards-spec"
+        }
+      ]
     }
   },
   "outcomes": {
@@ -330,7 +346,7 @@
       "boundary": "This is an explanation. It does not authorize implementing changes.",
       "prerequisites": [
         "Access to the relevant code.",
-        "An agent host able to support or adapt the source workflow’s explorer and explainer roles."
+        "An agent host able to run or adapt one read-only explanation subagent."
       ],
       "alternative": {
         "id": "poteto/teach",
@@ -342,12 +358,12 @@
     "recover-rationale": {
       "title": "Recover the reasons behind a design",
       "primary": "poteto/why",
-      "why": "It investigates historical constraints and explicitly separates findings from inference.",
+      "why": "It reads the commits and PR discussions that introduced and later changed the target, marks inference, and reports unanswered questions.",
       "next_step": "Name the design decision and collect code anchors, source-control history, and any available decision records.",
       "boundary": "Missing evidence stays a gap; plausible rationale is not a confirmed historical fact.",
       "prerequisites": [
-        "Relevant source-control history.",
-        "Access to any connected evidence sources to be queried; unavailable categories must be reported."
+        "Access to relevant commits and PR discussions.",
+        "Additional evidence sources if the historical trail is thin."
       ],
       "alternative": {
         "id": "poteto/how",
@@ -365,7 +381,7 @@
       "prerequisites": [
         "A bounded research question.",
         "Access to relevant primary sources and a writable notes destination.",
-        "Background research-agent capability or a stated adaptation."
+        "A background research agent with a fresh context window, or a stated adaptation."
       ],
       "alternative": {
         "id": "poteto/why",
@@ -497,7 +513,7 @@
       "title": "Create a scoped invariant verification workflow",
       "primary": "poteto/create-formal-verification-skill",
       "why": "It chooses a tool for one costly invariant, ties the model to real code, and demonstrates that the check can fail.",
-      "next_step": "State the invariant and user harm, pick the smallest appropriate verifier, record assumptions and bounds, and test a deliberately broken variant.",
+      "next_step": "State the invariant and harm. Use TLA+ for bad-order or interleaving questions, and a code verifier or real-code generated-input checks for input properties. Record bounds and prove a broken variant fails.",
       "boundary": "A pass covers only stated scope and assumptions. Report real product violations without changing product code unless requested.",
       "prerequisites": [
         "Relevant source code and a meaningful invariant.",
@@ -585,7 +601,7 @@
       ],
       "alternative": {
         "id": "poteto/architect",
-        "when": "The work needs competing interface designs followed by implementation, rather than a settled shape."
+        "when": "The interface shape still needs competing sketches before implementation can begin."
       },
       "support": [],
       "playbook": null
@@ -593,12 +609,12 @@
     "implement-ticket-graph": {
       "title": "Implement a specification across its ticket graph",
       "primary": "matt/implement-spec",
-      "why": "It dispatches ready tickets into worktrees and integrates them on one branch with a final review.",
+      "why": "It dispatches each ready ticket to a fresh implementer in its own worktree and integrates the results before final review.",
       "next_step": "Read the spec and blocking relationships, create the integration branch, and execute the ready frontier with bounded implementer worktrees.",
       "boundary": "This creates branches and worktrees, merges implementation, and resolves work through the configured tracker. It is a wider orchestration commitment.",
       "prerequisites": [
         "An existing spec with associated dependency-linked tickets.",
-        "Configured tracker, worktree support, and parallel-agent capability.",
+        "Configured tracker, worktree support, and fresh parallel agents with separate context windows.",
         "Authorization for code, commits, integration merges, and relevant tracker updates."
       ],
       "alternative": {
@@ -671,27 +687,31 @@
       ],
       "alternative": {
         "id": "poteto/architect",
-        "when": "You want synthesized architectural designs followed by implementation."
+        "when": "You need concrete architectural sketches rather than an executable throwaway experiment."
       },
       "support": [],
       "playbook": null
     },
     "design-implement": {
-      "title": "Compare architectural shapes, then implement",
+      "title": "Compare architecture sketches before implementation",
       "primary": "poteto/architect",
-      "why": "It grounds the surrounding system, compares structurally distinct sketches, and implements the selected design.",
-      "next_step": "Supply constraints and caller usage, compare at least two shapes, and request an explicit checkpoint if you need approval before implementation.",
-      "boundary": "Implementation is the default after synthesis. A design-only request needs a checkpoint or a narrower reference route.",
+      "why": "The current skill traces affected systems, compares two interface and ownership shapes, and uses arena for a large or contested design.",
+      "next_step": "Trace the affected systems, sketch two different shapes, and choose the smallest interface with clear state ownership. Agree the implementation scope afterward.",
+      "boundary": "Use it for pre-code sketches. A large or contested design can invoke arena, which creates and runs candidate artifacts; agree that scope first. The current leaf no longer specifies automatic implementation or a named checkpoint.",
       "prerequisites": [
-        "Permission for design sketches and implementation.",
-        "Available or explicitly adapted arena and model roles.",
-        "Access to the surrounding code and constraints."
+        "Access to the surrounding systems and caller constraints.",
+        "Arena capability or an explicit adaptation only when the design is large or contested."
       ],
       "alternative": {
         "id": "matt/codebase-design",
-        "when": "You want interface advice only, without implementation."
+        "when": "You need shared module and seam vocabulary rather than concrete architectural sketches."
       },
-      "support": [],
+      "support": [
+        {
+          "id": "matt/implement",
+          "when": "After the design is settled, you explicitly request implementation and agree the testing seams."
+        }
+      ],
       "playbook": null
     },
     "review-standards-spec": {
@@ -701,30 +721,31 @@
       "next_step": "Supply a resolving fixed point, the exact change, relevant standards, and the originating spec or an explicit absence.",
       "boundary": "The output is review findings. Missing specification coverage is reported, and review does not itself authorize code fixes or merging.",
       "prerequisites": [
-        "A nonempty diff from a valid fixed point.",
+        "A nonempty committed comparison from a valid fixed point to HEAD; separately freeze any uncommitted work before expecting it in this diff.",
         "Repository standards and the spec source, if available.",
-        "Support for the separate review tracks."
+        "Separate standards/specification reviewers with fresh context windows."
       ],
       "alternative": {
         "id": "poteto/interrogate",
-        "when": "You want a synthesized adversarial judgment from diverse model reviewers rather than two separate standards/spec reports."
+        "when": "You permit isolated executable reproductions and want independent adversaries to prove failures rather than report standards/specification findings."
       },
       "support": [],
       "playbook": null
     },
     "review-adversarial": {
-      "title": "Get an independent adversarial verdict",
+      "title": "Prove adversarial findings with executable reproductions",
       "primary": "poteto/interrogate",
-      "why": "It gives reviewers the same intent and artifact, then synthesizes their independent challenges.",
-      "next_step": "State the intended result, package the exact files or diff, and run the configured independent reviewers.",
-      "boundary": "The deliverable is a verdict. The source explicitly does not auto-apply fixes.",
+      "why": "Independent adversaries try to break the change, and the coordinator reruns each reported reproduction before keeping it.",
+      "next_step": "State the intent and exact scope, isolate each adversary in a worktree, run focused reproductions, and independently rerun the findings that survive.",
+      "boundary": "Reviewers may write and run isolated repros. The workflow reports verified failures and does not apply product fixes; unrun speculation is dropped.",
       "prerequisites": [
-        "A clear intent and exact artifact to review.",
-        "Multiple suitable model reviewers available or an explicit adaptation."
+        "A clear intent, exact scope, and the relevant working-tree changes.",
+        "Permission and an environment for isolated worktrees and executable probes against real code.",
+        "Suitable independent model reviewers or an explicit host adaptation."
       ],
       "alternative": {
         "id": "matt/code-review",
-        "when": "Your priority is separate standards and spec-compliance reports."
+        "when": "You need source-and-diff review without executing product reproductions."
       },
       "support": [],
       "playbook": null
@@ -750,8 +771,8 @@
       "title": "Make an existing PR ready for a merge decision",
       "primary": "poteto/poteto-mode",
       "why": "The Babysit playbook manages the merge frontier, review threads, and CI until the forge says it is merge-ready.",
-      "next_step": "Identify the existing PR or ordered stack, select check or drive mode, and resolve the frontier’s relevant blockers.",
-      "boundary": "Babysitting does not authorize merging. The source also limits topology changes and escalates conflicts to the owner.",
+      "next_step": "Declare drive, threads-only, or check mode. Stop on a conflict or stale base and name the owner’s rebase and drift sweep; otherwise resolve the selected frontier blockers.",
+      "boundary": "Babysitting never authorizes merging, rebasing, retargeting, or force-pushing. Opening a PR does not itself start babysitting.",
       "prerequisites": [
         "An existing PR or ordered stack.",
         "Forge CLI access, relevant watcher capability, and permission for scoped fixes and thread replies.",
@@ -768,11 +789,11 @@
       "title": "Verify and land an explicitly authorized PR run",
       "primary": "poteto/poteto-mode",
       "why": "The Shipping playbook requires independent per-PR runtime verdicts and lands only the contiguous verified run from the bottom.",
-      "next_step": "Identify the explicitly authorized PR set, obtain current independent verdicts, and land only the verified bottom-up run.",
+      "next_step": "Identify the authorized PR run and ceiling, obtain independent non-author live verdicts, check that each verdict still covers the current patch, and land only the contiguous verified run bottom-up.",
       "boundary": "This merges code and can retarget or move dependent branches. A green CI check alone is not its runtime verification verdict.",
       "prerequisites": [
         "Explicit authorization to land the selected PRs.",
-        "Merge-ready PRs and independent verdicts covering their current patches.",
+        "Merge-ready PRs and independent live verdicts for the current patches, with patch-id or build-equivalence receipts when relying on an older verdict.",
         "Forge CLI and independent runtime-verification capability, with environment adaptation checked."
       ],
       "alternative": {
@@ -860,7 +881,7 @@
       ],
       "alternative": {
         "id": "poteto/reflect",
-        "when": "You specifically want durable skill-edit proposals using the session’s multiple review lenses."
+        "when": "You want the complete active transcript mined for durable, approval-gated edits to locally copied skills."
       },
       "support": [],
       "playbook": null
@@ -885,8 +906,8 @@
     "sharpen-task": {
       "title": "Improve the prompt without expanding the task",
       "primary": "poteto/sharpen",
-      "why": "It asks what expert methods, raw evidence, and independent correctness checks the task is missing.",
-      "next_step": "Supply the current task prompt; rewrite it around stronger evidence and methods while leaving the user’s decisions open.",
+      "why": "It rewrites the task around expert methods, raw evidence, independent checks, and prototypes for choices an experiment can settle.",
+      "next_step": "Supply the task prompt; ask the rewrite to include experimental prototypes for observable choices while leaving product and preference decisions to you.",
       "boundary": "The output is a revised prompt. It does not execute the rewritten task or add unrelated scope.",
       "prerequisites": [
         "An existing task prompt and its intended scope."

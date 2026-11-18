@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "basis": "Reconfirmed during the 2026-10-25 full source reread after six scope, effect and dependency clarifications. All 35 goal outcomes, conditional alternatives and keyword vocabulary remain appropriate. The lock guards input consistency; it does not prove selection quality.",
-  "catalog_sha256": "de65f83c897eca87a044b8f67d4f9b1c1716aa205929839a21baa4d5e9e68563",
+  "basis": "2026-11-18 source-grounded reconciliation: architecture sketches instead of former automatic implementation; explicit executable-review question; source-only fallback, current workflow prerequisites and opt-in experimental/principle retrieval. Binary topology retained with current descriptions. Locks guard consistency, not selection quality.",
+  "catalog_sha256": "e0cfe7d2a723fa707f9039c9a45e53fd7f8ec5148603bea55f7c27e377e7800e",
   "artifacts": {
-    "catalog/navigation.json": "60c64c70aa264da95876de310d8eb1006de8e34b39958312bf6558d76348fbfc",
-    "catalog/navigation-cases.json": "27a2a1f11954f3f35e46d8075fde0503fd1549f6fe7025507e78c672bd6066f5",
-    "catalog/search-terms.json": "2c27813fa7f47d6454436edb3b1236cad468828193be6b813efac03f31b07f37"
+    "catalog/navigation.json": "ed4fa623b327045c5a44716090ccc2757f5636825d9f9dc3408ae61a4a09f126",
+    "catalog/navigation-cases.json": "d06463b71ff8936b02d184383251de6aca7fcd13862fae6bd8f04bd588434dbe",
+    "catalog/search-terms.json": "d2feba6f37090f6e40231d144b37392186c9993ff11005875392f6bb795f4842"
   }
 }

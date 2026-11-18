@@ -194,7 +194,7 @@
       "support": [
         "matt/domain-modeling"
       ],
-      "rationale": "Poteto why searches historical evidence categories; Matt research delegates primary-source reading into a cited note.",
+      "rationale": "Poteto why reads the historical commits and discussions, separating authors’ claims from inference; Matt research delegates primary-source reading into a cited note.",
       "constraints": [
         "Confirm which historical sources are accessible.",
         "Missing evidence stays unknown; do not invent rationale."
@@ -257,10 +257,11 @@
       "support": [
         "poteto/blast-radius"
       ],
-      "rationale": "Matt separates Standards and Spec reviewers; Poteto uses multiple model perspectives and supporting evidence.",
+      "rationale": "Matt separates Standards and Spec reports; current Poteto interrogate isolates adversaries and independently reruns their executable reproductions.",
       "constraints": [
         "Pin the base and exact reviewed contents.",
-        "Choose one review reporting contract and verify model/tool availability."
+        "Choose one review reporting contract and verify model/tool availability.",
+        "Poteto interrogate needs permission for isolated worktrees and executable probes; choose source-only reporting when those are outside scope."
       ],
       "classification": "Curator interpretation; compare candidates rather than invoking all of them."
     },
@@ -296,7 +297,7 @@
       "constraints": [
         "Use the survey when the target is unknown; architect when the change is known.",
         "The vocabulary references support a workflow and do not replace it.",
-        "Poteto architect implements by default; explicitly request a design-only checkpoint when you only want advice."
+        "Current Poteto architect compares two shapes before implementation; the former automatic implementation phase and optional checkpoint are no longer specified."
       ],
       "classification": "Curator interpretation; compare candidates rather than invoking all of them."
     },

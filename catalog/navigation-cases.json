@@ -176,7 +176,7 @@
       "expected_primary": "matt/prototype"
     },
     {
-      "scenario": "Compare architectural shapes, then implement",
+      "scenario": "Compare concrete architecture sketches before starting implementation.",
       "goal": "design",
       "answers": {
         "design-depth": "build"
@@ -197,7 +197,8 @@
       "scenario": "Get an independent adversarial verdict",
       "goal": "review",
       "answers": {
-        "review-result": "adversarial"
+        "review-result": "adversarial",
+        "review-execution": "allowed"
       },
       "expected_outcome": "review-adversarial",
       "expected_primary": "poteto/interrogate"
@@ -318,6 +319,16 @@
       },
       "expected_outcome": "catch-up",
       "expected_primary": "poteto/ketchup"
+    },
+    {
+      "scenario": "I want independent review but permit source inspection only, without product execution or reproduction files.",
+      "goal": "review",
+      "answers": {
+        "review-result": "adversarial",
+        "review-execution": "source-only"
+      },
+      "expected_outcome": "review-standards-spec",
+      "expected_primary": "matt/code-review"
     }
   ]
 }

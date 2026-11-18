@@ -1,0 +1,16 @@
+{
+  "status": "pass",
+  "guided_scenarios": 36,
+  "outcomes_covered": 35,
+  "module_queries": 2,
+  "experimental_queries": 2,
+  "principle_queries": 2,
+  "review_execution_gate": true,
+  "review_backtracking": true,
+  "note_preserved": true,
+  "feedback_trail_saved": true,
+  "mobile_width": 320,
+  "mobile_no_horizontal_overflow": true,
+  "page_errors": [],
+  "html_sha256": "d31913a0ea1730de1988d330f5549a785720bce0db7c52dcc91439712b618720"
+}

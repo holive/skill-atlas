@@ -151,8 +151,8 @@
     "poteto/swarm": "parallel workers coverage partition separate independent tasks",
     "poteto/arena": "parallel competing implementations compare candidates same brief bakeoff",
     "poteto/correct": "recurring repeated agent mistakes structural enforcement prevent errors",
-    "poteto/reflect": "lessons session improve skills retrospective",
-    "poteto/statechart": "state machine transitions diagram TLA model formal states",
+    "poteto/reflect": "lessons full transcript improve skills retrospective approved local copy no push",
+    "poteto/statechart": "state machine transitions diagram TLA model formal states TypeScript view Mermaid SVG",
     "poteto/create-verification-skill": "create browser app verification harness smoke e2e end to end",
     "poteto/maintain-verification-skill": "update repair existing verification harness feature coverage drift",
     "poteto/create-formal-verification-skill": "create formal model invariant bounded verification",
@@ -160,11 +160,18 @@
     "matt/teach": "course lessons learning persistent workspace aprender curso",
     "poteto/teach": "explain concept conversational understanding explicar",
     "matt/code-review": "diff review specification standards correctness",
-    "poteto/interrogate": "adversarial diff review multiple model perspectives",
+    "poteto/interrogate": "adversarial executable diff review proof reproduction isolated worktree verified findings",
     "poteto/poteto-mode": "feature refactoring performance shipping babysit PR readiness autonomous orchestration workflow",
     "matt/wizard": "human setup credentials dashboard interactive procedure",
     "matt/setup-matt-pocock-skills": "configure Matt issue tracker glossary setup repo",
     "poteto/setup-pstack": "configure Poteto pstack model roles setup",
-    "poteto/typescript-best-practices": "TypeScript types discriminated unions branded primitives TS TSX"
+    "poteto/typescript-best-practices": "TypeScript types discriminated unions branded primitives TS TSX",
+    "matt/software-factory": "software factory configure autonomous runners task graph observability git hosts ticket trackers fabrica software configuracao agentes automacao",
+    "poteto/architect": "architecture interface sketch two alternative designs ownership design before implementation",
+    "poteto/principle-explain-the-number": "before measurement benchmark decision threshold noise floor measured limiter variance eval spread antes medir decisao limiar ruido variacao",
+    "poteto/principle-outcome-oriented-execution": "planned migration rewrite scoped reversible temporary breakage phase verificacao quebra temporaria migracao",
+    "poteto/principle-sequence-verifiable-units": "small green units per unit check proof order failing test first unidades verificaveis checar cada etapa",
+    "poteto/principle-separate-before-serializing-shared-state": "concurrent writers same json independent facts split state locks escrita concorrente separar estado",
+    "poteto/principle-test-behavior-not-implementation": "private helper brittle test observable contract independent expected value skipped doubled effect teste fragil comportamento observavel"
   }
 }

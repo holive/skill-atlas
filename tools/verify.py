@@ -32,7 +32,6 @@ assert catalog.route(routes, {})["question_id"] == "software", "Missing context 
 assert routes["outcomes"]["course"]["candidates"] == ["matt/teach"]
 assert routes["outcomes"]["plain_teaching"]["candidates"] == ["poteto/teach"]
 assert "Not explicitly specified" not in index["matt/tdd"]["interpretation"]["confirmation"]
-assert "implements by default" in " ".join(routes["outcomes"]["design"]["constraints"])
 assert set(cat["duplicate_names"]) == {"tdd", "teach"}, "Revisit duplicate-name decisions"
 
 notes = catalog.read(ROOT / "catalog/compatibility.json")["notes"]
