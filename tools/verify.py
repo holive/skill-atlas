@@ -20,6 +20,19 @@ index = {entry["id"]: entry for entry in cat["skills"]}
 result = catalog.validate(cat, inv, routes, args.sources_dir)
 assert catalog.inventory(args.sources_dir) == inv, "Source snapshot drifted"
 
+# Newer Git renders a zero UTC offset as Z; both spellings must restore identical facts.
+original_git = catalog.git
+def git_with_zulu_time(source, *arguments):
+    value = original_git(source, *arguments)
+    if arguments == ("show", "-s", "--format=%cI", "HEAD") and value.endswith("+00:00"):
+        return value[:-6] + "Z"
+    return value
+try:
+    catalog.git = git_with_zulu_time
+    assert catalog.inventory(args.sources_dir) == inv, "Equivalent UTC timestamps changed the source inventory"
+finally:
+    catalog.git = original_git
+
 scenarios = catalog.read(ROOT / "catalog/scenarios.json")["scenarios"]
 outcomes_seen = set()
 for case in scenarios:
@@ -100,7 +113,7 @@ report = {
     "compatibility_notes": len(notes), "compatibility_evidence": compatibility_evidence,
     "rejected_invalid_inputs": negative, "missing_context_preserved": True,
     "reference_only_change_invalidates_analysis": True, "unchanged_snapshot_is_noop": True,
-    "deterministic_catalog_rebuild": True, "deterministic_rendered_documents": 3,
+    "deterministic_catalog_rebuild": True, "canonical_utc_commit_dates": True, "deterministic_rendered_documents": 3,
     "deterministic_html_page": True,
     "goal_navigation": catalog.read(ROOT / "catalog/navigation-validation.json"),
     "human_calibration": "pending; these checks do not establish subjective recommendation quality or host execution compatibility",

@@ -10,6 +10,7 @@ import os
 import re
 import subprocess
 from pathlib import Path
+from datetime import datetime
 
 ROOT = Path(__file__).resolve().parents[1]
 COLLECTIONS = {
@@ -104,7 +105,7 @@ def inventory(sources):
                 data = source_bytes(p)
                 files.append({"path": rel, "sha256": digest(data), "bytes": len(data), "type": "symlink" if p.is_symlink() else "file"})
         source_records[author] = {
-            **config, "commit": commit, "commit_time": git(root, "show", "-s", "--format=%cI", "HEAD"),
+            **config, "commit": commit, "commit_time": datetime.fromisoformat(git(root, "show", "-s", "--format=%cI", "HEAD").replace("Z", "+00:00")).isoformat(timespec="seconds"),
             "snapshot_tree_sha256": digest(json.dumps(files, sort_keys=True).encode()),
             "downloaded_scopes": ["entire repository"] if author == "matt" else ["pstack", "cursor-team-kit", "repository root files"],
             "supporting_collection": None if author == "matt" else "cursor-team-kit (dependency context, not a primary catalog collection)",

@@ -42,7 +42,7 @@ if actual != expected:
         changes = {key: {"expected": before[key], "actual": after.get(key)} for key in before if key != "files" and before[key] != after.get(key)}
         changes["missing_files"] = sorted(old_files.keys() - new_files.keys())[:10]
         changes["extra_files"] = sorted(new_files.keys() - old_files.keys())[:10]
-        changes["changed_files"] = [path for path in old_files.keys() & new_files.keys() if old_files[path] != new_files[path]][:10]
+        changes["changed_files"] = [path for path in sorted(old_files.keys() & new_files.keys()) if old_files[path] != new_files[path]][:10]
         differences["sources"][author] = changes
     old_skills = {item["id"]: item for item in expected["skills"]}
     new_skills = {item["id"]: item for item in actual["skills"]}
@@ -50,6 +50,6 @@ if actual != expected:
         before, after = old_skills.get(sid, {}), new_skills.get(sid, {})
         if before != after:
             differences["skills"].append({"id": sid, "fields": {key: {"expected": before.get(key), "actual": after.get(key)} for key in before.keys() | after.keys() if before.get(key) != after.get(key)}})
-    print(json.dumps(differences, indent=2))
+    print(json.dumps(differences, indent=2), flush=True)
     raise ValueError("Restored source inventory differs from the reviewed snapshot")
 print("Restored exact reviewed sources; no upstream code was executed.")

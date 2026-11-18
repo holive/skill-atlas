@@ -27,6 +27,7 @@
   "reference_only_change_invalidates_analysis": true,
   "unchanged_snapshot_is_noop": true,
   "deterministic_catalog_rebuild": true,
+  "canonical_utc_commit_dates": true,
   "deterministic_rendered_documents": 3,
   "deterministic_html_page": true,
   "goal_navigation": {
